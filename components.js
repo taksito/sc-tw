@@ -12,11 +12,11 @@ class ComponentManager {
                 <a href="index.html" class="nav-logo">SC <span>TW Guide</span></a>
                 <ul class="nav-links">
                     <li><a href="index.html">首頁</a></li>
+                    <li><a href="cargo.html">貨運</a></li>
+                    <li><a href="mining.html">挖礦</a></li>
+                    <li><a href="first-flight.html">飛行</a></li>
+                    <li><a href="ground-combat.html">地面 FPS</a></li>
                     <li><a href="ctinput1.html">中文化與輸入</a></li>
-                    <li><a href="character-creation.html">角色創建</a></li>
-                    <li><a href="first-flight.html">首次航行</a></li>
-                    <li><a href="fps-equipment.html">FPS裝備</a></li>
-                    <li><a href="ground-combat.html">地面戰技巧</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span><span></span><span></span>
