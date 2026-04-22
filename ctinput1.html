@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中文化與輸入 - Star Citizen 繁體中文新手入門教學</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .converter-container {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .status {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(15, 23, 42, 0.8);
+            color: white;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+        }
+
+        .button-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button.tool-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.2s;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        #convertBtn { background-color: transparent; border: 1px solid var(--accent); color: var(--accent); }
+        #convertBtn:hover { background-color: rgba(56, 189, 248, 0.1); }
+        #convertCopyBtn { background: rgba(58, 123, 213, 0.3); border: 1px solid var(--secondary); color: white; }
+        #convertCopyBtn:hover { background: rgba(58, 123, 213, 0.5); }
+        #translateBtn { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; flex: 1.5; border: none; }
+        #translateBtn:hover { box-shadow: 0 0 15px rgba(0, 210, 255, 0.6); }
+
+        button:disabled { opacity: 0.5; cursor: not-allowed; filter: grayscale(1); }
+
+        .result-label { font-size: 0.9rem; color: var(--accent); margin-bottom: 8px; font-weight: bold; }
+
+        .result-area {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            border: 1px dashed rgba(56, 189, 248, 0.4);
+            min-height: 60px;
+            word-break: break-all;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1rem;
+            color: var(--primary);
+            white-space: pre-wrap; 
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <h2 class="section-title">中文化與輸入指南</h2>
+        
+        <div class="content-section glass-panel">
+            <h3 class="text-gradient">如何安裝繁體中文化</h3>
+            <p>星際公民目前尚未內建官方中文支援。您可以透過社群製作的繁體中文模組來進行漢化：</p>
+            <ol>
+                <li>前往相關的 GitHub 或是繁中社群 Discord 下載最新版的繁體中文化檔案 (`global.ini`)。</li>
+                <li>將該檔案放置於您的遊戲安裝目錄下：<br>
+                <code>StarCitizen\LIVE\data\Localization\english</code> (如果資料夾不存在請自行建立)</li>
+                <li>重新啟動遊戲，介面即可顯示繁體中文。</li>
+            </ol>
+        </div>
+
+        <div class="content-section glass-panel">
+            <h3 class="text-gradient">中文字元轉換器 Pro</h3>
+            <p>由於遊戲內的聊天視窗無法直接輸入中文字元，我們為您準備了專屬的轉換工具。只要在下方輸入中文，它會自動將其轉碼為 UEE 標準字元，您只需複製後在遊戲中按 <strong>Enter</strong> 貼上即可！</p>
+            
+            <div class="converter-container">
+                <div id="status" class="status">正在同步 UEE 字典檔...</div>
+                
+                <div class="input-group">
+                    <input type="text" id="chinseInput" placeholder="請在此輸入中文內容..." />
+                    <div class="button-row">
+                        <button id="convertBtn" class="tool-btn" disabled>僅轉碼</button>
+                        <button id="convertCopyBtn" class="tool-btn" disabled>轉碼並複製</button>
+                        <button id="translateBtn" class="tool-btn" disabled>🚀 轉碼 + 翻譯 (EN) 並複製</button>
+                    </div>
+                </div>
+
+                <div class="result-label">輸出結果：</div>
+                <div class="result-area" id="resultOutput">等待輸入內容...</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="components.js"></script>
+    <script>
+        // Dictionary & Logic from original ctinput1.html
+        const dictionaryUrl = 'https://raw.githubusercontent.com/taksito/chsc-tw/refs/heads/main/textinput.txt';
+        const charMap = {};
+        const inputEl = document.getElementById('chinseInput');
+        const btnEl = document.getElementById('convertBtn');
+        const copyBtnEl = document.getElementById('convertCopyBtn');
+        const translateBtnEl = document.getElementById('translateBtn');
+        const resultEl = document.getElementById('resultOutput');
+        const statusEl = document.getElementById('status');
+
+        async function loadDictionary() {
+            try {
+                // First try to load from local file if available, else fallback to URL
+                let response;
+                try {
+                    response = await fetch('textinput.txt');
+                    if (!response.ok) throw new Error('Local fallback');
+                } catch(e) {
+                    response = await fetch(dictionaryUrl);
+                }
+                
+                const text = await response.text();
+                text.split(/\r?\n/).forEach(line => {
+                    const parts = line.split('=');
+                    if (parts.length === 2) charMap[parts[1].trim()] = parts[0].trim();
+                });
+                statusEl.innerText = '字典載入成功。準備好進入宇宙了嗎？';
+                [btnEl, copyBtnEl, translateBtnEl].forEach(b => b.disabled = false);
+            } catch (e) { statusEl.innerText = '字典載入失敗，請檢查網路連線。'; }
+        }
+
+        function encodeText(text) {
+            if (!text.trim()) return "";
+            let t = text.replace(/([\u4e00-\u9fa5])([a-zA-Z0-9])/g, '$1 $2').replace(/([a-zA-Z0-9])([\u4e00-\u9fa5])/g, '$1 $2');
+            let res = "";
+            for (let c of t) res += charMap[c] ? ("@" + charMap[c]) : c;
+            return res;
+        }
+
+        async function translateText(text) {
+            try {
+                const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=${encodeURIComponent(text)}`;
+                const r = await fetch(url);
+                const d = await r.json();
+                return d ? d[0].map(i => i[0]).join('') : "";
+            } catch (e) { return "Error"; }
+        }
+
+        async function copyToClipboard(text, targetBtn, overrideText) {
+            try {
+                await navigator.clipboard.writeText(text);
+                const oldT = overrideText || targetBtn.innerText;
+                targetBtn.innerText = "✓ 已複製";
+                setTimeout(() => { targetBtn.innerText = oldT; }, 1200);
+            } catch (e) {}
+        }
+
+        btnEl.addEventListener('click', () => {
+            resultEl.innerText = "[zh]" + encodeText(inputEl.value).trim();
+        });
+
+        copyBtnEl.addEventListener('click', async () => {
+            const str = "[zh]" + encodeText(inputEl.value).trim();
+            resultEl.innerText = str;
+            await copyToClipboard(str, copyBtnEl);
+        });
+
+        translateBtnEl.addEventListener('click', async () => {
+            const raw = inputEl.value.trim();
+            if (!raw) return;
+            const oldT = translateBtnEl.innerText;
+            translateBtnEl.innerText = "⏳ 翻譯中...";
+            translateBtnEl.disabled = true;
+
+            try {
+                const enc = encodeText(raw).trim();
+                const trans = (await translateText(raw)).trim();
+                const finalStr = `[zh]${enc}  [en]${trans}`;
+                resultEl.innerText = finalStr;
+                await copyToClipboard(finalStr, translateBtnEl, oldT);
+            } finally {
+                translateBtnEl.disabled = false;
+                translateBtnEl.innerText = oldT;
+            }
+        });
+
+        inputEl.addEventListener('keypress', (e) => { if (e.key === 'Enter') translateBtnEl.click(); });
+        loadDictionary();
+    </script>
+</body>
+</html>
