@@ -14,7 +14,7 @@ class ComponentManager {
                     <li><a href="index.html">首頁</a></li>
                     <li><a href="cargo.html">貨運</a></li>
                     <li><a href="mining.html">挖礦</a></li>
-                    <li><a href="first-flight.html">飛行</a></li>
+                    <li><a href="first-flight.html">基礎飛行</a></li>
                     <li><a href="ground-combat.html">地面 FPS</a></li>
                     <li><a href="ctinput1.html">中文化與輸入</a></li>
                 </ul>
