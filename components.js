@@ -12,6 +12,7 @@ class ComponentManager {
                 <a href="index.html" class="nav-logo">SC <span>TW Guide</span></a>
                 <ul class="nav-links">
                     <li><a href="index.html">首頁</a></li>
+                    <li><a href="ship-purchase-guide.html">飛機購買指南</a></li>
                     <li><a href="cargo.html">貨運</a></li>
                     <li><a href="mining.html">挖礦</a></li>
                     <li><a href="first-flight.html">基礎飛行</a></li>
