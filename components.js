@@ -1,38 +1,88 @@
 class ComponentManager {
     static init() {
-        this.injectNavbar();
+        this.injectNavigation();
         this.injectFooter();
         this.setupMobileNav();
         this.setActiveNavLink();
     }
 
-    static injectNavbar() {
-        const navbarHtml = `
-            <div class="nav-container">
-                <a href="index.html" class="nav-logo">SC <span>TW Guide</span></a>
-                <ul class="nav-links">
-                    <li><a href="index.html">首頁</a></li>
-                    <li><a href="ship-purchase-guide.html">飛機購買指南</a></li>
-                    <li><a href="cargo.html">貨運</a></li>
-                    <li><a href="mining.html">挖礦</a></li>
-                    <li><a href="first-flight.html">基礎飛行</a></li>
-                    <li><a href="ground-combat.html">地面 FPS</a></li>
-                    <li><a href="ctinput1.html">中文化與輸入</a></li>
-                </ul>
+    static getPathPrefix() {
+        const path = window.location.pathname;
+        const folders = ['/ships/', '/rockbreaker/', '/cargohauling/'];
+        return folders.some(f => path.includes(f)) ? '../' : '';
+    }
+
+    static injectNavigation() {
+        const prefix = this.getPathPrefix();
+        const navHtml = `
+            <header class="mobile-header">
+                <a href="${prefix}index.html" class="nav-logo" style="font-family: 'Orbitron', sans-serif; text-decoration: none; color: var(--text-main); font-weight: bold;">SC <span style="color: var(--primary);">TW Guide</span></a>
                 <div class="hamburger">
                     <span></span><span></span><span></span>
                 </div>
-            </div>
+            </header>
+
+            <nav class="sidebar" id="main-sidebar">
+                <a href="${prefix}index.html" class="sidebar-logo">
+                    <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.4rem; color: var(--text-main); margin: 0;">SC <span style="color: var(--primary);">TW Guide</span></h2>
+                </a>
+                
+                <div class="nav-category">主要指南</div>
+                <ul class="sidebar-nav">
+                    <li><a href="${prefix}index.html">🏠 首頁</a></li>
+                    <li><a href="${prefix}ctinput1.html">⌨️ 中文化與輸入</a></li>
+                    <li class="has-submenu">
+                        <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
+                            <a href="${prefix}first-flight.html" onclick="event.stopPropagation()">🚀 基礎飛行</a>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="${prefix}first-flight.html">• 呼叫與登機</a></li>
+                            <li><a href="${prefix}flight-movements.html">• 基礎操作</a></li>
+                            <li><a href="${prefix}flight-quantum.html">• 量子航行</a></li>
+                            <li><a href="${prefix}stanton-intro.html">• Stanton 星系介紹</a></li>
+                            <li><a href="${prefix}flight-landing.html">• 降落指南</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="nav-category">專業領域</div>
+                <ul class="sidebar-nav">
+                    <li class="has-submenu">
+                        <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
+                            <a href="${prefix}cargohauling/cargo.html" onclick="event.stopPropagation()">📦 貨運教學</a>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="${prefix}cargohauling/cargo.html">• 貨運基礎</a></li>
+                            <li><a href="${prefix}cargohauling/mission-tips.html">• 接任務技巧</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="${prefix}mining.html">⛏️ 挖礦教學</a></li>
+                    <li><a href="${prefix}ground-combat.html">🔫 地面 FPS</a></li>
+                </ul>
+
+                <div class="nav-category">參考手冊</div>
+                <ul class="sidebar-nav">
+                    <li><a href="${prefix}ship-purchase-guide.html">🚢 飛機購買指南</a></li>
+                    <li><a href="${prefix}ship-travel.html">✈️ 移動與交通推薦</a></li>
+                </ul>
+
+                <div class="nav-category">PTU 改版資訊 <span style="font-size: 0.7rem; color: var(--accent); vertical-align: middle;">(持續更新中)</span></div>
+                <ul class="sidebar-nav">
+                    <li><a href="${prefix}ptu-48-tactical.html">⚔️ 4.8 戰術打擊群</a></li>
+                    <li><a href="${prefix}rockbreaker/rock-breaker.html">⛏️ 4.7 碎石機啟動</a></li>
+                </ul>
+            </nav>
         `;
         
-        let nav = document.getElementById('main-nav');
-        if (!nav) {
-            nav = document.createElement('nav');
-            nav.id = 'main-nav';
-            nav.className = 'navbar';
-            document.body.insertBefore(nav, document.body.firstChild);
+        let container = document.getElementById('nav-wrapper');
+        if (!container) {
+            container = document.createElement('div');
+            container.id = 'nav-wrapper';
+            document.body.insertBefore(container, document.body.firstChild);
         }
-        nav.innerHTML = navbarHtml;
+        container.innerHTML = navHtml;
     }
 
     static injectFooter() {
@@ -55,23 +105,48 @@ class ComponentManager {
 
     static setupMobileNav() {
         const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        const sidebar = document.querySelector('.sidebar');
 
-        if (hamburger && navLinks) {
+        if (hamburger && sidebar) {
             hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+                sidebar.classList.toggle('active');
+            });
+
+            const links = sidebar.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 992) {
+                        sidebar.classList.remove('active');
+                    }
+                });
             });
         }
     }
 
+    static toggleSubmenu(header) {
+        const parent = header.parentElement;
+        parent.classList.toggle('expanded');
+    }
+
     static setActiveNavLink() {
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        const links = document.querySelectorAll('.nav-links a');
+        const pathParts = window.location.pathname.split('/');
+        const currentPath = pathParts.pop() || 'index.html';
+        const isInSubfolder = window.location.pathname.includes('/ships/');
+        
+        const links = document.querySelectorAll('.sidebar-nav a');
         
         links.forEach(link => {
             const href = link.getAttribute('href');
-            if (href === currentPath) {
+            const hrefParts = href.split('/');
+            const hrefFile = hrefParts.pop();
+            
+            if (hrefFile === currentPath) {
                 link.classList.add('active');
+                // Auto-expand parent if active link is in a submenu
+                const submenu = link.closest('.submenu');
+                if (submenu) {
+                    submenu.parentElement.classList.add('expanded');
+                }
             }
         });
     }

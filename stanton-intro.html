@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanton 星系介紹 - Star Citizen 繁體中文指南</title>
+    <meta name="description" content="Stanton 星系完整介紹，包含 Hurston、MicroTech、Crusader、ArcCorp 四大星球，以及主要城市與太空站一覽。">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Planet Cards Grid */
+        .planet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .planet-card {
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            position: relative;
+        }
+
+        .planet-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 210, 255, 0.25);
+        }
+
+        /* Per-planet accent colours */
+        .planet-card.hurston  { --planet-color: #e07b40; --planet-glow: rgba(224,123,64,0.3); }
+        .planet-card.microtech { --planet-color: #7eb8e0; --planet-glow: rgba(126,184,224,0.3); }
+        .planet-card.crusader  { --planet-color: #a06de0; --planet-glow: rgba(160,109,224,0.3); }
+        .planet-card.arccorp   { --planet-color: #e0c440; --planet-glow: rgba(224,196,64,0.3); }
+
+        .planet-card-header {
+            padding: 30px 30px 20px;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .planet-icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .planet-card-header h2 {
+            font-size: 1.5rem;
+            color: var(--planet-color);
+            letter-spacing: 3px;
+            -webkit-text-fill-color: var(--planet-color);
+            background: none;
+            margin-bottom: 6px;
+        }
+
+        .planet-card-header .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Glow ring behind the header */
+        .planet-card-header::after {
+            content: '';
+            position: absolute;
+            top: -20px; right: -20px;
+            width: 140px; height: 140px;
+            background: radial-gradient(circle, var(--planet-glow) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .planet-card-body {
+            padding: 20px 30px 25px;
+        }
+
+        .planet-card-body h3 {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            margin-top: 18px;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+            -webkit-text-fill-color: var(--text-muted);
+            background: none;
+        }
+
+        .planet-card-body h3:first-child {
+            margin-top: 0;
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin: 4px 4px 4px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.3);
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .location-tag.city {
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .location-tag.station {
+            border-color: rgba(0, 210, 255, 0.2);
+        }
+
+        .location-tag.outpost {
+            border-color: rgba(245,158,11,0.25);
+        }
+
+        .location-tag:hover {
+            background: rgba(0,210,255,0.08);
+            border-color: var(--primary);
+        }
+
+        .tag-icon { font-size: 1rem; }
+
+        /* Planet description paragraph */
+        .planet-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        /* Stanton overview map banner */
+        .stanton-banner {
+            text-align: center;
+            padding: 50px 30px 40px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        .stanton-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 50% 100%, rgba(0,210,255,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse at 20% 0%,  rgba(58,123,213,0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .stanton-banner h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 18px;
+        }
+
+        .stanton-banner p {
+            font-size: 1.1rem;
+            max-width: 780px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* Stats strip */
+        .stats-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 35px;
+        }
+
+        .stat-item {
+            background: rgba(0,0,0,0.35);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 14px 24px;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .stat-item .stat-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .stat-item .stat-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section title */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+        }
+
+        .section-header-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--glass-border), transparent);
+        }
+
+        /* Planet photo */
+        .planet-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+        }
+
+        /* System Map */
+        .system-map-wrapper {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .system-map-wrapper img {
+            width: 100%;
+            border-radius: 16px;
+            display: block;
+        }
+
+        /* Bottom nav */
+        .bottom-nav {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Hero Banner -->
+        <section class="stanton-banner glass-panel">
+            <h1><span class="text-gradient">Stanton</span> 星系</h1>
+            <p>
+                Stanton 是目前 Star Citizen 遊戲中唯一對玩家完全開放的恆星系統，由
+                <strong style="color: var(--accent);">四顆行星</strong>
+                組成，每顆星球都由不同企業控制，各有其獨特的城市景觀、太空站與任務類型。
+                無論你是剛踏入宇宙的新手，還是身經百戰的老手，熟悉 Stanton 各地點是展開星際旅程的第一步。
+            </p>
+            <div class="stats-strip">
+                <div class="stat-item">
+                    <span class="stat-value">4</span>
+                    <span class="stat-label">主要行星</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">4</span>
+                    <span class="stat-label">主要城市</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">4+</span>
+                    <span class="stat-label">軌道太空站</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">∞</span>
+                    <span class="stat-label">探索可能</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stanton System Map -->
+        <section class="content-section glass-panel" style="margin-bottom: 40px; text-align: center;">
+            <h2 class="text-gradient" style="margin-bottom: 8px;">Stanton 星系地圖</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">由內而外依序為：Hurston (I) → Crusader (II) → ArcCorp (III) → microTech (IV)　・　中心為 Stanton 恆星</p>
+            <div class="system-map-wrapper">
+                <img
+                    src="https://media.starcitizen.tools/b/b5/Stanton_2D.png"
+                    alt="Stanton 星系 2D 地圖"
+                    loading="lazy"
+                >
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.78rem; margin-top: 16px;">圖片來源：Star Citizen Wiki・地圖標籤為示意位置</p>
+        </section>
+
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="text-gradient">四大行星概覽</h2>
+            <div class="section-header-line"></div>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 10px; font-size: 1rem;">點選各地點標籤可查看更多資訊。每顆行星均有對應的軌道站，可用於停泊飛船、補給、買賣物資。</p>
+
+        <!-- Planet Cards -->
+        <div class="planet-grid">
+
+            <!-- Hurston -->
+            <div class="planet-card hurston glass-panel">
+                <img class="planet-img" src="https://media.starcitizen.tools/8/89/Hurston-4.3.jpg" alt="Hurston 星球" loading="lazy">
+                <div class="planet-card-header">
+                    <span class="planet-icon">🌑</span>
+                    <h2>HURSTON</h2>
+                    <div class="subtitle">工業煉獄 · 赫斯頓動力公司</div>
+                </div>
+                <div class="planet-card-body">
+                    <p class="planet-desc">
+                        Hurston 是 Stanton 最靠近恆星的行星，由 <strong>Hurston Dynamics</strong> 企業掌控。
+                        長期的工業汙染使其大氣層充滿毒素，天空呈現橙棕色，地表遍布廢棄礦坑與軍事設施。
+                        這裡是採礦、賞金任務與武器貿易的重要中心。
+                    </p>
+                    <h3>🏙️ 主要城市</h3>
+                    <span class="location-tag city">
+                        <span class="tag-icon">🏙️</span> Lorville（洛維爾）
+                    </span>
+                    <h3>🛰️ 軌道太空站</h3>
+                    <span class="location-tag station">
+                        <span class="tag-icon">🛰️</span> Everus Harbor
+                    </span>
+                    <h3>📍 重要外圍地點</h3>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🔬</span> Hdms-Edmond
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🔬</span> Hdms-Oparei
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🔬</span> Hdms-Pinehaven
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">⚔️</span> Hurston Security Posts
+                    </span>
+                </div>
+            </div>
+
+            <!-- MicroTech -->
+            <div class="planet-card microtech glass-panel">
+                <img class="planet-img" src="https://media.starcitizen.tools/e/e7/MicroTech-4.3.jpg" alt="MicroTech 星球" loading="lazy">
+                <div class="planet-card-header">
+                    <span class="planet-icon">🌨️</span>
+                    <h2>MICROTECH</h2>
+                    <div class="subtitle">科技冰球 · 微科技公司</div>
+                </div>
+                <div class="planet-card-body">
+                    <p class="planet-desc">
+                        MicroTech 是 Stanton 最遙遠的行星，終年被冰雪覆蓋，由科技巨頭
+                        <strong>microTech Inc.</strong> 所擁有。其主城 New Babbage 是一座現代化的未來都市，
+                        充滿高科技氛圍，是購買高端飛船零件與電子設備的最佳去處。
+                    </p>
+                    <h3>🏙️ 主要城市</h3>
+                    <span class="location-tag city">
+                        <span class="tag-icon">🏙️</span> New Babbage（新巴貝奇）
+                    </span>
+                    <h3>🛰️ 軌道太空站</h3>
+                    <span class="location-tag station">
+                        <span class="tag-icon">🛰️</span> Port Tressler
+                    </span>
+                    <h3>📍 重要外圍地點</h3>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🏔️</span> Calliope（衛星）
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🏔️</span> Clio（衛星）
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🏔️</span> Euterpe（衛星）
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🔭</span> Microtech Research Posts
+                    </span>
+                </div>
+            </div>
+
+            <!-- Crusader -->
+            <div class="planet-card crusader glass-panel">
+                <img class="planet-img" src="https://media.starcitizen.tools/d/d4/Crusader-4.3.jpg" alt="Crusader 星球" loading="lazy">
+                <div class="planet-card-header">
+                    <span class="planet-icon">🌀</span>
+                    <h2>CRUSADER</h2>
+                    <div class="subtitle">氣態巨行星 · 克魯塞德工業</div>
+                </div>
+                <div class="planet-card-body">
+                    <p class="planet-desc">
+                        Crusader 是 Stanton 唯一的氣態巨行星，由 <strong>Crusader Industries</strong> 管理。
+                        無法降落於其表面，但其浮空城市 Orison 是宇宙中最壯觀的城市之一，
+                        懸浮在厚厚雲層之上，是購買飛船與進行任務的熱門地點。
+                    </p>
+                    <h3>🏙️ 主要城市</h3>
+                    <span class="location-tag city">
+                        <span class="tag-icon">☁️</span> Orison（浮空城市）
+                    </span>
+                    <h3>🛰️ 軌道太空站</h3>
+                    <span class="location-tag station">
+                        <span class="tag-icon">🛰️</span> Seraphim Station
+                    </span>
+                    <span class="location-tag station">
+                        <span class="tag-icon">🛰️</span> Port Olisar（舊版中央站）
+                    </span>
+                    <h3>📍 衛星 / 外圍地點</h3>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🌙</span> Daymar（沙漠衛星）
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🌙</span> Cellin（火山衛星）
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🌙</span> Yela（冰岩衛星）
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🏗️</span> Grim HEX（非法太空站）
+                    </span>
+                </div>
+            </div>
+
+            <!-- ArcCorp -->
+            <div class="planet-card arccorp glass-panel">
+                <img class="planet-img" src="https://media.starcitizen.tools/e/e9/ArcCorp-4.3.jpg" alt="ArcCorp 星球" loading="lazy">
+                <div class="planet-card-header">
+                    <span class="planet-icon">🌆</span>
+                    <h2>ARCCORP</h2>
+                    <div class="subtitle">全球都市 · 弧形企業公司</div>
+                </div>
+                <div class="planet-card-body">
+                    <p class="planet-desc">
+                        ArcCorp 是 Stanton 最獨特的行星——整顆星球的表面幾乎完全被城市覆蓋，
+                        是 <strong>ArcCorp</strong> 公司的總部所在地。Area 18 是其主要城市區，
+                        是商業、購物與社交活動的核心，也是新手探索都市生活的理想起點。
+                    </p>
+                    <h3>🏙️ 主要城市</h3>
+                    <span class="location-tag city">
+                        <span class="tag-icon">🏙️</span> Area 18（第十八區）
+                    </span>
+                    <h3>🛰️ 軌道太空站</h3>
+                    <span class="location-tag station">
+                        <span class="tag-icon">🛰️</span> Baijini Point
+                    </span>
+                    <h3>📍 衛星 / 外圍地點</h3>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🌑</span> Lyria（礦業衛星）
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🌑</span> Wala（岩石衛星）
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">🔧</span> Shubin Interstellar Facilities
+                    </span>
+                    <span class="location-tag outpost">
+                        <span class="tag-icon">⛽</span> GasCloud Mining Sites
+                    </span>
+                </div>
+            </div>
+
+        </div><!-- /planet-grid -->
+
+        <!-- Quick Reference Table -->
+        <section class="content-section glass-panel" style="margin-top: 50px;">
+            <h2 class="text-gradient">快速參考：行星 → 城市 → 太空站</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">
+                以下是快速查詢每顆行星對應主城與軌道站的對照表，方便你在量子航行時快速找到目標。
+            </p>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--glass-border);">
+                            <th style="padding: 14px 16px; text-align: left; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 2px; font-weight: normal;">行星</th>
+                            <th style="padding: 14px 16px; text-align: left; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 2px; font-weight: normal;">企業</th>
+                            <th style="padding: 14px 16px; text-align: left; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 2px; font-weight: normal;">主城</th>
+                            <th style="padding: 14px 16px; text-align: left; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 2px; font-weight: normal;">軌道太空站</th>
+                            <th style="padding: 14px 16px; text-align: left; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 2px; font-weight: normal;">特色</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 14px 16px; color: #e07b40; font-weight: bold; font-family: 'Orbitron', sans-serif; font-size: 0.9rem;">Hurston</td>
+                            <td style="padding: 14px 16px; color: var(--text-muted);">Hurston Dynamics</td>
+                            <td style="padding: 14px 16px;">🏙️ Lorville</td>
+                            <td style="padding: 14px 16px;">🛰️ Everus Harbor</td>
+                            <td style="padding: 14px 16px; color: var(--text-muted); font-size: 0.85rem;">工業採礦、賞金任務、武器</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 14px 16px; color: #7eb8e0; font-weight: bold; font-family: 'Orbitron', sans-serif; font-size: 0.9rem;">MicroTech</td>
+                            <td style="padding: 14px 16px; color: var(--text-muted);">microTech Inc.</td>
+                            <td style="padding: 14px 16px;">🏙️ New Babbage</td>
+                            <td style="padding: 14px 16px;">🛰️ Port Tressler</td>
+                            <td style="padding: 14px 16px; color: var(--text-muted); font-size: 0.85rem;">高科技零件、冰雪地形、研究</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                            <td style="padding: 14px 16px; color: #a06de0; font-weight: bold; font-family: 'Orbitron', sans-serif; font-size: 0.9rem;">Crusader</td>
+                            <td style="padding: 14px 16px; color: var(--text-muted);">Crusader Industries</td>
+                            <td style="padding: 14px 16px;">☁️ Orison</td>
+                            <td style="padding: 14px 16px;">🛰️ Seraphim Station</td>
+                            <td style="padding: 14px 16px; color: var(--text-muted); font-size: 0.85rem;">氣態巨星、浮空城市、飛船購買</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 14px 16px; color: #e0c440; font-weight: bold; font-family: 'Orbitron', sans-serif; font-size: 0.9rem;">ArcCorp</td>
+                            <td style="padding: 14px 16px; color: var(--text-muted);">ArcCorp</td>
+                            <td style="padding: 14px 16px;">🏙️ Area 18</td>
+                            <td style="padding: 14px 16px;">🛰️ Baijini Point</td>
+                            <td style="padding: 14px 16px; color: var(--text-muted); font-size: 0.85rem;">全城市行星、商業貿易、都市探索</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="flight-quantum.html" class="btn">← 返回量子航行</a>
+            <a href="quantum-common-locations.html" class="btn" style="background: linear-gradient(135deg, #3a7bd5, #6247aa);">📍 常用量子地點</a>
+        </div>
+    </main>
+
+    <script src="components.js"></script>
+</body>
+</html>

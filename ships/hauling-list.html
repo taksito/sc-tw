@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hauling 貨運飛船列表 - Star Citizen 繁體中文新手入門教學</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .ship-list-section {
+            margin-bottom: 40px;
+        }
+        .ship-category-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid var(--accent);
+        }
+        .ship-item-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ship-info h4 {
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+        .ship-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .ship-tag {
+            background: var(--accent);
+            color: black;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero glass-panel">
+            <h1><span class="text-gradient">Hauling 貨運飛船列表</span></h1>
+            <p>根據您的經濟實力與任務需求，選擇最適合的物流夥伴。</p>
+        </section>
+
+        <!-- Starter -->
+        <section class="ship-list-section">
+            <h3 class="ship-category-title text-gradient">🟢 新手入門 (Starter Hauling)</h3>
+            <div class="ship-item-card">
+                <div class="ship-info">
+                    <h4><a href="avenger-titan.html" style="color: var(--text-main); text-decoration: none; border-bottom: 1px dashed var(--accent);">Aegis Avenger Titan</a></h4>
+                    <p>最強全能入門機，具備 8 SCU 貨艙與強大機動性。</p>
+                    <div style="font-size: 0.85rem; color: var(--success); margin-top: 5px;">💰 售價：1,324,325 aUEC</div>
+                </div>
+                <span class="ship-tag">8 SCU</span>
+            </div>
+            <div class="ship-item-card" style="opacity: 0.55; border-color: rgba(245,158,11,0.4); position: relative;">
+                <div style="
+                    position: absolute; top: 10px; right: 10px;
+                    background: rgba(245,158,11,0.15);
+                    border: 1px solid var(--warning);
+                    color: var(--warning);
+                    font-size: 0.7rem;
+                    font-family: 'Orbitron', sans-serif;
+                    letter-spacing: 1px;
+                    padding: 3px 10px;
+                    border-radius: 6px;
+                    text-transform: uppercase;
+                ">⚠ 目前無法購買</div>
+                <div class="ship-info">
+                    <h4><a href="aurora-mk2.html" style="color: var(--text-muted); text-decoration: none;">RSI Aurora MK2</a></h4>
+                    <p>經典入門改良版，適合輕量級物資運輸與快遞任務。</p>
+                    <div style="font-size: 0.85rem; color: var(--warning); margin-top: 5px;">⚠️ 目前遊戲內無法購買（暫時下架）</div>
+                </div>
+                <span class="ship-tag" style="background: var(--text-muted); color: rgba(0,0,0,0.5);">3 SCU</span>
+            </div>
+        </section>
+
+        <!-- Intermediate -->
+        <section class="ship-list-section">
+            <h3 class="ship-category-title text-gradient">🔵 中階進階 (Intermediate)</h3>
+            <div class="ship-item-card">
+                <div class="ship-info">
+                    <h4>MISC Hull A</h4>
+                    <p>專精貨運設計，具備展開式貨架，同體積中效率最高。</p>
+                    <div style="font-size: 0.85rem; color: var(--success); margin-top: 5px;">💰 售價：1,658,475 aUEC</div>
+                </div>
+                <span class="ship-tag">64 SCU</span>
+            </div>
+            <div class="ship-item-card">
+                <div class="ship-info">
+                    <h4><a href="drake-cutlass-black.html" style="color: var(--text-main); text-decoration: none; border-bottom: 1px dashed var(--accent);">Drake Cutlass Black</a></h4>
+                    <p>海盜與工商業者的首選，多功能且擁有寬敞的後貨艙。</p>
+                    <div style="font-size: 0.85rem; color: var(--success); margin-top: 5px;">💰 售價：2,010,960 aUEC</div>
+                </div>
+                <span class="ship-tag">46 SCU</span>
+            </div>
+            <div class="ship-item-card">
+                <div class="ship-info">
+                    <h4><a href="argo-raft.html" style="color: var(--text-main); text-decoration: none; border-bottom: 1px dashed var(--accent);">MISC RAFT</a></h4>
+                    <p>專為快速裝卸設計，能直接吊掛三枚大型 32 SCU 貨箱。</p>
+                    <div style="font-size: 0.85rem; color: var(--success); margin-top: 5px;">💰 售價：3,455,155 aUEC</div>
+                </div>
+                <span class="ship-tag">192 SCU</span>
+            </div>
+        </section>
+
+        <!-- Advanced -->
+        <section class="ship-list-section">
+            <h3 class="ship-category-title text-gradient">🟠 大型運輸 (Advanced Hauling)</h3>
+            <div class="ship-item-card" style="opacity: 0.55; border-color: rgba(245,158,11,0.4); position: relative;">
+                <div style="
+                    position: absolute; top: 10px; right: 10px;
+                    background: rgba(245,158,11,0.15);
+                    border: 1px solid var(--warning);
+                    color: var(--warning);
+                    font-size: 0.7rem;
+                    font-family: 'Orbitron', sans-serif;
+                    letter-spacing: 1px;
+                    padding: 3px 10px;
+                    border-radius: 6px;
+                    text-transform: uppercase;
+                ">⚠ 無遊戲幣購買</div>
+                <div class="ship-info">
+                    <h4 style="color: var(--text-muted);">Aegis Hermes</h4>
+                    <p>追求極致速度的高端商務運輸機，適合高價物品快速送達。</p>
+                    <div style="font-size: 0.85rem; color: var(--warning); margin-top: 5px;">⚠️ 目前無遊戲幣購買管道（概念開發中）</div>
+                </div>
+                <span class="ship-tag" style="background: var(--text-muted); color: rgba(0,0,0,0.5);">高速運輸</span>
+            </div>
+            <div class="ship-item-card" style="opacity: 0.55; border-color: rgba(245,158,11,0.4); position: relative;">
+                <div style="
+                    position: absolute; top: 10px; right: 10px;
+                    background: rgba(245,158,11,0.15);
+                    border: 1px solid var(--warning);
+                    color: var(--warning);
+                    font-size: 0.7rem;
+                    font-family: 'Orbitron', sans-serif;
+                    letter-spacing: 1px;
+                    padding: 3px 10px;
+                    border-radius: 6px;
+                    text-transform: uppercase;
+                ">⚠ 無遊戲幣購買</div>
+                <div class="ship-info">
+                    <h4 style="color: var(--text-muted);">MISC Hull B</h4>
+                    <p>貨運界的中堅力量，擁有驚人的運載比，需停靠空間站。</p>
+                    <div style="font-size: 0.85rem; color: var(--warning); margin-top: 5px;">⚠️ 目前無遊戲幣購買管道（開發中）</div>
+                </div>
+                <span class="ship-tag" style="background: var(--text-muted); color: rgba(0,0,0,0.5);">384 SCU</span>
+            </div>
+            <div class="ship-item-card">
+                <div class="ship-info">
+                    <h4>Crusader C2 Hercules</h4>
+                    <p>大氣層內最強運輸王，具備極大單一空間，適合運送重型載具。</p>
+                    <div style="font-size: 0.85rem; color: var(--success); margin-top: 5px;">💰 售價：18,900,000 aUEC</div>
+                </div>
+                <span class="ship-tag">696 SCU</span>
+            </div>
+        </section>
+
+        <!-- Special -->
+        <section class="ship-list-section">
+            <h3 class="ship-category-title text-gradient">🔴 特殊巨輪 (Specialized)</h3>
+            <div class="ship-item-card" style="border: 1px solid var(--warning);">
+                <div class="ship-info">
+                    <h4>MISC Hull C</h4>
+                    <p>星際物流的主動脈。展開後體積極大，僅能在深空軌道間穿梭。</p>
+                    <div style="font-size: 0.85rem; color: var(--success); margin-top: 5px;">💰 售價：15,710,600 aUEC</div>
+                </div>
+                <span class="ship-tag" style="background: var(--warning);">4608 SCU</span>
+            </div>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="../ship-purchase-guide.html" class="btn">返回購買手冊</a>
+        </div>
+    </main>
+
+    <script src="../components.js"></script>
+</body>
+</html>
