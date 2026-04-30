@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
             margin-bottom: 20px;
             text-align: center;
             padding: 8px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
         }
 
@@ -68,16 +69,49 @@
             font-family: 'Noto Sans TC', sans-serif;
         }
 
-        #convertBtn { background-color: transparent; border: 1px solid var(--accent); color: var(--accent); }
-        #convertBtn:hover { background-color: rgba(56, 189, 248, 0.1); }
-        #convertCopyBtn { background: rgba(58, 123, 213, 0.3); border: 1px solid var(--secondary); color: white; }
-        #convertCopyBtn:hover { background: rgba(58, 123, 213, 0.5); }
-        #translateBtn { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; flex: 1.5; border: none; }
-        #translateBtn:hover { box-shadow: 0 0 15px rgba(0, 210, 255, 0.6); }
+        #convertBtn {
+            background-color: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
 
-        button:disabled { opacity: 0.5; cursor: not-allowed; filter: grayscale(1); }
+        #convertBtn:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+        }
 
-        .result-label { font-size: 0.9rem; color: var(--accent); margin-bottom: 8px; font-weight: bold; }
+        #convertCopyBtn {
+            background: rgba(58, 123, 213, 0.3);
+            border: 1px solid var(--secondary);
+            color: white;
+        }
+
+        #convertCopyBtn:hover {
+            background: rgba(58, 123, 213, 0.5);
+        }
+
+        #translateBtn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            flex: 1.5;
+            border: none;
+        }
+
+        #translateBtn:hover {
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
 
         .result-area {
             padding: 20px;
@@ -89,35 +123,43 @@
             font-family: 'Courier New', Courier, monospace;
             font-size: 1.1rem;
             color: var(--primary);
-            white-space: pre-wrap; 
+            white-space: pre-wrap;
             line-height: 1.2;
         }
     </style>
 </head>
+
 <body>
 
     <main>
         <h2 class="section-title">中文化與輸入指南</h2>
-        
+
         <div class="content-section glass-panel">
             <h3 class="text-gradient">如何安裝繁體中文化</h3>
             <p>星際公民目前尚未內建官方中文支援。這是我自己翻譯的雙語中文化專案，目前仍在持續改善中，希望能幫助各位玩家更順利地體驗遊戲。您可以透過以下連結取得：</p>
-            <p style="margin-bottom: 15px;">🔗 <strong>專案連結：</strong><a href="https://github.com/taksito/starcitizen-chinese_traditional" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: bold;">Star Citizen 繁體雙語中文化 (GitHub)</a></p>
+            <p style="margin-bottom: 15px;">🔗 <strong>專案連結：</strong><a
+                    href="https://github.com/taksito/starcitizen-chinese_traditional" target="_blank"
+                    style="color: var(--primary); text-decoration: none; font-weight: bold;">Star Citizen 繁體雙語中文化
+                    (GitHub)</a></p>
             <ol>
                 <li>前往上方的 GitHub 連結下載最新版的繁體中文化檔案 (<code>global.ini</code>)。</li>
                 <li>將該檔案放置於您的遊戲安裝目錄下：<br>
-                <code>StarCitizen\LIVE\data\Localization\english</code> (如果資料夾不存在請自行建立)</li>
+                    <code>StarCitizen\LIVE\data\Localization\chinese_(traditional)</code> (如果資料夾不存在請自行建立)
+                </li>
+                <li>在StarCitizen\LIVE\下需加入一個 user.cfg，裡面需要有一行g_language = chinese_(traditional)
                 <li>重新啟動遊戲，介面即可顯示繁體中文。</li>
+
             </ol>
         </div>
 
         <div class="content-section glass-panel">
             <h3 class="text-gradient">中文字元轉換器 Pro</h3>
-            <p>由於遊戲內的聊天視窗無法直接輸入中文字元，我們為您準備了專屬的轉換工具。只要在下方輸入中文，它會自動將其轉碼為 UEE 標準字元，您只需複製後在遊戲中按 <strong>Enter</strong> 貼上即可！</p>
-            
+            <p>由於遊戲內的聊天視窗無法直接輸入中文字元，我們為您準備了專屬的轉換工具。只要在下方輸入中文，它會自動將其轉碼為 UEE 標準字元，您只需複製後在遊戲中按 <strong>Enter</strong> 貼上即可！
+            </p>
+
             <div class="converter-container">
                 <div id="status" class="status">正在同步 UEE 字典檔...</div>
-                
+
                 <div class="input-group">
                     <input type="text" id="chinseInput" placeholder="請在此輸入中文內容..." />
                     <div class="button-row">
@@ -152,10 +194,10 @@
                 try {
                     response = await fetch('textinput.txt');
                     if (!response.ok) throw new Error('Local fallback');
-                } catch(e) {
+                } catch (e) {
                     response = await fetch(dictionaryUrl);
                 }
-                
+
                 const text = await response.text();
                 text.split(/\r?\n/).forEach(line => {
                     const parts = line.split('=');
@@ -189,7 +231,7 @@
                 const oldT = overrideText || targetBtn.innerText;
                 targetBtn.innerText = "✓ 已複製";
                 setTimeout(() => { targetBtn.innerText = oldT; }, 1200);
-            } catch (e) {}
+            } catch (e) { }
         }
 
         btnEl.addEventListener('click', () => {
@@ -225,4 +267,5 @@
         loadDictionary();
     </script>
 </body>
+
 </html>
