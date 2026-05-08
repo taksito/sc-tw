@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISC Starlite - Star Citizen 飛船指南</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .ship-header { text-align: center; margin-bottom: 30px; }
+        .ship-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .stat-box { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 8px; border: 1px solid var(--glass-border); text-align: center; }
+        .stat-value { font-size: 1.5rem; color: var(--accent); font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="glass-panel" style="padding: 40px;">
+            <div class="ship-header">
+                <h1>MISC <span class="text-gradient">Starlite</span></h1>
+                <p>小型補給艦 (Small Refueling Vessel)</p>
+            </div>
+
+            <div style="margin-bottom: 30px; border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border);">
+                <img src="https://starcitizen.tools/Special:FilePath/Starlite_various_views_with_graphics_for_DefenseCon_2956.jpg" alt="MISC Starlite" style="width: 100%; height: auto; display: block;">
+            </div>
+
+            <h2 class="text-gradient" style="margin-top: 30px; margin-bottom: 20px;">船艦介紹</h2>
+            <p>
+                Starlite 是由 Musashi Industrial and Starflight Concern (MISC) 開發的小型燃料補給艦。它能為小型編隊提供靈活的燃料補充支援，延長戰鬥機與探險船的作業半徑，是艦隊與傭兵小隊後勤不可或缺的支援載具。
+            </p>
+
+            <div class="ship-stats">
+                <div class="stat-box">
+                    <div>製造商</div>
+                    <div class="stat-value" style="font-size: 1.2rem; color: #fff;">MISC</div>
+                </div>
+                <div class="stat-box">
+                    <div>定位</div>
+                    <div class="stat-value" style="font-size: 1.2rem;">燃料補給</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; text-align: center;">
+                <a href="https://starcitizen.tools/Starlite" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none;">查看 Star Citizen Wiki 詳細資料 ↗</a>
+            </div>
+            
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../update48/index.html" class="btn">返回 4.8 改版資訊</a>
+            </div>
+        </section>
+    </main>
+    <script src="../components.js"></script>
+</body>
+</html>

@@ -7,9 +7,9 @@ class ComponentManager {
     }
 
     static getPathPrefix() {
-        const path = window.location.pathname;
-        const folders = ['/ships/', '/rockbreaker/', '/cargohauling/'];
-        return folders.some(f => path.includes(f)) ? '../' : '';
+        const decodedPath = decodeURIComponent(window.location.pathname);
+        const folders = ['/ships/', '/rockbreaker/', '/cargohauling/', '/update48/'];
+        return folders.some(f => decodedPath.includes(f)) ? '../' : '';
     }
 
     static injectNavigation() {
@@ -40,37 +40,61 @@ class ComponentManager {
                             <li><a href="${prefix}first-flight.html">• 呼叫與登機</a></li>
                             <li><a href="${prefix}flight-movements.html">• 基礎操作</a></li>
                             <li><a href="${prefix}flight-quantum.html">• 量子航行</a></li>
-                            <li><a href="${prefix}stanton-intro.html">• Stanton 星系介紹</a></li>
                             <li><a href="${prefix}flight-landing.html">• 降落指南</a></li>
                         </ul>
                     </li>
-                </ul>
-
-                <div class="nav-category">專業領域</div>
-                <ul class="sidebar-nav">
                     <li class="has-submenu">
                         <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
-                            <a href="${prefix}cargohauling/cargo.html" onclick="event.stopPropagation()">📦 貨運教學</a>
+                            <a href="${prefix}professions.html" onclick="event.stopPropagation()">💼 專業領域</a>
                             <span class="toggle-icon">▼</span>
                         </div>
                         <ul class="submenu">
-                            <li><a href="${prefix}cargohauling/cargo.html">• 貨運基礎</a></li>
-                            <li><a href="${prefix}cargohauling/mission-tips.html">• 接任務技巧</a></li>
+                            <li><a href="${prefix}cargohauling/cargo.html">• 📦 貨運教學</a></li>
+                            <li><a href="${prefix}mining.html">• ⛏️ 挖礦教學</a></li>
+                            <li><a href="${prefix}ground-combat.html">• 🔫 地面 FPS</a></li>
+                            <li><a href="${prefix}ship-combat.html">• ⚔️ 飛船戰鬥</a></li>
                         </ul>
                     </li>
-                    <li><a href="${prefix}mining.html">⛏️ 挖礦教學</a></li>
-                    <li><a href="${prefix}ground-combat.html">🔫 地面 FPS</a></li>
+                    <li class="has-submenu">
+                        <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
+                            <a href="${prefix}world-intro.html" onclick="event.stopPropagation()">🌎 世界介紹</a>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="${prefix}stanton-intro.html">• Stanton 星系</a></li>
+                            <li><a href="${prefix}pyro-intro.html">• Pyro 星系</a></li>
+                            <li><a href="${prefix}nyx-intro.html">• Nyx 星系</a></li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <div class="nav-category">參考手冊</div>
                 <ul class="sidebar-nav">
-                    <li><a href="${prefix}ship-purchase-guide.html">🚢 飛機購買指南</a></li>
-                    <li><a href="${prefix}ship-travel.html">✈️ 移動與交通推薦</a></li>
+                    <li class="has-submenu">
+                        <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
+                            <a href="${prefix}ship-purchase-guide.html" onclick="event.stopPropagation()">🚢 飛機購買指南</a>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="${prefix}ship-purchase-guide.html">• 購買指南首頁</a></li>
+                            <li><a href="${prefix}ship-travel.html">• ✈️ 移動與交通推薦</a></li>
+                            <li><a href="${prefix}ships/hauling-list.html">• 📦 貨運飛船推薦清單</a></li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <div class="nav-category">PTU 改版資訊 <span style="font-size: 0.7rem; color: var(--accent); vertical-align: middle;">(持續更新中)</span></div>
                 <ul class="sidebar-nav">
-                    <li><a href="${prefix}ptu-48-tactical.html">⚔️ 4.8 戰術打擊群</a></li>
+                    <li class="has-submenu">
+                        <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
+                            <a href="${prefix}update48/index.html" onclick="event.stopPropagation()">📰 4.8 改版資訊</a>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="${prefix}update48/index.html">• 4.8 改版首頁</a></li>
+                            <li><a href="${prefix}update48/ptu-48-tactical.html">• 4.8 戰術打擊群</a></li>
+                        </ul>
+                    </li>
                     <li><a href="${prefix}rockbreaker/rock-breaker.html">⛏️ 4.7 碎石機啟動</a></li>
                 </ul>
             </nav>

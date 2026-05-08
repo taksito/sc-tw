@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drake Vulture - Star Citizen 飛船指南</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .ship-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .ship-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .ship-image-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 20px;
+        }
+        .ship-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="glass-panel" style="padding: 40px;">
+            <div class="ship-header">
+                <h1>Drake <span class="text-gradient">Vulture</span></h1>
+                <p>單人回收作業的首選座駕 (Light Salvage)</p>
+            </div>
+
+            <div class="ship-image-container">
+                <img src="https://media.robertsspaceindustries.com/v8tix0733xok5/store_large.jpg" alt="Drake Vulture">
+            </div>
+
+            <h2 class="text-gradient" style="margin-top: 30px; margin-bottom: 20px;">船艦介紹</h2>
+            <p>
+                Drake Interplanetary 的 Vulture（禿鷹級）是一款專為單人操作設計的輕型回收船。它配備了強大的雙臂刮削光束，能夠將廢棄船體的裝甲剝離並轉化為高價值的回收材料 (RMC)。對於想要踏入回收行業並享受穩定且豐厚收入的玩家來說，Vulture 絕對是不可或缺的工具。
+            </p>
+
+            <div class="ship-stats">
+                <div class="stat-box">
+                    <div>製造商</div>
+                    <div class="stat-value" style="font-size: 1.2rem; color: #fff;">Drake</div>
+                </div>
+                <div class="stat-box">
+                    <div>貨艙容量 (SCU)</div>
+                    <div class="stat-value">12</div>
+                </div>
+                <div class="stat-box">
+                    <div>乘員</div>
+                    <div class="stat-value">1</div>
+                </div>
+                <div class="stat-box">
+                    <div>長度</div>
+                    <div class="stat-value">33m</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; display: flex; gap: 20px;">
+                <div style="flex: 1; background: rgba(56, 189, 248, 0.05); padding: 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <h3 style="color: var(--accent); margin-bottom: 10px;">優點</h3>
+                    <ul style="padding-left: 20px; color: var(--text-muted);">
+                        <li>目前遊戲中最佳的單人賺錢工具之一。</li>
+                        <li>配備獨立的生活區與床鋪，支援登出。</li>
+                        <li>操作直覺，回收流程容易上手。</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; background: rgba(239, 68, 68, 0.05); padding: 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <h3 style="color: #ef4444; margin-bottom: 10px;">缺點</h3>
+                    <ul style="padding-left: 20px; color: var(--text-muted);">
+                        <li>Drake 傳統的薄弱裝甲，不適合戰鬥。</li>
+                        <li>貨艙空間 (12 SCU) 相對較小，需要頻繁手動堆疊箱子以最大化利潤。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../ship-purchase-guide.html" class="btn">返回飛機推薦指南</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../components.js"></script>
+</body>
+</html>

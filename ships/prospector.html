@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISC Prospector - Star Citizen 飛船指南</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .ship-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .ship-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .ship-image-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 20px;
+        }
+        .ship-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="glass-panel" style="padding: 40px;">
+            <div class="ship-header">
+                <h1>MISC <span class="text-gradient">Prospector</span></h1>
+                <p>專業單人採礦船 (Light Mining)</p>
+            </div>
+
+            <div class="ship-image-container">
+                <img src="https://media.robertsspaceindustries.com/qg9b9e6w5k42z/store_large.jpg" alt="MISC Prospector">
+            </div>
+
+            <h2 class="text-gradient" style="margin-top: 30px; margin-bottom: 20px;">船艦介紹</h2>
+            <p>
+                MISC Prospector (勘探者級) 是長久以來廣受單人礦工喜愛的採礦船。配備了專用的採礦雷射頭以及四個獨立的礦石鞍袋，它讓玩家能夠深入小行星帶或行星表面開採珍貴礦物。全景式的駕駛艙提供了無與倫比的視野，是進行精細採礦操作時的最佳助手。
+            </p>
+
+            <div class="ship-stats">
+                <div class="stat-box">
+                    <div>製造商</div>
+                    <div class="stat-value" style="font-size: 1.2rem; color: #fff;">MISC</div>
+                </div>
+                <div class="stat-box">
+                    <div>礦石容量 (SCU)</div>
+                    <div class="stat-value">32</div>
+                </div>
+                <div class="stat-box">
+                    <div>乘員</div>
+                    <div class="stat-value">1</div>
+                </div>
+                <div class="stat-box">
+                    <div>長度</div>
+                    <div class="stat-value">24m</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; display: flex; gap: 20px;">
+                <div style="flex: 1; background: rgba(56, 189, 248, 0.05); padding: 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <h3 style="color: var(--accent); margin-bottom: 10px;">優點</h3>
+                    <ul style="padding-left: 20px; color: var(--text-muted);">
+                        <li>專注的單人採礦體驗，利潤穩定。</li>
+                        <li>絕佳的駕駛艙視野，利於尋找礦點。</li>
+                        <li>模組化的雷射頭與配件，可根據需求高度客製化。</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; background: rgba(239, 68, 68, 0.05); padding: 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <h3 style="color: #ef4444; margin-bottom: 10px;">缺點</h3>
+                    <ul style="padding-left: 20px; color: var(--text-muted);">
+                        <li>採礦雷射能量有限，無法單獨打破巨型礦石。</li>
+                        <li>完全沒有戰鬥能力，遭遇海盜時只能逃跑。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../ship-purchase-guide.html" class="btn">返回飛機推薦指南</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../components.js"></script>
+</body>
+</html>
