@@ -83,27 +83,50 @@
         <div class="content-section glass-panel">
             <h3 class="text-gradient">🎬 教學影片</h3>
             <p>觀看以下影片，跟著步驟完成角色創建流程：</p>
-            <div style="
-                position: relative;
-                padding-bottom: 56.25%;
-                height: 0;
-                overflow: hidden;
-                border-radius: 12px;
-                margin-top: 16px;
-                border: 1px solid rgba(0,210,255,0.25);
-                box-shadow: 0 0 30px rgba(0,210,255,0.1);
-            ">
-                <iframe
-                    width="560" height="315"
-                    src="https://www.youtube.com/embed/dHdf3OGr1Ac?si=-nnygMAW_a-oFDDc"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"
-                ></iframe>
-            </div>
+            <a href="https://youtu.be/dHdf3OGr1Ac" target="_blank" rel="noopener" style="display: block; margin-top: 16px; text-decoration: none; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,210,255,0.25); box-shadow: 0 0 30px rgba(0,210,255,0.1);">
+                <img
+                    src="https://img.youtube.com/vi/dHdf3OGr1Ac/maxresdefault.jpg"
+                    alt="Star Citizen 角色創建教學影片"
+                    style="width: 100%; display: block; border-radius: 12px;"
+                    onerror="this.src='https://img.youtube.com/vi/dHdf3OGr1Ac/hqdefault.jpg'"
+                >
+                <!-- Play button overlay -->
+                <div style="
+                    position: absolute;
+                    inset: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba(0,0,0,0.25);
+                    border-radius: 12px;
+                    transition: background 0.3s;
+                " onmouseover="this.style.background='rgba(0,0,0,0.45)'" onmouseout="this.style.background='rgba(0,0,0,0.25)'">
+                    <div style="
+                        width: 72px;
+                        height: 72px;
+                        background: rgba(255,0,0,0.9);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+                        transition: transform 0.2s;
+                    " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:4px"><polygon points="5,3 19,12 5,21"/></svg>
+                    </div>
+                </div>
+                <div style="
+                    position: absolute;
+                    bottom: 12px;
+                    right: 14px;
+                    background: rgba(0,0,0,0.6);
+                    color: #fff;
+                    font-size: 0.75rem;
+                    padding: 4px 10px;
+                    border-radius: 6px;
+                    letter-spacing: 0.5px;
+                ">▶ 點擊前往 YouTube 觀看</div>
+            </a>
         </div>
 
         <!-- 注意事項 -->
