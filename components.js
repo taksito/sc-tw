@@ -81,7 +81,9 @@ class ComponentManager {
                             <li><a href="${prefix}ships/hauling-list.html">• 📦 貨運飛船推薦清單</a></li>
                         </ul>
                     </li>
+                    <li><a href="${prefix}resource.html">🔗 常用網路資源</a></li>
                 </ul>
+
 
                 <div class="nav-category">PTU 改版資訊 <span style="font-size: 0.7rem; color: var(--accent); vertical-align: middle;">(持續更新中)</span></div>
                 <ul class="sidebar-nav">
