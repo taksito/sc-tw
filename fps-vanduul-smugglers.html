@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanduul 科技走私者任務 - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen Vanduul-Tech Smugglers（Intersec，Nyx）任務攻略：接取條件、任務流程、Testudo 護甲位置、Wikelo 材料、攻略圖。">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .map-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin: 10px 0 20px; }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero glass-panel">
+            <h1><span class="text-gradient">Vanduul 科技走私者</span></h1>
+            <p style="margin-top: 15px;">Intersec Defence Solutions 的調查任務：在 Nyx 的廢棄 QV 物流站追查 Vanduul 科技的來源。</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">👾 任務簡介</h2>
+            <p>延續 Stanton 的 Onyx 設施調查，UEE 海軍承包商 <strong>Intersec Defence Solutions</strong> 正在追查 Vanduul 科技與遺體的來源。走私者被追蹤到 <strong>Nyx 星系 Glaciem 小行星帶</strong>的一座「廢棄」QV 物流站，旁邊還有一座輔助站小行星基地。</p>
+            <ul style="list-style-type: disc;">
+                <li><strong>接取條件</strong>：Intersec 聲望達到 <strong>Junior Contractor（初級承包商）</strong>，任務會出現在 mobiGlas 的 <strong>Investigation</strong> 分頁。</li>
+                <li><strong>太空戰 + FPS</strong>：一開始要先打 Vanduul 戰機，之後是大量室內近戰。</li>
+                <li><strong>戰利品豐富</strong>：Testudo 護甲、BoomTube 火箭筒、UCK-1 刀，以及 Wikelo 要的 Vanduul 材料。</li>
+                <li>這條任務線也是 4.10.3 <a href="update410/4103-ptu.html">Vanduul 入侵</a> 任務的前置條件。</li>
+            </ul>
+            <div style="margin: 20px 0; background: rgba(245,158,11,0.08); border-left: 3px solid var(--warning); padding: 15px 20px; border-radius: 0 8px 8px 0;">⚠️ <strong>停靠限制：</strong>物流站<strong>只有中型機庫</strong>、一個停機坪，太大的船停不進去，出發前確認你的船尺寸。</div>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🧭 任務流程</h2>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">1</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">保衛 Polaris</h3>
+                    <p style="margin: 0; font-size: 1rem;">抵達時先擊落 <strong>4 架 Vanduul 戰機</strong>（Scythe、Glaive、Blade、Stinger 混編）。依你的船不同可能很硬，可以利用太空站和小行星當掩護。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">2</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">解除封鎖</h3>
+                    <p style="margin: 0; font-size: 1rem;">從左邊樓梯上去，走過招牌後面的木板進入<strong>維修室</strong>，把拉桿扳到下方。注意：進入中央大廳會觸發<strong>伏擊</strong>。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">3</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">解密資料</h3>
+                    <p style="margin: 0; font-size: 1rem;">共有 <strong>5 名副官</strong>，每人身上有一次性解密鑰匙，分別在<strong>保全室、A 貨艙、B 貨艙、Polaris、輔助站</strong>。先到保全室解決伏擊首領，對屍體互動下載加密資料、拿走鑰匙，到終端機插入鑰匙。所有資料和鑰匙最後都要帶回這台終端機。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">4</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">清理貨艙</h3>
+                    <p style="margin: 0; font-size: 1rem;">A、B 兩個貨艙都有副官和小兵，後方有 NPC 砲塔。貨艙內有船艦組件、3 個 Testudo 護甲箱、20 個冷凍艙（可給 Collector 任務）。兩個貨艙都有貨梯直通你的機庫。拿到資料時入口會刷出伏擊。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">5</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">登上 Polaris</h3>
+                    <p style="margin: 0; font-size: 1rem;">開船離開時會再出現一波 Vanduul 戰機。從左舷對接口進入，一路近戰打到艦橋找副官。機庫中央的伺服器架可以拿倉庫通行碟。這裡有 <strong>6 個 Testudo 護甲箱</strong>（下層 2 個）與船艦組件。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">6</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">搜索殘骸</h3>
+                    <p style="margin: 0; font-size: 1rem;">靠近每個殘骸點都會觸發一波 Vanduul 戰機。在殘骸中找到身上有<strong>通行卡</strong>的副官屍體，靠近正確屍體時標記會更新。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">7</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">進入輔助站</h3>
+                    <p style="margin: 0; font-size: 1rem;">最後一名副官和通行碟伺服器架在<strong>密碼鎖保全室</strong>。門的密碼在隨機位置的筆電上；用 Cambio 把置物室的保險絲裝好進入保全亭；管線壞掉要修，可以刮吧台旁邊的管線取得修理材料 (RMC)。這裡有 <strong>8 具可搜刮的 Vanduul 屍體</strong>（新交易材料與 UCK-1 刀）。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">8</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">打開倉庫</h3>
+                    <p style="margin: 0; font-size: 1rem;">用分別在<strong>保全室、Polaris、輔助站</strong>的 3 個伺服器架把通行碟編碼，就能打開倉庫的戰利品室，裡面有整套 Testudo 護甲。</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🛡️ Testudo 護甲位置</h2>
+            <div style="width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 320px; border-collapse: collapse;">
+                    <thead><tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;"><th style="padding: 12px 16px;">部位</th><th style="padding: 12px 16px;">位置</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">腿部 (Legs)</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">A 貨艙 ×3</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">胸甲 (Chest)</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">B 貨艙 ×3</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">背包 (Backpack)</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Polaris ×3</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">頭盔 (Helmet)</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Polaris ×3</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">手臂 (Arms)</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">輔助站 ×3</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">整套 (Full set)</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">倉庫</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🦎 Wikelo 想要的東西</h2>
+            <div style="width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 480px; border-collapse: collapse;">
+                    <thead><tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;"><th style="padding: 12px 16px;">物品</th><th style="padding: 12px 16px;">位置</th><th style="padding: 12px 16px;">用途</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>BoomTube 火箭筒</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">保全室、倉庫、輔助站</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Wikelo 交易</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>Vanduul Plating／Metal</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">輔助站的 Vanduul 屍體</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Wolf 隱形版、Guardian MX、Meteor 等交易</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>Large Artifact Fragment (Pristine)</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">大型藍色箱子</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">多種船艦交易</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>交易內容請看 <a href="wikelo.html">Wikelo 交易攻略</a>。</p>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🗺️ 攻略圖（MrKraken）</h2>
+            <p>點擊圖片可以看原始高解析度大圖。</p>
+            <div class="map-grid">
+                <figure class="media-figure" style="margin:0;">
+                    <img src="https://robertsspaceindustries.com/i/965ac9bdb9350f65a8b9fba96d4ac221a35cd6bb/resize(680,680,inside,JLypLpqVPBaNxs8FRN3D3vuTrjntZTaECi8ToQLLZiEgiUjcwEzuY511JgyJBk2nwU4KBWPC3t64FJzEsV4pZ31168KuKAii49FKLbe1eSi1LSLaTzW7zjrqMswGNtxJGTRtwm7WWN7xGKCABhqv16qgZdsESj9i1k8zA6twuyiZE22UPJxykDeaJdR58VzfJn)/9d9520e0-0e7d-444e-8cf8-88747189bcd9.png" data-full="https://robertsspaceindustries.com/i/bd9f2634a682741d3a7b4fd1d3359b415a2a9436/JLypLpqVPBaNxs8FRN3D3vuTrjntZTaECi8ToQLLZiEgiUjcwEzuY511JgyJBk2nwU4KBWPC3t64FJzEsV4pZ31168KuKAii49FKLbe1eSi1LSLaTzW7zjrqMswGNtxJGTRtwm7WWN7xGKCABhqv16qgZdsESj9i1k8zA6twuyiZE22UPJxykDeaJdR58VzfJn/9d9520e0-0e7d-444e-8cf8-88747189bcd9.png" alt="Vanduul-Tech Smugglers 單頁攻略" loading="lazy">
+                    <figcaption>🗺️ Vanduul-Tech Smugglers 單頁攻略（點擊看原圖）</figcaption>
+                </figure>
+            </div>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">💡 小提醒</h2>
+            <ul style="list-style-type: disc;">
+                <li>船的強弱對難度影響很大，太空戰時多利用掩護。</li>
+                <li>隔一段時間回來，或伏擊門重新觸發時，敵人可能會重生。</li>
+                <li>回程經過的倉庫沒有敵人，可以放心搬戰利品。</li>
+                <li>這條任務線有時會有 BUG，卡關時可以放棄重接或換伺服器。</li>
+            </ul>
+
+        </section>
+
+        <section class="credits-section">
+            <h4>🗺️ 地圖與圖片來源</h4>
+            <p>本頁攻略圖取自 <strong>MrKraken</strong> 的 <a href="https://robertsspaceindustries.com/community-hub/post/vanduul-tech-smugglers-one-page-guide-4-4-0-wegEjvpy1Bcl7" target="_blank">Vanduul-Tech Smugglers One-Page Guide（RSI Community Hub）</a>，版權歸原作者所有，影片攻略：<a href="https://youtu.be/pcLc9CUt3WM" target="_blank">YouTube</a>。遊戲畫面與素材版權歸 Cloud Imperium Games 所有。</p>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="ground-combat.html" class="btn" style="background: transparent; border: 1px solid var(--primary);">返回地面 FPS</a>
+            <a href="index.html" class="btn">返回首頁</a>
+        </div>
+    </main>
+
+    <script src="components.js"></script>
+</body>
+</html>
