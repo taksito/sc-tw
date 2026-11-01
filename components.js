@@ -82,25 +82,29 @@ class ComponentManager {
                     </li>
                     <li class="has-submenu">
                         <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
+                            <a href="${prefix}professions.html" onclick="event.stopPropagation()">💼 專業領域</a>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="${prefix}cargohauling/cargo.html">• 📦 貨運教學</a></li>
+                            <li><a href="${prefix}cargohauling/mission-tips.html" class="sub-sub">↳ 賺錢 vs 解聲望</a></li>
+                            <li><a href="${prefix}cargohauling/covalex.html" class="sub-sub">↳ Covalex 任務攻略</a></li>
+                            <li><a href="${prefix}cargohauling/red-wind.html" class="sub-sub">↳ Red Wind 高收益</a></li>
+                            <li><a href="${prefix}cargohauling/equipment.html" class="sub-sub">↳ ATLS 與 MaxLift</a></li>
+                            <li><a href="${prefix}ship-combat.html">• ⚔️ 飛船戰鬥</a></li>
+                            <li><a href="${prefix}ground-combat.html">• 🔫 地面 FPS</a></li>
+                            <li><a href="${prefix}refueling.html">• ⛽ 加油任務</a></li>
+                            <li><a href="${prefix}mining.html">• ⛏️ 挖礦教學</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
                             <a href="${prefix}advanced.html" onclick="event.stopPropagation()">⚙️ 進階說明</a>
                             <span class="toggle-icon">▼</span>
                         </div>
                         <ul class="submenu">
                             <li><a href="${prefix}insurance.html">• 🛡️ 保險配置</a></li>
                             <li><a href="${prefix}ship-components.html">• ⚙️ 飛機組件</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-submenu">
-                        <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
-                            <a href="${prefix}professions.html" onclick="event.stopPropagation()">💼 專業領域</a>
-                            <span class="toggle-icon">▼</span>
-                        </div>
-                        <ul class="submenu">
-                            <li><a href="${prefix}cargohauling/cargo.html">• 📦 貨運教學</a></li>
-                            <li><a href="${prefix}mining.html">• ⛏️ 挖礦教學</a></li>
-                            <li><a href="${prefix}ground-combat.html">• 🔫 地面 FPS</a></li>
-                            <li><a href="${prefix}ship-combat.html">• ⚔️ 飛船戰鬥</a></li>
-                            <li><a href="${prefix}refueling.html">• ⛽ 加油任務</a></li>
                         </ul>
                     </li>
                     <li class="has-submenu">

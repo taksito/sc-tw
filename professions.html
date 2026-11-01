@@ -4,7 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>專業領域 - Star Citizen</title>
+    <meta name="description" content="Star Citizen 各職業收益排行（4.10.2）：貨運、飛船戰鬥、地面 FPS、加油、挖礦，以及新手該從哪裡開始。">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .rank-list {
+            list-style: none;
+            margin: 0 !important;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .rank-list li {
+            margin: 0 !important;
+        }
+        .rank-list a {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding: 20px 22px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+        .rank-list a:hover {
+            background: rgba(0, 210, 255, 0.08);
+            border-color: var(--primary);
+            transform: translateX(6px);
+            text-shadow: none;
+            color: var(--text-main);
+        }
+        .rank-num {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.2rem;
+            border: 2px solid currentColor;
+        }
+        .rank-body h3 {
+            font-size: 1.25rem;
+            margin-bottom: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+        }
+        .rank-body p {
+            color: var(--text-muted);
+            font-size: 1rem !important;
+            margin: 0 !important;
+        }
+        .income-bar {
+            margin-top: 10px;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.06);
+            overflow: hidden;
+            max-width: 320px;
+        }
+        .income-bar span {
+            display: block;
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+        }
+        .income-tag {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0;
+            text-transform: none;
+            padding: 2px 10px;
+            border-radius: 20px;
+            border: 1px solid currentColor;
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -13,39 +94,66 @@
             <p style="margin-top: 15px; line-height: 1.6;">本單元主要是介紹如何正式進入各項遊戲遊玩環節。在星際公民中，這階段的核心目標是賺取遊戲內的金錢 (aUEC)。因此，在接下來的各個職業分類中，我們將會為您詳細介紹專屬的<strong>裝備配裝</strong>、<strong>飛船搭配建議</strong>，以及執行任務時的<strong>相關操作模式</strong>，幫助您在宇宙中建立自己的財富與名聲。</p>
         </section>
 
-        <section class="content-section glass-panel" style="margin-top: 30px;">
-            <ul class="topic-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">💰 4.10.2 職業收益排行</h2>
+            <p>以下依照目前版本（<a href="update410/4102.html">4.10.2 LIVE</a>）的<strong>賺錢效率</strong>由高到低排列。遊戲經濟每次改版都可能調整，排行會隨版本更新。</p>
+
+            <ol class="rank-list">
                 <li>
-                    <a href="cargohauling/cargo.html" style="padding: 20px;">
-                        <h3 class="text-gradient">📦 貨運教學</h3>
-                        <p>成為星際物流專家，學習如何規劃航線、運送貨物並賺取價差。</p>
+                    <a href="cargohauling/cargo.html">
+                        <div class="rank-num" style="color: #fbbf24;">1</div>
+                        <div class="rank-body">
+                            <h3 class="text-gradient">📦 貨運 <span class="income-tag" style="color: #fbbf24;">最賺錢</span></h3>
+                            <p>目前最穩定、收益最高的職業。接 Covalex 或 Red Wind 的貨運合約，報酬固定、不用先投入本金買貨。其中 <strong>Red Wind 的跨星系任務</strong>是 4.10.2 最好賺的路線。</p>
+                            <div class="income-bar"><span style="width: 100%;"></span></div>
+                        </div>
                     </a>
                 </li>
                 <li>
-                    <a href="mining.html" style="padding: 20px;">
-                        <h3 class="text-gradient">⛏️ 挖礦教學</h3>
-                        <p>從手持採礦到駕駛大型採礦船，探索小行星帶尋找珍貴礦脈。</p>
+                    <a href="ship-combat.html">
+                        <div class="rank-num" style="color: #cbd5e1;">2</div>
+                        <div class="rank-body">
+                            <h3 class="text-gradient">⚔️ 飛船戰鬥 <span class="income-tag" style="color: #cbd5e1;">高收益</span></h3>
+                            <p>賞金獵人、護航、防禦任務。收益高、節奏快，但需要一定的駕駛技術和戰鬥船，飛船損壞也會有維修與索賠成本。</p>
+                            <div class="income-bar"><span style="width: 82%;"></span></div>
+                        </div>
                     </a>
                 </li>
                 <li>
-                    <a href="ground-combat.html" style="padding: 20px;">
-                        <h3 class="text-gradient">🔫 地面 FPS</h3>
-                        <p>全副武裝進入地堡 (Bunker) 或廢棄據點，與敵對勢力展開激烈的槍戰。</p>
+                    <a href="ground-combat.html">
+                        <div class="rank-num" style="color: #d97706;">3</div>
+                        <div class="rank-body">
+                            <h3 class="text-gradient">🔫 地面 FPS <span class="income-tag" style="color: #d97706;">穩定</span></h3>
+                            <p>地堡清剿、據點作戰。入門門檻低，只要一套護甲和武器就能開始，還能順便撿戰利品賣錢。</p>
+                            <div class="income-bar"><span style="width: 65%;"></span></div>
+                        </div>
                     </a>
                 </li>
                 <li>
-                    <a href="ship-combat.html" style="padding: 20px;">
-                        <h3 class="text-gradient">⚔️ 飛船戰鬥</h3>
-                        <p>參與賞金狩獵或護航任務，學習狗鬥 (Dogfighting) 技巧以稱霸星空。</p>
+                    <a href="refueling.html">
+                        <div class="rank-num" style="color: var(--accent);">4</div>
+                        <div class="rank-body">
+                            <h3 class="text-gradient">⛽ 加油任務 <span class="income-tag" style="color: var(--accent);">輕鬆</span></h3>
+                            <p>開著 Starlite 或 Starfarer 幫 NPC 船加油。操作簡單、風險低，但收益中等，適合想輕鬆賺錢的玩家。</p>
+                            <div class="income-bar"><span style="width: 48%;"></span></div>
+                        </div>
                     </a>
                 </li>
                 <li>
-                    <a href="refueling.html" style="padding: 20px;">
-                        <h3 class="text-gradient">⛽ 加油任務</h3>
-                        <p>成為宇宙中的移動加油站！學習如何駕駛 Starfarer 等加油船為其他船隻補給燃料。</p>
+                    <a href="mining.html">
+                        <div class="rank-num" style="color: var(--text-muted);">5</div>
+                        <div class="rank-body">
+                            <h3 class="text-gradient">⛏️ 挖礦 <span class="income-tag" style="color: var(--warning);">收益不穩定</span></h3>
+                            <p>收益波動最大。要挖到<strong>高品質</strong>的礦、精煉後再到 UEX 查到的好價格點販售，才會有價值。運氣不好或礦的品質差，一趟下來可能不如其他職業。</p>
+                            <div class="income-bar"><span style="width: 35%;"></span></div>
+                        </div>
                     </a>
                 </li>
-            </ul>
+            </ol>
+
+            <div style="margin-top: 25px; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">
+                💡 <strong>新手建議：</strong>剛開始缺錢的話，先從<strong>貨運</strong>開始。不需要戰鬥技巧，用小船也能接 Covalex 的入門任務，賺到第一桶金後再嘗試其他職業。
+            </div>
         </section>
     </main>
     <script src="components.js"></script>
