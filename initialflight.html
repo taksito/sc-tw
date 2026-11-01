@@ -9,14 +9,25 @@
 <body>
 
     <main>
-        <h2 class="section-title">起飛與離港 <br><span style="font-size: 1.2rem; color: var(--text-muted);">(Initial Flight)</span></h2>
+        <nav class="journey-steps" aria-label="基礎飛行進度">
+            <a href="first-flight.html" class="done">① 呼叫與登機</a>
+            <a href="flight-movements.html" class="done">② 啟動與起飛</a>
+            <a href="flight-controls.html" class="done">③ 操作與儀表板</a>
+            <a href="flight-quantum.html" class="done">④ 星圖與量子航行</a>
+            <a href="flight-landing.html" class="done">⑤ 降落</a>
+            <a href="initialflight.html" class="current">⑥ 實戰練習</a>
+        </nav>
+        <section class="hero glass-panel">
+            <h1><span class="text-gradient">實戰練習：飛到軌道太空站</span></h1>
+            <p>把前面學到的全部串起來，完成你的第一次完整航行！</p>
+        </section>
         
         <div class="content-section glass-panel">
             <h3 class="text-gradient">1. 啟動與起飛離港</h3>
             <p>坐上駕駛座後，請牢記以下三個起飛前最重要的按鍵：</p>
             <ul>
                 <li><strong>U</strong> 鍵：啟動飛船電源。</li>
-                <li><strong>I</strong> 鍵：開啟飛船引擎。</li>
+                <li><strong>I</strong> 鍵：開啟飛船推進器（或直接按 <strong>R</strong> 一鍵準備起飛）。</li>
                 <li><strong>ALT + N</strong>：呼叫機庫門開啟 (自動請求起飛許可)。</li>
             </ul>
             <p style="margin-top: 15px;">完成啟動並等待機庫門完全打開後：</p>
@@ -30,11 +41,27 @@
         <div class="content-section glass-panel">
             <h3 class="text-gradient">2. 飛往軌道空間站</h3>
             <p>飛出大氣層後，按 <strong>F2</strong> 打開星圖 (Starmap)。在您當前星球的軌道上尋找空間站 (例如 New Babbage 上方是 Port Tressler)。點擊空間站並選擇 <strong>Set Route</strong> (設定路線)。</p>
-            <p>對準目標點，按住 <strong>B</strong> 鍵進行量子跳躍 (Quantum Travel)。抵達後，按下 <strong>ALT + N</strong> 呼叫空間站降落服務，根據指示圖標降落並進入空間站，完成您的第一次航行！</p>
+            <p>按 <strong>B</strong> 進入量子模式，對準目標點，等充能與校準完成後<strong>長按 B</strong> 進行量子跳躍 (Quantum Travel)。抵達後，按下 <strong>ALT + N</strong> 呼叫空間站降落服務，根據指示圖標降落並進入空間站，完成您的第一次航行！</p>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="flight-controls.html" class="btn">下一步：學習進階飛行操作</a>
+        <section class="content-section glass-panel" style="border: 1px solid var(--primary);">
+            <h2 class="text-gradient">📦 下一步：先跑貨運任務練習</h2>
+            <p>能穩定起飛、量子航行、降落之後，<strong>建議先從貨運任務開始</strong>，用實際任務練習控制飛船：</p>
+            <ul style="list-style-type: disc;">
+                <li><strong>不用戰鬥</strong>：專心練起降、量子航行和在機庫、停機坪精準停船。</li>
+                <li><strong>會一直起降</strong>：每趟都要取貨、送貨，起降次數多，進步最快。</li>
+                <li><strong>邊練邊賺錢</strong>：貨運是 4.10.2 最賺錢的職業，新手小船也能接入門任務。</li>
+                <li><strong>順便學會貨梯與牽引光束</strong>：這些操作在其他職業也會用到。</li>
+            </ul>
+            <ul class="topic-list" style="margin-top: 20px;">
+                <li><a href="cargohauling/covalex-direct.html"><h3 class="text-gradient">⚡ 第一個任務：Covalex 直達任務</h3><p>一個取貨點、一個送貨點，最適合練手。一步一步帶你從接單到交貨。</p></a></li>
+                <li><a href="cargohauling/cargo.html"><h3 class="text-gradient">📦 貨運教學總覽</h3><p>任務流程、必備裝備、合約怎麼看。</p></a></li>
+                <li><a href="professions.html"><h3 class="text-gradient">💼 穩定後再挑其他職業</h3><p>飛得順手了，再看看 4.10.2 職業收益排行，挑戰飛船戰鬥、地面 FPS、挖礦等領域。</p></a></li>
+            </ul>
+        </section>
+        <div class="journey-next">
+            <a href="flight-landing.html"><small>← 上一步</small>⑤ 降落</a>
+            <a class="next" href="cargohauling/covalex-direct.html"><small>下一步 →</small>📦 第一個貨運任務</a>
         </div>
     </main>
 

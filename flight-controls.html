@@ -11,8 +11,18 @@
 <body>
 
     <main>
-        <h2 class="section-title">飛行操作與儀表板 <br><span style="font-size: 1.2rem; color: var(--text-muted);">(Flight
-                Controls & MFDs)</span></h2>
+        <nav class="journey-steps" aria-label="基礎飛行進度">
+            <a href="first-flight.html" class="done">① 呼叫與登機</a>
+            <a href="flight-movements.html" class="done">② 啟動與起飛</a>
+            <a href="flight-controls.html" class="current">③ 操作與儀表板</a>
+            <a href="flight-quantum.html" class="">④ 星圖與量子航行</a>
+            <a href="flight-landing.html" class="">⑤ 降落</a>
+            <a href="initialflight.html" class="">⑥ 實戰練習</a>
+        </nav>
+        <section class="hero glass-panel">
+            <h1><span class="text-gradient">飛行操作與儀表板</span></h1>
+            <p>掌握常用按鍵與 MFD 多功能顯示器，飛起來會順手很多。</p>
+        </section>
 
         <div class="content-section glass-panel">
             <h3 class="text-gradient">基礎飛行按鍵</h3>
@@ -27,20 +37,13 @@
         </div>
 
         <div class="content-section glass-panel">
-            <h3 class="text-gradient">TAB 鍵：雷達掃描 (Ping)</h3>
-            <p>按下 <strong>TAB</strong> 鍵可以向周圍發送脈衝掃描
-                (Ping)。這在黑暗的太空中或是尋找礦物、未知訊號時非常有用。掃描後，畫面上會短暫顯示周遭物體的輪廓與距離標示，幫助您辨識障礙物或目標。</p>
+            <h3 class="text-gradient">V 鍵：掃描與 Ping</h3>
+            <p>按 <kbd>V</kbd> 切換到<strong>掃描模式</strong>，<strong>長按 <kbd>V</kbd></strong> 會向周圍發送脈衝掃描 (Ping)。在黑暗的太空中找礦物、找未知訊號或辨識障礙物時非常有用。挖礦時的掃描用法請看 <a href="mining.html">挖礦教學</a>。</p>
         </div>
 
         <div class="content-section glass-panel">
             <h3 class="text-gradient">B 鍵：量子跳躍 (Quantum Travel)</h3>
-            <p>星際公民的宇宙非常廣大，星球之間的移動必須依賴量子跳躍：</p>
-            <ol>
-                <li>按下 <strong>B</strong> 鍵開啟量子引擎 (畫面會出現校準介面)。</li>
-                <li>將機頭對準目的地 (可透過 F2 星圖設定目標，或者直接對準畫面上的標記)。</li>
-                <li>等待畫面上方的 <strong>Spooling</strong> (充能) 與左側的 <strong>Calibration</strong> (校準) 皆達到 100%。</li>
-                <li><strong>長按 B 鍵</strong> 即可發動量子跳躍。跳躍過程中您可以按 B 中斷跳躍。</li>
-            </ol>
+            <p>星球之間的移動要靠量子跳躍：按 <kbd>B</kbd> 進入量子模式，對準目標，等充能與校準完成後<strong>長按 <kbd>B</kbd></strong> 發動。完整步驟請看下一頁 <a href="flight-quantum.html">④ 星圖與量子航行</a>。</p>
         </div>
 
         <div class="content-section glass-panel">
@@ -54,8 +57,34 @@
             </ul>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" class="btn">回首頁</a>
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">⌨️ 常用按鍵總表</h2>
+            <div style="width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 360px; border-collapse: collapse;">
+                    <thead><tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;"><th style="padding: 12px 16px;">動作</th><th style="padding: 12px 16px;">按鍵</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">一鍵準備起飛</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>R</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">電源／推進器／護盾／武器</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>U</kbd>／<kbd>I</kbd>／<kbd>O</kbd>／<kbd>P</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">呼叫航管（起飛、降落）</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>Left Alt</kbd> + <kbd>N</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">起落架／降落模式</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>N</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">加速</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>Left Shift</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">速度上限</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>滑鼠滾輪</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">脫鉤模式 (Decoupled)</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>Left Alt</kbd> + <kbd>C</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">自由視角</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>Z</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">外部攝影機</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>F4</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">星圖</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>F2</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">mobiGlas</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>F1</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">量子模式／發動量子跳躍</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>B</kbd>／長按 <kbd>B</kbd></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">掃描模式／Ping</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><kbd>V</kbd>／長按 <kbd>V</kbd></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="margin: 20px 0; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">⌨️ 以上為預設鍵位，不同版本偶爾會調整。按了沒反應的話，請到遊戲的 <strong>Options → Keybindings</strong> 搜尋確認。</div>
+
+        </section>
+        <div class="journey-next">
+            <a href="flight-movements.html"><small>← 上一步</small>② 啟動與起飛</a>
+            <a class="next" href="flight-quantum.html"><small>下一步 →</small>④ 星圖與量子航行</a>
         </div>
     </main>
 

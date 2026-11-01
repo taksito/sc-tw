@@ -8,6 +8,14 @@
 </head>
 <body>
     <main>
+        <nav class="journey-steps" aria-label="基礎飛行進度">
+            <a href="first-flight.html" class="done">① 呼叫與登機</a>
+            <a href="flight-movements.html" class="done">② 啟動與起飛</a>
+            <a href="flight-controls.html" class="done">③ 操作與儀表板</a>
+            <a href="flight-quantum.html" class="done">④ 星圖與量子航行</a>
+            <a href="flight-landing.html" class="current">⑤ 降落</a>
+            <a href="initialflight.html" class="">⑥ 實戰練習</a>
+        </nav>
         <section class="hero glass-panel">
             <h1><span class="text-gradient">降落注意事項</span> 與流程</h1>
             <p>平安降落是任務圓滿結束的最後一步。請遵循標準降落流程，避免飛船損毀或非法入侵警告。</p>
@@ -26,16 +34,31 @@
         <div class="content-section glass-panel">
             <h3 class="text-gradient">2. 準備與降落</h3>
             <ol style="margin-top: 15px;">
-                <li><strong>放下降落架</strong>：按下 <kbd>N</kbd> 鍵。確保降落架已完全伸展。</li>
+                <li><strong>放下起落架</strong>：按下 <kbd>N</kbd> 進入降落模式，確保起落架已完全放下。</li>
                 <li><strong>對準降落點</strong>：緩慢飛向指定的平台或機庫口。建議按 <kbd>F4</kbd> 切換到外部視角輔助對準。</li>
                 <li><strong>垂直下降</strong>：使用 <kbd>Left Ctrl</kbd> 控制下降力道，直到飛船穩固觸地。</li>
-                <li><strong>關閉引擎</strong>：安全降落後，按下 <kbd>I</kbd> 關閉引擎，節省燃料並防止飛船意外滑動。</li>
+                <li><strong>關閉推進器</strong>：安全降落後，按下 <kbd>I</kbd> 關閉推進器（或按 <kbd>R</kbd> 解除準備起飛），防止飛船意外滑動。</li>
             </ol>
         </div>
 
         <div class="content-section glass-panel" style="border-left: 4px solid var(--warning);">
             <h3 style="color: var(--warning);">⚠️ 專業提示</h3>
-            <p>如果您覺得手動降落太困難，在靠近降落點中心且降落架已放下的情況下，可以<strong>長按 <kbd>N</kbd> 鍵</strong>來啟動「自動降落輔助」系統。</p>
+            <p>如果您覺得手動降落太困難，在靠近降落點中心且降落架已放下的情況下，可以使用<strong>自動降落</strong>：在降落模式下長按降落鍵（預設 <kbd>Left Ctrl</kbd>，部分版本為長按 <kbd>N</kbd>），飛船會自動對準並降落。</p>
+        </div>
+
+        <div class="content-section glass-panel">
+            <h3 class="text-gradient">3. 下船與收船</h3>
+            <ol>
+                <li>降落後離開座位（長按 <kbd>Y</kbd> 或對座位按 <kbd>F</kbd> 選擇離開），從艙門下船。</li>
+                <li>在太空站或城市，船停在機庫或停機坪；要收船時到 <strong>ASOP 終端</strong> 選擇收納 (Store)。</li>
+                <li>可以順便在降落點的服務選單補充燃料、維修與補彈。</li>
+            </ol>
+        </div>
+            <div style="margin: 20px 0; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">⌨️ 以上為預設鍵位，不同版本偶爾會調整。按了沒反應的話，請到遊戲的 <strong>Options → Keybindings</strong> 搜尋確認。</div>
+            <div style="margin: 20px 0; background: rgba(16,185,129,0.1); border-left: 3px solid var(--success); padding: 15px 20px; border-radius: 0 8px 8px 0;">📦 <strong>學會降落了！</strong>做完下一頁的實戰練習後，建議先跑 <a href="cargohauling/covalex-direct.html">貨運任務</a> 練習控制飛船，穩定後再挑戰其他領域。</div>
+        <div class="journey-next">
+            <a href="flight-quantum.html"><small>← 上一步</small>④ 星圖與量子航行</a>
+            <a class="next" href="initialflight.html"><small>下一步 →</small>⑥ 實戰練習</a>
         </div>
     </main>
 

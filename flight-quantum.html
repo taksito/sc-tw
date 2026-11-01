@@ -8,10 +8,24 @@
 </head>
 <body>
     <main>
+        <nav class="journey-steps" aria-label="基礎飛行進度">
+            <a href="first-flight.html" class="done">① 呼叫與登機</a>
+            <a href="flight-movements.html" class="done">② 啟動與起飛</a>
+            <a href="flight-controls.html" class="done">③ 操作與儀表板</a>
+            <a href="flight-quantum.html" class="current">④ 星圖與量子航行</a>
+            <a href="flight-landing.html" class="">⑤ 降落</a>
+            <a href="initialflight.html" class="">⑥ 實戰練習</a>
+        </nav>
         <section class="hero glass-panel">
             <h1><span class="text-gradient">地圖及量子飛行</span> 指南</h1>
             <p>星際間的距離極其遙遠，學會使用量子航行 (Quantum Travel) 是在星系間穿梭的唯一方式。</p>
         </section>
+
+        <figure class="media-figure">
+            <img src="https://media.starcitizen.tools/thumb/b/b5/Stanton_2D.png/800px-Stanton_2D.png.webp" data-full="https://media.starcitizen.tools/b/b5/Stanton_2D.png" alt="Stanton 星系圖" loading="lazy">
+            <figcaption>Stanton 星系：四顆主要行星與它們的衛星、太空站，都要靠量子航行往返</figcaption>
+        </figure>
+
 
         <div class="content-section glass-panel">
             <h3 class="text-gradient">1. 使用星際地圖 (Star Map)</h3>
@@ -30,9 +44,9 @@
             <p>回到駕駛艙後，請按照以下步驟操作：</p>
             <ol style="margin-top: 15px;">
                 <li><strong>對準目標</strong>：在畫面中尋找藍色的稜形圖示（即您的目標），將飛船準心對準它。</li>
-                <li><strong>開啟量子引擎</strong>：按下 <kbd>B</kbd> 鍵。此時會開始 <strong>Spooling</strong> (預熱) 與 <strong>Calibration</strong> (校準)。</li>
+                <li><strong>進入量子模式</strong>：按下 <kbd>B</kbd> 鍵。此時會開始 <strong>Spooling</strong> (預熱) 與 <strong>Calibration</strong> (校準)。</li>
                 <li><strong>等待進度條</strong>：當兩個百分比都達到 100% 且變為綠色時，表示已就緒。</li>
-                <li><strong>發動跳躍</strong>：按住 <strong>滑鼠左鍵</strong> (Hold Left Mouse Button) 直到飛船進入量子隧道。</li>
+                <li><strong>發動跳躍</strong>：<strong>長按 <kbd>B</kbd></strong> 直到飛船進入量子隧道。</li>
             </ol>
             <p style="margin-top: 15px; color: var(--warning);"><strong>注意：</strong>如果前方有星球阻擋，您將無法直接跳躍。需要先飛離大氣層或繞過障礙物。</p>
         </div>
@@ -85,6 +99,27 @@
                 ">▶ 點擊前往 YouTube 觀看</div>
             </a>
         </div>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📍 延伸閱讀</h2>
+            <ul class="topic-list">
+                <li><a href="quantum-common-locations.html"><h3 class="text-gradient">📍 量子航行常用地點</h3><p>Stanton 四大城市與對應的軌道太空站，以及通往 Pyro、Nyx 的星門。</p></a></li>
+                <li><a href="components-quantum.html"><h3 class="text-gradient">🌌 QT 引擎與燃料</h3><p>想飛得更快、更省油？4.10 量子引擎推薦與燃料規劃。</p></a></li>
+            </ul>
+
+        </section>
+            <div style="margin: 20px 0; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">⌨️ 以上為預設鍵位，不同版本偶爾會調整。按了沒反應的話，請到遊戲的 <strong>Options → Keybindings</strong> 搜尋確認。</div>
+        <div class="journey-next">
+            <a href="flight-controls.html"><small>← 上一步</small>③ 操作與儀表板</a>
+            <a class="next" href="flight-landing.html"><small>下一步 →</small>⑤ 降落</a>
+        </div>
+        <section class="credits-section">
+            <h4>📷 圖片來源</h4>
+            <ol>
+                <li>Stanton 星系圖：<a href="https://starcitizen.tools/File:Stanton_2D.png" target="_blank">Stanton 2D.png</a></li>
+            </ol>
+            <p>以上圖片取自 <a href="https://starcitizen.tools/" target="_blank">Star Citizen Wiki (starcitizen.tools)</a>，遊戲畫面與相關素材版權歸 Cloud Imperium Games 所有，本站僅作非商業教學引用。</p>
+        </section>
     </main>
 
     <script src="components.js"></script>

@@ -10,6 +10,14 @@
 
 <body>
     <main>
+        <nav class="journey-steps" aria-label="基礎飛行進度">
+            <a href="first-flight.html" class="done">① 呼叫與登機</a>
+            <a href="flight-movements.html" class="current">② 啟動與起飛</a>
+            <a href="flight-controls.html" class="">③ 操作與儀表板</a>
+            <a href="flight-quantum.html" class="">④ 星圖與量子航行</a>
+            <a href="flight-landing.html" class="">⑤ 降落</a>
+            <a href="initialflight.html" class="">⑥ 實戰練習</a>
+        </nav>
         <section class="hero glass-panel">
             <h1><span class="text-gradient">基礎移動</span> 與啟動操作</h1>
             <p>坐進駕駛艙後，下一步就是喚醒飛船並請求出發。記住這些關鍵組合鍵，它們是每位飛行員的必修課。</p>
@@ -19,8 +27,9 @@
             <h3 class="text-gradient">1. 啟動飛船電源與引擎</h3>
             <p>飛船系統分為電源與引擎兩個層級：</p>
             <ul style="margin-top: 15px;">
+                <li><kbd>R</kbd>：<strong>一鍵準備起飛 (Flight Ready)</strong>，會自動打開電源與推進器，新手最推薦。</li>
                 <li><kbd>U</kbd>：<strong>啟動/關閉總電源</strong> (Power Toggle)。這會點亮所有儀表板與 MFD。</li>
-                <li><kbd>I</kbd>：<strong>啟動/關閉引擎</strong> (Engine Toggle)。只有引擎啟動後，飛船才能飛行。</li>
+                <li><kbd>I</kbd>：<strong>啟動/關閉推進器</strong> (Thrusters)。只有推進器啟動後，飛船才能飛行。</li>
             </ul>
         </div>
 
@@ -42,6 +51,8 @@
                 <li><strong>前後左右</strong>：使用 <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>。</li>
                 <li><strong>滾轉 (Roll)</strong>：使用 <kbd>Q</kbd> 與 <kbd>E</kbd> 鍵進行機身翻轉。</li>
                 <li><strong>滑鼠控制</strong>：控制飛船的俯仰 (Pitch) 與偏航 (Yaw)。</li>
+                <li><strong>加速 (Boost)</strong>：按住 <kbd>Left Shift</kbd>。</li>
+                <li><strong>速度上限</strong>：用 <kbd>滑鼠滾輪</kbd> 調整，新手在城市、機庫附近先把速度調低比較好控制。</li>
             </ul>
         </div>
         <!-- YouTube Video Section -->
@@ -92,6 +103,21 @@
                     letter-spacing: 0.5px;
                 ">▶ 點擊從 3:35 開始觀看</div>
             </a>
+        </div>
+
+        <div class="content-section glass-panel">
+            <h3 class="text-gradient">4. 離開機庫後</h3>
+            <ol>
+                <li>慢慢升高、對準機庫門飛出去，<strong>不要在機庫裡加速</strong>。</li>
+                <li>離開機庫後按 <kbd>N</kbd> 收起起落架（降落模式）。</li>
+                <li>城市周圍是<strong>禁武區 (Armistice Zone)</strong>，不能開火；離開後才算進入一般空域。</li>
+                <li>飛出大氣層後，就可以準備用星圖與量子航行前往目的地。</li>
+            </ol>
+        </div>
+            <div style="margin: 20px 0; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">⌨️ 以上為預設鍵位，不同版本偶爾會調整。按了沒反應的話，請到遊戲的 <strong>Options → Keybindings</strong> 搜尋確認。</div>
+        <div class="journey-next">
+            <a href="first-flight.html"><small>← 上一步</small>① 呼叫與登機</a>
+            <a class="next" href="flight-controls.html"><small>下一步 →</small>③ 操作與儀表板</a>
         </div>
     </main>
 

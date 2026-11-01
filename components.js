@@ -88,10 +88,13 @@ class ComponentManager {
                             <span class="toggle-icon">▼</span>
                         </div>
                         <ul class="submenu">
-                            <li><a href="${prefix}first-flight.html">• 呼叫與登機</a></li>
-                            <li><a href="${prefix}flight-movements.html">• 基礎操作</a></li>
-                            <li><a href="${prefix}flight-quantum.html">• 量子航行</a></li>
-                            <li><a href="${prefix}flight-landing.html">• 降落指南</a></li>
+                            <li><a href="${prefix}first-flight.html">• ① 呼叫與登機</a></li>
+                            <li><a href="${prefix}flight-movements.html">• ② 啟動與起飛</a></li>
+                            <li><a href="${prefix}flight-controls.html">• ③ 操作與儀表板</a></li>
+                            <li><a href="${prefix}flight-quantum.html">• ④ 星圖與量子航行</a></li>
+                            <li><a href="${prefix}quantum-common-locations.html" class="sub-sub">↳ 常用量子地點</a></li>
+                            <li><a href="${prefix}flight-landing.html">• ⑤ 降落</a></li>
+                            <li><a href="${prefix}initialflight.html">• ⑥ 實戰練習</a></li>
                         </ul>
                     </li>
                     <li class="has-submenu">
