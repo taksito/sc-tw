@@ -44,7 +44,7 @@ class ComponentManager {
 
     static getPathPrefix() {
         const decodedPath = decodeURIComponent(window.location.pathname);
-        const folders = ['/ships/', '/rockbreaker/', '/cargohauling/', '/update48/'];
+        const folders = ['/ships/', '/rockbreaker/', '/cargohauling/', '/update48/', '/update49/', '/update410/'];
         return folders.some(f => decodedPath.includes(f)) ? '../' : '';
     }
 
@@ -133,18 +133,39 @@ class ComponentManager {
                 </ul>
 
 
-                <div class="nav-category">PTU 改版資訊 <span style="font-size: 0.7rem; color: var(--accent); vertical-align: middle;">(持續更新中)</span></div>
+                <div class="nav-category">目前版本 <span style="font-size: 0.7rem; color: var(--success); vertical-align: middle;">● LIVE</span></div>
+                <ul class="sidebar-nav">
+                    <li><a href="${prefix}update410/4102.html">🟢 4.10.2 RSI 探索月</a></li>
+                </ul>
+
+                <div class="nav-category">PTU 測試中 <span style="font-size: 0.7rem; color: var(--warning); vertical-align: middle;">(持續更新中)</span></div>
+                <ul class="sidebar-nav">
+                    <li><a href="${prefix}update410/4103-ptu.html">🧪 4.10.3 Vanduul 入侵</a></li>
+                </ul>
+
+                <div class="nav-category">舊版資訊</div>
                 <ul class="sidebar-nav">
                     <li class="has-submenu">
                         <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
-                            <a href="${prefix}update48/index.html" onclick="event.stopPropagation()">📰 4.8 改版資訊</a>
+                            <a href="${prefix}update410/index.html" onclick="event.stopPropagation()">📰 4.10 改版</a>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="${prefix}update410/index.html">• 4.10.0 圍攻 Orison</a></li>
+                            <li><a href="${prefix}update410/4101.html">• 4.10.1 Orison 重建救援</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="${prefix}update49/index.html">📰 4.9 邊境緊張局勢</a></li>
+                    <li class="has-submenu">
+                        <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
+                            <a href="${prefix}update48/index.html" onclick="event.stopPropagation()">📰 4.8 改版</a>
                             <span class="toggle-icon">▼</span>
                         </div>
                         <ul class="submenu">
                             <li><a href="${prefix}update48/index.html">• 4.8 改版首頁</a></li>
+                            <li><a href="${prefix}update48/ptu-48-tactical.html">• ⚔️ 4.8 戰術打擊群</a></li>
                         </ul>
                     </li>
-                    <li><a href="${prefix}update48/ptu-48-tactical.html">⚔️ 4.8 戰術打擊群</a></li>
                     <li><a href="${prefix}rockbreaker/rock-breaker.html">⛏️ 4.7 碎石機啟動</a></li>
                 </ul>
             </nav>
@@ -203,20 +224,15 @@ class ComponentManager {
     }
 
     static setActiveNavLink() {
-        const pathParts = window.location.pathname.split('/');
-        const currentPath = pathParts.pop() || 'index.html';
-        const isInSubfolder = window.location.pathname.includes('/ships/');
-        
+        // 用完整路徑比對，避免不同資料夾的 index.html 同時被標成目前頁面
+        const normalize = path => decodeURIComponent(path).replace(/\/$/, '/index.html');
+        const currentPath = normalize(window.location.pathname);
         const links = document.querySelectorAll('.sidebar-nav a');
-        
+
         links.forEach(link => {
-            const href = link.getAttribute('href');
-            const hrefParts = href.split('/');
-            const hrefFile = hrefParts.pop();
-            
-            if (hrefFile === currentPath) {
+            const linkPath = normalize(new URL(link.getAttribute('href'), window.location.href).pathname);
+            if (linkPath === currentPath) {
                 link.classList.add('active');
-                // Auto-expand parent if active link is in a submenu
                 const submenu = link.closest('.submenu');
                 if (submenu) {
                     submenu.parentElement.classList.add('expanded');

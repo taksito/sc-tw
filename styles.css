@@ -667,3 +667,95 @@ img[data-full] {
     margin: 0;
     font-size: 0.8rem;
 }
+
+/* =========================================================
+   改版資訊頁共用元件 (Patch Notes)
+   <span class="patch-badge live">LIVE</span>  / ptu / old
+   <div class="patch-meta">...</div>
+   <div class="patch-grid"><div class="patch-card"><h3>標題</h3><ul>..</ul></div></div>
+   <div class="version-nav"><a href="..">← 上一版</a><a href="..">下一版 →</a></div>
+   ========================================================= */
+.patch-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    border: 1px solid currentColor;
+}
+.patch-badge.live { color: var(--success); background: rgba(16, 185, 129, 0.12); }
+.patch-badge.ptu { color: var(--warning); background: rgba(245, 158, 11, 0.12); }
+.patch-badge.old { color: var(--text-muted); background: rgba(148, 163, 184, 0.1); }
+
+.patch-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 25px;
+    margin-top: 18px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+.patch-meta strong { color: var(--text-main); }
+
+.patch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+.patch-card {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 18px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+}
+.patch-card h3 {
+    color: var(--accent);
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+.patch-card ul {
+    margin: 0 0 0 18px !important;
+    list-style: disc;
+}
+.patch-card li {
+    font-size: 0.97rem;
+    margin-bottom: 6px !important;
+}
+
+.version-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.version-nav a {
+    flex: 1;
+    min-width: 200px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-main);
+}
+.version-nav a:hover {
+    border-color: var(--primary);
+    background: rgba(0, 210, 255, 0.08);
+}
+.version-nav a.next { text-align: right; }
+.version-nav small { display: block; color: var(--text-muted); font-size: 0.8rem; }
+
+.source-links {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+.source-links a { margin-right: 15px; }
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.2rem; }
+}
