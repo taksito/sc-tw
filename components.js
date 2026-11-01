@@ -71,6 +71,19 @@ class ComponentManager {
                     <li><a href="${prefix}ctinput1.html">⌨️ 中文化與輸入</a></li>
                     <li class="has-submenu">
                         <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
+                            <a href="${prefix}journey.html" onclick="event.stopPropagation()">🧭 開始旅程</a>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="${prefix}journey.html">• 旅程總覽</a></li>
+                            <li><a href="${prefix}journey-pc.html">• ① 電腦檢核</a></li>
+                            <li><a href="${prefix}journey-install.html">• ② 註冊與安裝</a></li>
+                            <li><a href="${prefix}character-creation.html">• ③ 角色創建</a></li>
+                            <li><a href="${prefix}first-flight.html">• ④ 第一次飛行</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
                             <a href="${prefix}first-flight.html" onclick="event.stopPropagation()">🚀 基礎飛行</a>
                             <span class="toggle-icon">▼</span>
                         </div>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電腦檢核：我的電腦能玩星際公民嗎？ - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen 電腦規格需求與互動式檢核：CPU、AVX2、記憶體、顯示卡、SSD 空間，30 秒知道能不能玩。">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pc-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-top: 15px; }
+        .pc-form label { display: flex; flex-direction: column; gap: 6px; font-size: 0.95rem; color: var(--text-muted); }
+        .pc-form select { padding: 10px 12px; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(5, 11, 20, 0.8); color: var(--text-main); font-size: 1rem; font-family: inherit; }
+        .pc-form select:focus { outline: none; border-color: var(--primary); }
+        .pc-result { margin-top: 20px; padding: 20px 22px; border-radius: 12px; border: 1px solid var(--glass-border); }
+        .pc-result h3 { margin-bottom: 10px; font-size: 1.2rem; }
+        .pc-result ul { list-style: none; margin: 0 !important; padding: 0; }
+        .pc-result li { margin-bottom: 8px !important; }
+        .pc-result.ok { background: rgba(16, 185, 129, 0.1); border-color: var(--success); }
+        .pc-result.ok h3 { color: var(--success); }
+        .pc-result.warn { background: rgba(245, 158, 11, 0.08); border-color: var(--warning); }
+        .pc-result.warn h3 { color: var(--warning); }
+        .pc-result.bad { background: rgba(239, 68, 68, 0.08); border-color: #ef4444; }
+        .pc-result.bad h3 { color: #ef4444; }
+    </style>
+</head>
+<body>
+    <main>
+        <nav class="journey-steps">
+            <a href="journey.html" class="done">🧭 總覽</a>
+            <a href="journey-pc.html" class="current">① 電腦檢核</a>
+            <a href="journey-install.html" class="">② 註冊與安裝</a>
+            <a href="character-creation.html" class="">③ 角色創建</a>
+            <a href="first-flight.html" class="">④ 第一次飛行</a>
+        </nav>
+        <section class="hero glass-panel">
+            <h1><span class="text-gradient">電腦檢核</span></h1>
+            <p style="margin-top: 15px;">星際公民是出了名的吃硬體。先確認你的電腦跑不跑得動，再決定要不要入坑。</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🖥️ 官方系統需求</h2>
+            <div style="width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 560px; border-collapse: collapse;">
+                    <thead><tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;"><th style="padding: 12px 16px;">項目</th><th style="padding: 12px 16px;">最低需求</th><th style="padding: 12px 16px;">建議配備</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>作業系統</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Windows 10 64 位元（最新更新）</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Windows 11 64 位元</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>CPU</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">4 核心，Intel i7 Haswell（第 4 代）或 AMD Excavator 以後，<strong>必須支援 AVX、AVX2、FMA3</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">6～8 核心，Intel i7 或 AMD Ryzen 5 以上</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>記憶體</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">16 GB</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>32 GB</strong> 以上</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>顯示卡</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">4 GB VRAM，DirectX 11.1、Vulkan 1.2</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">8 GB VRAM 以上，DirectX 12</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>硬碟</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>SSD</strong>，150 GB 以上剩餘空間</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>NVMe SSD</strong>，150 GB；加裝 PTU 需約 300 GB</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>網路</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">寬頻網路（沒有離線模式）</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">穩定的光纖網路</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="margin: 20px 0; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">💡 <strong>最有感的升級：</strong>星際公民非常吃 CPU 和記憶體。預算有限時，<strong>先把記憶體升到 32 GB</strong>，再換 NVMe SSD，效果比換顯示卡明顯。</div>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">✅ 互動檢核：我的電腦可以玩嗎？</h2>
+            <p>依照你的電腦選擇，按「開始檢核」就會告訴你結果和升級建議。不知道自己的規格？看下面的「怎麼查自己的電腦規格」。</p>
+            <form id="pc-check" class="pc-form">
+                <label>作業系統
+                    <select name="os"><option value="ok">Windows 10／11 64 位元</option><option value="old">Windows 7／8 或 32 位元</option><option value="other">Mac／Linux</option></select>
+                </label>
+                <label>CPU 核心數
+                    <select name="cores"><option value="2">2 核以下</option><option value="4" selected>4 核</option><option value="6">6 核</option><option value="8">8 核以上</option></select>
+                </label>
+                <label>CPU 支援 AVX2 指令集？
+                    <select name="avx"><option value="yes">支援（Intel 4 代以後、AMD Ryzen）</option><option value="no">不支援</option><option value="unknown">不知道</option></select>
+                </label>
+                <label>記憶體 (RAM)
+                    <select name="ram"><option value="8">8 GB 以下</option><option value="16">16 GB</option><option value="32" selected>32 GB</option><option value="64">64 GB 以上</option></select>
+                </label>
+                <label>顯示卡記憶體 (VRAM)
+                    <select name="vram"><option value="2">4 GB 以下</option><option value="4">4–6 GB</option><option value="8" selected>8–10 GB</option><option value="12">12 GB 以上</option></select>
+                </label>
+                <label>遊戲要裝在哪種硬碟？
+                    <select name="disk"><option value="hdd">傳統硬碟 (HDD)</option><option value="sata">SATA SSD</option><option value="nvme" selected>NVMe SSD</option></select>
+                </label>
+                <label>硬碟剩餘空間
+                    <select name="space"><option value="low">150 GB 以下</option><option value="ok" selected>150–300 GB</option><option value="big">300 GB 以上</option></select>
+                </label>
+                <label>網路
+                    <select name="net"><option value="ok">穩定的寬頻網路</option><option value="bad">行動網路／不穩定</option></select>
+                </label>
+                <button type="submit" class="btn" style="grid-column: 1 / -1;">開始檢核</button>
+            </form>
+            <div id="pc-result" class="pc-result" hidden></div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🔍 怎麼查自己的電腦規格？</h2>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">1</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">看 CPU、記憶體、作業系統</h3>
+                    <p style="margin: 0; font-size: 1rem;">按 <kbd>Win</kbd> + <kbd>R</kbd>，輸入 <code>dxdiag</code> 按 Enter。「系統」頁籤會顯示作業系統、處理器和記憶體。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">2</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">看顯示卡記憶體</h3>
+                    <p style="margin: 0; font-size: 1rem;">在 dxdiag 切到「顯示」頁籤，「顯示記憶體 (VRAM)」就是顯示卡記憶體。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">3</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">看硬碟種類與空間</h3>
+                    <p style="margin: 0; font-size: 1rem;">按 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Esc</kbd> 打開工作管理員 → 效能，點每顆磁碟，會顯示 SSD 或 HDD；剩餘空間在「本機」查看。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">4</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">確認 AVX2</h3>
+                    <p style="margin: 0; font-size: 1rem;">下載免費的 <a href="https://www.cpuid.com/softwares/cpu-z.html" target="_blank">CPU-Z</a>，在「Instructions」欄位找有沒有 <strong>AVX2</strong>。</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">⚙️ 規格吃緊時的小技巧</h2>
+            <ul style="list-style-type: disc;">
+                <li><strong>記憶體只有 16 GB</strong>：把虛擬記憶體（分頁檔）設為固定 32 GB（32768 MB），放在裝遊戲的 SSD 上，設完要重新開機。</li>
+                <li><strong>第一次啟動很慢</strong>：第一次進遊戲要建立著色器快取，可能要等 30 分鐘，之後就會快很多。</li>
+                <li><strong>畫質設定</strong>：遊戲主要吃 CPU，畫質從「高」開始試；顯示卡吃緊時可以開 DLSS 或 FSR。</li>
+                <li><strong>不確定要不要買</strong>：等 Free Fly 免費試玩期間先測試，或確認官方的退款規定再購買。</li>
+            </ul>
+
+        </section>
+        <div class="journey-next">
+            <a href="journey.html"><small>← 上一步</small>🧭 總覽</a>
+            <a class="next" href="journey-install.html"><small>下一步 →</small>② 註冊與安裝</a>
+        </div>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="index.html" class="btn">返回首頁</a>
+        </div>
+    </main>
+
+    <script src="components.js"></script>
+    <script>
+    (function () {
+        const form = document.getElementById('pc-check');
+        const box = document.getElementById('pc-result');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const v = Object.fromEntries(new FormData(form).entries());
+            const fail = [], warn = [], good = [];
+            if (v.os === 'old') fail.push('作業系統需要 <strong>Windows 10 或 11（64 位元）</strong>。');
+            if (v.os === 'other') fail.push('星際公民<strong>只支援 Windows</strong>，Mac 無法直接遊玩；Linux 只能透過非官方方式，不建議新手嘗試。');
+            if (v.cores === '2') fail.push('CPU 至少需要 <strong>4 核心</strong>。');
+            else if (v.cores === '4') warn.push('4 核心剛好達到最低需求，城市裡可能會卡；建議 6～8 核。');
+            else good.push('CPU 核心數足夠。');
+            if (v.avx === 'no') fail.push('CPU 必須支援 <strong>AVX、AVX2、FMA3</strong> 指令集，否則遊戲無法啟動。');
+            if (v.avx === 'unknown') warn.push('請用 CPU-Z 確認 CPU 是否支援 <strong>AVX2</strong>（Intel 第 4 代 Haswell 以後、AMD Ryzen 都支援）。');
+            if (v.ram === '8') fail.push('記憶體至少需要 <strong>16 GB</strong>。');
+            else if (v.ram === '16') warn.push('16 GB 能跑，但很吃緊。<strong>升級到 32 GB 是效果最明顯的投資</strong>；暫時沒辦法的話，請把虛擬記憶體（分頁檔）設為 32 GB。');
+            else good.push('記憶體充足。');
+            if (v.vram === '2') fail.push('顯示卡記憶體至少需要 <strong>4 GB</strong>（支援 DirectX 11.1、Vulkan 1.2）。');
+            else if (v.vram === '4') warn.push('4–6 GB 顯示卡記憶體只能用較低畫質；建議 8 GB 以上，新購買建議 12–16 GB。');
+            else good.push('顯示卡記憶體足夠。');
+            if (v.disk === 'hdd') fail.push('<strong>一定要裝在 SSD</strong>。傳統硬碟會讓材質載入不出來、甚至當機。');
+            else if (v.disk === 'sata') warn.push('SATA SSD 可以玩，但官方強烈建議 <strong>NVMe SSD</strong>，載入更順。');
+            else good.push('NVMe SSD，完美。');
+            if (v.space === 'low') fail.push('需要至少 <strong>150 GB</strong> 的剩餘空間（同時裝 PTU 需要約 300 GB）。');
+            else if (v.space === 'ok') good.push('空間足夠安裝正式服 (LIVE)。');
+            else good.push('空間充足，連 PTU 測試服都能一起裝。');
+            if (v.net === 'bad') warn.push('遊戲<strong>沒有離線模式</strong>，需要穩定的網路，行動網路容易斷線。');
+            let cls, title;
+            if (fail.length) { cls = 'bad'; title = '❌ 目前還不能玩'; }
+            else if (warn.length) { cls = 'warn'; title = '⚠️ 可以玩，但體驗可能會受影響'; }
+            else { cls = 'ok'; title = '✅ 可以順利遊玩！'; }
+            const list = (arr, icon) => arr.map(t => '<li>' + icon + ' ' + t + '</li>').join('');
+            box.className = 'pc-result ' + cls;
+            box.innerHTML = '<h3>' + title + '</h3><ul>' + list(fail, '❌') + list(warn, '⚠️') + list(good, '✅') + '</ul>' +
+                (cls !== 'bad' ? '<p style="margin-top:12px;">下一步：<a href="journey-install.html">② 註冊與安裝</a></p>' : '<p style="margin-top:12px;">可以先等 Free Fly 免費試玩期間測試，或依上面建議升級。</p>');
+            box.hidden = false;
+            box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

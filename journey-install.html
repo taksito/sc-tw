@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊與安裝 - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen 註冊帳號（推薦碼）、購買遊戲包、下載 RSI Launcher、安裝位置與中文化教學。">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <nav class="journey-steps">
+            <a href="journey.html" class="done">🧭 總覽</a>
+            <a href="journey-pc.html" class="done">① 電腦檢核</a>
+            <a href="journey-install.html" class="current">② 註冊與安裝</a>
+            <a href="character-creation.html" class="">③ 角色創建</a>
+            <a href="first-flight.html" class="">④ 第一次飛行</a>
+        </nav>
+        <section class="hero glass-panel">
+            <h1><span class="text-gradient">註冊與安裝</span></h1>
+            <p style="margin-top: 15px;">註冊帳號、選遊戲包、下載啟動器，把星際公民裝進你的電腦。</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📝 步驟 1：註冊 RSI 帳號</h2>
+            <p>到 RSI 官網 <a href="https://robertsspaceindustries.com/" target="_blank">robertsspaceindustries.com</a> 註冊帳號（Enlist）。註冊時記得填<strong>推薦碼 (Referral Code)</strong>，可以拿到額外的開局遊戲幣。</p>
+            <!-- Referral Code Block -->
+            <div style="
+                margin-top: 24px;
+                padding: 24px 28px;
+                border-radius: 14px;
+                background: linear-gradient(135deg, rgba(0,210,255,0.08), rgba(58,123,213,0.12));
+                border: 1px solid rgba(0,210,255,0.35);
+                box-shadow: 0 0 20px rgba(0,210,255,0.08);
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 20px;
+            ">
+                <div style="flex: 1; min-width: 200px;">
+                    <div style="font-family: 'Orbitron', sans-serif; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">🎁 推薦碼 Referral Code</div>
+                    <div style="font-family: 'Orbitron', sans-serif; font-size: 1.6rem; font-weight: 900; color: var(--primary); letter-spacing: 4px; text-shadow: 0 0 12px rgba(0,210,255,0.5);">STAR-MQY9-QQ7P</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">使用此推薦碼註冊，您將獲得額外 <strong style="color: var(--accent);">5,000 aUEC</strong> 開局資金！</div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
+                    <a href="https://www.robertsspaceindustries.com/enlist?referral=STAR-MQY9-QQ7P"
+                       target="_blank"
+                       style="
+                           display: inline-block;
+                           padding: 12px 22px;
+                           background: linear-gradient(135deg, var(--primary), var(--secondary));
+                           color: #fff;
+                           font-family: 'Orbitron', sans-serif;
+                           font-size: 0.8rem;
+                           font-weight: bold;
+                           border-radius: 8px;
+                           text-decoration: none;
+                           letter-spacing: 1px;
+                           text-transform: uppercase;
+                           transition: all 0.3s ease;
+                           white-space: nowrap;
+                           box-shadow: 0 4px 15px rgba(0,210,255,0.3);
+                       "
+                       onmouseover="this.style.boxShadow='0 0 20px rgba(0,210,255,0.6)'; this.style.transform='scale(1.05)'"
+                       onmouseout="this.style.boxShadow='0 4px 15px rgba(0,210,255,0.3)'; this.style.transform='scale(1)'"
+                    >🚀 立即使用推薦碼註冊</a>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); text-align: right;">點擊後推薦碼將自動帶入</div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🎮 步驟 2：購買遊戲包</h2>
+        <figure class="media-figure">
+            <img src="https://media.starcitizen.tools/thumb/1/1f/Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg/800px-Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg.webp" data-full="https://media.starcitizen.tools/1/1f/Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg" alt="Aurora Mk II" loading="lazy">
+            <figcaption>Aurora Mk II：目前最常見的入門遊戲包附贈船</figcaption>
+        </figure>
+            <p>要進入遊戲，一定要買一個<strong>遊戲包 (Game Package)</strong>，單買飛船是無法進入遊戲的。</p>
+            <ul style="list-style-type: disc;">
+                <li><strong>入門首選</strong>：附 <strong>Aurora Mk II</strong> 的入門遊戲包（例如 First Flight Pack），內含遊戲本體、一艘 Aurora Mk II、開局遊戲幣，部分版本還附 Golem、Fortune、Intrepid 的 30 天租借。</li>
+                <li><strong>預算多一點</strong>：<a href="ships/avenger-titan.html">Avenger Titan</a> 的遊戲包，是公認最好用的新手船，有 8 SCU 貨艙可以跑貨。</li>
+                <li>遊戲包價格會隨活動調整，<strong>以官網為準</strong>。想用現金買更大的船，請看 <a href="ship-ccu.html">CCU 現金購船</a>。</li>
+            </ul>
+            <div style="margin: 20px 0; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">💡 <strong>先試玩再買：</strong>IAE（每年 11 月）、Invictus（5 月）等活動常有 <strong>Free Fly 免費試玩</strong>，可以先確認電腦跑不跑得動。</div>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">💾 步驟 3：下載與安裝 RSI Launcher</h2>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">1</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">下載啟動器</h3>
+                    <p style="margin: 0; font-size: 1rem;">到官網下載頁 <a href="https://robertsspaceindustries.com/download" target="_blank">robertsspaceindustries.com/download</a> 下載 <strong>RSI Launcher</strong> 並安裝。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">2</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">登入帳號</h3>
+                    <p style="margin: 0; font-size: 1rem;">打開 RSI Launcher，用剛剛註冊的帳號登入。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">3</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">選擇安裝位置</h3>
+                    <p style="margin: 0; font-size: 1rem;">在 Launcher 的 <strong>Settings → Games → Library Folder</strong> 選擇遊戲要裝在哪裡。<strong>一定要選 SSD</strong>（最好是 NVMe），並確認有 150 GB 以上的空間。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">4</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">選擇 LIVE 並安裝</h3>
+                    <p style="margin: 0; font-size: 1rem;">確認上方選的是 <strong>LIVE</strong>（正式服），按 Install 開始下載。檔案約 150 GB，網路慢的話可能要下載好幾個小時。</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-bottom: 18px;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">5</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 16px 20px;">
+                    <h3 class="text-gradient" style="font-size: 1.1rem; margin-bottom: 8px;">安裝中文化（選用）</h3>
+                    <p style="margin: 0; font-size: 1rem;">下載完成後，可以照 <a href="ctinput1.html">中文化與輸入</a> 頁的三步驟安裝繁體中文語言包。</p>
+                </div>
+            </div>
+            <h3 class="text-gradient" style="font-size: 1.15rem; margin: 20px 0 10px;">📂 預設安裝位置</h3>
+            <div style="width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 280px; border-collapse: collapse;">
+                    <thead><tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;"><th style="padding: 12px 16px;">版本</th><th style="padding: 12px 16px;">路徑</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">正式服 LIVE</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><code>C:\Program Files\Roberts Space Industries\StarCitizen\LIVE</code></td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">測試服 PTU</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><code>C:\Program Files\Roberts Space Industries\StarCitizen\PTU</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="margin: 20px 0; background: rgba(245,158,11,0.08); border-left: 3px solid var(--warning); padding: 15px 20px; border-radius: 0 8px 8px 0;">⚠️ C 槽空間不夠或不是 SSD 的話，請在 Library Folder 改成其他 SSD，例如 <code>D:\Roberts Space Industries</code>。之後安裝中文化、找 <code>user.cfg</code> 都會用到這個位置，記下來。</div>
+            <h3 class="text-gradient" style="font-size: 1.15rem; margin: 20px 0 10px;">🛠️ 安裝出問題？</h3>
+            <ul style="list-style-type: disc;">
+                <li>遊戲檔案損壞：在 Launcher 的設定裡執行<strong>檔案驗證 (Verify)</strong>，會自動修復。</li>
+                <li>Launcher 卡住或登入異常：按 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd> 清除快取並登出，再重新登入。</li>
+            </ul>
+
+        </section>
+        <div class="journey-next">
+            <a href="journey-pc.html"><small>← 上一步</small>① 電腦檢核</a>
+            <a class="next" href="character-creation.html"><small>下一步 →</small>③ 角色創建</a>
+        </div>
+
+        <section class="credits-section">
+            <h4>📷 圖片來源</h4>
+            <ol>
+                <li>Aurora Mk II：<a href="https://starcitizen.tools/File:Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg" target="_blank">Aurora Mk II x3 flying close to mountains - cropped.jpg</a></li>
+            </ol>
+            <p>以上圖片取自 <a href="https://starcitizen.tools/" target="_blank">Star Citizen Wiki (starcitizen.tools)</a>，遊戲畫面與相關素材版權歸 Cloud Imperium Games 所有，本站僅作非商業教學引用。</p>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="index.html" class="btn">返回首頁</a>
+        </div>
+    </main>
+
+    <script src="components.js"></script>
+</body>
+</html>

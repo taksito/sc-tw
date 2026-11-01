@@ -769,3 +769,79 @@ img[data-full] {
 .has-submenu.expanded .submenu {
     max-height: 500px;
 }
+
+/* =========================================================
+   旅程進度列 (Journey Steps)
+   <nav class="journey-steps">
+       <a href="..." class="done">① 電腦檢核</a>
+       <a href="..." class="current">② 註冊與安裝</a>
+       <a href="...">③ 角色創建</a>
+   </nav>
+   ========================================================= */
+.journey-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+.journey-steps a {
+    flex: 1 1 140px;
+    text-align: center;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.journey-steps a:hover {
+    border-color: var(--primary);
+    color: var(--text-main);
+    text-shadow: none;
+}
+.journey-steps a.done {
+    color: var(--success);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+.journey-steps a.current {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(0, 210, 255, 0.35), rgba(58, 123, 213, 0.35));
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.25);
+}
+.journey-next {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.journey-next a {
+    flex: 1 1 220px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-main);
+}
+.journey-next a.next {
+    text-align: right;
+    border-color: var(--primary);
+    background: rgba(0, 210, 255, 0.08);
+}
+.journey-next a:hover {
+    border-color: var(--primary);
+    text-shadow: none;
+    color: var(--text-main);
+}
+.journey-next small {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* 長路徑或長代碼自動換行，避免手機版左右溢出 */
+.content-section code { word-break: break-all; }
+.content-section p, .content-section li { overflow-wrap: anywhere; }
