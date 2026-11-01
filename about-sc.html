@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星際公民是什麼？ - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen 星際公民特色介紹：無讀取的降落與升空、擬真的場景設計、3A 等級的畫面，以及無敵多的 BUG 與不友善的設計。我勸你別玩，我玩你別勸。">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .slogan-banner {
+            text-align: center;
+            padding: 35px 20px;
+            margin-bottom: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            background:
+                radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.15), transparent 70%),
+                rgba(5, 11, 20, 0.7);
+        }
+        .slogan-banner .slogan {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: clamp(1.6rem, 5vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: none;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.4;
+        }
+        .slogan-banner .slogan-sub {
+            margin-top: 12px;
+            color: var(--warning);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .pro-con {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .pro-con .box {
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+        }
+        .pro-con .box h3 {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+        .pro-con .box ul {
+            margin: 0 0 0 18px !important;
+            list-style: disc;
+        }
+        .pro-con .box li {
+            font-size: 1rem;
+            margin-bottom: 10px !important;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- 標語：上 -->
+        <section class="slogan-banner">
+            <div class="slogan">我勸你別玩，我玩你別勸</div>
+            <div class="slogan-sub">⚠️ 想進來，要有心理準備</div>
+        </section>
+
+        <section class="hero glass-panel">
+            <h1>星際公民 <span class="text-gradient">是什麼？</span></h1>
+            <p>Star Citizen（星際公民）是一款還在開發中的太空沙盒遊戲。你可以開著自己的飛船，從城市的機庫起飛、穿越大氣層、飛進太空，再降落到另一顆星球，全程沒有讀取畫面。</p>
+        </section>
+
+        <figure class="media-figure">
+            <img src="https://media.starcitizen.tools/thumb/d/dd/Prospector_-_Hovering_mining_on_cliffside_1.jpg/1200px-Prospector_-_Hovering_mining_on_cliffside_1.jpg.webp" data-full="https://media.starcitizen.tools/d/dd/Prospector_-_Hovering_mining_on_cliffside_1.jpg" alt="Prospector 在懸崖邊懸停採礦">
+            <figcaption>在星球地表懸停作業的採礦船。地表、大氣層與太空是同一個無縫的世界</figcaption>
+        </figure>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">✨ 星際公民的特色</h2>
+            <div class="gear-grid">
+                <div class="gear-card">
+                    <img src="https://media.starcitizen.tools/thumb/1/1f/Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg/800px-Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg.webp" data-full="https://media.starcitizen.tools/1/1f/Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg" alt="Aurora Mk II 飛越山脈" loading="lazy">
+                    <div class="gear-body">
+                        <h4>🚀 無讀取的降落與升空</h4>
+                        <span class="gear-tag">最大賣點</span>
+                        <p>從機庫起飛、衝出大氣層、量子航行到另一顆星球、再一路降落到地表，<strong>整段過程沒有任何讀取畫面</strong>。第一次從太空看著星球越來越近、穿過雲層落地的感覺，非常震撼。</p>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img src="https://media.starcitizen.tools/thumb/b/bc/Levski_-_Above_complex.jpg/800px-Levski_-_Above_complex.jpg.webp" data-full="https://media.starcitizen.tools/b/bc/Levski_-_Above_complex.jpg" alt="Levski 鳥瞰" loading="lazy">
+                    <div class="gear-body">
+                        <h4>🏙️ 擬真的場景設計</h4>
+                        <span class="gear-tag">沉浸感</span>
+                        <p>城市、太空站、前哨站、飛船內部都做得非常細緻。開門、坐上駕駛座、搬貨箱都要自己一步一步來，整個宇宙像真的有人在生活。</p>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img src="https://media.starcitizen.tools/thumb/9/97/Hull_B_flying_away_from_a_jump_point_-_cropped.jpg/800px-Hull_B_flying_away_from_a_jump_point_-_cropped.jpg.webp" data-full="https://media.starcitizen.tools/9/97/Hull_B_flying_away_from_a_jump_point_-_cropped.jpg" alt="Hull B 從跳躍點飛出" loading="lazy">
+                    <div class="gear-body">
+                        <h4>🎬 3A 大作等級的畫面</h4>
+                        <span class="gear-tag">視覺效果</span>
+                        <p>光影、星球地形、飛船細節都是 3A 大作的規格。光是截圖或錄影，就常常美到讓人以為是宣傳片。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">⚖️ 好的與壞的</h2>
+            <div class="pro-con">
+                <div class="box" style="background: rgba(16, 185, 129, 0.06); border-color: rgba(16, 185, 129, 0.4);">
+                    <h3 style="color: var(--success);">👍 讓人上癮的地方</h3>
+                    <ul>
+                        <li>無縫的星球降落與升空，沒有讀取畫面</li>
+                        <li>擬真的場景與飛船內部，沉浸感極強</li>
+                        <li>3A 等級的畫面表現</li>
+                        <li>職業自由：貨運、戰鬥、挖礦、加油……想做什麼就做什麼</li>
+                        <li>和朋友一起開大船、分工合作的樂趣</li>
+                    </ul>
+                </div>
+                <div class="box" style="background: rgba(239, 68, 68, 0.06); border-color: rgba(239, 68, 68, 0.4);">
+                    <h3 style="color: #ef4444;">👎 讓人崩潰的地方</h3>
+                    <ul>
+                        <li><strong>BUG 無敵多</strong>：斷線、電梯卡住、任務壞掉、船莫名爆炸都是日常</li>
+                        <li><strong>很多不太友善的設計</strong>：操作複雜、按鍵多、新手引導不足</li>
+                        <li>什麼都要親手做，跑一趟任務很花時間</li>
+                        <li>死亡或斷線可能會損失身上的裝備與貨物</li>
+                        <li>遊戲還在開發中，改版時遊戲幣可能被重置</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 20px; background: rgba(245,158,11,0.08); border-left: 3px solid var(--warning); padding: 15px 20px; border-radius: 0 8px 8px 0;">
+                ⚠️ <strong>心理準備：</strong>星際公民的美好和崩潰常常在同一個晚上發生。能接受「今天又被 BUG 搞」還笑得出來的玩家，才會玩得下去。
+            </div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🧭 本站的定位：以 PVE 為主</h2>
+            <p>這個網站主要整理 <strong>PVE（玩家對環境）</strong>的內容，例如貨運、挖礦、加油、任務攻略，幫助新手穩穩地賺錢、享受遊戲。</p>
+            <p><strong>PVP（玩家對玩家）</strong>的內容會比較少，除非任務的細節牽扯到 PVP，例如：</p>
+            <ul style="list-style-type: disc;">
+                <li><strong>地面 FPS 任務</strong>：部分任務地點可能會遇到其他玩家</li>
+                <li><strong>Wikelo 相關資料</strong>（未來會加入）：交換需要的物品可能涉及 PVP 地區或玩家競爭</li>
+            </ul>
+            <p>遇到這些情況時，才會補充 PVP 相關的注意事項。</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🚀 準備好了嗎？</h2>
+            <ul class="topic-list">
+                <li><a href="character-creation.html"><h3 class="text-gradient">👤 開始你的旅程</h3><p>從創建角色開始，一步一步進入星際公民的宇宙。</p></a></li>
+                <li><a href="professions.html"><h3 class="text-gradient">💰 選一個職業賺錢</h3><p>看看目前版本哪個職業最賺錢，新手建議從貨運開始。</p></a></li>
+            </ul>
+        </section>
+
+        <!-- 標語：下 -->
+        <section class="slogan-banner" style="margin-top: 30px;">
+            <div class="slogan">我勸你別玩，我玩你別勸</div>
+            <div class="slogan-sub">⚠️ 想進來，要有心理準備</div>
+        </section>
+
+        <section class="credits-section">
+            <h4>📷 圖片來源</h4>
+            <ol>
+                <li>Prospector 在懸崖邊懸停採礦：<a href="https://starcitizen.tools/File:Prospector_-_Hovering_mining_on_cliffside_1.jpg" target="_blank">Prospector - Hovering mining on cliffside 1.jpg</a></li>
+                <li>Aurora Mk II 飛越山脈：<a href="https://starcitizen.tools/File:Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg" target="_blank">Aurora Mk II x3 flying close to mountains - cropped.jpg</a></li>
+                <li>Levski 鳥瞰：<a href="https://starcitizen.tools/File:Levski_-_Above_complex.jpg" target="_blank">Levski - Above complex.jpg</a></li>
+                <li>Hull B 從跳躍點飛出：<a href="https://starcitizen.tools/File:Hull_B_flying_away_from_a_jump_point_-_cropped.jpg" target="_blank">Hull B flying away from a jump point - cropped.jpg</a></li>
+            </ol>
+            <p>以上圖片取自 <a href="https://starcitizen.tools/" target="_blank">Star Citizen Wiki (starcitizen.tools)</a>，遊戲畫面與相關素材版權歸 Cloud Imperium Games 所有，本站僅作非商業教學引用。</p>
+        </section>
+    </main>
+
+    <script src="components.js"></script>
+</body>
+</html>

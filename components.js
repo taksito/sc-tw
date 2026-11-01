@@ -66,6 +66,7 @@ class ComponentManager {
                 <div class="nav-category">主要指南</div>
                 <ul class="sidebar-nav">
                     <li><a href="${prefix}index.html">🏠 首頁</a></li>
+                    <li><a href="${prefix}about-sc.html">🌌 星際公民是什麼？</a></li>
                     <li><a href="${prefix}blog.html">📝 塔克 Blog</a></li>
                     <li><a href="${prefix}ctinput1.html">⌨️ 中文化與輸入</a></li>
                     <li class="has-submenu">

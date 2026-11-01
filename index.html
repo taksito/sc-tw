@@ -4,23 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Citizen 繁體中文新手入門教學</title>
-    <meta name="description" content="專為繁體中文玩家設計的星際公民 (Star Citizen) 新手入門教學網站。">
+    <meta name="description" content="專為繁體中文玩家設計的星際公民 (Star Citizen) 新手入門教學網站，以 PVE 內容為主：貨運、挖礦、加油、任務攻略與改版資訊。">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .home-slogan {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: clamp(1.1rem, 3.2vw, 1.5rem);
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--warning);
+        }
+        .hero-btns {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+        .status-card {
+            display: block;
+            padding: 18px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+        .status-card:hover {
+            border-color: var(--primary);
+            background: rgba(0, 210, 255, 0.08);
+            color: var(--text-main);
+            text-shadow: none;
+        }
+        .status-card strong {
+            display: block;
+            font-size: 1.15rem;
+            margin: 8px 0 4px;
+        }
+        .status-card span.desc {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+    </style>
 </head>
 <body>
 
     <main>
         <section class="hero glass-panel">
-            <h1>歡迎來到 <span class="text-gradient">Star Citizen</span> 宇宙</h1>
+            <div class="home-slogan">「我勸你別玩，我玩你別勸」</div>
+            <h1 style="margin-top: 20px;">歡迎來到 <span class="text-gradient">Star Citizen</span> 宇宙</h1>
             <p>這是一份專為繁體中文玩家準備的生存與起步指南。無論你是剛買包的新手，還是想要尋找特定技巧的老鳥，這裡都能為你指明方向。</p>
-            <div style="margin-top: 30px;">
+            <p style="margin-top: 15px; color: var(--warning);">⚠️ 想進來，要有心理準備。</p>
+            <div class="hero-btns">
+                <a href="about-sc.html" class="btn" style="background: transparent; border: 1px solid var(--primary);">星際公民是什麼？</a>
                 <a href="character-creation.html" class="btn">開始你的旅程</a>
             </div>
         </section>
 
-        <section class="glass-panel" style="padding: 30px; margin-top: 40px; margin-bottom: 40px;">
+        <section class="glass-panel" style="padding: 30px; margin-bottom: 40px;">
+            <h2 class="text-gradient" style="font-size: 1.5rem; margin-bottom: 15px;">🧭 本站定位</h2>
+            <p style="font-size: 1.05rem;">本站以 <strong>PVE（玩家對環境）</strong>內容為主：貨運、挖礦、加油、任務攻略與改版資訊。<strong>PVP</strong> 的內容會比較少，只有在任務細節牽扯到 PVP 時（例如地面 FPS 任務、未來加入的 Wikelo 資料）才會補充。</p>
+        </section>
+
+        <section class="glass-panel" style="padding: 30px; margin-bottom: 40px;">
+            <h2 class="text-gradient" style="font-size: 1.5rem; margin-bottom: 20px;">📰 目前版本</h2>
+            <div class="status-grid">
+                <a class="status-card" href="update410/4102.html">
+                    <span class="patch-badge live">LIVE</span>
+                    <strong>4.10.2 RSI 探索月</strong>
+                    <span class="desc">目前的正式伺服器版本</span>
+                </a>
+                <a class="status-card" href="update410/4103-ptu.html">
+                    <span class="patch-badge ptu">PTU</span>
+                    <strong>4.10.3 Vanduul 入侵</strong>
+                    <span class="desc">測試中的下一個版本</span>
+                </a>
+                <a class="status-card" href="blog.html">
+                    <span class="patch-badge old">BLOG</span>
+                    <strong>網站更新進度</strong>
+                    <span class="desc">看看最近新增了哪些內容</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="glass-panel" style="padding: 30px; margin-bottom: 40px;">
             <h2 class="section-title" style="margin-bottom: 30px; font-size: 2rem;">主要學習單元</h2>
             <ul class="topic-list">
+                <li>
+                    <a href="about-sc.html">
+                        <h3 class="text-gradient">🌌 星際公民是什麼？</h3>
+                        <p>無讀取的降落與升空、擬真場景、3A 畫面，以及無敵多的 BUG。進來之前先看這篇。</p>
+                    </a>
+                </li>
                 <li>
                     <a href="first-flight.html">
                         <h3 class="text-gradient">🚀 基礎飛行 (Basic Flight)</h3>
@@ -30,7 +110,7 @@
                 <li>
                     <a href="professions.html">
                         <h3 class="text-gradient">💼 專業領域 (Professions)</h3>
-                        <p>探索各種職業：貨運物流、探勘挖礦、地面武裝作戰與太空飛船戰鬥。</p>
+                        <p>4.10.2 職業收益排行：貨運、飛船戰鬥、地面 FPS、加油、挖礦，看看哪個最賺錢。</p>
                     </a>
                 </li>
                 <li>
@@ -46,6 +126,11 @@
                     </a>
                 </li>
             </ul>
+        </section>
+
+        <section class="glass-panel" style="padding: 35px 20px; text-align: center;">
+            <div class="home-slogan">「我勸你別玩，我玩你別勸」</div>
+            <p style="margin-top: 10px; color: var(--text-muted);">想進來，要有心理準備。準備好了，就 See You In The 'Verse! o7</p>
         </section>
     </main>
 
