@@ -20,6 +20,17 @@
             </div>
         </section>
 
+        <!-- 讀取畫面：把遊戲截圖存成 update410/images/4103-loading.jpg 就會自動顯示；檔案不存在時整區隱藏 -->
+        <figure class="media-figure" id="loading-screen">
+            <img src="images/4103-loading.jpg" data-full="images/4103-loading.jpg" alt="4.10.3 PTU 讀取畫面" onerror="document.getElementById('loading-screen').remove()">
+            <figcaption>4.10.3 PTU 讀取畫面</figcaption>
+        </figure>
+
+        <figure class="media-figure">
+            <img src="https://robertsspaceindustries.com/i/54aa48fbf5cda7f8a3801dcf92aa88b8783f8368/resize%281500,643,cover,crop%283840,1645,0,0,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskBU2WivGk3x4X3Z3CpK2BwpGP1GGdLTiW%29%29/85/star-citizen-patch-4-4-vanduul-4k.webp" data-full="https://robertsspaceindustries.com/i/54aa48fbf5cda7f8a3801dcf92aa88b8783f8368/resize%281500,643,cover,crop%283840,1645,0,0,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskBU2WivGk3x4X3Z3CpK2BwpGP1GGdLTiW%29%29/85/star-citizen-patch-4-4-vanduul-4k.webp" alt="Vanduul 戰機穿越小行星帶" loading="lazy">
+            <figcaption>Vanduul 戰機群（官方宣傳圖）。4.10.3 的 Vanduul 入侵任務線就是對抗這些敵人</figcaption>
+        </figure>
+
         <section class="content-section glass-panel">
             <h2 class="text-gradient" style="margin-bottom: 20px;">🧪 測試狀態</h2>
             <p>4.10.3 已於 <strong>2026-10-30</strong> 開放給<strong>所有 PTU 測試波次</strong>（目前僅美國 PTU 頻道），並開啟長期保存 (LTP) 測試，確認玩家資料能否在 PTU 版本之間延續。官方尚未公布正式上線日期。</p>
@@ -46,7 +57,46 @@
                     </tbody>
                 </table>
             </div>
-            <p style="font-size: 0.95rem; color: var(--text-muted);">高難度任務是為多人團隊設計的，不適合單人挑戰。敵方船艦包含 Blade、Glaive、Scythe、Stinger。</p>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">高難度任務是為多人團隊設計的，不適合單人挑戰。</p>
+            <div style="margin-top: 20px; background: rgba(16,185,129,0.1); border-left: 3px solid var(--success); padding: 15px 20px; border-radius: 0 8px 8px 0;">
+                💡 <strong>建議先提升 Intersec 聲望：</strong>表格中的「等級」就是你在 <strong>Intersec Defence Solutions</strong> 的聲望等級。聲望越高，能接的 Vanduul 入侵任務選項就越多。建議先從等級 1 的 <strong>Shattered Blade Raid</strong>、等級 2 的 <strong>Retake Ship</strong> 開始累積聲望，再挑戰等級 4 以上的 Vanduul 太空戰。正式上線後，記得也要先完成「Welcome to Nyx」的 Vanduul 科技走私任務。
+            </div>
+
+            <h3 class="text-gradient" style="font-size: 1.2rem; margin: 30px 0 12px;">🛸 會遇到的 Vanduul 船艦</h3>
+            <div class="gear-grid">
+                <div class="gear-card">
+                    <img src="https://media.starcitizen.tools/thumb/4/4c/Blade-top-isc-2020-06-18.jpg/800px-Blade-top-isc-2020-06-18.jpg.webp" data-full="https://media.starcitizen.tools/4/4c/Blade-top-isc-2020-06-18.jpg" alt="Vanduul Blade" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Blade</h4>
+                        <span class="gear-tag">輕型戰機</span>
+                        <p>速度快、數量多的輕型戰機，常成群出現騷擾。</p>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img src="https://media.starcitizen.tools/thumb/b/b0/Scythe_ISC_2020-06-18.png/800px-Scythe_ISC_2020-06-18.png.webp" data-full="https://media.starcitizen.tools/b/b0/Scythe_ISC_2020-06-18.png" alt="Vanduul Scythe" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Scythe</h4>
+                        <span class="gear-tag">主力戰機</span>
+                        <p>Vanduul 最具代表性的戰機，火力與耐打度都比 Blade 高。</p>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img src="https://media.starcitizen.tools/thumb/3/39/Glaive-iso-isc-2020-06-18.jpg/800px-Glaive-iso-isc-2020-06-18.jpg.webp" data-full="https://media.starcitizen.tools/3/39/Glaive-iso-isc-2020-06-18.jpg" alt="Vanduul Glaive" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Glaive</h4>
+                        <span class="gear-tag">重型戰機</span>
+                        <p>Scythe 的強化版，通常是隊長級的威脅，建議優先集火。</p>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img src="https://media.starcitizen.tools/thumb/9/9a/Stinger_-_Squadron_42_CitizenCon_2954_Live_Gameplay_Reveal.jpg/800px-Stinger_-_Squadron_42_CitizenCon_2954_Live_Gameplay_Reveal.jpg.webp" data-full="https://media.starcitizen.tools/9/9a/Stinger_-_Squadron_42_CitizenCon_2954_Live_Gameplay_Reveal.jpg" alt="Vanduul Stinger" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Stinger</h4>
+                        <span class="gear-tag">Squadron 42 登場</span>
+                        <p>在 Squadron 42 首度亮相的 Vanduul 船艦，這次也會在任務中出現。</p>
+                    </div>
+                </div>
+            </div>
 
         </section>
 
@@ -77,6 +127,26 @@
 
         <section class="content-section glass-panel" style="margin-top: 30px;">
             <h2 class="text-gradient" style="margin-bottom: 20px;">🔫 新武器：LBCO Skarnov 能量步槍</h2>
+            <figure class="media-figure">
+                <img src="https://theverse.robertsspaceindustries.com/nfjd8an8d35c3/source.jpg" data-full="https://theverse.robertsspaceindustries.com/nfjd8an8d35c3/source.jpg" alt="LBCO Skarnov 步槍掛在武器架上" loading="lazy">
+                <figcaption>LBCO Skarnov 步槍（官方圖片）。Lightning Bolt Co. 睽違許久的新武器，定位是全自動 DMR</figcaption>
+            </figure>
+            <div class="table-wrap" style="width: 100%; overflow-x: auto; margin: 0 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 480px; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;">
+                            <th style="padding: 10px 16px;">射擊模式</th><th style="padding: 10px 16px;">傷害</th><th style="padding: 10px 16px;">射速</th><th style="padding: 10px 16px;">彈匣</th><th style="padding: 10px 16px;">彈速</th><th style="padding: 10px 16px;">開鏡時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 10px 16px;">全自動／單發</td><td style="padding: 10px 16px;">27</td><td style="padding: 10px 16px;">375 RPM</td><td style="padding: 10px 16px;">30 發</td><td style="padding: 10px 16px;">500 m/s</td><td style="padding: 10px 16px;">0.25 秒</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: -10px;">以上為第一波 PTU 公布的基礎數據，之後的調整請見下方「最新 PTU 調整」。</p>
+            <div style="margin: 10px 0 20px; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">
+                🛒 <strong>PTU 期間購買地點：</strong>Area18 的 <strong>Cubby Blast</strong>、Grim HEX 的 <strong>Skutters</strong>、Levski 的 <strong>Conscientious Objects</strong>、Checkmate 的武器店。要去 Nyx 打任務的話，Levski 最順路。正式版不一定維持相同販售地點。
+            </div>
             <div class="patch-grid">
                 <div class="patch-card">
                     <h3>特性</h3>
@@ -147,6 +217,19 @@
         <div style="margin-top: 40px; text-align: center;">
             <a href="../index.html" class="btn">返回首頁</a>
         </div>
+
+        <section class="credits-section">
+            <h4>📷 圖片來源</h4>
+            <ol>
+                <li>Vanduul 戰機穿越小行星帶：<a href="https://robertsspaceindustries.com/" target="_blank">Roberts Space Industries 官方宣傳圖</a></li>
+                <li>LBCO Skarnov 步槍：<a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/4/thread/4-10-3-ptu-feedback-lbco-skarnov-rifle" target="_blank">[4.10.3 PTU Feedback] LBCO Skarnov Rifle（RSI Spectrum 官方貼文）</a></li>
+                <li>Vanduul Blade：<a href="https://starcitizen.tools/File:Blade-top-isc-2020-06-18.jpg" target="_blank">Blade-top-isc-2020-06-18.jpg</a></li>
+                <li>Vanduul Scythe：<a href="https://starcitizen.tools/File:Scythe_ISC_2020-06-18.png" target="_blank">Scythe ISC 2020-06-18.png</a></li>
+                <li>Vanduul Glaive：<a href="https://starcitizen.tools/File:Glaive-iso-isc-2020-06-18.jpg" target="_blank">Glaive-iso-isc-2020-06-18.jpg</a></li>
+                <li>Vanduul Stinger：<a href="https://starcitizen.tools/File:Stinger_-_Squadron_42_CitizenCon_2954_Live_Gameplay_Reveal.jpg" target="_blank">Stinger - Squadron 42 CitizenCon 2954 Live Gameplay Reveal.jpg</a></li>
+            </ol>
+            <p>Vanduul 船艦圖片取自 <a href="https://starcitizen.tools/" target="_blank">Star Citizen Wiki (starcitizen.tools)</a>。遊戲畫面與相關素材版權歸 Cloud Imperium Games 所有，本站僅作非商業教學引用。</p>
+        </section>
     </main>
 
     <script src="../components.js"></script>
