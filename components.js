@@ -4,6 +4,42 @@ class ComponentManager {
         this.injectFooter();
         this.setupMobileNav();
         this.setActiveNavLink();
+        this.setupLightbox();
+    }
+
+    // 點圖放大：任何有 data-full 屬性的圖片，點擊後顯示大圖
+    static setupLightbox() {
+        const images = document.querySelectorAll('img[data-full]');
+        if (!images.length) return;
+
+        const box = document.createElement('div');
+        box.className = 'lightbox';
+        box.innerHTML = `
+            <button class="lightbox-close" aria-label="關閉">×</button>
+            <img alt="">
+            <div class="lightbox-caption"></div>
+        `;
+        document.body.appendChild(box);
+
+        const bigImg = box.querySelector('img');
+        const caption = box.querySelector('.lightbox-caption');
+        const close = () => box.classList.remove('open');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                bigImg.src = img.dataset.full;
+                bigImg.alt = img.alt;
+                const fig = img.closest('figure');
+                const figcap = fig ? fig.querySelector('figcaption') : null;
+                caption.textContent = figcap ? figcap.textContent : img.alt;
+                box.classList.add('open');
+            });
+        });
+
+        box.addEventListener('click', close);
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') close();
+        });
     }
 
     static getPathPrefix() {
