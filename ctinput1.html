@@ -126,7 +126,8 @@
             white-space: pre-wrap;
             line-height: 1.2;
         }
-    </style>
+            main code { word-break: break-all; }
+</style>
 </head>
 
 <body>
@@ -136,20 +137,79 @@
 
         <div class="content-section glass-panel">
             <h3 class="text-gradient">如何安裝繁體中文化</h3>
-            <p>星際公民目前尚未內建官方中文支援。這是我自己翻譯的雙語中文化專案，目前仍在持續改善中，希望能幫助各位玩家更順利地體驗遊戲。您可以透過以下連結取得：</p>
-            <p style="margin-bottom: 15px;">🔗 <strong>專案連結：</strong><a
-                    href="https://github.com/taksito/starcitizen-chinese_traditional" target="_blank"
-                    style="color: var(--primary); text-decoration: none; font-weight: bold;">Star Citizen 繁體雙語中文化
-                    (GitHub)</a></p>
-            <ol>
-                <li>前往上方的 GitHub 連結下載最新版的繁體中文化檔案 (<code>global.ini</code>)。</li>
-                <li>將該檔案放置於您的遊戲安裝目錄下：<br>
-                    <code>StarCitizen\LIVE\data\Localization\chinese_(traditional)</code> (如果資料夾不存在請自行建立)
-                </li>
-                <li>在StarCitizen\LIVE\下需加入一個 user.cfg，裡面需要有一行g_language = chinese_(traditional)
-                <li>重新啟動遊戲，介面即可顯示繁體中文。</li>
+            <p>星際公民目前沒有官方中文。這裡使用我製作的 <strong>SC 語言包合併台</strong>：把簡體中文漢化包和 ExoAE 英文資訊包合併成<strong>繁體中文 <code>global.ini</code></strong>，整個過程在瀏覽器裡完成，檔案不會上傳到任何伺服器。</p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0;">
+                <a href="https://taksito.github.io/sc-zh-tw-merge/" target="_blank" rel="noopener" class="btn">🌐 打開語言包合併台</a>
+                <a href="https://github.com/taksito/sc-zh-tw-merge" target="_blank" rel="noopener" class="btn" style="background: transparent; border: 1px solid var(--primary);">GitHub 專案頁</a>
+            </div>
 
-            </ol>
+            <h4 class="text-gradient" style="font-size: 1.15rem; margin: 25px 0 12px;">✨ 這個語言包有什麼</h4>
+            <ul style="list-style-type: disc;">
+                <li><strong>繁體中文介面</strong>：台灣正體加台灣用語（例如「激光」會變成「雷射」）</li>
+                <li><strong>零件等級看得懂</strong>：例如 <code>MIL-1C "Bracer"</code> 會顯示成 <code>軍規1C-Bracer</code>（軍規、民用、工業、隱形、競速）</li>
+                <li><strong>任務資訊更完整</strong>：任務標題直接標出聲望與藍圖，貨運任務附上路線</li>
+                <li><strong>飛船中英並列</strong>：例如「黑彎刀」下一行是「Cutlass Black」，跟外國玩家溝通也不怕</li>
+                <li><strong>地點中英並列</strong>：例如「Nyx I 尼克斯 I」，方便對照英文攻略</li>
+                <li><strong>礦石名稱精簡</strong>：中文加英文縮寫和 RS 值，挖礦時一眼看懂</li>
+                <li><strong>看得到中文聊天</strong>：內建中文輸入解碼表，其他玩家用下方轉換器打的中文，你的遊戲也能正常顯示</li>
+            </ul>
+
+            <h4 class="text-gradient" style="font-size: 1.15rem; margin: 30px 0 12px;">🚀 方法一：三步驟安裝（推薦）</h4>
+                <div style="display: flex; gap: 18px; margin-bottom: 16px;">
+                    <div style="flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">1</div>
+                    <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px 18px;">
+                        <h4 style="color: var(--text-main); margin-bottom: 6px; font-size: 1.05rem;">打開合併台，一鍵匯入</h4>
+                        <p style="margin: 0; font-size: 1rem;">打開 <a href="https://taksito.github.io/sc-zh-tw-merge/" target="_blank" rel="noopener">SC 語言包合併台</a>，按第 1 步的 <strong>「一鍵匯入並合併」</strong>，等它顯示合併完成。</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 18px; margin-bottom: 16px;">
+                    <div style="flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">2</div>
+                    <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px 18px;">
+                        <h4 style="color: var(--text-main); margin-bottom: 6px; font-size: 1.05rem;">下載語言包</h4>
+                        <p style="margin: 0; font-size: 1rem;">按第 2 步的 <strong>「下載 global.ini（.zip）」</strong>，檔案會存到你的「下載」資料夾，不用解壓縮。</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 18px; margin-bottom: 16px;">
+                    <div style="flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: rgba(0,210,255,0.15); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Orbitron', sans-serif; color: var(--primary);">3</div>
+                    <div style="flex: 1; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px 18px;">
+                        <h4 style="color: var(--text-main); margin-bottom: 6px; font-size: 1.05rem;">執行安裝器</h4>
+                        <p style="margin: 0; font-size: 1rem;">下載 <a href="https://taksito.github.io/sc-zh-tw-merge/download/SC-zhTW-Installer.exe" target="_blank" rel="noopener">SC-zhTW-Installer.exe</a>（只要下載一次），<strong>先關閉遊戲</strong>再雙擊執行。它會自動找到遊戲的 <code>LIVE</code> 資料夾和「下載」資料夾裡最新的語言包，確認後就安裝完成，重新開遊戲就是繁體中文。</p>
+                    </div>
+                </div>
+
+            <div style="margin: 15px 0 10px; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">
+                💡 <strong>安裝器幫你做了什麼：</strong>
+                <ul style="margin: 8px 0 0 20px; list-style-type: disc;">
+                    <li>把語言包放到 <code>LIVE\Data\Localization\chinese_(traditional)\global.ini</code></li>
+                    <li>把 <code>user.cfg</code> 的語言設定改成繁體中文（其他設定保留）</li>
+                    <li>舊的 <code>global.ini</code> 和 <code>user.cfg</code> 會先備份到 <code>LIVE\語言包備份\</code></li>
+                    <li>遊戲裝在 Program Files 時，會詢問是否用系統管理員身分重新開啟，按「是」就好</li>
+                </ul>
+            </div>
+
+            <h4 class="text-gradient" style="font-size: 1.15rem; margin: 30px 0 12px;">🔄 遊戲改版後怎麼更新？</h4>
+            <p>每次遊戲改版後，舊的語言包可能會出現空白或缺字。重新做一次<strong>第 1、2 步</strong>下載新的語言包，再執行安裝器，選擇 <strong>「更新中文化」</strong>即可。</p>
+
+            <h4 class="text-gradient" style="font-size: 1.15rem; margin: 30px 0 12px;">↩️ 想變回英文？</h4>
+            <p>執行安裝器，選擇 <strong>「移除中文化（變回英文）」</strong>。它只會把語言設定改回英文，中文語言包會保留，之後想換回中文隨時可以。</p>
+
+            <details style="margin-top: 25px; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px 20px;">
+                <summary style="cursor: pointer; font-weight: 700; color: var(--accent);">🛠️ 方法二：手動安裝（不用安裝器）</summary>
+                <ol style="margin-top: 15px;">
+                    <li>在合併台按 <strong>「直接下載 global.ini」</strong>（下載的是 zip 的話先解壓縮）。</li>
+                    <li>找到遊戲的 <code>LIVE</code> 資料夾。預設是 <code>C:\Program Files\Roberts Space Industries\StarCitizen\LIVE</code>，裡面會有 <code>Data.p4k</code> 和 <code>Bin64</code>。裝在別處的話，打開 RSI 啟動器 → Settings → Games，看 Library Folder 的位置。</li>
+                    <li>在 <code>LIVE</code> 裡建立資料夾 <code>data\Localization\chinese_(traditional)\</code>（名稱要完全一樣，包含括號和底線）。</li>
+                    <li>把 <code>global.ini</code> 放進去。<strong>不要用記事本另存</strong>，以免編碼被改掉（必須是 UTF-8 with BOM）。</li>
+                    <li>在 <code>LIVE</code> 資料夾打開 <code>user.cfg</code>（沒有就新增，記得開啟「副檔名」顯示，確認不是 <code>user.cfg.txt</code>），加入下面兩行；已經有 <code>g_language</code> 的話就改掉：
+                        <pre style="margin: 10px 0; padding: 12px 15px; background: rgba(0,0,0,0.4); border-radius: 8px; overflow-x: auto;"><code>g_language = chinese_(traditional)
+g_languageAudio = english</code></pre>
+                        第二行讓遊戲語音維持英文。
+                    </li>
+                    <li>重新啟動遊戲。想變回英文，把那一行改成 <code>g_language = english</code>。</li>
+                </ol>
+            </details>
+
+            <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-muted);">翻譯來源：CitizenWiki 中文社群（42kit 半漢化包）、ExoAE、MrKraken、星際公民汉化组。這是非官方的粉絲專案，使用前請閱讀 <a href="https://github.com/taksito/sc-zh-tw-merge/blob/main/TERMS.md" target="_blank" rel="noopener">使用者協議</a>。CIG 目前允許玩家使用自訂的 <code>global.ini</code>，但政策可能隨時變更。</p>
         </div>
 
         <div class="content-section glass-panel">
@@ -176,7 +236,7 @@
         <!-- YouTube Video Section -->
         <div class="content-section glass-panel">
             <h3 class="text-gradient">🎬 中文化安裝與輸入教學</h3>
-            <p>如果您在安裝中文化或使用輸入法時遇到困難，可以觀看以下教學影片：</p>
+            <p>如果您在使用中文輸入時遇到困難，可以觀看以下教學影片。<span style="color: var(--warning);">影片中的中文化安裝方式是舊版，安裝步驟請以本頁上方的說明為準。</span></p>
             <a href="https://youtu.be/8nhUeOx6-GU" target="_blank" rel="noopener" style="display: block; margin-top: 16px; text-decoration: none; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,210,255,0.25); box-shadow: 0 0 30px rgba(0,210,255,0.1);">
                 <img
                     src="https://img.youtube.com/vi/8nhUeOx6-GU/maxresdefault.jpg"
