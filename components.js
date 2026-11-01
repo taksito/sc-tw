@@ -90,6 +90,7 @@ class ComponentManager {
                             <li><a href="${prefix}cargohauling/mission-tips.html" class="sub-sub">↳ 賺錢 vs 解聲望</a></li>
                             <li><a href="${prefix}cargohauling/covalex.html" class="sub-sub">↳ Covalex 任務攻略</a></li>
                             <li><a href="${prefix}cargohauling/red-wind.html" class="sub-sub">↳ Red Wind 高收益</a></li>
+                            <li><a href="${prefix}cargohauling/ling-family.html" class="sub-sub">↳ Ling Family 小船</a></li>
                             <li><a href="${prefix}cargohauling/equipment.html" class="sub-sub">↳ ATLS 與 MaxLift</a></li>
                             <li><a href="${prefix}ship-combat.html">• ⚔️ 飛船戰鬥</a></li>
                             <li><a href="${prefix}ground-combat.html">• 🔫 地面 FPS</a></li>
