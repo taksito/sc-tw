@@ -101,12 +101,16 @@ class ComponentManager {
                     </li>
                     <li class="has-submenu">
                         <div class="submenu-header" onclick="ComponentManager.toggleSubmenu(this)">
-                            <a href="${prefix}advanced.html" onclick="event.stopPropagation()">⚙️ 進階說明</a>
+                            <a href="${prefix}advanced.html" onclick="event.stopPropagation()">⚙️ 進階技巧</a>
                             <span class="toggle-icon">▼</span>
                         </div>
                         <ul class="submenu">
                             <li><a href="${prefix}insurance.html">• 🛡️ 保險配置</a></li>
                             <li><a href="${prefix}ship-components.html">• ⚙️ 飛機組件</a></li>
+                            <li><a href="${prefix}components-weapons.html" class="sub-sub">↳ 武器與飛彈</a></li>
+                            <li><a href="${prefix}components-systems.html" class="sub-sub">↳ 電源、護盾、冷卻</a></li>
+                            <li><a href="${prefix}components-quantum.html" class="sub-sub">↳ QT 引擎與燃料</a></li>
+                            <li><a href="${prefix}wikelo.html">• 🦎 Wikelo 交易</a></li>
                         </ul>
                     </li>
                     <li class="has-submenu">
