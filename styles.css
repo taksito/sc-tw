@@ -845,3 +845,51 @@ img[data-full] {
 /* 長路徑或長代碼自動換行，避免手機版左右溢出 */
 .content-section code { word-break: break-all; }
 .content-section p, .content-section li { overflow-wrap: anywhere; }
+
+/* 推薦碼卡片 (Referral) */
+.referral-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 28px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(0, 210, 255, 0.08), rgba(58, 123, 213, 0.12));
+    border: 1px solid rgba(0, 210, 255, 0.35);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.08);
+}
+.referral-card .ref-info { flex: 1 1 260px; }
+.referral-card .ref-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+.referral-card .ref-code {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: 4px;
+    text-shadow: 0 0 12px rgba(0, 210, 255, 0.5);
+}
+.referral-card .ref-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+.referral-thanks {
+    margin-top: 16px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: rgba(251, 191, 36, 0.07);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+.referral-thanks strong { color: #fbbf24; }
+@media (max-width: 600px) {
+    .referral-card { padding: 20px; }
+    .referral-card .ref-code { font-size: 1.15rem; letter-spacing: 2px; white-space: nowrap; }
+}
