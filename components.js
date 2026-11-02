@@ -115,6 +115,7 @@ class ComponentManager {
                             <li><a href="${prefix}fps-vanduul-smugglers.html" class="sub-sub">↳ Vanduul 科技走私者</a></li>
                             <li><a href="${prefix}refueling.html">• ⛽ 加油任務</a></li>
                             <li><a href="${prefix}mining.html">• ⛏️ 挖礦教學</a></li>
+                            <li><a href="${prefix}mining-helper.html" class="sub-sub">↳ 挖礦小幫手</a></li>
                         </ul>
                     </li>
                     <li class="has-submenu">

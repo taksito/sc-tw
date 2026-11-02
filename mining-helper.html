@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>挖礦小幫手 - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen 挖礦小幫手：選擇星系、星球、區域，列出可挖礦物與出現機率；輸入掃描訊號，快速判斷是哪種礦、有幾顆石頭。資料來源 SCMDB 4.10.2。">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .mh-selects { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+        .mh-selects label { display: flex; flex-direction: column; gap: 6px; color: var(--text-muted); font-size: 0.9rem; }
+        .mh-selects select, .mh-sig input {
+            background: rgba(0,0,0,0.45); color: var(--text-main); border: 1px solid var(--glass-border);
+            border-radius: 10px; padding: 12px 14px; font-size: 1.05rem; font-family: inherit; width: 100%;
+        }
+        .mh-selects select:focus, .mh-sig input:focus { outline: none; border-color: var(--primary); }
+        .mh-note { margin-top: 12px; color: var(--text-muted); font-size: 0.92rem; }
+        .mh-sig { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 15px 0; }
+        .mh-sig input { max-width: 260px; font-size: 1.4rem; font-family: 'Orbitron', monospace; letter-spacing: 1px; }
+        .mh-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+        .mh-chips button { background: rgba(0,210,255,0.08); border: 1px solid var(--glass-border); color: var(--text-muted); border-radius: 20px; padding: 6px 12px; cursor: pointer; font-family: inherit; }
+        .mh-chips button:hover { color: var(--primary); border-color: var(--primary); }
+        .mh-match { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 14px 18px; border-radius: 12px; margin-bottom: 10px; border: 1px solid var(--glass-border); background: rgba(0,0,0,0.3); }
+        .mh-match.here { border-color: rgba(16,185,129,0.6); background: rgba(16,185,129,0.08); }
+        .mh-match.best { box-shadow: 0 0 0 2px var(--primary) inset; }
+        .mh-match .nm { font-size: 1.15rem; font-weight: 700; min-width: 160px; }
+        .mh-match .cnt { font-family: 'Orbitron', monospace; color: var(--primary); }
+        .mh-match .tag { font-size: 0.8rem; padding: 2px 10px; border-radius: 20px; border: 1px solid currentColor; }
+        .mh-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+        .mh-tabs button { background: rgba(0,0,0,0.35); color: var(--text-muted); border: 1px solid var(--glass-border); border-radius: 10px; padding: 10px 16px; cursor: pointer; font-family: inherit; font-size: 0.98rem; }
+        .mh-tabs button.on { color: #07101c; background: var(--primary); border-color: var(--primary); font-weight: 700; }
+        .mh-tabs button:disabled { opacity: 0.35; cursor: default; }
+        .mh-table-wrap { overflow-x: auto; }
+        .mh-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+        .mh-table th { text-align: left; color: var(--primary); font-size: 0.85rem; letter-spacing: 1px; padding: 10px 12px; border-bottom: 1px solid var(--glass-border); white-space: nowrap; }
+        .mh-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: middle; }
+        .mh-table tr.hl td { background: rgba(0,210,255,0.1); }
+        .mh-bar { display: flex; align-items: center; gap: 10px; min-width: 150px; }
+        .mh-bar span.b { flex: 1; height: 8px; border-radius: 4px; background: rgba(255,255,255,0.07); overflow: hidden; }
+        .mh-bar span.b i { display: block; height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--secondary), var(--primary)); }
+        .mh-bar b { font-family: 'Orbitron', monospace; font-size: 0.9rem; min-width: 52px; text-align: right; }
+        .mh-sigs { display: flex; flex-wrap: wrap; gap: 6px; }
+        .mh-sigs span { font-family: 'Orbitron', monospace; font-size: 0.82rem; padding: 3px 8px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); white-space: nowrap; }
+        .mh-sigs span em { font-style: normal; color: var(--text-muted); margin-right: 3px; }
+        .mh-sigs span.hit { background: var(--primary); color: #07101c; border-color: var(--primary); }
+        .mh-sigs span.hit em { color: #07101c; }
+        .r-legendary { color: #fbbf24; } .r-epic { color: #c084fc; } .r-rare { color: #60a5fa; } .r-uncommon { color: #34d399; } .r-common { color: #cbd5e1; }
+        .mh-zh { color: var(--text-muted); font-size: 0.85rem; margin-left: 6px; }
+        .mh-details summary { cursor: pointer; color: var(--primary); font-weight: 700; margin: 10px 0; }
+        .mh-empty { color: var(--text-muted); padding: 10px 0; }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero glass-panel">
+            <h1><span class="text-gradient">⛏️ 挖礦小幫手</span></h1>
+            <p style="margin-top: 15px;">選擇你的位置，看這裡挖得到什麼礦、機率多少；輸入掃描訊號，馬上知道是哪種礦。<br><span class="patch-badge live">資料版本 4.10.2 LIVE</span></p>
+        </section>
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📍 1. 選擇你的位置</h2>
+            <p>依序選擇<strong>星系 → 星球 → 區域</strong>，下方會列出這裡可以挖到的礦物、出現機率和訊號表。你的選擇會記在這台電腦的瀏覽器裡，下次打開會自動帶入。</p>
+            <div class="mh-selects">
+                <label>星系<select id="selSys"></select></label>
+                <label>星球／空間<select id="selBody"></select></label>
+                <label>區域<select id="selLoc"></select></label>
+            </div>
+            <div id="locNote" class="mh-note"></div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📡 2. 輸入掃描訊號</h2>
+            <p>在遊戲裡按 <strong>V</strong> 掃描後，把看到的訊號數字輸入下方。小幫手會算出可能是哪種礦、有幾顆石頭，並標出<strong>在你目前的位置會不會出現</strong>。</p>
+            <div class="mh-sig">
+                <input id="sigIn" type="number" inputmode="numeric" placeholder="例如 6340">
+                <div class="mh-chips" id="sigChips"></div>
+            </div>
+            <div id="sigOut"></div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient" id="resTitle" style="text-transform: none;">⛏️ 3. 礦物與出現機率</h2>
+            <div class="mh-tabs" id="tabs"></div>
+            <div id="resOut"></div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📊 訊號倍率總表</h2>
+            <p>訊號 = <strong>單顆基礎訊號 × 石頭數量</strong>。越稀有的礦，一個點最多出現的顆數越少（傳說 2 顆、史詩 3 顆、稀有 4 顆、罕見 5 顆、普通 6 顆）。</p>
+            <details class="mh-details">
+                <summary>展開完整訊號表</summary>
+                <div id="allSig"></div>
+            </details>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">💡 怎麼看</h2>
+            <ul style="list-style-type: disc;">
+                <li><strong>出現機率</strong>：在這個區域找到一個礦點時，它是這種礦的機率。同一類（飛船、ROC、手持、採集）加起來是 100%。</li>
+                <li><strong>訊號</strong>：同一種礦每多一顆石頭，訊號就多加一份基礎值。例如 Quantainium 一顆 3,170、兩顆 6,340。</li>
+                <li>Quantainium（3,170）、Stileron（3,185）、Savrilium（3,200）只差一點點，輸入時要看清楚數字。</li>
+                <li><strong>ROC</strong>（地面車輛）礦每顆 4,000，<strong>手持 FPS</strong> 礦每顆 3,000，<strong>打撈殘骸</strong>每塊 2,000。</li>
+                <li>挖到後的精煉與販售，請看 <a href="mining.html">挖礦教學</a>。</li>
+            </ul>
+        </section>
+
+        <section class="credits-section">
+            <h4>📚 資料來源</h4>
+            <p>礦物分布、出現機率與訊號數值取自 <a href="https://scmdb.net/?page=mine" target="_blank">SCMDB（scmdb.net）</a> 的 4.10.2 LIVE 遊戲資料。改版後數值可能變動，以遊戲內為準。Terminus Ring 使用與 Yela 小行星帶相同的礦物組成（SCMDB 標註）。</p>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="mining.html" class="btn" style="background: transparent; border: 1px solid var(--primary);">返回挖礦教學</a>
+            <a href="index.html" class="btn">返回首頁</a>
+        </div>
+    </main>
+
+    <script src="components.js"></script>
+    <script>
+(function(){
+const DATA = [{"s":"Nyx","n":"Breaker Stations Interior","t":"event","fps":[["Aphorite",75],["Sadaryx",25]]},{"s":"Nyx","n":"Breaker Stations Large Geode","t":"event","ship":[["Savrilium (Ore)",100]]},{"s":"Nyx","n":"Glaciem Ring","t":"belt","ship":[["Ice (Raw)",20.8],["Iron (Ore)",20.8],["Lindinium (Ore)",10],["Bexalite (Raw)",18],["Savrilium (Ore)",2],["Torite (Ore)",28.5]]},{"s":"Nyx","n":"Keeger Belt","t":"belt","ship":[["Ice (Raw)",20.8],["Aluminium (Ore)",20.8],["Lindinium (Ore)",10],["Bexalite (Raw)",18],["Savrilium (Ore)",2],["Torite (Ore)",28.5]]},{"s":"Pyro","n":"Akiro Cluster","t":"belt","ship":[["Ice (Raw)",14.9],["Silicon (Raw)",14.9],["Copper (Ore)",14.9],["Iron (Ore)",14.8],["Riccite (Ore)",10],["Stileron (Ore)",2],["Torite (Ore)",28.5]]},{"s":"Pyro","n":"Pyro Belt (Cool 1)","t":"belt","ship":[["Ice (Raw)",26.8],["Silicon (Raw)",26.7],["Titanium (Ore)",28.5],["Borase (Ore)",18]]},{"s":"Pyro","n":"Pyro Belt (Cool 2)","t":"belt","ship":[["Ice (Raw)",26.8],["Silicon (Raw)",26.7],["Aslarite (Raw)",28.5],["Taranite (Raw)",18]]},{"s":"Pyro","n":"Pyro Belt (Warm 1)","t":"belt","ship":[["Iron (Ore)",26.8],["Copper (Ore)",26.7],["Agricium (Ore)",28.5],["Bexalite (Raw)",18]]},{"s":"Pyro","n":"Pyro Belt (Warm 2)","t":"belt","ship":[["Iron (Ore)",26.8],["Copper (Ore)",26.7],["Tungsten (Ore)",28.5],["Gold (Ore)",18]]},{"s":"Pyro","n":"Pyro Deep Space Asteroids","t":"belt","ship":[["Aluminium (Ore)",14.9],["Corundum (Raw)",14.9],["Quartz (Raw)",14.9],["Tin (Ore)",14.8],["Riccite (Ore)",10],["Stileron (Ore)",2],["Torite (Ore)",28.5]]},{"s":"Pyro","n":"Pyro I","t":"planet","harv":[["Plant Decari",46.2],["Plant Fotia",30.8],["Plant Wuotan",23.1]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]],"roc":[["Beradom",100]],"ship":[["Iron (Ore)",32.7],["Copper (Ore)",32.6],["Tin (Ore)",32.6],["Stileron (Ore)",2]]},{"s":"Pyro","n":"Pyro II (Monox)","t":"planet","harv":[["Plant Pingala",100]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]],"roc":[["Glacosite",100]],"ship":[["Hephaestanite (Raw)",32.7],["Iron (Ore)",32.6],["Tin (Ore)",32.6],["Stileron (Ore)",2]]},{"s":"Pyro","n":"Pyro III (Bloom)","t":"planet","fps":[["Aphorite",61.1],["Dolivine",36.9],["Janalite",2]],"roc":[["Beradom",100]],"ship":[["Riccite (Ore)",10],["Borase (Ore)",18],["Quartz (Raw)",35],["Stileron (Ore)",2],["Iron (Ore)",35]]},{"s":"Pyro","n":"Pyro IV","t":"planet","harv":[["Plant Amiant",50],["Plant Flareweed",50]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]],"roc":[["Feynmaline",100]],"ship":[["Laranite (Raw)",28.5],["Borase (Ore)",18],["Copper (Ore)",25.7],["Stileron (Ore)",2],["Iron (Ore)",25.7]]},{"s":"Pyro","n":"Pyro V-a (Ignis)","t":"moon","fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]],"roc":[["Feynmaline",100]],"ship":[["Tin (Ore)",36],["Silicon (Raw)",36],["Riccite (Ore)",10],["Gold (Ore)",18]]},{"s":"Pyro","n":"Pyro V-b (Vatra)","t":"moon","fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]],"roc":[["Beradom",50],["Glacosite",50]],"ship":[["Iron (Ore)",36],["Silicon (Raw)",36],["Riccite (Ore)",10],["Gold (Ore)",18]]},{"s":"Pyro","n":"Pyro V-c (Adir)","t":"moon","fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]],"roc":[["Glacosite",100]],"ship":[["Iron (Ore)",43.5],["Tungsten (Ore)",28.5],["Riccite (Ore)",10],["Borase (Ore)",18]]},{"s":"Pyro","n":"Pyro V-d (Fairo)","t":"moon","fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]],"roc":[["Beradom",100]],"ship":[["Bexalite (Raw)",9],["Tungsten (Ore)",28.5],["Silicon (Raw)",26.8],["Gold (Ore)",9],["Iron (Ore)",26.7]]},{"s":"Pyro","n":"Pyro V-e (Fuego)","t":"moon","fps":[["Aphorite",61.1],["Dolivine",36.9],["Janalite",2]],"roc":[["Feynmaline",100]],"ship":[["Borase (Ore)",9],["Bexalite (Raw)",9],["Aslarite (Raw)",28.5],["Hephaestanite (Raw)",26.7],["Iron (Ore)",26.8]]},{"s":"Pyro","n":"Pyro V-f (Vuur)","t":"moon","fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]],"roc":[["Glacosite",100]],"ship":[["Agricium (Ore)",14.2],["Bexalite (Raw)",18],["Aslarite (Raw)",14.2],["Hephaestanite (Raw)",26.8],["Iron (Ore)",26.8]]},{"s":"Pyro","n":"Pyro VI (Terminus)","t":"planet","fps":[["Aphorite",61.1],["Dolivine",36.9],["Janalite",2]],"roc":[["Feynmaline",100]],"ship":[["Ice (Raw)",20.8],["Agricium (Ore)",14.2],["Copper (Ore)",20.8],["Titanium (Ore)",14.2],["Riccite (Ore)",10],["Stileron (Ore)",2],["Gold (Ore)",18]]},{"s":"Stanton","n":"Aaron Halo","t":"belt","ship":[["Ice (Raw)",10.4],["Silicon (Raw)",10.3],["Aluminium (Ore)",10.3],["Quantainium (Raw)",2],["Iron (Ore)",10.3],["Copper (Ore)",10.3],["Aslarite (Raw)",14.2],["Titanium (Ore)",14.2],["Beryl (Raw)",18]]},{"s":"Stanton","n":"Aberdeen","t":"moon","ship":[["Aluminium (Ore)",29.7],["Titanium (Ore)",28.5],["Ouratite (Raw)",10],["Quantainium (Raw)",2],["Corundum (Raw)",29.8]],"roc":[["Beradom",4],["Glacosite",32],["Feynmaline",64]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]]},{"s":"Stanton","n":"Arial","t":"moon","harv":[["Plant Prota",100]],"ship":[["Aluminium (Ore)",22],["Tin (Ore)",22],["Hephaestanite (Raw)",22],["Corundum (Raw)",22],["Ouratite (Raw)",10],["Quantainium (Raw)",2]],"roc":[["Beradom",16],["Glacosite",32],["Feynmaline",52]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]]},{"s":"Stanton","n":"Asteroid Cluster (Low Yield)","t":"cluster","ship":[["Ice (Raw)",19.6],["Silicon (Raw)",19.6],["Aluminium (Ore)",19.6],["Iron (Ore)",19.6],["Copper (Ore)",19.6],["Quantainium (Raw)",2]]},{"s":"Stanton","n":"Asteroid Cluster (Medium Yield)","t":"cluster","ship":[["Ice (Raw)",19.6],["Silicon (Raw)",19.6],["Aluminium (Ore)",19.6],["Iron (Ore)",19.6],["Copper (Ore)",19.6],["Quantainium (Raw)",2]]},{"s":"Stanton","n":"Calliope","t":"moon","ship":[["Iron (Ore)",32.7],["Ice (Raw)",32.6],["Hephaestanite (Raw)",32.6],["Quantainium (Raw)",2]],"roc":[["Beradom",12],["Glacosite",84],["Feynmaline",4]],"fps":[["Aphorite",61.1],["Dolivine",36.9],["Janalite",2]]},{"s":"Stanton","n":"Cellin","t":"moon","ship":[["Quartz (Raw)",25.7],["Agricium (Ore)",28.5],["Taranite (Raw)",18],["Quantainium (Raw)",2],["Silicon (Raw)",25.8]],"roc":[["Beradom",56],["Glacosite",32],["Feynmaline",12]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]]},{"s":"Stanton","n":"Clio","t":"moon","ship":[["Ice (Raw)",40],["Copper (Ore)",40],["Taranite (Raw)",18],["Quantainium (Raw)",2]],"roc":[["Beradom",20],["Glacosite",68],["Feynmaline",12]],"fps":[["Aphorite",61.1],["Dolivine",36.9],["Janalite",2]]},{"s":"Stanton","n":"Daymar","t":"moon","harv":[["Plant Revenant",100]],"ship":[["Quartz (Raw)",34.7],["Agricium (Ore)",28.5],["Silicon (Raw)",34.8],["Quantainium (Raw)",2]],"roc":[["Beradom",48],["Glacosite",12],["Feynmaline",40]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]]},{"s":"Stanton","n":"Euterpe","t":"moon","ship":[["Ice (Raw)",40],["Copper (Ore)",40],["Taranite (Raw)",18],["Quantainium (Raw)",2]],"roc":[["Beradom",12],["Glacosite",88]],"fps":[["Aphorite",61.1],["Dolivine",36.9],["Janalite",2]]},{"s":"Stanton","n":"Hathor Caves","t":"cave","fps":[["Aphorite",30.2],["Dolivine",18.3],["Hadanite",3.2],["Janalite",1.1],["Jaclium",19.5],["Saldynium",15.8],["Carinite",11.6],["Carinite (Pure)",0.5]],"roc":[["Carinite",100]]},{"s":"Stanton","n":"Hurston","t":"planet","harv":[["Plant Prota",24.4],["Plant Pitambu",19.5],["Plant GoldenMedmon",17.1],["Plant Revenant",14.6],["Plant Degnous",12.2],["Scrap CompBoard",12.2]],"roc":[["Beradom",64],["Glacosite",32],["Feynmaline",4]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]],"ship":[["Aluminium (Ore)",44],["Tin (Ore)",44],["Ouratite (Raw)",10],["Quantainium (Raw)",2]]},{"s":"Stanton","n":"Ita","t":"moon","ship":[["Aluminium (Ore)",34.7],["Tin (Ore)",34.8],["Aslarite (Raw)",28.5],["Quantainium (Raw)",2]],"roc":[["Beradom",3.8],["Glacosite",69.2],["Feynmaline",26.9]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]]},{"s":"Stanton","n":"Lagrange A","t":"lagrange","ship":[["Aluminium (Ore)",17.9],["Corundum (Raw)",17.8],["Hephaestanite (Raw)",17.8],["Laranite (Raw)",28.5],["Borase (Ore)",18]]},{"s":"Stanton","n":"Lagrange B","t":"lagrange","ship":[["Iron (Ore)",17.9],["Ice (Raw)",17.8],["Copper (Ore)",17.8],["Aslarite (Raw)",28.5],["Gold (Ore)",18]]},{"s":"Stanton","n":"Lagrange C","t":"lagrange","ship":[["Aluminium (Ore)",23.9],["Corundum (Raw)",23.9],["Hephaestanite (Raw)",23.9],["Torite (Ore)",28.4]]},{"s":"Stanton","n":"Lagrange D","t":"lagrange","ship":[["Iron (Ore)",17.9],["Ice (Raw)",17.8],["Copper (Ore)",17.8],["Agricium (Ore)",28.5],["Beryl (Raw)",18]]},{"s":"Stanton","n":"Lagrange E","t":"lagrange","ship":[["Iron (Ore)",17.9],["Ice (Raw)",17.8],["Copper (Ore)",17.8],["Titanium (Ore)",28.5],["Bexalite (Raw)",18]]},{"s":"Stanton","n":"Lagrange F","t":"lagrange","ship":[["Corundum (Raw)",17.9],["Aluminium (Ore)",17.8],["Hephaestanite (Raw)",17.8],["Tungsten (Ore)",28.5],["Taranite (Raw)",18]]},{"s":"Stanton","n":"Lyria","t":"moon","ship":[["Iron (Ore)",34.8],["Copper (Ore)",34.8],["Laranite (Raw)",28.5],["Quantainium (Raw)",2]],"roc":[["Beradom",48],["Glacosite",48],["Feynmaline",4]],"fps":[["Aphorite",61.1],["Dolivine",36.9],["Janalite",2]]},{"s":"Stanton","n":"Magda","t":"moon","ship":[["Aluminium (Ore)",34.8],["Titanium (Ore)",14.2],["Aslarite (Raw)",14.2],["Quantainium (Raw)",2],["Iron (Ore)",34.8]],"roc":[["Beradom",3.7],["Glacosite",59.3],["Feynmaline",37]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]]},{"s":"Stanton","n":"Wala","t":"moon","ship":[["Iron (Ore)",25.7],["Beryl (Raw)",18],["Laranite (Raw)",28.5],["Quantainium (Raw)",2],["Copper (Ore)",25.8]],"roc":[["Beradom",56],["Glacosite",40],["Feynmaline",4]],"fps":[["Aphorite",61.1],["Dolivine",36.9],["Janalite",2]]},{"s":"Stanton","n":"Yela","t":"moon","ship":[["Quartz (Raw)",25.7],["Agricium (Ore)",28.5],["Taranite (Raw)",18],["Silicon (Raw)",25.8],["Quantainium (Raw)",2]],"roc":[["Beradom",24],["Glacosite",68],["Feynmaline",8]],"fps":[["Aphorite",58.6],["Dolivine",35.4],["Hadanite",6]]},{"s":"Stanton","n":"Yela Asteroid Belt","t":"belt","ship":[["Iron (Ore)",20.5],["Ice (Raw)",20.5],["Copper (Ore)",20.5],["Titanium (Ore)",28.5],["Ouratite (Raw)",10]]},{"s":"Stanton","n":"microTech","t":"planet","harv":[["Plant GoldenMedmon",24.7],["Plant HeartoftheWoods",24.7],["Plant Pitambu",24.7],["Plant SunsetBerry",24.7],["Plant Degnous",1.2]],"ship":[["Iron (Ore)",32.6],["Ice (Raw)",32.7],["Hephaestanite (Raw)",32.7],["Quantainium (Raw)",2]],"roc":[["Beradom",28],["Glacosite",68],["Feynmaline",4]],"fps":[["Aphorite",61.1],["Dolivine",36.9],["Janalite",2]]}];
+// [基礎訊號, 稀有度, 中文]
+const ORE = {
+ 'Quantainium':[3170,'legendary','量子礦'],'Stileron':[3185,'legendary',''],'Savrilium':[3200,'legendary',''],
+ 'Ouratite':[3370,'epic',''],'Riccite':[3385,'epic',''],'Lindinium':[3400,'epic',''],
+ 'Beryl':[3540,'rare','綠柱石'],'Taranite':[3555,'rare',''],'Borase':[3570,'rare',''],'Gold':[3585,'rare','金'],'Bexalite':[3600,'rare',''],
+ 'Laranite':[3825,'uncommon',''],'Aslarite':[3840,'uncommon',''],'Titanium':[3855,'uncommon','鈦'],'Tungsten':[3870,'uncommon','鎢'],'Agricium':[3885,'uncommon',''],'Torite':[3900,'uncommon',''],
+ 'Hephaestanite':[4180,'common',''],'Tin':[4195,'common','錫'],'Quartz':[4210,'common','石英'],'Corundum':[4225,'common','剛玉'],'Copper':[4240,'common','銅'],'Silicon':[4255,'common','矽'],'Iron':[4270,'common','鐵'],'Aluminium':[4285,'common','鋁'],'Ice':[4300,'common','冰']
+};
+const RAR = {legendary:['傳說',2],epic:['史詩',3],rare:['稀有',4],uncommon:['罕見',5],common:['普通',6]};
+const KIND = {ship:['🚀 飛船採礦',null],roc:['🚜 ROC 地面車',4000],fps:['⛏️ 手持 FPS',3000],harv:['🌿 採集',null]};
+const clean = n => n.replace(/ \((Ore|Raw)\)$/,'').replace(/^Plant /,'').replace('GoldenMedmon','Golden Medmon').replace('HeartoftheWoods','Heart of the Woods').replace('SunsetBerry','Sunset Berry').replace('Scrap CompBoard','Comp Board（電路板）');
+const byName = {}; DATA.forEach(l => byName[l.n] = l);
+const L = (label, data, note) => ({label, data, note});
+const GEO = {
+ 'Stanton': {
+  'Hurston': [L('Hurston（行星）','Hurston'),L('Arial','Arial'),L('Aberdeen','Aberdeen'),L('Magda','Magda'),L('Ita','Ita'),
+   L('HUR-L1','Lagrange A'),L('HUR-L2','Lagrange F'),L('HUR-L3','Lagrange E'),L('HUR-L4','Lagrange A'),L('HUR-L5','Lagrange C')],
+  'Crusader': [L('Cellin','Cellin'),L('Daymar','Daymar'),L('Yela','Yela'),L('Yela 小行星帶','Yela Asteroid Belt'),
+   L('CRU-L1','Lagrange E'),L('CRU-L2','Lagrange E'),L('CRU-L3','Lagrange C'),L('CRU-L4','Lagrange B'),L('CRU-L5','Lagrange D')],
+  'ArcCorp': [L('Lyria','Lyria'),L('Wala','Wala'),
+   L('ARC-L1','Lagrange F'),L('ARC-L2','Lagrange F'),L('ARC-L3','Lagrange D'),L('ARC-L4','Lagrange F'),L('ARC-L5','Lagrange B')],
+  'microTech': [L('microTech（行星）','microTech'),L('Calliope','Calliope'),L('Clio','Clio'),L('Euterpe','Euterpe'),
+   L('MIC-L1','Lagrange C'),L('MIC-L2','Lagrange C'),L('MIC-L3','Lagrange B'),L('MIC-L4','Lagrange D'),L('MIC-L5','Lagrange C')],
+  '星系空間／其他': [L('Aaron Halo 小行星帶','Aaron Halo','所有採礦基地（Mining Base）位置'),L('小行星群（低產量）','Asteroid Cluster (Low Yield)'),L('小行星群（中產量）','Asteroid Cluster (Medium Yield)'),L('Hathor 洞穴','Hathor Caves')]
+ },
+ 'Pyro': {
+  'Pyro I': [L('Pyro I','Pyro I')],
+  'Monox (Pyro II)': [L('Monox','Pyro II (Monox)')],
+  'Bloom (Pyro III)': [L('Bloom','Pyro III (Bloom)')],
+  'Pyro IV': [L('Pyro IV','Pyro IV')],
+  'Pyro V 的衛星': [L('Ignis (V-a)','Pyro V-a (Ignis)'),L('Vatra (V-b)','Pyro V-b (Vatra)'),L('Adir (V-c)','Pyro V-c (Adir)'),L('Fairo (V-d)','Pyro V-d (Fairo)'),L('Fuego (V-e)','Pyro V-e (Fuego)'),L('Vuur (V-f)','Pyro V-f (Vuur)')],
+  'Terminus (Pyro VI)': [L('Terminus（行星）','Pyro VI (Terminus)'),L('Terminus Ring','Yela Asteroid Belt','SCMDB 標註：與 Stanton 的 Yela 小行星帶礦物組成相同')],
+  '星系空間': [L('Akiro Cluster','Akiro Cluster'),L('Pyro 小行星帶（Cool 1）','Pyro Belt (Cool 1)'),L('Pyro 小行星帶（Cool 2）','Pyro Belt (Cool 2)'),L('Pyro 小行星帶（Warm 1）','Pyro Belt (Warm 1)'),L('Pyro 小行星帶（Warm 2）','Pyro Belt (Warm 2)'),L('深空小行星','Pyro Deep Space Asteroids','所有 Cluster、RAB、RMB 位置')]
+ },
+ 'Nyx': {
+  '小行星帶': [L('Glaciem Ring','Glaciem Ring'),L('Keeger Belt','Keeger Belt')],
+  '碎石站 (Rock Breaker)': [L('碎石站：大型晶洞','Breaker Stations Large Geode','碎石機打開的大型晶洞，只有 Savrilium'),L('碎石站：站內','Breaker Stations Interior','SCMDB 標註：此為估計值，非遊戲資料')]
+ }
+};
+const $ = id => document.getElementById(id);
+const store = { get(){ try { return JSON.parse(localStorage.getItem('sc-mining-helper')||'{}'); } catch(e){ return {}; } }, set(v){ try { localStorage.setItem('sc-mining-helper', JSON.stringify(v)); } catch(e){} } };
+let state = Object.assign({sys:'Stanton', body:'Hurston', loc:0, tab:'ship'}, store.get());
+const fmt = n => n.toLocaleString('en-US');
+const fill = (sel, opts, val) => { sel.innerHTML = opts.map((o,i)=>`<option value="${typeof o==='string'?o:i}">${typeof o==='string'?o:o.label}</option>`).join(''); sel.value = val; };
+
+function sync(){
+  if(!GEO[state.sys]) state.sys='Stanton';
+  fill($('selSys'), Object.keys(GEO), state.sys);
+  const bodies = Object.keys(GEO[state.sys]); if(!bodies.includes(state.body)) state.body = bodies[0];
+  fill($('selBody'), bodies, state.body);
+  const locs = GEO[state.sys][state.body]; if(!(state.loc < locs.length)) state.loc = 0;
+  fill($('selLoc'), locs, String(state.loc));
+  store.set(state); render();
+}
+const curLoc = () => { const o = GEO[state.sys][state.body][state.loc]; return Object.assign({}, o, {d: byName[o.data]}); };
+
+function sigList(name, kind){
+  if(kind==='ship'){ const o=ORE[name]; if(!o) return []; return Array.from({length:RAR[o[1]][1]},(_,i)=>[i+1,o[0]*(i+1)]); }
+  if(KIND[kind][1]) return Array.from({length:6},(_,i)=>[i+1,KIND[kind][1]*(i+1)]);
+  return [];
+}
+function sigCell(list, hit){ return list.length ? '<div class="mh-sigs">'+list.map(([n,v])=>`<span class="${hit&&hit===v?'hit':''}"><em>×${n}</em>${fmt(v)}</span>`).join('')+'</div>' : '<span class="mh-zh">—</span>'; }
+
+function render(){
+  const L0 = curLoc(), d = L0.d;
+  $('locNote').innerHTML = `📌 ${state.sys} ／ ${state.body} ／ <strong>${L0.label}</strong>` + (L0.data!==L0.label && /Lagrange/.test(L0.data) ? `（礦物組成：${L0.data}）` : '') + (L0.note ? `<br>ℹ️ ${L0.note}` : '');
+  const kinds = Object.keys(KIND);
+  if(!d[state.tab] || !d[state.tab].length) state.tab = kinds.find(k=>d[k]&&d[k].length) || 'ship';
+  $('tabs').innerHTML = kinds.map(k=>`<button data-k="${k}" class="${state.tab===k?'on':''}" ${d[k]&&d[k].length?'':'disabled'}>${KIND[k][0]}</button>`).join('');
+  $('tabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{state.tab=b.dataset.k; store.set(state); render();});
+  const sig = +$('sigIn').value || 0;
+  const rows = (d[state.tab]||[]).map(([n,p])=>[clean(n),p]).sort((a,b)=>b[1]-a[1]);
+  const isOre = state.tab==='ship';
+  $('resTitle').textContent = `⛏️ 3. ${L0.label} 的礦物與出現機率`;
+  $('resOut').innerHTML = rows.length ? `<div class="mh-table-wrap"><table class="mh-table"><thead><tr><th>礦物</th>${isOre?'<th>稀有度</th>':''}<th>出現機率</th>${state.tab==='harv'?'':'<th>訊號（× 石頭數）</th>'}</tr></thead><tbody>` + rows.map(([n,p])=>{
+    const o = ORE[n]; const list = sigList(n, state.tab); const hit = sig && list.find(x=>x[1]===sig) ? sig : 0;
+    return `<tr class="${hit?'hl':''}"><td><strong class="${o?'r-'+o[1]:''}">${n}</strong>${o&&o[2]?`<span class="mh-zh">${o[2]}</span>`:''}</td>${isOre?`<td class="${o?'r-'+o[1]:''}">${o?RAR[o[1]][0]:''}</td>`:''}<td><div class="mh-bar"><span class="b"><i style="width:${Math.min(100,p)}%"></i></span><b>${p}%</b></div></td>${state.tab==='harv'?'':`<td>${sigCell(list, hit)}</td>`}</tr>`;
+  }).join('') + '</tbody></table></div>' : '<p class="mh-empty">這個區域沒有這類資源。</p>';
+  renderSig();
+}
+
+function renderSig(){
+  const v = +$('sigIn').value || 0, out = $('sigOut');
+  if(!v){ out.innerHTML = '<p class="mh-empty">輸入訊號後，這裡會顯示可能的礦物。</p>'; renderAll(0); return; }
+  const d = curLoc().d; const here = {ship:new Set((d.ship||[]).map(x=>clean(x[0]))), roc:!!(d.roc&&d.roc.length), fps:!!(d.fps&&d.fps.length)};
+  const cands = [];
+  for(const [n,o] of Object.entries(ORE)) for(const [k,s] of sigList(n,'ship')) cands.push({name:n, zh:o[2], rar:o[1], k, s, kind:'ship', here: here.ship.has(n)});
+  for(const kind of ['roc','fps']) for(const [k,s] of sigList('',kind)) cands.push({name: kind==='roc'?'ROC 地面車礦':'手持 FPS 礦', k, s, kind, here: here[kind]});
+  for(let k=1;k<=15;k++) cands.push({name:'打撈殘骸', k, s:2000*k, kind:'salv', here:false});
+  cands.forEach(c=>c.diff=Math.abs(c.s-v));
+  const exact = cands.filter(c=>c.diff===0);
+  let list = exact.length ? exact : cands.filter(c=>c.diff/v<=0.015).sort((a,b)=>a.diff-b.diff).slice(0,5);
+  list.sort((a,b)=>(b.here-a.here)||(a.diff-b.diff));
+  if(!list.length){ out.innerHTML = `<p class="mh-empty">找不到接近 ${fmt(v)} 的訊號。可能是多種礦物重疊在一起，或數字輸入錯誤。</p>`; renderAll(0); return; }
+  out.innerHTML = (exact.length ? '<p>✅ 完全符合：</p>' : '<p>🔎 沒有完全符合，最接近的是：</p>') + list.map((c,i)=>`<div class="mh-match ${c.here?'here':''} ${i===0?'best':''}"><span class="nm ${c.rar?'r-'+c.rar:''}">${c.name}${c.zh?`<span class="mh-zh">${c.zh}</span>`:''}</span><span class="cnt">${c.k} 顆 × ${fmt(c.s/c.k)} = ${fmt(c.s)}</span>${c.rar?`<span class="tag r-${c.rar}">${RAR[c.rar][0]}</span>`:''}${c.diff?`<span class="mh-zh">差 ${fmt(c.diff)}</span>`:''}<span class="tag" style="color:${c.here?'var(--success)':'var(--text-muted)'}">${c.here?'✔ 這個區域會出現':(c.kind==='salv'?'打撈':'✖ 這個區域沒有')}</span></div>`).join('');
+  renderAll(exact.length ? v : 0);
+}
+
+function renderAll(hitV){
+  $('allSig').innerHTML = `<div class="mh-table-wrap"><table class="mh-table"><thead><tr><th>礦物</th><th>稀有度</th><th>訊號（× 石頭數）</th></tr></thead><tbody>` +
+   Object.entries(ORE).map(([n,o])=>`<tr><td><strong class="r-${o[1]}">${n}</strong>${o[2]?`<span class="mh-zh">${o[2]}</span>`:''}</td><td class="r-${o[1]}">${RAR[o[1]][0]}</td><td>${sigCell(sigList(n,'ship'),hitV)}</td></tr>`).join('') +
+   `<tr><td><strong>ROC 地面車礦</strong></td><td>—</td><td>${sigCell(sigList('','roc'),hitV)}</td></tr><tr><td><strong>手持 FPS 礦</strong></td><td>—</td><td>${sigCell(sigList('','fps'),hitV)}</td></tr></tbody></table></div>`;
+}
+
+$('selSys').onchange = e => { state.sys = e.target.value; state.body = Object.keys(GEO[state.sys])[0]; state.loc = 0; sync(); };
+$('selBody').onchange = e => { state.body = e.target.value; state.loc = 0; sync(); };
+$('selLoc').onchange = e => { state.loc = +e.target.value; store.set(state); render(); };
+$('sigIn').oninput = () => render();
+$('sigChips').innerHTML = [3170,6340,7200,12810,8000,9000].map(v=>`<button type="button">${fmt(v)}</button>`).join('');
+$('sigChips').querySelectorAll('button').forEach(b=>b.onclick=()=>{ $('sigIn').value = b.textContent.replace(/,/g,''); render(); });
+sync();
+})();
+
+    </script>
+</body>
+</html>
