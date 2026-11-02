@@ -34,18 +34,49 @@
 
         <section class="content-section glass-panel">
             <h2 class="text-gradient">🌍 各星系介紹</h2>
-            <ul class="topic-list">
-                <li><a href="stanton-intro.html"><h3 class="text-gradient">Stanton（斯坦頓）星系</h3><p>由大型企業控制的繁華商業星系，也是目前遊戲的主要活動區域。</p></a></li>
-                <li><a href="pyro-intro.html"><h3 class="text-gradient">Pyro（派羅）星系</h3><p>無法無天的荒涼星系，充滿致命的太陽閃焰與亡命之徒。附爭奪區攻略。</p></a></li>
-                <li><a href="nyx-intro.html"><h3 class="text-gradient">Nyx（尼克斯）星系</h3><p>隱藏在星雲深處的自由星系，People's Alliance 與 Vanduul 前線。</p></a></li>
-            </ul>
+            <div class="gear-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+                <a class="gear-card" href="stanton-intro.html" style="color: var(--text-main); text-shadow:none;">
+                    <img src="https://media.starcitizen.tools/thumb/d/d4/Crusader-4.3.jpg/800px-Crusader-4.3.jpg.webp" alt="Stanton（斯坦頓）" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Stanton（斯坦頓）</h4>
+                        <span class="gear-tag">🟢 新手起點</span>
+                        <p>由大型企業控制的繁華商業星系，也是目前遊戲的主要活動區域。</p>
+                    </div>
+                </a>
+                <a class="gear-card" href="pyro-intro.html" style="color: var(--text-main); text-shadow:none;">
+                    <img src="https://media.starcitizen.tools/thumb/2/2f/Ignis_and_Pyro_V.png/800px-Ignis_and_Pyro_V.png.webp" alt="Pyro（派羅）" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Pyro（派羅）</h4>
+                        <span class="gear-tag">🔴 高風險</span>
+                        <p>無法無天的荒涼星系，充滿致命的太陽閃焰與亡命之徒。附爭奪區攻略。</p>
+                    </div>
+                </a>
+                <a class="gear-card" href="nyx-intro.html" style="color: var(--text-main); text-shadow:none;">
+                    <img src="https://media.starcitizen.tools/thumb/a/ac/Vanduul_Blades_in_the_Glaciem_ring.webp/800px-Vanduul_Blades_in_the_Glaciem_ring.webp" alt="Nyx（尼克斯）" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Nyx（尼克斯）</h4>
+                        <span class="gear-tag">🟡 Vanduul 前線</span>
+                        <p>隱藏在星雲深處的自由星系，People's Alliance 與 Vanduul 前線。</p>
+                    </div>
+                </a>
+            </div>
 
         </section>
 
         <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
             <a href="index.html" class="btn">返回首頁</a>
         </div>
-    </main>
+    
+        <section class="credits-section">
+            <h4>🗺️ 地圖與圖片來源</h4>
+            <ol>
+                <li>Crusader：<a href="https://starcitizen.tools/File:Crusader-4.3.jpg" target="_blank">Crusader-4.3.jpg</a></li>
+                <li>Pyro V 與 Ignis：<a href="https://starcitizen.tools/File:Ignis_and_Pyro_V.png" target="_blank">Ignis and Pyro V.png</a></li>
+                <li>Vanduul Blade 穿越 Glaciem：<a href="https://starcitizen.tools/File:Vanduul_Blades_in_the_Glaciem_ring.webp" target="_blank">Vanduul Blades in the Glaciem ring.webp</a></li>
+            </ol>
+            <p>以上圖片取自 <a href="https://starcitizen.tools/" target="_blank">Star Citizen Wiki (starcitizen.tools)</a>，版權歸原作者所有；遊戲畫面與相關素材版權歸 Cloud Imperium Games 所有，本站僅作非商業教學引用。</p>
+        </section>
+</main>
 
     <script src="components.js"></script>
 </body>
