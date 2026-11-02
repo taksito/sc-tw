@@ -3,22 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pyro 星系介紹 - Star Citizen</title>
+    <title>Pyro 星系介紹 - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen Pyro 星系介紹：六顆行星、Ruin Station 等太空站與勢力、星系地圖，以及爭奪區、貨運與 Wikelo 相關攻略。">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
         <section class="hero glass-panel">
             <h1><span class="text-gradient">Pyro 星系</span></h1>
-            <p>無法無天的危險邊境。</p>
+            <p style="margin-top: 15px;">無法無天的荒涼星系，不穩定的恆星與亡命之徒，是冒險者的天堂與地獄。</p>
         </section>
-        <section class="content-section glass-panel" style="margin-top: 30px;">
-            <p>Pyro 是一個瀕臨死亡的恆星系統，被頻繁的太陽閃焰所肆虐。這裡沒有 UEE 的執法力量，是海盜、拾荒者與亡命之徒的溫床。</p>
-            <div style="margin-top: 30px; text-align: center;">
-                <a href="world-intro.html" class="btn">返回世界介紹</a>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🔥 Pyro 是什麼樣的星系？</h2>
+            <p>Pyro 是一個<strong>沒有政府管轄的無法紀星系</strong>。過去由 Pyrotechnic Amalgamated 公司開採，公司在 2563 年倒閉後，海盜幫派、拓荒者和獨立團體紛紛進駐。這裡沒有中央權力，幫派勢力互相爭奪地盤。</p>
+            <div class="patch-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+                <div class="patch-card" style="text-align:center;"><div style="font-size:1.8rem; font-weight:900; color: var(--primary); font-family: Orbitron, sans-serif;">6</div><div style="color: var(--text-muted); font-size: 0.9rem;">顆行星</div></div>
+                <div class="patch-card" style="text-align:center;"><div style="font-size:1.8rem; font-weight:900; color: var(--primary); font-family: Orbitron, sans-serif;">10+</div><div style="color: var(--text-muted); font-size: 0.9rem;">座太空站</div></div>
+                <div class="patch-card" style="text-align:center;"><div style="font-size:1.8rem; font-weight:900; color: var(--primary); font-family: Orbitron, sans-serif;">0</div><div style="color: var(--text-muted); font-size: 0.9rem;">政府管轄</div></div>
+                <div class="patch-card" style="text-align:center;"><div style="font-size:1.8rem; font-weight:900; color: var(--primary); font-family: Orbitron, sans-serif;">⚠️</div><div style="color: var(--text-muted); font-size: 0.9rem;">不穩定恆星</div></div>
             </div>
+            <div style="margin: 20px 0; background: rgba(245,158,11,0.08); border-left: 3px solid var(--warning); padding: 15px 20px; border-radius: 0 8px 8px 0;">⚠️ <strong>出發前注意：</strong>Pyro 的恆星<strong>不穩定、會爆發閃焰</strong>，就算有護盾，飛行時船也會受到殘餘傷害，輻射嚴重時甚至會致命。滿載貨物時更要小心海盜。</div>
+
         </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🗺️ Pyro 星系地圖</h2>
+            <figure class="media-figure" style="max-width:720px; margin-left:auto; margin-right:auto;">
+                <img src="https://media.starcitizen.tools/thumb/5/58/Pyro_2D.png/1200px-Pyro_2D.png.webp" data-full="https://media.starcitizen.tools/5/58/Pyro_2D.png" alt="Pyro 星系 2D 地圖" loading="lazy">
+                <figcaption>Pyro 星系：由內而外為 Pyro I、Monox、Bloom、Pyro IV、Pyro V、Terminus</figcaption>
+            </figure>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🪐 六顆行星</h2>
+            <div style="width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 480px; border-collapse: collapse;">
+                    <thead><tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;"><th style="padding: 12px 16px;">行星</th><th style="padding: 12px 16px;">特色</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>Pyro I</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">最靠近恆星，高溫高壓，但仍有少數動植物存活</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>Monox（Pyro II）</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">沒有地核、大氣有毒，到處是舊礦坑，現在是亡命之徒的據點。<strong>Checkmate</strong> 太空站在它的 L4 點</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>Bloom（Pyro III）</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">冰冷但大氣可呼吸，被海盜與前礦工佔據。<strong>Orbituary</strong> 太空站在它的軌道上</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>Pyro IV</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">過去曾被大型天體撞擊，正以緩慢的軌道朝 Pyro V 靠近</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>Pyro V</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">最大的行星，綠黃色大氣，居民在這裡採集氫氣</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>Terminus（Pyro VI）</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">寒冷、大氣含甲烷，<strong>Ruin Station</strong> 在它的軌道上，幫派衝突頻繁</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🛰️ 主要太空站與勢力</h2>
+            <figure class="media-figure">
+                <img src="https://media.starcitizen.tools/thumb/0/0c/Ruin_Station%2C_Terminus%2C_Pyro.webp/1200px-Ruin_Station%2C_Terminus%2C_Pyro.webp.webp" data-full="https://media.starcitizen.tools/0/0c/Ruin_Station%2C_Terminus%2C_Pyro.webp" alt="Ruin Station" loading="lazy">
+                <figcaption>Ruin Station：Pyro 最重要的據點，誰控制它，誰就是 Pyro 的實質領袖</figcaption>
+            </figure>
+            <div style="width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 480px; border-collapse: collapse;">
+                    <thead><tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;"><th style="padding: 12px 16px;">勢力</th><th style="padding: 12px 16px;">控制的太空站</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>XenoThreat</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Ruin Station（Terminus 軌道）</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>Rough &amp; Ready</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Checkmate、Orbituary、Patch City、Gaslight、Rat's Nest、Endgame、Megumi Refueling</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>Citizens for Prosperity</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Starlight Service Station、Rod's Fuel 'N Supplies、Dudley &amp; Daughters</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>跳躍點太空站</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Stanton Gateway（通往 Stanton）、Nyx Gateway（通往 Nyx）</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>其他勢力還有 <strong>Headhunters</strong>、<strong>73R Vipers</strong>、<strong>Fire Rats</strong> 等幫派。</p>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🎯 在 Pyro 可以做什麼</h2>
+            <ul class="topic-list">
+                <li><a href="pyro-cz.html"><h3 class="text-gradient">⚔️ 爭奪區 (Contested Zones)</h3><p>Checkmate、Orbituary、Ruin Station 的 PVPvE 區域，收集電路板打開 Executive Hangar 拿船。附完整地圖與流程。</p></a></li>
+                <li><a href="cargohauling/red-wind.html"><h3 class="text-gradient">💰 Red Wind 跨星系貨運</h3><p>4.10.2 最賺的貨運路線，在 Stanton 與 Pyro 之間來回運貨。</p></a></li>
+                <li><a href="cargohauling/ling-family.html"><h3 class="text-gradient">🏠 Ling Family 小船貨運</h3><p>入門合約從 Pyro 出發，小船也能跑。</p></a></li>
+                <li><a href="wikelo.html"><h3 class="text-gradient">🦎 Wikelo 材料：DCHS-05</h3><p>Sabre、F7、F8C 等交易需要的電路板，就在 Ruin Station 爭奪區。</p></a></li>
+            </ul>
+
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">💡 新手在 Pyro 的生存守則</h2>
+            <ul style="list-style-type: disc;">
+                <li><strong>先在 Stanton 練好</strong>：飛行、戰鬥都熟悉之後再來，這裡沒有安全的地方。</li>
+                <li><strong>滿載貨物別逗留</strong>：卸完貨就走，被攔截時優先逃往跳躍點。</li>
+                <li><strong>燃料加滿再出發</strong>：跨星系來回很耗油，補給站之間距離遠。</li>
+                <li><strong>重生點設在安全處</strong>：死掉時才不會被丟在危險的地方。</li>
+                <li><strong>多人同行</strong>：組隊不只更安全，進爭奪區也幾乎一定要組隊。</li>
+            </ul>
+
+        </section>
+
+        <section class="credits-section">
+            <h4>🗺️ 地圖與圖片來源</h4>
+            <ol>
+                <li>Pyro 星系地圖：<a href="https://starcitizen.tools/File:Pyro_2D.png" target="_blank">Pyro 2D.png</a></li>
+                <li>Ruin Station：<a href="https://starcitizen.tools/File:Ruin_Station,_Terminus,_Pyro.webp" target="_blank">Ruin Station, Terminus, Pyro.webp</a></li>
+            </ol>
+            <p>以上圖片取自 <a href="https://starcitizen.tools/" target="_blank">Star Citizen Wiki (starcitizen.tools)</a>，版權歸原作者所有；遊戲畫面與相關素材版權歸 Cloud Imperium Games 所有，本站僅作非商業教學引用。</p>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="world-intro.html" class="btn" style="background: transparent; border: 1px solid var(--primary);">返回世界介紹</a>
+            <a href="index.html" class="btn">返回首頁</a>
+        </div>
     </main>
+
     <script src="components.js"></script>
 </body>
 </html>

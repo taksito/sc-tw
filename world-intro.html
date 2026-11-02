@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>世界介紹 - Star Citizen</title>
+    <title>世界介紹 - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen 世界介紹：Stanton、Pyro、Nyx 三大星系比較與介紹。">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
         <section class="hero glass-panel">
             <h1><span class="text-gradient">世界介紹 (World Intro)</span></h1>
-            <p>探索 Star Citizen 宇宙中各具特色的星系與星球。</p>
+            <p style="margin-top: 15px;">探索 Star Citizen 宇宙中各具特色的星系與星球。</p>
         </section>
 
-        <section class="content-section glass-panel" style="margin-top: 30px;">
-            <ul class="topic-list" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-                <li>
-                    <a href="stanton-intro.html" style="padding: 20px;">
-                        <h3 class="text-gradient">Stanton (斯坦頓) 星系</h3>
-                        <p>由大型企業控制的繁華商業星系，也是目前遊戲的主要活動區域。</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="pyro-intro.html" style="padding: 20px;">
-                        <h3 class="text-gradient">Pyro (派羅) 星系</h3>
-                        <p>無法無天的荒涼星系，充滿致命的太陽閃焰與亡命之徒，是冒險者的天堂與地獄。</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="nyx-intro.html" style="padding: 20px;">
-                        <h3 class="text-gradient">Nyx (尼克斯) 星系</h3>
-                        <p>隱藏在星雲深處的神秘星系，反抗軍與邊緣人的避難所。</p>
-                    </a>
-                </li>
-            </ul>
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">⚖️ 三大星系比較</h2>
+            <div style="width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 640px; border-collapse: collapse;">
+                    <thead><tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;"><th style="padding: 12px 16px;"></th><th style="padding: 12px 16px;">Stanton</th><th style="padding: 12px 16px;">Pyro</th><th style="padding: 12px 16px;">Nyx</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>管轄</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">UEE 與大企業</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">無政府、幫派割據</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">People's Alliance</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>安全性</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">🟢 最安全</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">🔴 最危險</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">🟡 中等</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>主要城市／據點</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Lorville、Area18、New Babbage、Orison</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Ruin Station、Checkmate、Orbituary</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Levski</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>適合</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">新手、貨運、挖礦、任務</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">爭奪區、跨星系貨運、高風險高報酬</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">Vanduul 任務、挖礦、買特殊船</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;"><strong>特色</strong></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">禁武區、警察、完整的城市與太空站</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">不穩定恆星的閃焰、海盜</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">暗星雲、Vanduul 襲擊</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="margin: 20px 0; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">💡 新手建議先在 <strong>Stanton</strong> 熟悉一切，再前往 Nyx，最後才挑戰 Pyro。</div>
+
         </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🌍 各星系介紹</h2>
+            <ul class="topic-list">
+                <li><a href="stanton-intro.html"><h3 class="text-gradient">Stanton（斯坦頓）星系</h3><p>由大型企業控制的繁華商業星系，也是目前遊戲的主要活動區域。</p></a></li>
+                <li><a href="pyro-intro.html"><h3 class="text-gradient">Pyro（派羅）星系</h3><p>無法無天的荒涼星系，充滿致命的太陽閃焰與亡命之徒。附爭奪區攻略。</p></a></li>
+                <li><a href="nyx-intro.html"><h3 class="text-gradient">Nyx（尼克斯）星系</h3><p>隱藏在星雲深處的自由星系，People's Alliance 與 Vanduul 前線。</p></a></li>
+            </ul>
+
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="index.html" class="btn">返回首頁</a>
+        </div>
     </main>
+
     <script src="components.js"></script>
 </body>
 </html>

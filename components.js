@@ -139,6 +139,7 @@ class ComponentManager {
                         <ul class="submenu">
                             <li><a href="${prefix}stanton-intro.html">• Stanton 星系</a></li>
                             <li><a href="${prefix}pyro-intro.html">• Pyro 星系</a></li>
+                            <li><a href="${prefix}pyro-cz.html" class="sub-sub">↳ 爭奪區攻略 (CZ)</a></li>
                             <li><a href="${prefix}nyx-intro.html">• Nyx 星系</a></li>
                         </ul>
                     </li>
