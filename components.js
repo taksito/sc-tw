@@ -275,6 +275,9 @@ class ComponentManager {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// 腳本放在 <body> 最後，此時頁面結構已解析完，直接建立選單，不用等所有資源載入
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => ComponentManager.init());
+} else {
     ComponentManager.init();
-});
+}
