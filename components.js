@@ -158,6 +158,7 @@ class ComponentManager {
                             <li><a href="${prefix}ship-purchase-guide.html">• 購買指南首頁</a></li>
                             <li><a href="${prefix}ship-travel.html">• ✈️ 移動與交通推薦</a></li>
                             <li><a href="${prefix}ships/hauling-list.html">• 📦 貨運飛船推薦清單</a></li>
+                            <li><a href="${prefix}ship-combat-intersec.html#ships">• ⚔️ 戰鬥飛船推薦</a></li>
                             <li><a href="${prefix}ship-ccu.html">• 💵 CCU 現金購船</a></li>
                         </ul>
                     </li>
