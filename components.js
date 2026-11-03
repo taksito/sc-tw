@@ -110,6 +110,7 @@ class ComponentManager {
                             <li><a href="${prefix}cargohauling/ling-family.html" class="sub-sub">↳ Ling Family 小船</a></li>
                             <li><a href="${prefix}cargohauling/equipment.html" class="sub-sub">↳ ATLS 與 MaxLift</a></li>
                             <li><a href="${prefix}ship-combat.html">• ⚔️ 飛船戰鬥</a></li>
+                            <li><a href="${prefix}ship-combat-intersec.html" class="sub-sub">↳ Intersec 聲望攻略</a></li>
                             <li><a href="${prefix}ground-combat.html">• 🔫 地面 FPS</a></li>
                             <li><a href="${prefix}fps-onyx.html" class="sub-sub">↳ ASD Onyx 設施調查</a></li>
                             <li><a href="${prefix}fps-vanduul-smugglers.html" class="sub-sub">↳ Vanduul 科技走私者</a></li>
