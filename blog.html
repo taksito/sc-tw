@@ -233,6 +233,13 @@
         // ==========================================================
         const STATIC_POSTS = [
             {
+                id: "intersec-lv4-2026-11-04",
+                title: "終於搞定啦！Intersec 聲望升上 LV.4 資深承包商",
+                date: "2026-11-04",
+                category: "game",
+                content: "**終於搞定啦！** 🎉\n\n這幾天一直在刷 Intersec 的任務，今天總算升上 **LV.4 資深承包商**，**196k** 的任務終於可以接了！\n\n![Intersec 聲望等級畫面：已升上 LV.4 資深承包商](images/intersec-rank-lv4.webp)\n\n**📈 一路走來**\n- 中立：先跑 **98k**\n- LV.1 初級承包商：多了 **126k**\n- LV.3 高階承包商：可以接 **168k**\n- LV.4 資深承包商：解鎖 **196k** ✅\n\n**🎯 下一步**\n- 目標是 **LV.5 主要承包商**，LV.6 精英承包商就不追了\n- LV.4 到 LV.5 要從 15,000 拉到 38,000 聲望，大概還要跑 70 幾趟，慢慢來\n\n練法、推薦的船和 Deadbolt 配裝都整理在 [Intersec 聲望攻略](ship-combat-intersec.html)，等級名稱也改成跟遊戲內中文一致了。\n\n*See You In The 'Verse! o7 — 塔克*"
+            },
+            {
                 id: "intersec-rep-2026-11-03",
                 title: "最近都在練 Intersec 聲望，準備迎接 4.10.3",
                 date: "2026-11-03",
@@ -400,6 +407,8 @@
                 text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
                 // 處理行內 code `code`
                 text = text.replace(/`(.*?)`/g, '<code>$1</code>');
+                // 處理圖片 ![說明](網址)
+                text = text.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" loading="lazy" decoding="async" style="width: 100%; max-width: 720px; border-radius: 12px; border: 1px solid var(--glass-border); display: block; margin: 10px 0;">');
                 // 處理超連結 [text](url)
                 text = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
                 return text;
