@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷達選擇 - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen 飛船雷達怎麼選：雷達等級差在哪、依船的尺寸推薦（S1 競賽 A SNSR-7、省電用民用 A、S2／S3 工業 A）。">
+    <link rel="stylesheet" href="styles.css?v=20261104">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+    <style>
+        .rd-table { width: 100%; min-width: 520px; border-collapse: collapse; }
+        .rd-table th { padding: 12px 16px; text-align: left; }
+        .rd-table td { padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top; }
+        .rd-wrap { width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border); }
+        .rd-wrap thead tr { background: rgba(0,210,255,0.08); color: var(--primary); }
+        .size-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin: 10px 0 20px; }
+        .size-card { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 18px 20px; }
+        .size-card .size { font-family: 'Orbitron', sans-serif; font-size: 1.6rem; color: var(--primary); font-weight: bold; }
+        .size-card .pick { font-size: 1.15rem; font-weight: bold; margin: 6px 0 10px; color: var(--text-main); }
+        .size-card ul { margin: 0; padding-left: 18px; list-style-type: disc; }
+        .soon { text-align: center; padding: 30px 20px; border: 1px dashed var(--glass-border); border-radius: 12px; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero glass-panel">
+            <h1><span class="text-gradient">雷達選擇</span></h1>
+            <p style="margin-top: 15px;">雷達決定你多遠看得到敵人、多遠開始有輔助瞄準。船的大小不同，適合的雷達也不同。</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📡 雷達在做什麼</h2>
+            <ul style="list-style-type: disc;">
+                <li><strong>偵測與鎖定</strong>：越好的雷達，偵測和鎖定的距離越遠。</li>
+                <li><strong>輔助瞄準</strong>：鎖定敵人後畫面上會出現輔助瞄準游標，雷達會影響這個游標的效果和出現距離，也就是你的<strong>攻擊距離</strong>。</li>
+                <li><strong>耗電</strong>：雷達也要吃電，性能越好通常越耗電；小船電源有限時要特別注意。</li>
+            </ul>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🏷️ 等級怎麼選</h2>
+            <div class="rd-wrap">
+                <table class="rd-table">
+                    <thead><tr><th>等級</th><th>特色</th><th>適合</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>競賽 (Competition)</strong></td><td>攻擊距離長、輔助瞄準效果好</td><td>S1 小型戰鬥機，站長首選</td></tr>
+                        <tr><td><strong>工業 (Industrial)</strong></td><td>耐用、表現穩定</td><td>S2、S3 船，站長首選</td></tr>
+                        <tr><td><strong>民用 (Civilian)</strong></td><td><strong>省電</strong>，但攻擊距離比較短</td><td>電力吃緊的船</td></tr>
+                        <tr><td><strong>軍規／隱形</strong></td><td>商店買不到</td><td>要去刷，地點請看 <a href="components-systems.html">電源、護盾、冷卻</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📏 依船的尺寸推薦</h2>
+            <p>雷達的選擇會因為船的大小不同而有不同結果。先看你的船雷達槽是幾號，再照下面挑：</p>
+            <div class="size-cards">
+                <div class="size-card">
+                    <div class="size">Size 1</div>
+                    <div class="pick">競賽 A：SNSR-7</div>
+                    <ul>
+                        <li>站長最喜歡用的 S1 雷達</li>
+                        <li>攻擊距離長，輔助瞄準好用</li>
+                        <li><strong>想省電</strong>：改用<strong>民用 A</strong>，但攻擊距離會短一些</li>
+                    </ul>
+                </div>
+                <div class="size-card">
+                    <div class="size">Size 2</div>
+                    <div class="pick">工業 A</div>
+                    <ul>
+                        <li>站長在 S2 的首選</li>
+                    </ul>
+                </div>
+                <div class="size-card">
+                    <div class="size">Size 3</div>
+                    <div class="pick">工業 A</div>
+                    <ul>
+                        <li>S3 一樣推薦工業 A</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin: 20px 0; background: rgba(0,210,255,0.08); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">💡 不知道船的雷達是幾號？可以到 <a href="https://www.erkul.games/" target="_blank">Erkul</a> 選你的船，就能看到每個組件槽的尺寸。</div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🧮 互動選配工具</h2>
+            <div class="soon">🚧 製作中：之後會在這裡做一個互動網頁，選船的尺寸就能直接看到建議的雷達與組件配置。</div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📚 其他組件</h2>
+            <ul class="topic-list">
+                <li><a href="components-weapons.html"><h3 class="text-gradient">⚔️ 武器與飛彈</h3><p>S1–S5 槍砲推薦、飛彈 IR／EM／CS 分類、推薦配置。</p></a></li>
+                <li><a href="components-systems.html"><h3 class="text-gradient">⚡ 電源、護盾、冷卻</h3><p>一般配置建議，以及軍規、隱形組件去哪裡拿。</p></a></li>
+                <li><a href="components-quantum.html"><h3 class="text-gradient">🌌 QT 引擎與燃料</h3><p>4.10 量子引擎新攻略與燃料規劃。</p></a></li>
+            </ul>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="ship-components.html" class="btn" style="background: transparent; border: 1px solid var(--primary);">返回飛機組件</a>
+            <a href="index.html" class="btn">返回首頁</a>
+        </div>
+    </main>
+
+    <script src="components.js?v=20261104"></script>
+</body>
+</html>

@@ -130,6 +130,7 @@ class ComponentManager {
                             <li><a href="${prefix}components-weapons.html" class="sub-sub">↳ 武器與飛彈</a></li>
                             <li><a href="${prefix}components-systems.html" class="sub-sub">↳ 電源、護盾、冷卻</a></li>
                             <li><a href="${prefix}components-quantum.html" class="sub-sub">↳ QT 引擎與燃料</a></li>
+                            <li><a href="${prefix}components-radar.html" class="sub-sub">↳ 雷達</a></li>
                             <li><a href="${prefix}wikelo.html">• 🦎 Wikelo 交易</a></li>
                         </ul>
                     </li>
