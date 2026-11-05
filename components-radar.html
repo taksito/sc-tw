@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>雷達選擇 - Star Citizen 繁體中文新手入門教學</title>
-    <meta name="description" content="Star Citizen 飛船雷達怎麼選：雷達等級差在哪、依船的尺寸推薦（S1 競賽 A SNSR-7、省電用民用 A、S2／S3 工業 A）。">
+    <meta name="description" content="Star Citizen 飛船雷達怎麼選：雷達等級差在哪、依船的尺寸推薦（S1 競賽 A SNSR-7、省電用民用 A、S2／S3 工業 A），以及 S1 雷達範圍預測器：依配電算輔助瞄準範圍與 Deadbolt III 命中率。">
     <link rel="stylesheet" href="styles.css?v=20261105">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,38 @@
         .size-card .pick { font-size: 1.15rem; font-weight: bold; margin: 6px 0 10px; color: var(--text-main); }
         .size-card ul { margin: 0; padding-left: 18px; list-style-type: disc; }
         .soon { text-align: center; padding: 30px 20px; border: 1px dashed var(--glass-border); border-radius: 12px; color: var(--text-muted); }
+        .rp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 15px; }
+        .rp-panel { background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 14px; padding: 20px; }
+        .rp-panel h3 { margin: 0 0 12px; font-size: 1.15rem; color: var(--primary); }
+        .rp-label { display: flex; flex-direction: column; gap: 6px; color: var(--text-muted); font-size: 0.9rem; margin: 12px 0 6px; }
+        .rp-label select { background: rgba(0,0,0,0.45); color: var(--text-main); border: 1px solid var(--glass-border); border-radius: 10px; padding: 10px 12px; font-size: 1rem; font-family: inherit; }
+        .rp-pips { display: flex; gap: 6px; flex-wrap: wrap; }
+        .rp-pips button { width: 46px; height: 34px; border-radius: 6px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-muted); cursor: pointer; font-family: 'Orbitron', monospace; }
+        .rp-pips button.on { background: var(--accent); border-color: var(--accent); color: #07101c; font-weight: 700; }
+        .rp-pips button:disabled { opacity: 0.25; cursor: default; }
+        .rp-big { margin-top: 16px; display: flex; flex-direction: column; }
+        .rp-big span { font-family: 'Orbitron', monospace; font-size: 2.2rem; font-weight: 900; color: var(--primary); line-height: 1.1; }
+        .rp-big small { color: var(--text-muted); }
+        .rp-bar { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.07); margin: 10px 0; overflow: hidden; }
+        .rp-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--secondary), var(--primary)); border-radius: 4px; transition: width .3s; }
+        .rp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; font-size: 0.9rem; color: var(--text-muted); }
+        .rp-stats b { color: var(--text-main); font-weight: 600; }
+        .rp-tip { margin-top: 12px; font-size: 0.92rem; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 10px 14px; border-radius: 0 8px 8px 0; }
+        .rp-tip:empty { display: none; }
+        .rp-fixed { font-size: 0.92rem; color: var(--text-muted); }
+        .rp-seg { display: flex; gap: 6px; flex-wrap: wrap; }
+        .rp-seg button { flex: 1; min-width: 70px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-muted); cursor: pointer; font-family: inherit; }
+        .rp-seg button.on { background: var(--primary); border-color: var(--primary); color: #07101c; font-weight: 700; }
+        .rp-check { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 0.92rem; cursor: pointer; }
+        .rp-chart-wrap { margin-top: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 14px; padding: 16px; }
+        .rp-chart-wrap svg { width: 100%; height: auto; display: block; }
+        .rp-how summary { cursor: pointer; color: var(--primary); font-weight: 700; margin-top: 15px; }
+        .rp-how ul { list-style: disc; margin: 10px 0 0 20px !important; }
+        .rp-how li { font-size: 0.92rem; margin-bottom: 6px !important; }
+        .rp-src { font-size: 0.85rem; color: var(--text-muted); margin-top: 12px; }
+        #rpTable tr.sel td { background: rgba(0,210,255,0.1); }
+        #rpTable th, #rpTable td { white-space: nowrap; }
+        #rpTable td.num { font-family: 'Orbitron', monospace; white-space: nowrap; }
     </style>
 </head>
 <body>
@@ -85,9 +117,53 @@
             <div style="margin: 20px 0; background: rgba(0,210,255,0.08); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">💡 不知道船的雷達是幾號？可以到 <a href="https://www.erkul.games/" target="_blank">Erkul</a> 選你的船，就能看到每個組件槽的尺寸。</div>
         </section>
 
-        <section class="content-section glass-panel">
-            <h2 class="text-gradient">🧮 互動選配工具</h2>
-            <div class="soon">🚧 製作中：之後會在這裡做一個互動網頁，選船的尺寸就能直接看到建議的雷達與組件配置。</div>
+        <section class="content-section glass-panel" id="radar-tool">
+            <h2 class="text-gradient">🧮 雷達範圍預測器（S1）</h2>
+            <p>選雷達、調配電，馬上看到輔助瞄準範圍；右邊用 <strong>Deadbolt III</strong> 打 <strong>Gladius（短劍）</strong>，算出在這個距離的命中率。</p>
+            <div class="rp-grid">
+                <div class="rp-panel">
+                    <h3>📡 雷達設定</h3>
+                    <label class="rp-label">選擇雷達<select id="rpRadar"></select></label>
+                    <div class="rp-label">配電 <span id="rpPipTxt"></span></div>
+                    <div class="rp-pips" id="rpPips"></div>
+                    <div class="rp-big"><span id="rpRange">—</span><small>輔助瞄準範圍</small></div>
+                    <div class="rp-bar"><i id="rpBar"></i></div>
+                    <div class="rp-stats" id="rpStats"></div>
+                    <div class="rp-tip" id="rpTip"></div>
+                </div>
+                <div class="rp-panel">
+                    <h3>🎯 命中率分析</h3>
+                    <div class="rp-fixed">武器：<strong>Deadbolt III</strong>（S3 實彈加農砲，彈速 1,184 m/s）<br>目標：<strong>Gladius（短劍）</strong></div>
+                    <div class="rp-label">目標閃避</div>
+                    <div class="rp-seg" id="rpEvade">
+                        <button data-v="0">不閃避</button><button data-v="0.5">一般</button><button data-v="1" class="on">全力</button>
+                    </div>
+                    <label class="rp-check"><input type="checkbox" id="rpBoost"> 目標開加力（Boost）</label>
+                    <div class="rp-label">目標角度</div>
+                    <div class="rp-seg" id="rpAspect">
+                        <button data-v="front" class="on">正面</button><button data-v="side">側面</button><button data-v="top">上方</button>
+                    </div>
+                    <div class="rp-big"><span id="rpHit">—</span><small id="rpHitLbl">雷達範圍處命中率</small></div>
+                    <div class="rp-stats" id="rpCalc"></div>
+                </div>
+            </div>
+            <div class="rp-chart-wrap">
+                <div class="rp-label">命中率 × 距離（虛線＝你的雷達範圍）</div>
+                <svg id="rpChart" viewBox="0 0 640 260"></svg>
+            </div>
+            <h3 style="margin-top:25px;">📋 全部 S1 雷達比較</h3>
+            <div class="rd-wrap"><table class="rd-table" id="rpTable"></table></div>
+            <details class="rp-how">
+                <summary>❓ 怎麼算的</summary>
+                <ul>
+                    <li><strong>雷達範圍</strong>＝最小距離 ＋（最大距離 − 最小距離）× 配電格數 ÷ 最高格數。與 Erkul 的數值一致（例如 V801-11：2 格 1,037 m、5 格 1,326 m）。</li>
+                    <li><strong>子彈飛行時間</strong>＝距離 ÷ 1,184 m/s。你按照前置準星開火後，目標在子彈飛行這段時間開始閃避，偏移距離＝½ × 加速度 × 時間²。</li>
+                    <li>目標隨機往任一方向閃避，力道隨機（全力：0～100% 推力；一般：0～50%），加速度依方向不同：Gladius 橫移 9.9 G、往上 9.9 G、往下 4.9 G、前進 13.6 G、後退 4.2 G（開加力分別為 12.9／12.9／6.6／21.1／5.9 G）。</li>
+                    <li>子彈散布 0.4°；目標外形以船體尺寸 21 × 17.5 × 5.5 m 的橢圓估算。以上用 2,000 個樣本模擬，算出打中的比例。</li>
+                    <li>這是理論值，沒有計入你的瞄準誤差、目標護盾與裝甲，實戰命中率通常更低。</li>
+                </ul>
+            </details>
+            <p class="rp-src">資料來源：雷達與武器數據取自 <a href="https://api.star-citizen.wiki/" target="_blank">Star Citizen Wiki API</a>（4.10.2），Gladius 加速度取自 <a href="https://www.spviewer.eu/performance?ship=aegs_gladius" target="_blank">SC Ships Performances Viewer</a>。</p>
         </section>
 
         <section class="content-section glass-panel">
@@ -106,5 +182,107 @@
     </main>
 
     <script src="components.js?v=20261105"></script>
+    <script>
+    (function(){
+      // S1 雷達：[名稱, 類型, 等級, 最小距離, 最大距離, 最少配電, 最多配電]（Star Citizen Wiki API 4.10.2）
+      const R = [
+        ['V801-11','軍規','A',845,1326,2,5],['Tige','軍規','B',845,1215.5,2,5],['Ecouter','軍規','C',845,1105,2,5],['Ecouter（穿透型）','軍規','C',845,1105,2,5],['Voir','軍規','D',845,994.5,2,5],
+        ['Delphi RS-10','軍規','B',910,1075.25,1,4],['Prophet','隱形','A',780,1122,2,5],['Hunter','隱形','B',780,1028.5,2,5],['Pelerous','隱形','A',780,935,2,5],
+        ['SNSR7','競賽','B',780,1168.75,2,2],['SNS-R6','競賽','C',780,1062.5,2,2],['SNSR5','競賽','D',780,956.25,2,2],
+        ['Abetti','民用','A',780,1173,1,4],['Backlund','民用','B',780,1075.25,1,4],['Capston','民用','C',780,977.5,1,4],['Fleming','民用','D',780,879.75,1,4],
+        ['Surveyor-Lite','工業','C',845,977.5,1,3],['Observer-Lite','工業','D',845,879.75,1,3]
+      ];
+      const V = 1184, SPREAD = 0.4 * Math.PI / 180; // Deadbolt III
+      const G = 9.81, ACC = { strafe:[9.9,12.9], up:[9.9,12.9], down:[4.9,6.6], fwd:[13.6,21.1], back:[4.2,5.9] };
+      const DIM = { front:[17.5,5.5], side:[21,5.5], top:[21,17.5] };   // [橫, 直]
+      // 各角度下，畫面橫軸與直軸對應的推力方向 [正, 負]
+      const AX = { front:[['strafe','strafe'],['up','down']], side:[['fwd','back'],['up','down']], top:[['fwd','back'],['strafe','strafe']] };
+      const $ = id => document.getElementById(id);
+      const fmt = n => Math.round(n).toLocaleString('en-US');
+      const store = { get(){ try { return JSON.parse(localStorage.getItem('sc-radar-tool')||'{}'); } catch(e){ return {}; } }, set(v){ try { localStorage.setItem('sc-radar-tool', JSON.stringify(v)); } catch(e){} } };
+      let S = Object.assign({ r:0, p:5, ev:1, boost:false, asp:'front' }, store.get());
+      const range = (r,p) => r[3] + (r[4]-r[3]) * p / r[6];
+      // 固定的準隨機樣本，讓結果穩定不跳動
+      const N = 2000, SMP = [];
+      for (let i=0;i<N;i++){ const h=(b,n)=>{let f=1,x=0;while(n>0){f/=b;x+=f*(n%b);n=Math.floor(n/b);}return x;}; SMP.push([h(2,i+1),h(3,i+1),h(5,i+1),h(7,i+1)]); }
+      function hit(d){
+        const t = d / V, [W,H] = DIM[S.asp], ax = AX[S.asp], bi = S.boost?1:0;
+        const a2 = W/2, b2 = H/2, rs = d * Math.tan(SPREAD/2);
+        let n = 0;
+        for (const [u1,u2,u3,u4] of SMP){
+          const th = u1*2*Math.PI, c = Math.cos(th), s = Math.sin(th);
+          const gx = ACC[c>=0?ax[0][0]:ax[0][1]][bi], gy = ACC[s>=0?ax[1][0]:ax[1][1]][bi];
+          const k = 0.5 * t * t * G * S.ev * u2; // 閃避力道隨機 0～100%（一般閃避上限 50%）
+          const ox = c*gx*k, oy = s*gy*k;
+          const rr = rs*Math.sqrt(u3), ph = u4*2*Math.PI;
+          const x = ox + rr*Math.cos(ph), y = oy + rr*Math.sin(ph);
+          if ((x*x)/(a2*a2) + (y*y)/(b2*b2) <= 1) n++;
+        }
+        return n / N;
+      }
+      function effRange(){ let lo=0; for (let d=50; d<=3000; d+=10){ if (hit(d) >= 0.5) lo=d; else break; } return lo; }
+
+      function render(){
+        const r = R[S.r]; S.p = Math.min(Math.max(S.p, r[5]), r[6]); store.set(S);
+        $('rpRadar').value = S.r;
+        $('rpPips').innerHTML = Array.from({length:6},(_,i)=>i+1).map(p=>`<button data-p="${p}" class="${p<=S.p&&p>=r[5]?'on':''}" ${p<r[5]||p>r[6]?'disabled':''}>${p}</button>`).join('');
+        $('rpPips').querySelectorAll('button').forEach(b=>b.onclick=()=>{ S.p=+b.dataset.p; render(); });
+        $('rpPipTxt').textContent = r[5]===r[6] ? `（固定 ${r[5]} 格）` : `（${r[5]}～${r[6]} 格，目前 ${S.p} 格）`;
+        const rg = range(r,S.p), full = r[4];
+        $('rpRange').textContent = fmt(rg) + ' m';
+        $('rpBar').style.width = (rg/1400*100)+'%';
+        $('rpStats').innerHTML = `<span>類型：<b>${r[1]} ${r[2]}</b></span><span>滿電：<b>${fmt(full)} m</b></span><span>最少格：<b>${fmt(range(r,r[5]))} m</b></span><span>每格增加：<b>${r[5]===r[6]?'—':fmt((r[4]-r[3])/r[6])+' m'}</b></span>`;
+        // 命中率
+        const h = hit(rg), t = rg/V, ax = AX[S.asp], bi = S.boost?1:0;
+        const maxG = Math.max(...ax.flat().map(k=>ACC[k][bi])) * S.ev;
+        $('rpHit').textContent = Math.round(h*100) + '%';
+        $('rpHitLbl').textContent = `在 ${fmt(rg)} m（雷達範圍）的命中率`;
+        const eff = effRange();
+        $('rpCalc').innerHTML = `<span>子彈飛行：<b>${t.toFixed(2)} 秒</b></span><span>目標最大偏移：<b>${(0.5*maxG*G*t*t).toFixed(1)} m</b></span><span>0.5 秒內偏移：<b>${(0.5*maxG*G*0.25).toFixed(1)} m</b></span><span>命中 50% 以上：<b>${eff?fmt(eff)+' m 內':'—'}</b></span>`;
+        // 配電建議
+        let tip = '';
+        if (r[5] < r[6]) {
+          const need = Array.from({length:r[6]-r[5]+1},(_,i)=>r[5]+i).find(p=>range(r,p) >= eff);
+          if (eff && need && need < r[6]) tip = `💡 命中率 50% 以上的距離大約 ${fmt(eff)} m。如果只在這個距離內開火，配 <b>${need} 格</b>（${fmt(range(r,need))} m）就夠用，多的電可以分給護盾或武器；想更早鎖定目標再加電。`;
+          else if (eff) tip = `💡 這個雷達要配滿 <b>${r[6]} 格</b>，範圍才能涵蓋命中率 50% 的距離（約 ${fmt(eff)} m）。`;
+        }
+        const snsr7 = range(R[9],2);
+        if (r[0] !== 'SNSR7' && rg < snsr7) tip += (tip?'<br>':'') + `⚠️ 目前範圍比固定 2 格的 SNSR7（${fmt(snsr7)} m）還短。`;
+        $('rpTip').innerHTML = tip;
+        document.querySelectorAll('#rpEvade button').forEach(b=>b.classList.toggle('on', +b.dataset.v===S.ev));
+        document.querySelectorAll('#rpAspect button').forEach(b=>b.classList.toggle('on', b.dataset.v===S.asp));
+        $('rpBoost').checked = S.boost;
+        chart(rg);
+        table();
+      }
+      function chart(rg){
+        const W=640,H=260,L=40,B=30,T=10,Rt=10, maxD=1500, pts=[];
+        for (let d=0; d<=maxD; d+=25) pts.push([d, d===0?1:hit(d)]);
+        const X=d=>L+(W-L-Rt)*d/maxD, Y=v=>T+(H-T-B)*(1-v);
+        let g='';
+        for (const v of [0,0.25,0.5,0.75,1]) g+=`<line x1="${L}" x2="${W-Rt}" y1="${Y(v)}" y2="${Y(v)}" stroke="rgba(255,255,255,0.08)"/><text x="${L-6}" y="${Y(v)+4}" fill="#94a3b8" font-size="11" text-anchor="end">${v*100}%</text>`;
+        for (let d=0; d<=maxD; d+=250) g+=`<text x="${X(d)}" y="${H-10}" fill="#94a3b8" font-size="11" text-anchor="middle">${d}m</text>`;
+        const path = pts.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join('');
+        const area = path + `L${X(maxD)},${Y(0)}L${X(0)},${Y(0)}Z`;
+        const hv = hit(rg);
+        g += `<path d="${area}" fill="rgba(0,210,255,0.12)"/><path d="${path}" fill="none" stroke="#00d2ff" stroke-width="2.5"/>`;
+        g += `<line x1="${X(rg)}" x2="${X(rg)}" y1="${T}" y2="${H-B}" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5"/><circle cx="${X(rg)}" cy="${Y(hv)}" r="5" fill="#f59e0b"/><text x="${X(rg)+(X(rg)>W-120?-8:8)}" y="${Y(hv)-8}" fill="#fbbf24" font-size="12" text-anchor="${X(rg)>W-120?'end':'start'}">${fmt(rg)} m：${Math.round(hv*100)}%</text>`;
+        $('rpChart').innerHTML = g;
+      }
+      function table(){
+        const rows = R.map((r,i)=>({i,r,min:range(r,r[5]),max:r[4]})).sort((a,b)=>b.max-a.max);
+        $('rpTable').innerHTML = '<thead><tr><th>雷達</th><th>類型</th><th>配電</th><th>最少格範圍</th><th>滿電範圍</th><th>滿電範圍處命中率</th></tr></thead><tbody>' +
+          rows.map(o=>`<tr class="${o.i===S.r?'sel':''}" data-i="${o.i}" style="cursor:pointer"><td><strong>${o.r[0]}</strong></td><td>${o.r[1]} ${o.r[2]}</td><td class="num">${o.r[5]===o.r[6]?o.r[5]:o.r[5]+'～'+o.r[6]}</td><td class="num">${fmt(o.min)} m</td><td class="num">${fmt(o.max)} m</td><td class="num">${Math.round(hit(o.max)*100)}%</td></tr>`).join('') + '</tbody>';
+        $('rpTable').querySelectorAll('tbody tr').forEach(tr=>tr.onclick=()=>{ S.r=+tr.dataset.i; S.p=R[S.r][6]; render(); });
+      }
+      $('rpRadar').innerHTML = R.map((r,i)=>`<option value="${i}">${r[0]}（${r[1]} ${r[2]}，${r[5]===r[6]?r[5]:r[5]+'～'+r[6]} 格）</option>`).join('');
+      $('rpRadar').onchange = e => { S.r = +e.target.value; S.p = R[S.r][6]; render(); };
+      document.querySelectorAll('#rpEvade button').forEach(b=>b.onclick=()=>{ S.ev=+b.dataset.v; render(); });
+      document.querySelectorAll('#rpAspect button').forEach(b=>b.onclick=()=>{ S.asp=b.dataset.v; render(); });
+      $('rpBoost').onchange = e => { S.boost = e.target.checked; render(); };
+      if (!(S.r < R.length)) S.r = 0;
+      render();
+    })();
+    </script>
 </body>
 </html>
