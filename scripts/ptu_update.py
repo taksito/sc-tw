@@ -90,26 +90,32 @@ def gemini_translate(text):
     key = os.environ.get('GEMINI_API_KEY')
     if not key:
         raise RuntimeError('GEMINI_API_KEY is not set')
-    model = os.environ.get('GEMINI_MODEL', 'gemini-2.5-flash')
+    # 依序嘗試；Google 下架舊模型時會自動改用下一個
+    models = [m for m in [os.environ.get('GEMINI_MODEL'), 'gemini-3.8-flash', 'gemini-3.6-flash', 'gemini-3.5-flash-lite'] if m]
     prompt = PROMPT.replace('__GLOSSARY__', load_glossary()).replace('__TEXT__', text)
-    url = f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent'
     payload = {'contents': [{'parts': [{'text': prompt}]}],
                'generationConfig': {'temperature': 0.2, 'responseMimeType': 'application/json'}}
     last = None
-    for attempt in range(4):
-        try:
-            r = post_json(url, payload, headers={'x-goog-api-key': key}, timeout=180)
-            raw = r['candidates'][0]['content']['parts'][0]['text']
-            data = json.loads(raw)
-            assert isinstance(data.get('sections'), list) and data['sections']
-            return data
-        except urllib.error.HTTPError as e:
-            last = f'HTTP {e.code}: {e.read().decode("utf-8", "ignore")[:300]}'
-            if e.code not in (429, 500, 503):
-                break
-        except Exception as e:  # malformed JSON etc.
-            last = repr(e)
-        time.sleep(20 * (attempt + 1))
+    for model in models:
+        url = f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent'
+        for attempt in range(4):
+            try:
+                r = post_json(url, payload, headers={'x-goog-api-key': key}, timeout=180)
+                raw = r['candidates'][0]['content']['parts'][0]['text']
+                data = json.loads(raw)
+                assert isinstance(data.get('sections'), list) and data['sections']
+                print(f'  translated with {model}')
+                return data
+            except urllib.error.HTTPError as e:
+                last = f'{model} HTTP {e.code}: {e.read().decode("utf-8", "ignore")[:300]}'
+                if e.code in (400, 404):
+                    break  # 模型不存在或請求格式不符，換下一個模型
+                if e.code not in (429, 500, 503):
+                    raise RuntimeError(f'Gemini translation failed: {last}')
+            except Exception as e:  # malformed JSON etc.
+                last = f'{model} {e!r}'
+            time.sleep(20 * (attempt + 1))
+        print(f'  {last}')
     raise RuntimeError(f'Gemini translation failed: {last}')
 
 
