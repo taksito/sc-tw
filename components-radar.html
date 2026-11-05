@@ -46,6 +46,14 @@
         .rp-check { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 0.92rem; cursor: pointer; }
         .rp-chart-wrap { margin-top: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 14px; padding: 16px; }
         .rp-chart-wrap svg { width: 100%; height: auto; display: block; }
+        .rp-legend { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; }
+        .rp-dist { display: flex; align-items: center; gap: 10px; }
+        .rp-dist input[type=range] { flex: 1; accent-color: var(--primary); }
+        .rp-dist input[type=number] { width: 90px; background: rgba(0,0,0,0.45); color: var(--text-main); border: 1px solid var(--glass-border); border-radius: 8px; padding: 6px 8px; font-family: 'Orbitron', monospace; }
+        .rp-quick { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+        .rp-quick button { padding: 4px 10px; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-muted); cursor: pointer; font-size: 0.82rem; font-family: inherit; }
+        .rp-quick button:hover { color: var(--primary); border-color: var(--primary); }
+        .rp-inrange { margin: 6px 0 10px; font-size: 0.9rem; }
         .rp-how summary { cursor: pointer; color: var(--primary); font-weight: 700; margin-top: 15px; }
         .rp-how ul { list-style: disc; margin: 10px 0 0 20px !important; }
         .rp-how li { font-size: 0.92rem; margin-bottom: 6px !important; }
@@ -119,7 +127,7 @@
 
         <section class="content-section glass-panel" id="radar-tool">
             <h2 class="text-gradient">🧮 雷達範圍預測器（S1）</h2>
-            <p>選雷達、調配電，馬上看到輔助瞄準範圍；右邊用 <strong>Deadbolt III</strong> 打 <strong>Gladius（短劍）</strong>，算出在這個距離的命中率。</p>
+            <p>選雷達、調配電，馬上看到輔助瞄準範圍；右邊設定你和目標的距離，算出 <strong>Deadbolt III</strong> 打 <strong>Gladius（短劍）</strong>的命中率。</p>
             <div class="rp-grid">
                 <div class="rp-panel">
                     <h3>📡 雷達設定</h3>
@@ -143,12 +151,19 @@
                     <div class="rp-seg" id="rpAspect">
                         <button data-v="front" class="on">正面</button><button data-v="side">側面</button><button data-v="top">上方</button>
                     </div>
-                    <div class="rp-big"><span id="rpHit">—</span><small id="rpHitLbl">雷達範圍處命中率</small></div>
+                    <div class="rp-label">與目標的距離 <span id="rpDistTxt"></span></div>
+                    <div class="rp-dist">
+                        <input type="range" id="rpDist" min="100" max="1500" step="10">
+                        <input type="number" id="rpDistNum" min="100" max="1500" step="10" inputmode="numeric"><span>m</span>
+                    </div>
+                    <div class="rp-quick" id="rpQuick"></div>
+                    <div class="rp-big"><span id="rpHit">—</span><small id="rpHitLbl"></small></div>
+                    <div class="rp-inrange" id="rpInRange"></div>
                     <div class="rp-stats" id="rpCalc"></div>
                 </div>
             </div>
             <div class="rp-chart-wrap">
-                <div class="rp-label">命中率 × 距離（虛線＝你的雷達範圍）</div>
+                <div class="rp-legend">命中率 × 距離（<span style="color:#f59e0b;">橘色虛線＝雷達範圍</span>、<span style="color:#e2e8f0;">白線＝你設定的距離</span>）</div>
                 <svg id="rpChart" viewBox="0 0 640 260"></svg>
             </div>
             <h3 style="margin-top:25px;">📋 全部 S1 雷達比較</h3>
@@ -200,7 +215,7 @@
       const $ = id => document.getElementById(id);
       const fmt = n => Math.round(n).toLocaleString('en-US');
       const store = { get(){ try { return JSON.parse(localStorage.getItem('sc-radar-tool')||'{}'); } catch(e){ return {}; } }, set(v){ try { localStorage.setItem('sc-radar-tool', JSON.stringify(v)); } catch(e){} } };
-      let S = Object.assign({ r:0, p:5, ev:1, boost:false, asp:'front' }, store.get());
+      let S = Object.assign({ r:0, p:5, ev:1, boost:false, asp:'front', d:500 }, store.get());
       const range = (r,p) => r[3] + (r[4]-r[3]) * p / r[6];
       // 固定的準隨機樣本，讓結果穩定不跳動
       const N = 2000, SMP = [];
@@ -233,10 +248,14 @@
         $('rpBar').style.width = (rg/1400*100)+'%';
         $('rpStats').innerHTML = `<span>類型：<b>${r[1]} ${r[2]}</b></span><span>滿電：<b>${fmt(full)} m</b></span><span>最少格：<b>${fmt(range(r,r[5]))} m</b></span><span>每格增加：<b>${r[5]===r[6]?'—':fmt((r[4]-r[3])/r[6])+' m'}</b></span>`;
         // 命中率
-        const h = hit(rg), t = rg/V, ax = AX[S.asp], bi = S.boost?1:0;
+        S.d = Math.min(1500, Math.max(100, Math.round(+S.d || 500)));
+        const D = S.d, h = hit(D), t = D/V, ax = AX[S.asp], bi = S.boost?1:0;
         const maxG = Math.max(...ax.flat().map(k=>ACC[k][bi])) * S.ev;
+        $('rpDist').value = D; if (document.activeElement !== $('rpDistNum')) $('rpDistNum').value = D;
+        $('rpDistTxt').textContent = `（${fmt(D)} m）`;
         $('rpHit').textContent = Math.round(h*100) + '%';
-        $('rpHitLbl').textContent = `在 ${fmt(rg)} m（雷達範圍）的命中率`;
+        $('rpHitLbl').textContent = `在 ${fmt(D)} m 的命中率（雷達範圍 ${fmt(rg)} m 處：${Math.round(hit(rg)*100)}%）`;
+        $('rpInRange').innerHTML = D <= rg ? '<span style="color:var(--success);">✅ 在雷達輔助瞄準範圍內</span>' : `<span style="color:#f87171;">⚠️ 超出雷達範圍 ${fmt(D-rg)} m，沒有輔助瞄準</span>`;
         const eff = effRange();
         $('rpCalc').innerHTML = `<span>子彈飛行：<b>${t.toFixed(2)} 秒</b></span><span>目標最大偏移：<b>${(0.5*maxG*G*t*t).toFixed(1)} m</b></span><span>0.5 秒內偏移：<b>${(0.5*maxG*G*0.25).toFixed(1)} m</b></span><span>命中 50% 以上：<b>${eff?fmt(eff)+' m 內':'—'}</b></span>`;
         // 配電建議
@@ -252,21 +271,35 @@
         document.querySelectorAll('#rpEvade button').forEach(b=>b.classList.toggle('on', +b.dataset.v===S.ev));
         document.querySelectorAll('#rpAspect button').forEach(b=>b.classList.toggle('on', b.dataset.v===S.asp));
         $('rpBoost').checked = S.boost;
-        chart(rg);
+        chart(rg, D);
         table();
       }
-      function chart(rg){
-        const W=640,H=260,L=40,B=30,T=10,Rt=10, maxD=1500, pts=[];
+      function chart(rg, D){
+        const M = window.innerWidth < 600, W = M ? 300 : 640, H = M ? 240 : 260, L = M ? 34 : 40, B=30, T=12, Rt=22, maxD=1500, pts=[];
+        $('rpChart').setAttribute('viewBox', `0 0 ${W} ${H}`);
         for (let d=0; d<=maxD; d+=25) pts.push([d, d===0?1:hit(d)]);
         const X=d=>L+(W-L-Rt)*d/maxD, Y=v=>T+(H-T-B)*(1-v);
         let g='';
         for (const v of [0,0.25,0.5,0.75,1]) g+=`<line x1="${L}" x2="${W-Rt}" y1="${Y(v)}" y2="${Y(v)}" stroke="rgba(255,255,255,0.08)"/><text x="${L-6}" y="${Y(v)+4}" fill="#94a3b8" font-size="11" text-anchor="end">${v*100}%</text>`;
-        for (let d=0; d<=maxD; d+=250) g+=`<text x="${X(d)}" y="${H-10}" fill="#94a3b8" font-size="11" text-anchor="middle">${d}m</text>`;
+        for (let d=0; d<=maxD; d+=(W<500?500:250)) g+=`<text x="${X(d)}" y="${H-10}" fill="#94a3b8" font-size="11" text-anchor="middle">${d}m</text>`;
         const path = pts.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join('');
         const area = path + `L${X(maxD)},${Y(0)}L${X(0)},${Y(0)}Z`;
-        const hv = hit(rg);
         g += `<path d="${area}" fill="rgba(0,210,255,0.12)"/><path d="${path}" fill="none" stroke="#00d2ff" stroke-width="2.5"/>`;
-        g += `<line x1="${X(rg)}" x2="${X(rg)}" y1="${T}" y2="${H-B}" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5"/><circle cx="${X(rg)}" cy="${Y(hv)}" r="5" fill="#f59e0b"/><text x="${X(rg)+(X(rg)>W-120?-8:8)}" y="${Y(hv)-8}" fill="#fbbf24" font-size="12" text-anchor="${X(rg)>W-120?'end':'start'}">${fmt(rg)} m：${Math.round(hv*100)}%</text>`;
+        // 標籤：深色底框；接近 100% 時放到點的下方，避免被切掉或看不清楚
+        const label = (d, v, txt, color, row) => {
+          const x = X(d), y = Y(v), w = [...txt].reduce((a,c)=>a+(/[\u2E80-\uFFFF]/.test(c)?12.5:7.3),0)+16, right = x + 10 + w > W - Rt;
+          let ly = v > 0.8 ? y + 22 + row*24 : y - 14 - row*24;
+          ly = Math.min(Math.max(ly, T+14), H-B-6);
+          const lx = right ? x-10-w : x+10;
+          return `<rect x="${lx}" y="${ly-15}" width="${w}" height="21" rx="5" fill="rgba(5,11,20,0.9)" stroke="${color}" stroke-width="1"/><text x="${lx+8}" y="${ly}" fill="${color}" font-size="12" font-weight="700">${txt}</text>`;
+        };
+        const hr = hit(rg), hd = hit(D);
+        g += `<line x1="${X(rg)}" x2="${X(rg)}" y1="${T}" y2="${H-B}" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5"/>`;
+        g += `<line x1="${X(D)}" x2="${X(D)}" y1="${T}" y2="${H-B}" stroke="#e2e8f0" stroke-width="1.5"/>`;
+        g += `<circle cx="${X(rg)}" cy="${Y(hr)}" r="5" fill="#f59e0b"/><circle cx="${X(D)}" cy="${Y(hd)}" r="5" fill="#e2e8f0" stroke="#00d2ff" stroke-width="2"/>`;
+        const near = Math.abs(X(rg)-X(D)) < 170;
+        g += label(rg, hr, `雷達 ${fmt(rg)} m：${Math.round(hr*100)}%`, '#fbbf24', 0);
+        g += label(D, hd, `距離 ${fmt(D)} m：${Math.round(hd*100)}%`, '#f1f5f9', near ? 1 : 0);
         $('rpChart').innerHTML = g;
       }
       function table(){
@@ -275,11 +308,16 @@
           rows.map(o=>`<tr class="${o.i===S.r?'sel':''}" data-i="${o.i}" style="cursor:pointer"><td><strong>${o.r[0]}</strong></td><td>${o.r[1]} ${o.r[2]}</td><td class="num">${o.r[5]===o.r[6]?o.r[5]:o.r[5]+'～'+o.r[6]}</td><td class="num">${fmt(o.min)} m</td><td class="num">${fmt(o.max)} m</td><td class="num">${Math.round(hit(o.max)*100)}%</td></tr>`).join('') + '</tbody>';
         $('rpTable').querySelectorAll('tbody tr').forEach(tr=>tr.onclick=()=>{ S.r=+tr.dataset.i; S.p=R[S.r][6]; render(); });
       }
-      $('rpRadar').innerHTML = R.map((r,i)=>`<option value="${i}">${r[0]}（${r[1]} ${r[2]}，${r[5]===r[6]?r[5]:r[5]+'～'+r[6]} 格）</option>`).join('');
+      $('rpRadar').innerHTML = R.map((r,i)=>({r,i})).sort((a,b)=>b.r[4]-a.r[4]||a.r[0].localeCompare(b.r[0])).map(({r,i})=>`<option value="${i}">${r[0]}（${r[1]} ${r[2]}）滿電 ${fmt(r[4])} m・${r[5]===r[6]?r[5]:r[5]+'～'+r[6]} 格</option>`).join('');
       $('rpRadar').onchange = e => { S.r = +e.target.value; S.p = R[S.r][6]; render(); };
       document.querySelectorAll('#rpEvade button').forEach(b=>b.onclick=()=>{ S.ev=+b.dataset.v; render(); });
       document.querySelectorAll('#rpAspect button').forEach(b=>b.onclick=()=>{ S.asp=b.dataset.v; render(); });
       $('rpBoost').onchange = e => { S.boost = e.target.checked; render(); };
+      $('rpDist').oninput = e => { S.d = +e.target.value; render(); };
+      $('rpDistNum').onchange = e => { S.d = +e.target.value; render(); };
+      $('rpQuick').innerHTML = [300,500,800,1000].map(d=>`<button type="button" data-d="${d}">${d} m</button>`).join('') + '<button type="button" data-d="radar">＝雷達範圍</button>';
+      $('rpQuick').querySelectorAll('button').forEach(b=>b.onclick=()=>{ S.d = b.dataset.d==='radar' ? Math.round(range(R[S.r],S.p)) : +b.dataset.d; render(); });
+      let rz; window.addEventListener('resize', ()=>{ clearTimeout(rz); rz = setTimeout(render, 200); });
       if (!(S.r < R.length)) S.r = 0;
       render();
     })();
