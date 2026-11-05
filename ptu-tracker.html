@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTU 更新追蹤台 - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen PTU 更新追蹤台：自動追蹤 RSI 官方 Patch Notes，繁體中文翻譯，武器與飛船名稱中英並列。">
+    <link rel="stylesheet" href="styles.css?v=20261105">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+    <style>
+        .pt-meta { display:flex; flex-wrap:wrap; gap:10px 18px; color: var(--text-muted); font-size:0.92rem; margin-top:10px; }
+        .pt-card { border:1px solid var(--glass-border); border-radius:14px; background:rgba(0,0,0,0.3); margin-bottom:18px; overflow:hidden; }
+        .pt-card summary { list-style:none; cursor:pointer; padding:20px 22px; display:flex; flex-direction:column; gap:8px; }
+        .pt-card summary::-webkit-details-marker { display:none; }
+        .pt-card[open] summary { border-bottom:1px solid var(--glass-border); background:rgba(0,210,255,0.05); }
+        .pt-top { display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+        .pt-build { font-family:'Orbitron',monospace; font-size:1.1rem; color:var(--primary); font-weight:700; }
+        .pt-date { color:var(--text-muted); font-size:0.9rem; }
+        .pt-new { background:#ef4444; color:#fff; font-size:0.75rem; padding:2px 10px; border-radius:20px; font-weight:700; }
+        .pt-hl { font-size:1.02rem; }
+        .pt-body { padding:8px 22px 20px; }
+        .pt-body h3 { font-size:1.08rem; margin:18px 0 8px; color:var(--accent); }
+        .pt-body ul { list-style:disc; margin-left:20px !important; }
+        .pt-body li { margin-bottom:6px !important; font-size:0.98rem; }
+        .pt-src { margin-top:14px; font-size:0.88rem; }
+        .pt-chev { margin-left:auto; color:var(--text-muted); font-size:0.85rem; }
+        .pt-empty { color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero glass-panel">
+            <h1><span class="text-gradient">📡 PTU 更新追蹤台</span></h1>
+            <p style="margin-top: 15px;">官方 Patch Notes 的繁體中文版，新的公告出來會自動加進來。</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📡 最新 PTU 更新</h2>
+            <p>自動追蹤 RSI 官方論壇 <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/190048" target="_blank">Patch Notes</a> 的最新公告，翻譯成繁體中文，武器與飛船名稱中英並列。每 6 小時檢查一次，最多保留最近 10 筆。</p>
+            <div class="pt-meta" id="ptMeta"></div>
+        </section>
+
+        <section class="content-section glass-panel" id="ptList">
+            <p class="pt-empty">載入中…</p>
+        </section>
+
+        <section class="credits-section">
+            <h4>📚 資料來源</h4>
+            <p>內容翻譯自 Cloud Imperium Games 於 <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/190048" target="_blank">RSI Spectrum Patch Notes 論壇</a>發布的官方更新說明，由 AI 自動翻譯，可能有用詞不精確的地方，以英文原文為準。「可能修正 (Potential Fix)」代表官方嘗試修正，實際效果需等測試確認。</p>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="index.html" class="btn">返回首頁</a>
+        </div>
+    </main>
+
+    <script src="components.js?v=20261105"></script>
+    <script src="data/ptu-notes.js"></script>
+    <script>
+    (function(){
+      const D = window.PTU_NOTES, list = document.getElementById('ptList'), meta = document.getElementById('ptMeta');
+      if(!D || !D.posts || !D.posts.length){ list.innerHTML = '<p class="pt-empty">目前沒有資料。</p>'; return; }
+      const esc = s => String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+      meta.innerHTML = `<span>🕒 最後更新：${esc(D.updated)}</span><span>📚 目前收錄：${D.posts.length} 筆</span>`;
+      const badge = k => k==='LIVE' ? '<span class="patch-badge live">LIVE</span>' : (k==='PTU' ? '<span class="patch-badge ptu">PTU</span>' : '<span class="patch-badge old">NOTE</span>');
+      list.innerHTML = D.posts.map((p,i)=>`<details class="pt-card"${i===0?' open':''}>
+        <summary>
+          <div class="pt-top">${i===0?'<span class="pt-new">最新</span>':''}${badge(p.kind)}<span class="pt-build">${esc(p.version)}${p.build?' · '+esc(p.build):''}</span><span class="pt-date">📅 ${esc(p.date)}${p.audience?'　👥 '+esc(p.audience):''}</span><span class="pt-chev">點擊展開／收合</span></div>
+          <div class="pt-hl">${esc(p.highlight)}</div>
+        </summary>
+        <div class="pt-body">${(p.sections||[]).map(s=>`<h3>${esc(s.h)}</h3><ul>${(s.items||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`).join('')}
+          <p class="pt-src">📄 英文原文：<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></p></div>
+      </details>`).join('');
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+ "_說明": "PTU 更新追蹤台的翻譯名稱對照表。格式：英文 = 中文。翻譯時會固定用這裡的中文名，想改名稱或新增，直接編輯這個檔案。",
+ "Polaris": "北極星", "Centaurus": "半人馬座", "Starlifter": "大力神運輸機", "Starlancer": "星槍",
+ "Perseus": "英仙座", "Carrack": "卡拉克", "Vulture": "禿鷹", "Reclaimer": "回收者", "Moth": "飛蛾",
+ "Fortune": "財富號", "Salvation": "救贖號", "Zeus Mk II": "宙斯 Mk II", "Prowler": "徘徊者",
+ "Idris": "伊德里斯", "Cutter": "切割者", "Hornet": "大黃蜂", "Gladius": "短劍", "Arrow": "箭",
+ "Cutlass": "彎刀", "Caterpillar": "毛毛蟲", "Constellation": "星座", "Freelancer": "自由槍騎兵",
+ "Hammerhead": "錘頭鯊", "Hull": "船體", "Prospector": "探勘者", "Mole": "鼴鼠", "Aurora": "極光",
+ "Avenger": "復仇者", "Titan": "泰坦", "Retaliator": "報復者", "Vanguard": "先鋒", "Sabre": "軍刀",
+ "Meteor": "流星", "Guardian": "守護者", "Ironclad": "鐵甲", "Railen": "Railen", "Corsair": "海盜",
+ "Scorpius": "天蠍", "Hercules": "大力神", "Merchantman": "商船", "Pisces": "雙魚",
+ "Blade": "刀鋒", "Glaive": "長柄刀", "Scythe": "鐮刀", "Stinger": "螫刺",
+ "Multitool": "多功能工具", "Pulverizer LMG": "粉碎者輕機槍", "Skarnov Rifle": "Skarnov 步槍",
+ "Tractor Beam": "牽引光束", "Quantum Drive": "量子引擎", "Power Plant": "發電機", "Shield Generator": "護盾產生器", "Cooler": "冷卻器", "Radar": "雷達"
+}

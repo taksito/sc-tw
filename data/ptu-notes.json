@@ -1,0 +1,272 @@
+{
+ "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
+ "updated": "2026-11-05 11:00",
+ "posts": [
+  {
+   "id": "575968",
+   "title": "[All Backers] Star Citizen Alpha 4.10.3 PTU Patch Notes 13107423",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/all-backers-star-citizen-alpha-4-10-3-ptu-patch-no",
+   "date": "2026-11-04",
+   "time": 1793816676,
+   "version": "4.10.3",
+   "kind": "PTU",
+   "build": "13107423",
+   "audience": "所有支持者 (All Backers)",
+   "highlight": "開放給所有支持者；Centaurus 平衡調整、打撈船緩衝倉大幅增加、Multitool 預設附牽引光束。",
+   "sections": [
+    {
+     "h": "🎯 測試重點",
+     "items": [
+      "穩定性、錯誤修正、PTU 版本之間的長期持久化 (LTP)",
+      "新任務：Vanduul 入侵 (Vanduul Incursion)",
+      "新 FPS 武器：LBCO Skarnov 步槍（LBCO Skarnov Rifle）",
+      "IAE 星際航太展（加速排程）"
+     ]
+    },
+    {
+     "h": "🎮 遊戲性更新",
+     "items": [
+      "日誌依玩家分類，重要任務事件排在最上方",
+      "mobiGlas 資產管理員與 NikNax 改為字母排序，數量超過 1 個才顯示計數",
+      "Multitool（多功能工具）現在預設附帶牽引光束配件",
+      "高風險 (High Risk) 賞金合約聲望由 2,000 提高到 4,000，介於中風險與極高風險之間",
+      "新增髮型、眉毛與鬍子選項"
+     ]
+    },
+    {
+     "h": "🚀 飛船與載具",
+     "items": [
+      "Centaurus（半人馬座）：裝甲偏轉值物理 531→390、能量 380→330；船體血量 25,740→30,740；油箱 46.8→32 SCU，推進器開始耗油",
+      "Polaris（北極星）：物理與能量的裝甲偏轉值都提高",
+      "Starlifter（大力神運輸機）新增 S10 與 S3 炸彈架",
+      "全域調整預設電力分配，啟動時關鍵組件不會再被關閉",
+      "Starlancer（星槍）、Perseus（英仙座）、Carrack（卡拉克）雷達升級為 S3；Starlancer 雷達移到工程區，Perseus 中繼器移到控制台"
+     ]
+    },
+    {
+     "h": "♻️ 打撈船緩衝倉增加",
+     "items": [
+      "Vulture（禿鷹）：13 → 16 SCU（最大箱 1 SCU，+23.08%）",
+      "Reclaimer（回收者）：240 → 448 SCU（最大箱 16 SCU，+86.67%）",
+      "Moth（飛蛾）：64 → 240 SCU（最大箱 8 SCU，+275%）",
+      "Fortune（財富號）：13 → 14 SCU（最大箱 1 SCU，+7.69%）",
+      "Salvation（救贖號）：6 → 8 SCU（最大箱 1 SCU，+33.33%）"
+     ]
+    },
+    {
+     "h": "🔧 錯誤修正（節錄）",
+     "items": [
+      "修正 2 個客戶端當機與 1 個伺服器死結",
+      "可能修正：Battaglia 故事 1 卡在發電廠欄杆、卡在「前往 Blinding Hope」（船沒生成）",
+      "可能修正：從機庫平台叫出的地面載具被摧毀",
+      "可能修正：載具模組可以從貨運電梯取出（模組尺寸已加大來防止）",
+      "可能修正：Intersec 三方對峙 (3-Way Standoff) 敵人都死光仍顯示還有敵人",
+      "可能修正：RSI 活動獎勵組件的 Distortion 數值設定錯誤",
+      "可能修正：小艇停靠母艦時有摩擦聲",
+      "可能修正：Esperia Prowler（徘徊者）VTOL 推進器沒有轉向",
+      "可能修正：Aegis Idris（伊德里斯）IFR-BC7 砲塔雲台異常",
+      "可能修正：RSI Zeus Mk II（宙斯 Mk II）ES 貨艙牆壁閃爍",
+      "可能修正：多艘船的 HUD 顯示成灰色佔位貼圖",
+      "可能修正：配送中心 (Distribution Center) 無法呼叫 ATC 起降",
+      "可能修正：ASOP 終端互動時卡頓 3～4 秒（新增 1 分鐘逾時保護）",
+      "可能修正：被摧毀的發電機仍算通電，導致無法結構打撈"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "575883",
+   "title": "[All Backers] Star Citizen Alpha 4.10.3 PTU Patch Notes 13093654",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-3",
+   "date": "2026-11-03",
+   "time": 1793729719,
+   "version": "4.10.3",
+   "kind": "PTU",
+   "build": "13093654",
+   "audience": "所有測試梯次 (All Waves)",
+   "highlight": "Skarnov 彈藥加入戰利品、Prowler Utility 可開貨艙門、持續處理機庫重疊問題。",
+   "sections": [
+    {
+     "h": "🔫 LBCO Skarnov 步槍（LBCO Skarnov Rifle）",
+     "items": [
+      "新武器的彈藥現在會出現在戰利品中，並正確標記在對應武器旁"
+     ]
+    },
+    {
+     "h": "🚀 Esperia Prowler（徘徊者）",
+     "items": [
+      "Prowler Utility 新增開啟貨艙門的專用互動"
+     ]
+    },
+    {
+     "h": "🔧 錯誤修正",
+     "items": [
+      "持續處理個人機庫重疊（看得到別人的機庫與船）的問題，遇到請回報地點",
+      "可能修正：一次只提供一個 PvP 執法合約",
+      "可能修正：Vanduul 入侵合約中 Vanduul 語音沒有播放",
+      "可能修正：Shattered Blade 突襲在 mobiGlas 顯示佔位文字而不是地點",
+      "可能修正：接受登艦 (Board Ship) 合約時播放錯誤的戰術打擊群通訊",
+      "可能修正：Vulkan 與 DX11 下有機表面出現塗抹或條紋",
+      "可能修正：Mauler 擊殺與奪回船艦合約顯示佔位文字",
+      "可能修正：ArcCorp 地表部分建築沒有碰撞",
+      "可能修正：AR 購物卡片上的價格在某些角度偏移",
+      "可能修正：Drake Cutter（切割者）前起落架造成當機",
+      "可能修正：Pulverizer LMG（粉碎者輕機槍）彈藥缺少命中特效造成當機"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "575513",
+   "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU Patch Notes 13055118",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-2",
+   "date": "2026-10-30",
+   "time": 1793384913,
+   "version": "4.10.3",
+   "kind": "PTU",
+   "build": "13055118",
+   "audience": "所有測試梯次 (All Waves)",
+   "highlight": "開放所有梯次；Vanduul 入侵大量修正、Skarnov 傷害與重量重新平衡、新讀取畫面。",
+   "sections": [
+    {
+     "h": "👾 Vanduul 入侵 (Vanduul Incursion)",
+     "items": [
+      "可以量子航行到 Shattered Blade 突襲地點了",
+      "合約完成後正確給予藍圖獎勵",
+      "Vanduul NPC 正確穿上護甲（不再沒穿衣服）",
+      "玩家無法再擊暈或用牽引光束拉 Vanduul",
+      "Mauler 武器傷害提高後，血量相對調降",
+      "入侵地點 AI 調整：三層攻擊、專屬走廊路線讓守軍分散、重做掉寶",
+      "每個地點只會生成一個藍色 Vanduul 冷凍艙",
+      "與 Vanduul 戰鬥時播放 Welcome To Nyx 的太空戰音樂",
+      "「消滅特定目標」合約文字修訂，「消滅首領」目標改名為「消滅目標」",
+      "合約任務進一步經濟平衡"
+     ]
+    },
+    {
+     "h": "🔫 LBCO Skarnov 步槍（LBCO Skarnov Rifle）",
+     "items": [
+      "每發能量傷害：10 → 30",
+      "電子連鎖跳躍距離：3.8m → 7.5m",
+      "修正傷害衰減下限（原本下限 30 高於基礎傷害 10），現在下限 20、基礎 30",
+      "步槍重量：4.9 → 2.9；彈匣重量：1.12 → 1.05",
+      "快速射擊模式後座力稍微降低",
+      "補上原本全部空白的 10 個槍聲音效",
+      "槍管配件槽原本只接受實彈槍管，已修正為能量槍管"
+     ]
+    },
+    {
+     "h": "🖼️ 讀取畫面",
+     "items": [
+      "更新 4.10.3 讀取畫面"
+     ]
+    },
+    {
+     "h": "🔧 錯誤修正",
+     "items": [
+      "可能修正：Collector（收藏家）入門合約沒出現，無法進入該任務線",
+      "可能修正：新手教學第 3 部分自動降落無法完成「降落在 LEO」",
+      "可能修正：商店購買失敗逾時後，之後所有購買都卡住直到換伺服器",
+      "可能修正：mobiGlas 降落服務卡在「處理中」或「已封鎖」",
+      "可能修正：完成回收貨物合約後貨運電梯出現大量重複貨物",
+      "可能修正：賞金與傭兵合約的敵方 AI 船有時不還擊"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "575272",
+   "title": "[Wave 1] Star Citizen Alpha 4.10.3 PTU Patch Notes 13032516",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-1",
+   "date": "2026-10-28",
+   "time": 1793206316,
+   "version": "4.10.3",
+   "kind": "PTU",
+   "build": "13032516",
+   "audience": "第 1 梯次 (Wave 1)",
+   "highlight": "Mauler 武器大幅增強、Skarnov 彈匣改 30 發、移除 Vulkan 快取 4GB 上限。",
+   "sections": [
+    {
+     "h": "👾 Vanduul 入侵",
+     "items": [
+      "Mauler 的武器變得危險許多",
+      "與 Vanduul 戰鬥時播放 Welcome To Nyx 太空戰音樂，緊張度偵測系統重新啟用",
+      "登艦 (Board Ship) 目標修訂並重新平衡"
+     ]
+    },
+    {
+     "h": "🔫 LBCO Skarnov 步槍（LBCO Skarnov Rifle）",
+     "items": [
+      "副射擊模式加入光效",
+      "彈匣容量改為 30 發"
+     ]
+    },
+    {
+     "h": "💾 著色器快取",
+     "items": [
+      "移除 Vulkan 管線快取 4GB 上限（完整快取會超過，之前會被丟棄）；現有快取會重建一次"
+     ]
+    },
+    {
+     "h": "🔧 錯誤修正",
+     "items": [
+      "可能修正：維生系統可以遠超過 100%",
+      "可能修正：在星球區域內排氣的載具無法恢復大氣，乘客凍死或窒息",
+      "可能修正：mobiGlas 合約選單捲動卡住",
+      "可能修正：從 ASOP 叫船時船卡進機庫平台",
+      "可能修正：船被扣押時 ASOP 沒有繳罰款選項",
+      "可能修正：任務敵方 AI 生成後呆站 20～50 秒才攻擊",
+      "可能修正：任務描述把 UGF 地堡說成廢棄前哨站，現在改稱「廢棄設施」",
+      "其中 4 項修正來自 Issue Council 回報（維生超過 100% 有 249 人回報）"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "574712",
+   "title": "[Wave 1] Star Citizen Alpha 4.10.3 PTU Patch Notes 12999338",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes",
+   "date": "2026-10-23",
+   "time": 1792773346,
+   "version": "4.10.3",
+   "kind": "PTU",
+   "build": "12999338",
+   "audience": "第 1 梯次 (Wave 1)",
+   "highlight": "4.10.3 PTU 首發：Vanduul 入侵任務線、LBCO Skarnov 步槍登場。",
+   "sections": [
+    {
+     "h": "👾 新任務：Vanduul 入侵 (Vanduul Incursion)",
+     "items": [
+      "Intersec Defence Solutions 開放對抗 Vanduul 與 Shattered Blade 氏族的新任務線，在深空進行",
+      "會遇到 Blade（刀鋒）、Glaive（長柄刀）、Scythe（鐮刀）、Stinger（螫刺）等 Vanduul 戰機",
+      "正式版需先完成 Welcome To Nyx 的 Vanduul 科技走私者任務；PTU 全部開放",
+      "Shattered Blade 突襲（等級 1）：清除 Nyx 各輔助站的 Shattered Blade 部隊",
+      "奪回船艦（等級 2）：登上被佔領的船並奪回",
+      "Vanduul 氏族殲滅（等級 4）：撐過一波波 Vanduul 船艦，三種難度",
+      "三方對峙（等級 4）：你、Vanduul、Shattered Blade 三方混戰",
+      "[保密] 擊殺（等級 4～6）：打退多波 Vanduul 直到引出 [保密]，五種難度",
+      "收集 Vanduul 冷凍艙",
+      "高難度是為團隊設計，不適合單人"
+     ]
+    },
+    {
+     "h": "🧊 冷凍艙與獎勵",
+     "items": [
+      "新增第二種冷凍艙：紅色裝活的 Vanduul，新顏色是死的；死的比較值錢，可以交給 Wikelo",
+      "完成高難度可得：新能量步槍、兩套新重甲、新飛行服、一組新飛船武器的藍圖",
+      "Nyx 星系各處新增太空與 FPS 戰鬥地點"
+     ]
+    },
+    {
+     "h": "🔫 新 FPS 武器：LBCO Skarnov 步槍（LBCO Skarnov Rifle）",
+     "items": [
+      "全自動／單發的能量 DMR，傷害 27、射速 375 RPM、彈匣 30 發、彈速 500",
+      "命中後產生電脈衝，連鎖到附近目標",
+      "垂直後座力高但穩定；會過熱，炎熱環境過熱更快、寒冷環境較慢",
+      "PTU 購買地點：Area18 Cubby Blast、GrimHex Skutters、Levski Conscientious Objects、Checkmate 武器店"
+     ]
+    }
+   ]
+  }
+ ]
+}

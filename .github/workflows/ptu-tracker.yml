@@ -1,0 +1,54 @@
+name: PTU 更新追蹤台
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'   # 每 6 小時檢查一次（UTC）
+  workflow_dispatch:
+    inputs:
+      test:
+        description: '只測試翻譯最新一篇，不寫入網站'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ptu-tracker
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 測試翻譯
+        if: ${{ inputs.test }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/ptu_update.py --test
+
+      - name: 檢查新公告並翻譯
+        if: ${{ !inputs.test }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/ptu_update.py
+
+      - name: 提交更新
+        if: ${{ !inputs.test }}
+        run: |
+          if git diff --quiet -- data/; then
+            echo "沒有新公告"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ptu-notes.json data/ptu-notes.js
+          git commit -m "PTU 更新追蹤台：自動翻譯新公告"
+          git pull --rebase origin main
+          git push
