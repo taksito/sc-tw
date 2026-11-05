@@ -98,7 +98,7 @@ def gemini_translate(text):
     last = None
     for model in models:
         url = f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent'
-        for attempt in range(4):
+        for attempt in range(3):
             try:
                 r = post_json(url, payload, headers={'x-goog-api-key': key}, timeout=180)
                 raw = r['candidates'][0]['content']['parts'][0]['text']
@@ -114,7 +114,7 @@ def gemini_translate(text):
                     raise RuntimeError(f'Gemini translation failed: {last}')
             except Exception as e:  # malformed JSON etc.
                 last = f'{model} {e!r}'
-            time.sleep(20 * (attempt + 1))
+            time.sleep(15 * (attempt + 1))
         print(f'  {last}')
     raise RuntimeError(f'Gemini translation failed: {last}')
 
