@@ -172,6 +172,11 @@ class ComponentManager {
                     <li><a href="${prefix}update410/4102.html">🟢 4.10.2 RSI 探索月</a></li>
                 </ul>
 
+                <div class="nav-category">官方最新消息</div>
+                <ul class="sidebar-nav">
+                    <li><a href="${prefix}news.html">📰 官方最新消息展望台</a></li>
+                </ul>
+
                 <div class="nav-category">PTU 測試中 <span style="font-size: 0.7rem; color: var(--warning); vertical-align: middle;">(持續更新中)</span></div>
                 <ul class="sidebar-nav">
                     <li><a href="${prefix}update410/4103-ptu.html">🧪 4.10.3 Vanduul 入侵</a></li>
