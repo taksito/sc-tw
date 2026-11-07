@@ -1,7 +1,62 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-06 15:01",
+ "updated": "2026-11-07 14:15",
  "posts": [
+  {
+   "id": "576227",
+   "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU Patch Notes 13132336",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-4",
+   "date": "2026-11-06",
+   "time": 1793999236,
+   "version": "4.10.3",
+   "kind": "PTU",
+   "build": "13132336",
+   "audience": "所有測試梯次 (All Waves)",
+   "highlight": "本版開放新槍 LBCO Skarnov Rifle，調升 Ironclad 價格並支援地面載具保險理賠，並修正 ASOP 與飛船碰撞問題。",
+   "sections": [
+    {
+     "h": "🎯 測試重點",
+     "items": [
+      "穩定性、錯誤修正以及 PTU 版本之間的 LTP（長期持續性）測試",
+      "新任務：Vanduul Incursion（Vanduul 入侵）",
+      "新單兵武器：LBCO Skarnov Rifle（LBCO Skarnov 步槍）",
+      "IAE（聖宇航展，採加速時程進行測試）"
+     ]
+    },
+    {
+     "h": "⚙️ 遊戲性與功能更新",
+     "items": [
+      "飛船取得與價格調整：Basher（撞擊者）現可在 Pyro Rundown Reststops 購買；Gatac Tyilui 現可在 Area18 的 Astro Armada 購買；兩者皆已加入 Arena Commander 庫存。同時調升 Drake Ironclad（鐵甲）、Drake Ironclad Assault（鐵甲突擊型）與 Gatac Tyilui 的 aUEC 售價。",
+      "武器手感調整：全面調整 4.10 版本武器組的操作手感，提升射擊體驗。",
+      "Vanduul Incursion 任務更新：導入全新一次性實體生成器，用於從生成的飛船領取一次性合約獎勵，現已應用於 Vanduul 低溫艙（cryopod），使其在太空中不再出現受重力影響的行為。",
+      "新增 LBCO Skarnov Rifle（LBCO Skarnov 步槍）彈匣藍圖並作為合約獎勵。",
+      "Vanduul 在戰鬥期間新增語音喊話。",
+      "量子站（quantum stations）的 AI 在受到攻擊前就會主動與目標交戰。",
+      "共享合約的聲望獎勵現已平均分配給所有隊員。",
+      "登船合約（Board Ship）地點調整，不再將任務設在玩家及其 Drake Caterpillar（毛毛蟲）一抵達就會遭受攻擊的位置。",
+      "壓制目標合約（Neutralize Target）不再生成無人操控的 Polaris（北極星）作為目標。",
+      "保險系統更新：地面載具與動力服（powersuits）現可透過保險理賠進行索賠回收。"
+     ]
+    },
+    {
+     "h": "🛠️ 錯誤修正與技術調整",
+     "items": [
+      "可能修正：在某些表面行走時腳步聲材質未正確切換的問題。",
+      "可能修正：玩家離開座椅後失去與自家飛船的碰撞體，導致斜坡與電梯變為無實體且船體互相穿透的問題。",
+      "可能修正：多款載具在 Fleet Manager 與 ASOP 終端機顯示占位符狀態，導致無法交付或檢索的問題。",
+      "可能修正：部分飛船上的武器架位置出現占位符球體的問題。",
+      "可能修正：當機庫門打開時，玩家能在自己的獨立機庫（instanced hangar）內看到其他玩家載具的問題。",
+      "可能修正：由衝突的護盾藍圖關聯引起的資料斷言（data assert）錯誤。",
+      "可能修正：RSI Constellation（星座） Centaurus（半人馬座） Mk V 的遙控砲塔失去雲台運作功能的問題。",
+      "可能修正：MaxLift Tractor Beam（牽引光束）與 Cambio SRT 變體無法放置在 Bosco Weapon Display Rack（Bosco 武器展示架）上的問題。",
+      "可能修正：玩家能夠進入 Drake Caterpillar（毛毛蟲）上原本被封鎖死角的問題。",
+      "可能修正：部分 Argo Moth（飛蛾）塗裝在載具塗裝管理器中顯示方向錯誤的問題。",
+      "可能修正：物品吸附至貨運電梯（freight elevator）時懸浮在半空中的問題。",
+      "可能修正：Polaris（北極星）的 Size 4 Shield Generator（4 級護盾產生器）顯示錯誤名稱與描述的問題。"
+     ]
+    }
+   ]
+  },
   {
    "id": "576120",
    "title": "[Wave 1] Star Citizen Alpha 5.0 PTU 13119881 - Genesis, QDSM, Starchitect, Mission Boards",
