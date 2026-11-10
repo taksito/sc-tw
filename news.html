@@ -18,16 +18,37 @@
         .nw-hi td { background: rgba(245,158,11,0.08); }
         .nw-tag { display: inline-block; font-size: 0.8rem; padding: 2px 10px; border-radius: 20px; border: 1px solid var(--warning); color: var(--warning); margin-right: 8px; }
         .nw-date { color: var(--text-muted); font-size: 0.9rem; }
+        .feed { display: grid; gap: 14px; }
+        .feed-item { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 14px; border: 1px solid var(--glass-border); border-radius: 12px; background: rgba(255,255,255,0.03); color: inherit; text-decoration: none; transition: border-color .2s; }
+        .feed-item:hover { border-color: var(--primary); }
+        .feed-item.noimg { grid-template-columns: 1fr; }
+        .feed-item img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; }
+        .feed-item h3 { font-size: 1.05rem; margin: 4px 0 6px; color: var(--text-main); }
+        .feed-item p { margin: 0; font-size: 0.92rem; color: var(--text-muted); }
+        .feed-meta { font-size: 0.8rem; color: var(--text-muted); }
+        .feed-tag { display: inline-block; font-size: 0.75rem; padding: 1px 9px; border-radius: 20px; border: 1px solid var(--primary); color: var(--primary); margin-right: 8px; }
+        .feed-en { font-size: 0.78rem; color: var(--text-muted); opacity: .75; margin-top: 4px; }
+        .feed-more { margin-top: 10px; }
+        @media (max-width: 560px) { .feed-item { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <main>
         <section class="hero glass-panel">
             <h1>📰 <span class="text-gradient">官方最新消息展望台</span></h1>
-            <p style="margin-top: 15px;">CIG 官方公布的活動、展覽與重大消息，用繁體中文整理在這裡。改版內容請看下方的 PTU 頁面。</p>
+            <p style="margin-top: 15px;">CIG 官方公布的活動、展覽與重大消息。上方是自動抓取的官方公告，下方是站長整理的重點。</p>
+        </section>
+
+
+        <section class="content-section glass-panel" id="auto-news" style="content-visibility: visible;">
+            <h2 class="text-gradient">📡 官方公告（自動更新）</h2>
+            <p class="feed-meta" id="feed-updated">RSI 官方 Comm-Link 的新文章，每 3 小時自動抓取並翻成中文摘要，點標題看官方原文。</p>
+            <div class="feed" id="feed"><p class="feed-meta">讀取中…</p></div>
+            <div class="feed-more" id="feed-more-wrap" hidden><button type="button" class="btn" id="feed-more" style="background: transparent; border: 1px solid var(--primary);">顯示更多</button></div>
         </section>
 
         <section class="content-section glass-panel">
+            <p class="feed-meta" style="margin-bottom: 10px;">✍️ 站長整理</p>
             <div style="margin-bottom: 12px;"><span class="nw-tag">即將開始</span><span class="nw-date">官方公告：<a href="https://robertsspaceindustries.com/en/comm-link/transmission/21389-Countdown-To-IAE-2956" target="_blank" rel="noopener">IAE 2956 - Save the Date ↗</a></span></div>
             <h2 class="text-gradient">🚀 IAE 2956 星際航太展</h2>
             <p><strong>IAE（Intergalactic Aerospace Expo）</strong>是星際公民每年最大的船展。今年的展期是 <strong>11/13～11/27</strong>，共 15 天，地點在 <strong>microTech 的 New Babbage</strong>，Stanton 的科技重鎮、白雪覆蓋的城市。</p>
@@ -91,6 +112,31 @@
             <a href="index.html" class="btn">返回首頁</a>
         </div>
     </main>
+    <script src="data/news.js?v=20261110" onerror="window.SC_NEWS=null"></script>
+    <script>
+        (function () {
+            var box = document.getElementById('feed');
+            var d = window.SC_NEWS;
+            if (!d || !d.items || !d.items.length) {
+                box.innerHTML = '<p class="feed-meta">目前還沒有資料，第一次自動更新完成後就會出現。</p>';
+                return;
+            }
+            if (d.updated) document.getElementById('feed-updated').textContent = '最後更新：' + d.updated + '（台灣時間）・每 3 小時自動抓取 RSI 官方 Comm-Link 並翻成中文摘要，點標題看官方原文。';
+            function esc(t) { var e = document.createElement('div'); e.textContent = t || ''; return e.innerHTML; }
+            var SHOW = 8, html = '';
+            d.items.forEach(function (it, i) {
+                var img = it.image ? '<img src="' + esc(it.image) + '" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add(\'noimg\');this.remove()">' : '';
+                html += '<a class="feed-item' + (it.image ? '' : ' noimg') + '" href="' + esc(it.link) + '" target="_blank" rel="noopener"' + (i >= SHOW ? ' hidden' : '') + '>' + img +
+                    '<div><div class="feed-meta"><span class="feed-tag">' + esc(it.tag) + '</span>' + esc(it.date) + '</div>' +
+                    '<h3>' + esc(it.title_zh) + '</h3><p>' + esc(it.summary) + '</p><div class="feed-en">' + esc(it.title) + ' ↗</div></div></a>';
+            });
+            box.innerHTML = html;
+            if (d.items.length > SHOW) {
+                var w = document.getElementById('feed-more-wrap'); w.hidden = false;
+                document.getElementById('feed-more').onclick = function () { box.querySelectorAll('[hidden]').forEach(function (x) { x.hidden = false; }); w.hidden = true; };
+            }
+        })();
+    </script>
     <script src="components.js?v=20261110"></script>
 </body>
 </html>

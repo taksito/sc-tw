@@ -1,0 +1,62 @@
+name: 官方最新消息
+
+on:
+  schedule:
+    - cron: '47 */3 * * *'   # 每 3 小時檢查一次（UTC）
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/news_update.py'
+      - '.github/workflows/news-tracker.yml'
+  workflow_dispatch:
+    inputs:
+      test:
+        description: '只測試抓取與翻譯，不寫入網站'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: news-tracker
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 測試
+        if: ${{ inputs.test }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/news_update.py --test
+
+      - name: 檢查新文章並翻譯
+        if: ${{ !inputs.test }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/news_update.py
+
+      - name: 提交更新
+        if: ${{ !inputs.test }}
+        run: |
+          git add data/news.json data/news.js 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "沒有新文章"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "官方最新消息：自動翻譯新文章"
+          git pull --rebase origin main
+          git push
