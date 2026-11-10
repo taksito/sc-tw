@@ -169,19 +169,6 @@ main {
     display: none;
 }
 
-.hamburger {
-    cursor: pointer;
-    flex-direction: column;
-    gap: 6px;
-    z-index: 1100;
-}
-
-.hamburger span {
-    width: 30px;
-    height: 2px;
-    background-color: var(--primary);
-    transition: all 0.3s;
-}
 
 /* Footer */
 footer {
@@ -900,3 +887,74 @@ img[data-full] {
 
 /* 圖片載入中先顯示底色，避免空白閃爍 */
 img { background-color: rgba(255, 255, 255, 0.03); }
+
+/* =========================================================
+   手機選單（漢堡按鈕＋側欄抽屜）
+   ========================================================= */
+.hamburger {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 6px 12px;
+    background: rgba(0, 210, 255, 0.08);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: var(--primary);
+    font: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.hamburger-icon { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 22px; }
+.hamburger-label { white-space: nowrap; line-height: 1; }
+.hamburger-icon span { display: block; width: 22px; height: 2px; border-radius: 2px; background: var(--primary); transition: transform .3s, opacity .3s; }
+.hamburger.open .hamburger-icon span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open .hamburger-icon span:nth-child(2) { opacity: 0; }
+.hamburger.open .hamburger-icon span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.sidebar-close { display: none; }
+.nav-overlay { display: none; }
+
+@media (max-width: 992px) {
+    .hamburger { display: inline-flex; }
+    .mobile-header { padding: 10px 16px; padding-top: calc(10px + env(safe-area-inset-top)); }
+    .mobile-header .nav-logo { font-size: 1.1rem; }
+    main { padding: 84px 16px 40px; }
+
+    .sidebar {
+        z-index: 1100;
+        width: min(86vw, 320px);
+        height: 100vh;
+        height: 100dvh;
+        padding: 20px 16px calc(40px + env(safe-area-inset-bottom));
+        padding-top: calc(20px + env(safe-area-inset-top));
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        visibility: hidden;
+        transition: transform .3s ease, visibility 0s linear .3s;
+    }
+    .sidebar.active { visibility: visible; transition: transform .3s ease, visibility 0s; }
+    .sidebar-logo { margin-bottom: 20px; padding-right: 50px; }
+    .sidebar-close {
+        display: flex; align-items: center; justify-content: center;
+        position: absolute; top: calc(14px + env(safe-area-inset-top)); right: 12px;
+        width: 44px; height: 44px; border-radius: 10px;
+        background: rgba(255, 255, 255, 0.06); border: 1px solid var(--glass-border);
+        color: var(--text-main); font-size: 1.1rem; cursor: pointer;
+    }
+    .nav-overlay {
+        display: block; position: fixed; inset: 0; z-index: 1050;
+        background: rgba(0, 0, 0, 0.55); opacity: 0; transition: opacity .3s ease;
+    }
+    .nav-overlay.show { opacity: 1; }
+    .nav-overlay[hidden] { display: none; }
+    body.nav-open { overflow: hidden; }
+
+    /* 手指好點：加大選單項目與展開箭頭的點擊範圍 */
+    .sidebar-nav li a { padding: 13px 14px; font-size: 1rem; }
+    .sidebar-nav li a:hover, .sidebar-nav li a.active { transform: none; }
+    .submenu-header { padding-right: 0; }
+    .toggle-icon { display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font-size: 0.85rem; }
+    .submenu li a { padding: 11px 12px; font-size: 0.92rem; }
+    .has-submenu.expanded .submenu { max-height: 900px; }
+}

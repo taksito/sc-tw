@@ -53,12 +53,15 @@ class ComponentManager {
         const navHtml = `
             <header class="mobile-header">
                 <a href="${prefix}index.html" class="nav-logo" style="font-family: 'Orbitron', sans-serif; text-decoration: none; color: var(--text-main); font-weight: bold;">SC <span style="color: var(--primary);">TW Guide</span></a>
-                <div class="hamburger">
-                    <span></span><span></span><span></span>
-                </div>
+                <button type="button" class="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="main-sidebar">
+                    <span class="hamburger-icon"><span></span><span></span><span></span></span>
+                    <span class="hamburger-label">選單</span>
+                </button>
             </header>
+            <div class="nav-overlay" hidden></div>
 
-            <nav class="sidebar" id="main-sidebar">
+            <nav class="sidebar" id="main-sidebar" aria-label="網站選單">
+                <button type="button" class="sidebar-close" aria-label="關閉選單">✕</button>
                 <a href="${prefix}index.html" class="sidebar-logo">
                     <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.4rem; color: var(--text-main); margin: 0;">SC <span style="color: var(--primary);">TW Guide</span></h2>
                 </a>
@@ -243,21 +246,61 @@ class ComponentManager {
     static setupMobileNav() {
         const hamburger = document.querySelector('.hamburger');
         const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.nav-overlay');
+        const closeBtn = document.querySelector('.sidebar-close');
+        if (!hamburger || !sidebar) return;
 
-        if (hamburger && sidebar) {
-            hamburger.addEventListener('click', () => {
-                sidebar.classList.toggle('active');
-            });
+        const isMobile = () => window.innerWidth <= 992;
+        const open = () => {
+            sidebar.classList.add('active');
+            hamburger.classList.add('open');
+            hamburger.setAttribute('aria-expanded', 'true');
+            hamburger.setAttribute('aria-label', '關閉選單');
+            if (overlay) { overlay.hidden = false; requestAnimationFrame(() => overlay.classList.add('show')); }
+            document.body.classList.add('nav-open');
+            // 打開時把目前所在頁面捲到看得到的位置
+            const cur = sidebar.querySelector('a.active');
+            if (cur) cur.scrollIntoView({ block: 'center' });
+        };
+        const close = () => {
+            sidebar.classList.remove('active');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', '開啟選單');
+            document.body.classList.remove('nav-open');
+            if (overlay) { overlay.classList.remove('show'); setTimeout(() => { if (!sidebar.classList.contains('active')) overlay.hidden = true; }, 300); }
+        };
+        this.openNav = open;
+        this.closeNav = close;
 
-            const links = sidebar.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 992) {
-                        sidebar.classList.remove('active');
-                    }
-                });
-            });
-        }
+        hamburger.addEventListener('click', () => (sidebar.classList.contains('active') ? close() : open()));
+        if (overlay) overlay.addEventListener('click', close);
+        if (closeBtn) closeBtn.addEventListener('click', close);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && sidebar.classList.contains('active')) close(); });
+        window.addEventListener('resize', () => { if (!isMobile() && sidebar.classList.contains('active')) close(); });
+
+        sidebar.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => { if (isMobile()) close(); });
+        });
+
+        // 手勢：從螢幕左邊緣往右滑打開選單，在選單上往左滑關閉
+        let sx = null, sy = null, fromEdge = false;
+        document.addEventListener('touchstart', e => {
+            if (!isMobile() || e.touches.length !== 1) return;
+            const t = e.touches[0];
+            sx = t.clientX; sy = t.clientY;
+            fromEdge = sx < 24 && !sidebar.classList.contains('active');
+        }, { passive: true });
+        document.addEventListener('touchend', e => {
+            if (sx === null) return;
+            const t = e.changedTouches[0];
+            const dx = t.clientX - sx, dy = Math.abs(t.clientY - sy);
+            if (dy < 60) {
+                if (fromEdge && dx > 60) open();
+                else if (sidebar.classList.contains('active') && dx < -60) close();
+            }
+            sx = sy = null; fromEdge = false;
+        }, { passive: true });
     }
 
     static toggleSubmenu(header) {
