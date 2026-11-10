@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新船介紹 - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen 2026 新船時間表：即將登場的 RSI Galaxy、Skylark、Anvil Odin，以及今年每個月新上線的飛船、可駕駛版本、現金價格、遊戲內價格與購買地點。">
+    <link rel="stylesheet" href="../styles.css?v=20261105">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://media.starcitizen.tools">
+    <style>
+        .price-box { margin-top: 10px; padding: 10px 12px; border-radius: 8px; background: rgba(0,210,255,0.05); border: 1px solid var(--glass-border); font-size: 0.88rem; line-height: 1.6; }
+        .price-box b { color: var(--accent); }
+        .role-chip { display: inline-block; font-size: 0.78rem; padding: 2px 9px; border-radius: 20px; border: 1px solid var(--glass-border); color: var(--text-muted); margin: 2px 4px 2px 0; }
+        .badge { display: inline-block; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; font-weight: 700; margin-right: 6px; }
+        .b-live { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid #10b981; }
+        .b-cash { background: rgba(245,158,11,0.12); color: #fbbf24; border: 1px solid #f59e0b; }
+        .b-dev { background: rgba(168,85,247,0.12); color: #c084fc; border: 1px solid #a855f7; }
+        .b-ptu { background: rgba(56,189,248,0.12); color: #7dd3fc; border: 1px solid #38bdf8; }
+        
+        .up-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+        .up-card, .tl-card { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; overflow: hidden; }
+        .up-card { border-color: rgba(168,85,247,0.4); }
+        .tl-img img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+        .card-body { padding: 14px 18px 16px; }
+        .card-body h3 { font-size: 1.12rem; margin: 6px 0 4px; }
+        .card-body h3 a { color: var(--text-main); }
+        .card-body .when { color: #c084fc; font-size: 0.85rem; }
+        .card-body p { font-size: 0.92rem; margin: 6px 0 0; }
+        .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+        .filters button { background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid var(--glass-border); border-radius: 20px; padding: 6px 14px; cursor: pointer; font-size: 0.9rem; }
+        .filters button.on { border-color: var(--primary); color: var(--primary); background: rgba(0,210,255,0.08); }
+        .timeline { position: relative; margin-left: 10px; padding-left: 28px; border-left: 2px solid var(--glass-border); }
+        .tl-month { font-family: 'Orbitron', sans-serif; color: var(--primary); font-size: 1.05rem; margin: 26px 0 12px; position: relative; }
+        .tl-month::before { content: ''; position: absolute; left: -36px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px rgba(0,210,255,0.15); }
+        .tl-month:first-child { margin-top: 0; }
+        .tl-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+        .tl-date { font-size: 0.82rem; color: var(--text-muted); }
+        .tl-date b { color: var(--accent); font-family: 'Orbitron', sans-serif; }
+        .tl-card[hidden], .tl-month[hidden], .tl-row[hidden] { display: none; }
+
+    </style>
+</head>
+<body>
+    <script>function imgFail(i){var f=i.closest('figure,.tl-img');if(f)f.remove();else i.remove();}</script>
+    <main>
+        <section class="hero glass-panel">
+            <h1>🆕 <span class="text-gradient">新船介紹</span></h1>
+            <p style="margin-top: 15px;">2026 年至今的新船時間表：什麼時候出現、哪個版本可以開、要花多少錢、哪裡買得到。</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🔮 即將登場</h2>
+            <div class="up-grid"><div class="up-card"><div class="tl-img"><img src="https://i.ytimg.com/vi/1YzZqThl2k8/hqdefault.jpg" alt="RSI Galaxy" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="when">🔮 開發中・IAE 2956 RSI 日（11/13–14）值得關注</div><h3><a href="rsi-galaxy.html">RSI Galaxy</a></h3><div><span class="badge b-dev">開發中</span><span class="role-chip">多用途</span><span class="role-chip">模組化</span></div><p>110 m 模組化多用途船，可換貨運、醫療、精煉模組。11/9 官方釋出 Behind the Ships 影片。</p><div class="price-box">💵 現金：<b>$380（戰爭債券 $350）</b><br>🪙 遊戲內：<b>尚未能在遊戲內駕駛</b></div></div></div><div class="up-card"><div class="card-body"><div class="when">🔮 4.10.2 搶先租借・IAE 2956 正式推出</div><h3>RSI Skylark</h3><div><span class="badge b-ptu">搶先租借</span><span class="role-chip">小戰機</span><span class="role-chip">艦載機</span></div><p>專門停靠 Constellation Mk V 的單人小戰機，3 門 S2、兩顆護盾。</p><div class="price-box">💵 現金：<b>IAE 時公布</b><br>🪙 遊戲內：<b>尚未開放購買</b></div></div></div><div class="up-card"><div class="card-body"><div class="when">🔮 概念階段（2026-05-24 概念銷售）</div><h3>Anvil Odin</h3><div><span class="badge b-dev">概念階段</span><span class="role-chip">戰列巡洋艦</span><span class="role-chip">主力艦</span></div><p>752 m 的戰列巡洋艦，33～65 人，船頭固定光束砲＋大量點防禦與魚雷。</p><div class="price-box">💵 現金：<b>$5,900（戰爭債券 $5,000，限量）</b><br>🪙 遊戲內：<b>尚未能在遊戲內駕駛</b></div></div></div></div>
+        </section>
+
+        <section class="content-section glass-panel" style="content-visibility: visible;">
+            <h2 class="text-gradient">📅 2026 新船時間表</h2>
+            <p>越新的排越上面。日期是官方開賣或可以駕駛的日期，點船名可以看完整介紹。</p>
+            <div class="filters" role="group" aria-label="篩選">
+                <button type="button" class="on" data-f="all">全部</button>
+                <button type="button" data-f="live">遊戲內可買</button>
+                <button type="button" data-f="ptu">4.10.3 起可買</button>
+                <button type="button" data-f="cash">現金限定</button>
+            </div>
+            <div class="timeline">
+                <div class="tl-month">2026 年 10 月</div>
+                <div class="tl-row"><div class="tl-card" data-st="cash"><div class="tl-img"><img src="https://media.starcitizen.tools/thumb/e/e7/RSI_Constellation_Mk_V_Centaurus_flying_and_firing.png/800px-RSI_Constellation_Mk_V_Centaurus_flying_and_firing.png.webp" alt="RSI Constellation Mk V Centaurus" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="tl-date">📅 <b>2026/10/14</b>・✈️ Alpha 4.10.2 可駕駛</div><h3>RSI Constellation Mk V Centaurus</h3><div><span class="badge b-cash">現金限定</span><span class="role-chip">多用途</span><span class="role-chip">重型火力</span></div><p>新一代 Constellation，4 門 S5、32 顆飛彈、240 SCU，可停靠 Skylark。</p><div class="price-box">💵 現金：<b>$300（戰爭債券 $275）</b><br>🪙 遊戲內：<b>目前查無遊戲內販售（RSI 探索月曾開放租借）</b></div></div></div></div>
+                <div class="tl-month">2026 年 9 月</div>
+                <div class="tl-row"><div class="tl-card" data-st="cash"><div class="card-body"><div class="tl-date">📅 <b>2026/09/16</b>・✈️ Alpha 4.10.1 可駕駛</div><h3>Aegis Sabre Raven EX</h3><div><span class="badge b-cash">現金限定</span><span class="role-chip">中型戰機</span><span class="role-chip">攔截</span></div><p>4 門 S3，配備量子抑制器，讓目標跳不走。</p><div class="price-box">💵 現金：<b>$185（戰爭債券 $165）</b><br>🪙 遊戲內：<b>目前查無遊戲內販售</b></div></div></div></div>
+                <div class="tl-month">2026 年 8 月</div>
+                <div class="tl-row"><div class="tl-card" data-st="cash"><div class="card-body"><div class="tl-date">📅 <b>2026/08/26</b>・✈️ Alpha 4.10.0 可駕駛</div><h3>Kruger S-65 Stingray</h3><div><span class="badge b-cash">現金限定</span><span class="role-chip">中型戰機</span></div><p>2 門 S4＋4 門 S2，8 顆 S2 飛彈。</p><div class="price-box">💵 現金：<b>$175（戰爭債券 $160）</b><br>🪙 遊戲內：<b>目前查無遊戲內販售</b></div></div></div></div>
+                <div class="tl-month">2026 年 7 月</div>
+                <div class="tl-row"><div class="tl-card" data-st="ptu"><div class="card-body"><div class="tl-date">📅 <b>2026/07/15</b>・✈️ Alpha 4.9.0 可駕駛</div><h3>Grey's Basher</h3><div><span class="badge b-ptu">4.10.3 起遊戲內可買</span><span class="role-chip">小戰機</span></div><p>6 門 S2 的輕型戰機，雷射與實彈混搭。</p><div class="price-box">💵 現金：<b>$110（戰爭債券 $100）</b><br>🪙 遊戲內：<b>4.10.3 起開賣</b><br>📍 Pyro 的 Rundown 休息站</div></div></div></div>
+                <div class="tl-month">2026 年 6 月</div>
+                <div class="tl-row"><div class="tl-card" data-st="cash"><div class="tl-img"><img src="https://media.starcitizen.tools/thumb/4/45/Railen_flying_through_debris_field_%26_adjusted_H.jpg/800px-Railen_flying_through_debris_field_%26_adjusted_H.jpg.webp" alt="Gatac Railen" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="tl-date">📅 <b>2026/06/17</b>・✈️ Alpha 4.8.2 可駕駛</div><h3><a href="gatac-railen.html">Gatac Railen</a></h3><div><span class="badge b-cash">現金限定</span><span class="role-chip">中型貨運</span></div><p>外星廠商 Gatac 的中型貨船，640 SCU 外掛貨架。</p><div class="price-box">💵 現金：<b>$400（戰爭債券 $360）</b><br>🪙 遊戲內：<b>目前查無遊戲內販售</b></div></div></div><div class="tl-card" data-st="ptu"><div class="card-body"><div class="tl-date">📅 <b>2026/06/17</b>・✈️ Alpha 4.8.2 可駕駛</div><h3>Gatac Tyilui</h3><div><span class="badge b-ptu">4.10.3 起遊戲內可買</span><span class="role-chip">小型載機母艦</span></div><p>可以搭載小戰機的運輸船，96 SCU，1～4 人。</p><div class="price-box">💵 現金：<b>$425（戰爭債券 $385）</b><br>🪙 遊戲內：<b>4.10.3 起開賣（PTU 已調漲售價）</b><br>📍 Area18 的 Astro Armada</div></div></div></div>
+                <div class="tl-month">2026 年 5 月</div>
+                <div class="tl-row"><div class="tl-card" data-st="cash"><div class="tl-img"><img src="https://media.starcitizen.tools/thumb/e/ea/Tiburon_various_views_with_graphics_for_DefenseCon_2956.jpg/800px-Tiburon_various_views_with_graphics_for_DefenseCon_2956.jpg.webp" alt="Aegis Tiburon" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="tl-date">📅 <b>2026/05/20</b>・✈️ Alpha 4.8.0 可駕駛</div><h3><a href="aegis-tiburon.html">Aegis Tiburon</a></h3><div><span class="badge b-cash">現金限定</span><span class="role-chip">巡航艦</span></div><p>駕駛操控 S10 雷射光束，加上 8 門 S7 遙控砲，1～9 人。</p><div class="price-box">💵 現金：<b>$775（戰爭債券 $700）</b><br>🪙 遊戲內：<b>目前查無遊戲內販售</b></div></div></div><div class="tl-card" data-st="cash"><div class="tl-img"><img src="https://media.starcitizen.tools/thumb/2/29/Starlite_various_views_with_graphics_for_DefenseCon_2956.jpg/800px-Starlite_various_views_with_graphics_for_DefenseCon_2956.jpg.webp" alt="MISC Starlite" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="tl-date">📅 <b>2026/05/18</b>・✈️ Alpha 4.8.0 可駕駛</div><h3><a href="misc-starlite.html">MISC Starlite</a></h3><div><span class="badge b-cash">現金限定</span><span class="role-chip">輕型加油</span></div><p>單人輕型加油船，40 SCU 貨艙。</p><div class="price-box">💵 現金：<b>$60（戰爭債券 $55）</b><br>🪙 遊戲內：<b>目前查無遊戲內販售</b></div></div></div><div class="tl-card" data-st="cash"><div class="tl-img"><img src="https://media.starcitizen.tools/thumb/4/4f/M80_flying_over_mountains_before_sun_rise_-_cropped.png/800px-M80_flying_over_mountains_before_sun_rise_-_cropped.png.webp" alt="Origin M80" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="tl-date">📅 <b>2026/05/16</b>・✈️ Alpha 4.8.0 可駕駛</div><h3><a href="origin-m80.html">Origin M80</a></h3><div><span class="badge b-cash">現金限定</span><span class="role-chip">重戰機</span></div><p>2 門 S5＋2 門 S4，平均高傷害，是 Intersec 任務的單人首推。</p><div class="price-box">💵 現金：<b>$300（戰爭債券 $275）</b><br>🪙 遊戲內：<b>目前只能用現金購買</b></div></div></div><div class="tl-card" data-st="live"><div class="tl-img"><img src="https://media.starcitizen.tools/thumb/6/69/Ironclad_flying_away_from_world_-_cropped.png/800px-Ironclad_flying_away_from_world_-_cropped.png.webp" alt="Drake Ironclad／Ironclad Assault" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="tl-date">📅 <b>2026/05/14</b>・✈️ Alpha 4.8.0 可駕駛</div><h3><a href="drake-ironclad.html">Drake Ironclad／Ironclad Assault</a></h3><div><span class="badge b-live">遊戲內可買</span><span class="role-chip">重型貨運</span><span class="role-chip">登陸艦</span></div><p>2,200 SCU 的重型貨船，Assault 是重型登陸艦版本。4.10.3 PTU 調漲 aUEC 售價。</p><div class="price-box">💵 現金：<b>$600（戰爭債券 $525）</b><br>🪙 遊戲內：<b>4.10.3 調漲中，價格待確認</b></div></div></div><div class="tl-card" data-st="cash"><div class="tl-img"><img src="https://media.starcitizen.tools/thumb/f/fb/Pitbull_various_views_with_graphics_for_DefenseCon_2956.jpg/800px-Pitbull_various_views_with_graphics_for_DefenseCon_2956.jpg.webp" alt="Drake Pitbull" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="tl-date">📅 <b>2026/05/14</b>・✈️ Alpha 4.8.0 可駕駛</div><h3><a href="drake-pitbull.html">Drake Pitbull</a></h3><div><span class="badge b-cash">現金限定</span><span class="role-chip">小戰機</span></div><p>DefenseCon 2956 第一天登場的小戰機，2 門 S2＋4 門 S1。</p><div class="price-box">💵 現金：<b>$55（戰爭債券 $50）</b><br>🪙 遊戲內：<b>目前查無遊戲內販售</b></div></div></div></div>
+                <div class="tl-month">2026 年 4 月</div>
+                <div class="tl-row"><div class="tl-card" data-st="live"><div class="tl-img"><img src="https://media.starcitizen.tools/thumb/9/97/Hull_B_flying_away_from_a_jump_point_-_cropped.jpg/800px-Hull_B_flying_away_from_a_jump_point_-_cropped.jpg.webp" alt="MISC Hull B" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="tl-date">📅 <b>2026/04/08</b>・✈️ Alpha 4.7.1 可駕駛</div><h3>MISC Hull B</h3><div><span class="badge b-live">遊戲內可買</span><span class="role-chip">中型貨運</span></div><p>Hull 系列唯一的中型貨船，512 SCU，改成 X 型骨架後滿載也能降落。</p><div class="price-box">💵 現金：<b>$280（戰爭債券 $260）</b><br>🪙 遊戲內：<b>約 754～794 萬</b><br>📍 New Deal（Lorville）、Teach's（Levski）</div></div></div></div>
+                <div class="tl-month">2026 年 3 月</div>
+                <div class="tl-row"><div class="tl-card" data-st="live"><div class="tl-img"><img src="https://media.starcitizen.tools/thumb/1/1f/Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg/800px-Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg.webp" alt="RSI Aurora Mk II" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="tl-date">📅 <b>2026/03/25</b>・✈️ Alpha 4.7.0 可駕駛</div><h3><a href="aurora-mk2.html">RSI Aurora Mk II</a></h3><div><span class="badge b-live">遊戲內可買</span><span class="role-chip">入門</span><span class="role-chip">輕戰機</span></div><p>經典入門機重製，4 門 S2 武器，4.10 起取代 Mk I 在遊戲內販售。</p><div class="price-box">💵 現金：<b>$45（戰爭債券 $40）</b><br>🪙 遊戲內：<b>約 90 萬</b><br>📍 New Deal（Lorville）、Teach's（Levski）<br>🔑 租借：約 2.3 萬</div></div></div></div>
+                <div class="tl-month">2026 年 2 月</div>
+                <div class="tl-row"><div class="tl-card" data-st="live"><div class="card-body"><div class="tl-date">📅 <b>2026/02</b>・✈️ Alpha 4.6 可駕駛</div><h3>Argo MOTH</h3><div><span class="badge b-live">遊戲內可買</span><span class="role-chip">中型打撈</span></div><p>介於輕型打撈與工業級之間的中型打撈船，224 SCU 外掛貨架。4.10.3 PTU 打撈緩衝倉大增到 240 SCU。</p><div class="price-box">💵 現金：<b>$315（戰爭債券＋CCU $290）</b><br>🪙 遊戲內：<b>約 848～893 萬</b><br>📍 New Deal（Lorville）、Teach's（Levski）、Pyro 的 Ruin Station／Orbituary／Checkmate<br>🔑 租借：約 22.3 萬</div></div></div></div>
+                <div class="tl-month">2026 年 1 月</div>
+                <div class="tl-row"><div class="tl-card" data-st="live"><div class="tl-img"><img src="https://media.starcitizen.tools/thumb/e/e0/Hermes_flying_away_from_jump_point_-_cropped.jpg/800px-Hermes_flying_away_from_jump_point_-_cropped.jpg.webp" alt="RSI Hermes" loading="lazy" decoding="async" onerror="imgFail(this)"></div><div class="card-body"><div class="tl-date">📅 <b>2026/01/28</b>・✈️ Alpha 4.6.0 可駕駛</div><h3>RSI Hermes</h3><div><span class="badge b-live">遊戲內可買</span><span class="role-chip">中型貨運</span></div><p>288 SCU 的中型貨船，駕駛 2 門 S4、加上 S4 遙控砲塔，也列入多用途船。</p><div class="price-box">💵 現金：<b>$220（戰爭債券 $205）</b><br>🪙 遊戲內：<b>約 711 萬</b><br>📍 Teach's Ship Shop（Levski）<br>🔑 租借：約 18.7 萬（Orison、New Babbage、Lorville、Area18）</div></div></div></div>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 20px;">※ 價格為 2026-11 查詢的數字（遊戲內為 4.10.2），現金價格會因促銷變動，遊戲內價格以各地商店為準。「目前查無遊戲內販售」表示 UEX 沒有商店資料，之後的版本可能開賣。</p>
+        </section>
+
+        <section class="credits-section">
+            <h4>📚 資料來源</h4>
+            <p>上線日期、價格與購買地點整理自 <a href="https://starcitizen.tools/Development_timeline" target="_blank">Star Citizen Wiki 開發時間軸</a> 與各船頁面（遊戲內價格引用 UEX 資料），4.10.3 異動來自官方 PTU Patch Notes。圖片來自 starcitizen.tools 與 Star Citizen 官方 YouTube，版權歸 Cloud Imperium Games 所有。</p>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="multirole-list.html" class="btn" style="background: transparent; border: 1px solid var(--primary);">多用途船推薦</a>
+            <a href="../ship-purchase-guide.html" class="btn">飛機購買指南</a>
+        </div>
+    <script>
+        (function () {
+            var btns = document.querySelectorAll('.filters button');
+            btns.forEach(function (b) {
+                b.addEventListener('click', function () {
+                    btns.forEach(function (x) { x.classList.toggle('on', x === b); });
+                    var f = b.dataset.f;
+                    document.querySelectorAll('.tl-card').forEach(function (c) { c.hidden = f !== 'all' && c.dataset.st !== f; });
+                    document.querySelectorAll('.tl-row').forEach(function (r) {
+                        var any = r.querySelector('.tl-card:not([hidden])');
+                        r.hidden = !any; r.previousElementSibling.hidden = !any;
+                    });
+                });
+            });
+        })();
+    </script>
+    </main>
+    <script src="../components.js?v=20261110"></script>
+</body>
+</html>

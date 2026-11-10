@@ -1,0 +1,309 @@
+{
+ "updated": "2026-11-10",
+ "upcoming": [
+  {
+   "id": "galaxy",
+   "when": "開發中・IAE 2956 RSI 日（11/13–14）值得關注",
+   "name": "RSI Galaxy",
+   "role": [
+    "多用途",
+    "模組化"
+   ],
+   "st": "dev",
+   "img": "https://i.ytimg.com/vi/1YzZqThl2k8/hqdefault.jpg",
+   "link": "rsi-galaxy.html",
+   "desc": "110 m 模組化多用途船，可換貨運、醫療、精煉模組。11/9 官方釋出 Behind the Ships 影片。",
+   "p": {
+    "cash": "$380（戰爭債券 $350）",
+    "auec": "尚未能在遊戲內駕駛"
+   }
+  },
+  {
+   "id": "skylark",
+   "when": "4.10.2 搶先租借・IAE 2956 正式推出",
+   "name": "RSI Skylark",
+   "role": [
+    "小戰機",
+    "艦載機"
+   ],
+   "st": "partial",
+   "desc": "專門停靠 Constellation Mk V 的單人小戰機，3 門 S2、兩顆護盾。",
+   "p": {
+    "cash": "IAE 時公布",
+    "auec": "尚未開放購買"
+   }
+  },
+  {
+   "id": "odin",
+   "when": "概念階段（2026-05-24 概念銷售）",
+   "name": "Anvil Odin",
+   "role": [
+    "戰列巡洋艦",
+    "主力艦"
+   ],
+   "st": "concept",
+   "desc": "752 m 的戰列巡洋艦，33～65 人，船頭固定光束砲＋大量點防禦與魚雷。",
+   "p": {
+    "cash": "$5,900（戰爭債券 $5,000，限量）",
+    "auec": "尚未能在遊戲內駕駛"
+   }
+  }
+ ],
+ "timeline": [
+  {
+   "id": "hermes",
+   "date": "2026-01-28",
+   "patch": "4.6.0",
+   "name": "RSI Hermes",
+   "role": [
+    "中型貨運"
+   ],
+   "st": "live",
+   "img": "Hermes_flying_away_from_jump_point_-_cropped.jpg",
+   "desc": "288 SCU 的中型貨船，駕駛 2 門 S4、加上 S4 遙控砲塔，也列入多用途船。",
+   "p": {
+    "cash": "$220（戰爭債券 $205）",
+    "auec": "約 711 萬",
+    "where": "Teach's Ship Shop（Levski）",
+    "rent": "約 18.7 萬（Orison、New Babbage、Lorville、Area18）"
+   }
+  },
+  {
+   "id": "moth",
+   "date": "2026-02",
+   "patch": "4.6",
+   "name": "Argo MOTH",
+   "role": [
+    "中型打撈"
+   ],
+   "st": "live",
+   "desc": "介於輕型打撈與工業級之間的中型打撈船，224 SCU 外掛貨架。4.10.3 PTU 打撈緩衝倉大增到 240 SCU。",
+   "p": {
+    "cash": "$315（戰爭債券＋CCU $290）",
+    "auec": "約 848～893 萬",
+    "where": "New Deal（Lorville）、Teach's（Levski）、Pyro 的 Ruin Station／Orbituary／Checkmate",
+    "rent": "約 22.3 萬"
+   }
+  },
+  {
+   "id": "aurora-mk2",
+   "date": "2026-03-25",
+   "patch": "4.7.0",
+   "name": "RSI Aurora Mk II",
+   "role": [
+    "入門",
+    "輕戰機"
+   ],
+   "st": "live",
+   "img": "Aurora_Mk_II_x3_flying_close_to_mountains_-_cropped.jpg",
+   "link": "aurora-mk2.html",
+   "desc": "經典入門機重製，4 門 S2 武器，4.10 起取代 Mk I 在遊戲內販售。",
+   "p": {
+    "cash": "$45（戰爭債券 $40）",
+    "auec": "約 90 萬",
+    "where": "New Deal（Lorville）、Teach's（Levski）",
+    "rent": "約 2.3 萬"
+   }
+  },
+  {
+   "id": "hull-b",
+   "date": "2026-04-08",
+   "patch": "4.7.1",
+   "name": "MISC Hull B",
+   "role": [
+    "中型貨運"
+   ],
+   "st": "live",
+   "img": "Hull_B_flying_away_from_a_jump_point_-_cropped.jpg",
+   "desc": "Hull 系列唯一的中型貨船，512 SCU，改成 X 型骨架後滿載也能降落。",
+   "p": {
+    "cash": "$280（戰爭債券 $260）",
+    "auec": "約 754～794 萬",
+    "where": "New Deal（Lorville）、Teach's（Levski）"
+   }
+  },
+  {
+   "id": "ironclad",
+   "date": "2026-05-14",
+   "patch": "4.8.0",
+   "name": "Drake Ironclad／Ironclad Assault",
+   "role": [
+    "重型貨運",
+    "登陸艦"
+   ],
+   "st": "live",
+   "img": "Ironclad_flying_away_from_world_-_cropped.png",
+   "link": "drake-ironclad.html",
+   "desc": "2,200 SCU 的重型貨船，Assault 是重型登陸艦版本。4.10.3 PTU 調漲 aUEC 售價。",
+   "p": {
+    "cash": "$600（戰爭債券 $525）",
+    "auec": "4.10.3 調漲中，價格待確認"
+   }
+  },
+  {
+   "id": "pitbull",
+   "date": "2026-05-14",
+   "patch": "4.8.0",
+   "name": "Drake Pitbull",
+   "role": [
+    "小戰機"
+   ],
+   "st": "cash",
+   "img": "Pitbull_various_views_with_graphics_for_DefenseCon_2956.jpg",
+   "link": "drake-pitbull.html",
+   "desc": "DefenseCon 2956 第一天登場的小戰機，2 門 S2＋4 門 S1。",
+   "p": {
+    "cash": "$55（戰爭債券 $50）",
+    "auec": "目前查無遊戲內販售"
+   }
+  },
+  {
+   "id": "m80",
+   "date": "2026-05-16",
+   "patch": "4.8.0",
+   "name": "Origin M80",
+   "role": [
+    "重戰機"
+   ],
+   "st": "cash",
+   "img": "M80_flying_over_mountains_before_sun_rise_-_cropped.png",
+   "link": "origin-m80.html",
+   "desc": "2 門 S5＋2 門 S4，平均高傷害，是 Intersec 任務的單人首推。",
+   "p": {
+    "cash": "$300（戰爭債券 $275）",
+    "auec": "目前只能用現金購買"
+   }
+  },
+  {
+   "id": "starlite",
+   "date": "2026-05-18",
+   "patch": "4.8.0",
+   "name": "MISC Starlite",
+   "role": [
+    "輕型加油"
+   ],
+   "st": "cash",
+   "img": "Starlite_various_views_with_graphics_for_DefenseCon_2956.jpg",
+   "link": "misc-starlite.html",
+   "desc": "單人輕型加油船，40 SCU 貨艙。",
+   "p": {
+    "cash": "$60（戰爭債券 $55）",
+    "auec": "目前查無遊戲內販售"
+   }
+  },
+  {
+   "id": "tiburon",
+   "date": "2026-05-20",
+   "patch": "4.8.0",
+   "name": "Aegis Tiburon",
+   "role": [
+    "巡航艦"
+   ],
+   "st": "cash",
+   "img": "Tiburon_various_views_with_graphics_for_DefenseCon_2956.jpg",
+   "link": "aegis-tiburon.html",
+   "desc": "駕駛操控 S10 雷射光束，加上 8 門 S7 遙控砲，1～9 人。",
+   "p": {
+    "cash": "$775（戰爭債券 $700）",
+    "auec": "目前查無遊戲內販售"
+   }
+  },
+  {
+   "id": "railen",
+   "date": "2026-06-17",
+   "patch": "4.8.2",
+   "name": "Gatac Railen",
+   "role": [
+    "中型貨運"
+   ],
+   "st": "cash",
+   "img": "Railen_flying_through_debris_field_&_adjusted_H.jpg",
+   "link": "gatac-railen.html",
+   "desc": "外星廠商 Gatac 的中型貨船，640 SCU 外掛貨架。",
+   "p": {
+    "cash": "$400（戰爭債券 $360）",
+    "auec": "目前查無遊戲內販售"
+   }
+  },
+  {
+   "id": "tyilui",
+   "date": "2026-06-17",
+   "patch": "4.8.2",
+   "name": "Gatac Tyilui",
+   "role": [
+    "小型載機母艦"
+   ],
+   "st": "ptu",
+   "desc": "可以搭載小戰機的運輸船，96 SCU，1～4 人。",
+   "p": {
+    "cash": "$425（戰爭債券 $385）",
+    "auec": "4.10.3 起開賣（PTU 已調漲售價）",
+    "where": "Area18 的 Astro Armada"
+   }
+  },
+  {
+   "id": "basher",
+   "date": "2026-07-15",
+   "patch": "4.9.0",
+   "name": "Grey's Basher",
+   "role": [
+    "小戰機"
+   ],
+   "st": "ptu",
+   "desc": "6 門 S2 的輕型戰機，雷射與實彈混搭。",
+   "p": {
+    "cash": "$110（戰爭債券 $100）",
+    "auec": "4.10.3 起開賣",
+    "where": "Pyro 的 Rundown 休息站"
+   }
+  },
+  {
+   "id": "stingray",
+   "date": "2026-08-26",
+   "patch": "4.10.0",
+   "name": "Kruger S-65 Stingray",
+   "role": [
+    "中型戰機"
+   ],
+   "st": "cash",
+   "desc": "2 門 S4＋4 門 S2，8 顆 S2 飛彈。",
+   "p": {
+    "cash": "$175（戰爭債券 $160）",
+    "auec": "目前查無遊戲內販售"
+   }
+  },
+  {
+   "id": "raven-ex",
+   "date": "2026-09-16",
+   "patch": "4.10.1",
+   "name": "Aegis Sabre Raven EX",
+   "role": [
+    "中型戰機",
+    "攔截"
+   ],
+   "st": "cash",
+   "desc": "4 門 S3，配備量子抑制器，讓目標跳不走。",
+   "p": {
+    "cash": "$185（戰爭債券 $165）",
+    "auec": "目前查無遊戲內販售"
+   }
+  },
+  {
+   "id": "centaurus",
+   "date": "2026-10-14",
+   "patch": "4.10.2",
+   "name": "RSI Constellation Mk V Centaurus",
+   "role": [
+    "多用途",
+    "重型火力"
+   ],
+   "st": "cash",
+   "img": "RSI_Constellation_Mk_V_Centaurus_flying_and_firing.png",
+   "desc": "新一代 Constellation，4 門 S5、32 顆飛彈、240 SCU，可停靠 Skylark。",
+   "p": {
+    "cash": "$300（戰爭債券 $275）",
+    "auec": "目前查無遊戲內販售（RSI 探索月曾開放租借）"
+   }
+  }
+ ]
+}
