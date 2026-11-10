@@ -1,7 +1,19 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-10 11:12",
+ "updated": "2026-11-11 04:05",
  "items": [
+  {
+   "image_checked": true,
+   "id": "20943",
+   "title": "Monthly Store Bundle 2026",
+   "title_zh": "2026 每月商店組合包",
+   "summary": "介紹官方商店推出的每月限定超值組合包內容，方便玩家了解並選購優惠商品。",
+   "tag": "促銷",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/20943-Monthly-Store-Bundle-2026",
+   "date": "2026-11-11",
+   "time": 1794326516,
+   "image": "https://robertsspaceindustries.com/i/4ecc13a928211aa45f99e877ac137b0f6a67bcdf/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjMy1AX26oX2a98svjkV9gcn47RUvJekWJ)/source.jpg"
+  },
   {
    "id": "21445",
    "title": "This Week in Star Citizen - November 9, 2026",
