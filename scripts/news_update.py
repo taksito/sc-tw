@@ -252,8 +252,21 @@ def main():
         data = {'source': BASE + '/comm-link', 'updated': '', 'items': []}
     have = {i['id'] for i in data['items']}
     todo = [i for i in items[:MAX_ITEMS] if i['id'] not in have]
+    # 補抓舊文章缺的封面圖（每次最多 10 篇）
+    filled = 0
+    for i in [x for x in data['items'] if not x.get('image') and not x.get('image_checked')][:10]:
+        img, _ = page_meta(i['link'])
+        i['image'] = img
+        i['image_checked'] = True
+        filled += 1 if img else 0
+        time.sleep(1)
     if not todo:
-        print('No new items.')
+        if filled:
+            data['updated'] = datetime.datetime.now(TZ8).strftime('%Y-%m-%d %H:%M')
+            save(data)
+            print(f'Filled {filled} image(s).')
+        else:
+            print('No new items.')
         return
     for i in todo:
         if not i['image'] or not i['desc']:
@@ -265,7 +278,7 @@ def main():
     tr = gemini_translate(todo)
     for i in todo:
         t = tr.get(i['id'], {})
-        data['items'].append({'id': i['id'], 'title': i['title'], 'title_zh': t.get('title_zh') or i['title'],
+        data['items'].append({'image_checked': True, 'id': i['id'], 'title': i['title'], 'title_zh': t.get('title_zh') or i['title'],
                               'summary': t.get('summary', ''), 'tag': t.get('tag', '其他'), 'link': i['link'],
                               'date': i['date'], 'time': i['time'], 'image': i['image']})
     data['items'].sort(key=lambda x: x.get('time', 0), reverse=True)
