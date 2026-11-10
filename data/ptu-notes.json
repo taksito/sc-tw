@@ -1,7 +1,40 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-07 14:15",
+ "updated": "2026-11-10 15:39",
  "posts": [
+  {
+   "id": "576588",
+   "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU Patch Notes 13145606",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-5",
+   "date": "2026-11-09",
+   "time": 1794263066,
+   "version": "4.10.3",
+   "kind": "PTU",
+   "build": "13145606",
+   "audience": "所有測試梯次 (All Waves)",
+   "highlight": "本次 PTU 開放所有 Wave，重點包含新任務 Vanduul Incursion、新武器 LBCO Skarnov 步槍及 IAE 與 AI 修正。",
+   "sections": [
+    {
+     "h": "🎯 測試重點",
+     "items": [
+      "版本資訊：Alpha 4.10.3-PTU.13145606（測試對象：所有 Wave，伺服器：僅限美服 US，長期持續性 LTP：已啟用）",
+      "PTU 版本之間的穩定性、錯誤修正與 LTP（長期持續性）測試",
+      "新任務：Vanduul Incursion",
+      "新 FPS 武器：LBCO Skarnov Rifle（LBCO Skarnov 步槍）",
+      "IAE（星際航空展，採用加速時程）"
+     ]
+    },
+    {
+     "h": "🐛 錯誤修正與技術更新",
+     "items": [
+      "今晚的版本重點在於進一步提升 IAE 與 Vanduul Incursion 的效能與進行細節拋光。",
+      "可能修正：在「Blinding Hope」Battaglia 任務中消滅船上所有敵人後，計數器卡在 0% 的問題。",
+      "可能修正：在 Wikelo's 接受任務卡片時，會導致隨機接受其他任務的問題。",
+      "可能修正：在 Bounty Hunter（賞金獵人）/ Mercenary（傭兵）任務期間，敵對 AI 飛船有機率不會向玩家還擊的問題。"
+     ]
+    }
+   ]
+  },
   {
    "id": "576227",
    "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU Patch Notes 13132336",
