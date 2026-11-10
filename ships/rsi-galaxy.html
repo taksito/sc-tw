@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSI Galaxy - Star Citizen 飛船指南</title>
+    <meta name="description" content="RSI Galaxy 介紹：110 公尺的模組化多用途船，可換貨運、醫療、精煉模組，6 人乘員、規格、武器與開發進度，搭配官方 Behind the Ships 影片。">
+    <link rel="stylesheet" href="../styles.css?v=20261105">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://media.starcitizen.tools">
+    <style>
+        .ship-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin: 20px 0; }
+        .stat-box { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 8px; border: 1px solid var(--glass-border); text-align: center; font-size: 0.9rem; color: var(--text-muted); }
+        .stat-value { font-size: 1.1rem; color: var(--accent); font-weight: bold; margin-top: 8px; }
+        .video-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border); background: #000; }
+        .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .mod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin: 10px 0 20px; }
+        .mod-card { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 18px 20px; }
+        .mod-card h3 { font-size: 1.15rem; margin-bottom: 4px; }
+        .mod-card .price { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px; }
+        .mod-card ul { margin: 0; padding-left: 18px; list-style-type: disc; }
+        .timeline { border-left: 2px solid var(--glass-border); margin: 10px 0 10px 8px; padding-left: 20px; }
+        .timeline div { position: relative; margin-bottom: 14px; }
+        .timeline div::before { content: ''; position: absolute; left: -27px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); }
+        .timeline b { color: var(--accent); margin-right: 8px; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; }
+        .badge-dev { display: inline-block; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--warning); color: var(--warning); font-size: 0.85rem; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <script>
+        // 遠端圖片載入失敗時移除該圖；整個圖庫都失敗就把區塊收起來
+        function gxImgFail(img) {
+            var grid = img.closest('.gear-grid');
+            img.closest('figure').remove();
+            if (grid && !grid.querySelector('figure')) {
+                var sec = grid.closest('#gx-gallery');
+                if (sec) sec.remove(); else grid.remove();
+            }
+        }
+    </script>
+    <main>
+        <section class="hero glass-panel">
+            <h1>RSI <span class="text-gradient">Galaxy</span></h1>
+            <p style="margin-top: 10px;">模組化多用途船・6 人乘員・貨運／醫療／精煉一船搞定</p>
+            <span class="badge-dev">🚧 開發中，尚未能在遊戲內駕駛</span>
+        </section>
+
+        <section class="content-section glass-panel">
+            <div style="margin-bottom: 25px;"><figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/1/1b/RSI_Galaxy_concept_-_front_quarter_-_Cut.jpg/1200px-RSI_Galaxy_concept_-_front_quarter_-_Cut.jpg.webp" data-full="https://media.starcitizen.tools/thumb/1/1b/RSI_Galaxy_concept_-_front_quarter_-_Cut.jpg/1600px-RSI_Galaxy_concept_-_front_quarter_-_Cut.jpg.webp" alt="RSI Galaxy 概念圖" decoding="async" onerror="gxImgFail(this)"><figcaption>RSI Galaxy 概念圖</figcaption></figure></div>
+            <h2 class="text-gradient">🚀 船艦介紹</h2>
+            <p><strong>Galaxy</strong> 是 RSI 的大型多用途船，最大特色是船身中段可以<strong>更換模組</strong>：裝上貨運模組就是貨船，換成醫療模組就是會飛的醫院，換成精煉模組就能在太空中精煉礦石。一艘船就能依照團隊需要切換職業。</p>
+            <p>船上有 6 間船員房（每人一間）、船長室、餐廳和有撞球桌的休息室，很適合當成小團隊的移動基地。船尾機庫有 64 SCU 的基本貨艙，還有一個 XXS 停機坪可以停一台小型載具。</p>
+            <div class="ship-stats"><div class="stat-box"><div>製造商</div><div class="stat-value">RSI</div></div><div class="stat-box"><div>尺寸</div><div class="stat-value">大型 (Large)</div></div><div class="stat-box"><div>長／寬／高</div><div class="stat-value">110／60／22 m</div></div><div class="stat-box"><div>乘員</div><div class="stat-value">6 人（每人一間房）</div></div><div class="stat-box"><div>基本貨艙</div><div class="stat-value">64 SCU</div></div><div class="stat-box"><div>機庫</div><div class="stat-value">XXS 停機坪</div></div><div class="stat-box"><div>護盾</div><div class="stat-value">1 × S3</div></div><div class="stat-box"><div>價格</div><div class="stat-value">$380（戰爭債券 $350）</div></div></div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🎬 官方影片：Behind the Ships</h2>
+            <p>官方在 2026 年 11 月 9 日釋出 Galaxy 的「Behind the Ships」幕後影片，由設計師和美術團隊介紹這艘船的外觀與內裝，正好在 IAE 2956 之前。</p>
+            <div class="video-wrap"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/1YzZqThl2k8" title="Star Citizen | Behind the Ships: RSI Galaxy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">影片：<a href="https://www.youtube.com/watch?v=1YzZqThl2k8" target="_blank" rel="noopener">Star Citizen | Behind the Ships: RSI Galaxy ↗</a></p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🧩 三種模組</h2>
+            <p>模組裝在船身中段，可以單獨購買。目前公布的有三種：</p>
+            <div class="mod-grid">
+                <div class="mod-card">
+                    <h3 class="text-gradient">📦 貨運模組</h3>
+                    <div class="price">Cargo Module・$70</div>
+                    <ul>
+                        <li>增加 <strong>512 SCU</strong> 貨艙</li>
+                        <li>貨運電梯可放 2 個 32 SCU 貨箱，或一台 Ursa 大小以內的載具</li>
+                        <li>附牽引吊臂，裝卸貨更方便</li>
+                    </ul>
+                </div>
+                <div class="mod-card">
+                    <h3 class="text-gradient">🏥 醫療模組</h3>
+                    <div class="price">Med Bay Module・$90</div>
+                    <ul>
+                        <li>3 個醫療室共 <strong>6 張病床</strong></li>
+                        <li>T1 病床 1 張、T2 病床 2 張、T3 病床 3 張</li>
+                        <li>T1 病床可以當重生點，整個團隊的前進基地</li>
+                    </ul>
+                </div>
+                <div class="mod-card">
+                    <h3 class="text-gradient">⚗️ 精煉模組</h3>
+                    <div class="price">Refinery Module・$80</div>
+                    <ul>
+                        <li>2 座精煉反應爐</li>
+                        <li>原礦與成品分開存放</li>
+                        <li>同時處理的工作較少，但每次處理量比較大</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin: 20px 0; background: rgba(0,210,255,0.08); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">🔮 <strong>未來模組：</strong>官方已確認之後會有<strong>製造模組</strong>，也規劃了搭配大型建造無人機的<strong>基地建設模組</strong>，但都還沒有時程。</div>
+            <div class="gear-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/f/f6/Galaxy_Concept_Cargo_Module.jpg/800px-Galaxy_Concept_Cargo_Module.jpg.webp" data-full="https://media.starcitizen.tools/thumb/f/f6/Galaxy_Concept_Cargo_Module.jpg/1600px-Galaxy_Concept_Cargo_Module.jpg.webp" alt="貨運模組概念圖" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>貨運模組概念圖</figcaption></figure>
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/b/ba/Galaxy_Concept_Medical_Module_Cutaway.jpg/800px-Galaxy_Concept_Medical_Module_Cutaway.jpg.webp" data-full="https://media.starcitizen.tools/thumb/b/ba/Galaxy_Concept_Medical_Module_Cutaway.jpg/1600px-Galaxy_Concept_Medical_Module_Cutaway.jpg.webp" alt="醫療模組剖面圖" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>醫療模組剖面圖</figcaption></figure>
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/8/8d/Galaxy_Concept_Refinery_Module_Cutaway.jpg/800px-Galaxy_Concept_Refinery_Module_Cutaway.jpg.webp" data-full="https://media.starcitizen.tools/thumb/8/8d/Galaxy_Concept_Refinery_Module_Cutaway.jpg/1600px-Galaxy_Concept_Refinery_Module_Cutaway.jpg.webp" alt="精煉模組剖面圖" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>精煉模組剖面圖</figcaption></figure>
+            </div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🔫 武器與組件</h2>
+            <div style="width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 520px; border-collapse: collapse;">
+                    <thead><tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;"><th style="padding: 12px 16px;">項目</th><th style="padding: 12px 16px;">配置</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">遙控砲塔</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">3 座 S5 遙控砲塔，每座 2 門砲</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">飛彈</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">2 組 S4 飛彈架，每組 4 顆 S2 飛彈</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">護盾</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">1 × S3 大型護盾產生器</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">電源／冷卻</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">2 × S3 電源、2 × S3 冷卻器、2 × S3 電池</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">雷達</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">1 × S3</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">量子／跳躍引擎</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">大型量子引擎、大型跳躍引擎</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">推進器</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">4 具主推進器、2 具反推、12 具萬向操控推進器</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">※ 組件數值官方大多還是「待定」，以上為概念銷售時公布的配置，正式版可能調整。</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🛠️ 開發進度</h2>
+            <div class="timeline">
+                <div><b>2022/11</b>IAE 2952 正式公布並開放概念銷售</div>
+                <div><b>2025/11</b>進入前期製作</div>
+                <div><b>2026/03</b>調整內部動線與配置</div>
+                <div><b>2026/05</b>修改對接環、船員房、艦橋與電梯的白模配置</div>
+                <div><b>2026/07</b>通過白模 (Whitebox) 審查，開始做工程區、走廊、模組區和船尾機庫</div>
+                <div><b>2026/09</b>通過灰模 (Greybox) 審查，進入細部建模 (LOD0)</div>
+                <div><b>2026/10</b>社群流出新版外型預覽圖，船身據傳加長約 10 m（官方未證實）</div>
+                <div><b>2026/11</b>官方釋出 Behind the Ships 影片</div>
+            </div>
+            <div style="margin: 20px 0; background: rgba(245,158,11,0.08); border-left: 3px solid var(--warning); padding: 15px 20px; border-radius: 0 8px 8px 0;">⚠️ Galaxy 還沒有正式上線，上面的規格都是 2022 年概念銷售時的數字。新版外型改過，<strong>最終尺寸、貨艙與機庫大小要等官方公布</strong>。IAE 2956 的 <strong>RSI 日（11/13–14）</strong>值得關注，詳見 <a href="../news.html">官方最新消息展望台</a>。</div>
+        </section>
+
+        <section class="content-section glass-panel" id="gx-gallery">
+            <h2 class="text-gradient">🖼️ 圖片</h2>
+            <div class="gear-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/a/a8/Galaxy_Landed_in_hangar_-_Isometric.jpg/800px-Galaxy_Landed_in_hangar_-_Isometric.jpg.webp" data-full="https://media.starcitizen.tools/thumb/a/a8/Galaxy_Landed_in_hangar_-_Isometric.jpg/1600px-Galaxy_Landed_in_hangar_-_Isometric.jpg.webp" alt="Galaxy 停在機庫" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>Galaxy 停在機庫</figcaption></figure>
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/a/ae/Galaxy_3D_Concept_with_Lower_deck_cutout_-_Isometric.png/800px-Galaxy_3D_Concept_with_Lower_deck_cutout_-_Isometric.png.webp" data-full="https://media.starcitizen.tools/thumb/a/ae/Galaxy_3D_Concept_with_Lower_deck_cutout_-_Isometric.png/1600px-Galaxy_3D_Concept_with_Lower_deck_cutout_-_Isometric.png.webp" alt="下層甲板剖面" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>下層甲板剖面</figcaption></figure>
+            </div>
+        </section>
+
+        <section class="credits-section">
+            <h4>📚 資料與圖片來源</h4>
+            <p>規格與開發進度整理自 <a href="https://starcitizen.tools/Galaxy" target="_blank">Star Citizen Wiki</a>、<a href="https://robertsspaceindustries.com/en/comm-link/transmission/18836-RSI-Galaxy" target="_blank">RSI 官方 Galaxy 公告</a> 與 <a href="https://theimpound.com/pages/rsi-galaxy-guide-modules-history-the-updated-2026-model" target="_blank">The Impound</a>，影片為 Star Citizen 官方 YouTube。圖片來自 starcitizen.tools，版權歸 Cloud Imperium Games 所有。</p>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="../ship-purchase-guide.html" class="btn" style="background: transparent; border: 1px solid var(--primary);">推薦飛機購買手冊</a>
+            <a href="../index.html" class="btn">返回首頁</a>
+        </div>
+    </main>
+    <script src="../components.js?v=20261107"></script>
+</body>
+</html>
