@@ -92,8 +92,32 @@ def parse_feed(text):
     return items
 
 
+REL = re.compile(r'^(?P<kind>[a-z-]+)\s+(?P<title>.*?)\s+\d+\s+Posted:\s*(?P<rel>.*?(?:ago|yesterday|today|just now))\s*(?P<desc>.*)$', re.I | re.S)
+
+
+def rel_to_dt(rel):
+    now = datetime.datetime.now(datetime.timezone.utc)
+    rel = rel.lower().strip()
+    if 'yesterday' in rel:
+        return now - datetime.timedelta(days=1)
+    m = re.search(r'(\d+|an?|one)\s+(second|minute|hour|day|week|month|year)', rel)
+    if not m:
+        return now
+    n = 1 if m.group(1) in ('a', 'an', 'one') else int(m.group(1))
+    unit = {'second': 1 / 86400, 'minute': 1 / 1440, 'hour': 1 / 24, 'day': 1, 'week': 7, 'month': 30, 'year': 365}[m.group(2)]
+    return now - datetime.timedelta(days=n * unit)
+
+
+def split_listing_text(text):
+    """列表頁的連結文字長這樣：'post 標題 0 Posted: 4 hours ago 簡介…'"""
+    m = REL.match(text)
+    if not m:
+        return {'kind': '', 'title': text, 'dt': datetime.datetime.now(datetime.timezone.utc), 'desc': ''}
+    return {'kind': m.group('kind'), 'title': m.group('title').strip(), 'dt': rel_to_dt(m.group('rel')), 'desc': m.group('desc').strip()}
+
+
 def parse_html_listing(text):
-    """RSS 失效時的備案：從 Comm-Link 列表頁抓連結與標題。"""
+    """RSS 網址實際回傳的是 HTML 列表頁：從連結抓標題、類型、相對時間與簡介。"""
     items, seen = [], set()
     for m in re.finditer(r'href="((?:https://robertsspaceindustries\.com)?/comm-link/[a-z-]+/(\d+)-[^"]+)"[^>]*>(.*?)</a>', text, re.S | re.I):
         link, iid, inner = m.group(1), m.group(2), clean(m.group(3))
@@ -102,9 +126,32 @@ def parse_html_listing(text):
         seen.add(iid)
         if link.startswith('/'):
             link = BASE + link
-        items.append({'id': iid, 'title': inner, 'link': link, 'time': int(time.time()),
-                      'date': datetime.datetime.now(TZ8).strftime('%Y-%m-%d'), 'desc': '', 'image': '', 'kind': ''})
+        p = split_listing_text(inner)
+        items.append({'id': iid, 'title': p['title'], 'link': link, 'time': int(p['dt'].timestamp()),
+                      'date': p['dt'].astimezone(TZ8).strftime('%Y-%m-%d'), 'desc': p['desc'][:1200],
+                      'image': '', 'kind': p['kind']})
+    items.sort(key=lambda x: x['time'], reverse=True)
     return items
+
+
+def page_meta(link):
+    """抓文章頁的 og:image 與 og:description（文章內文是 JavaScript 產生的，抓不到全文）。"""
+    try:
+        t = http_get(link, timeout=30)
+    except Exception as e:
+        print('  meta fetch failed:', link, e)
+        return '', ''
+    def og(prop):
+        m = re.search(r'<meta[^>]+(?:property|name)="' + prop + r'"[^>]+content="([^"]*)"', t) or \
+            re.search(r'<meta[^>]+content="([^"]*)"[^>]+(?:property|name)="' + prop + r'"', t)
+        return html.unescape(m.group(1)) if m else ''
+    img = og('og:image')
+    if img.startswith('/'):
+        img = BASE + img
+    desc = og('og:description')
+    if 'official go-to website' in desc:
+        desc = ''
+    return img, desc
 
 
 def fetch_items():
@@ -161,7 +208,7 @@ def gemini_translate(items):
         url = f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent'
         for attempt in range(3):
             try:
-                r = post_json(url, payload, headers={'x-goog-api-key': key})
+                r = post_json(url, payload, headers={'x-goog-api-key': key}, timeout=90)
                 data = json.loads(r['candidates'][0]['content']['parts'][0]['text'])
                 assert isinstance(data, list) and data
                 print(f'  translated with {model}')
@@ -208,6 +255,13 @@ def main():
     if not todo:
         print('No new items.')
         return
+    for i in todo:
+        if not i['image'] or not i['desc']:
+            img, desc = page_meta(i['link'])
+            i['image'] = i['image'] or img
+            if desc and len(desc) > len(i['desc']):
+                i['desc'] = desc
+            time.sleep(1)
     tr = gemini_translate(todo)
     for i in todo:
         t = tr.get(i['id'], {})
