@@ -1,7 +1,44 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-10 15:39",
+ "updated": "2026-11-11 14:52",
  "posts": [
+  {
+   "id": "576753",
+   "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU RC1 Patch Notes 13160301",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-2-1",
+   "date": "2026-11-10",
+   "time": 1794346336,
+   "version": "4.10.3",
+   "kind": "PTU",
+   "build": "13160301",
+   "audience": "所有測試梯次 (All Waves)",
+   "highlight": "本版修復 Levski 機庫無電梯、ASOP 終端機卡船，以及 Battaglia 任務與飛船機制異常。",
+   "sections": [
+    {
+     "h": "ℹ️ 測試資訊",
+     "items": [
+      "版本號：Alpha 4.10.3-PTU.13160301",
+      "測試對象：所有波次（All Waves）",
+      "伺服器資訊：PTU 頻道（僅限美服）",
+      "長期持續性（LTP）：已啟用"
+     ]
+    },
+    {
+     "h": "🛠️ 錯誤與技術修正",
+     "items": [
+      "進一步進行最終效能與日誌紀錄更新。",
+      "可能修正：Vanduul Incursion 護衛飛船合約在較低難度的變體中錯誤地生成 Mauler（槌骨者）。",
+      "可能修正：當機庫裝載平台在移動中途卡住時，ASOP 終端機的「取回（Retrieve）」選項會永久變灰的問題。現在平台會自動與機庫門重新同步，並乾淨地取消掛起的存放或取回請求，避免玩家卡在換船佇列中。",
+      "可能修正：Levski 指定的機庫內缺少電梯或電梯控制面板，導致完全無法進入該地點的問題。",
+      "可能修正：Battaglia 中型回收合約無法成功生成載具的問題。",
+      "可能修正：玩家在進行 Battaglia 任務期間能夠進入 Drake Caterpillar（毛毛蟲）引擎室的問題。",
+      "可能修正：玩家在 Battaglia Story 1 Phase 2 期間穿越擋住 Command Module（指揮艙）大門的障礙物並卡住的問題。",
+      "可能修正：在 Battaglia Story 2 期間將上傳卡插入讀卡機後會被退出的問題，現在磁碟會在交付時正確被銷毀。",
+      "可能修正：Drake Golem（Drake 傀儡）在運載不穩定的 Quantanium 時缺少音效警報的問題。"
+     ]
+    }
+   ]
+  },
   {
    "id": "576588",
    "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU Patch Notes 13145606",
