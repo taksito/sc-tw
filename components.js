@@ -107,6 +107,7 @@ class ComponentManager {
                         </div>
                         <ul class="submenu">
                             <li><a href="${prefix}cargohauling/cargo.html">• 📦 貨運教學</a></li>
+                            <li><a href="${prefix}cargohauling/cargo-helper.html" class="sub-sub">↳ 🧮 貨運小幫手</a></li>
                             <li><a href="${prefix}cargohauling/mission-tips.html" class="sub-sub">↳ 賺錢 vs 解聲望</a></li>
                             <li><a href="${prefix}cargohauling/covalex.html" class="sub-sub">↳ Covalex 任務攻略</a></li>
                             <li><a href="${prefix}cargohauling/red-wind.html" class="sub-sub">↳ Red Wind 高收益</a></li>

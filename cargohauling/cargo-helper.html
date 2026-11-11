@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貨運小幫手 - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen 貨運小幫手：輸入 SCU，自動算出用最少箱數裝完要幾個 32、24、16、8、4、2、1 SCU 貨箱，可限制最大貨箱尺寸。">
+    <link rel="stylesheet" href="../styles.css?v=20261110b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+    <style>
+        .ch-form { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: end; }
+        .ch-field label { display: block; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px; }
+        .ch-field input, .ch-field select {
+            width: 100%; padding: 14px 16px; font-size: 1.4rem; font-family: 'Orbitron', sans-serif;
+            color: var(--text-main); background: rgba(0,0,0,0.35); border: 1px solid var(--glass-border); border-radius: 12px;
+        }
+        .ch-field select { font-size: 1rem; font-family: inherit; padding: 16px 14px; }
+        .ch-field input:focus, .ch-field select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,210,255,0.15); }
+        .ch-quick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .ch-quick button { background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid var(--glass-border); border-radius: 20px; padding: 6px 14px; cursor: pointer; font-size: 0.9rem; min-height: 36px; }
+        .ch-quick button:hover { border-color: var(--primary); color: var(--primary); }
+        .ch-hint { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; }
+
+        .ch-result { margin-top: 24px; }
+        .ch-summary { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+        .ch-summary div { flex: 1 1 140px; background: rgba(0,210,255,0.06); border: 1px solid var(--glass-border); border-radius: 12px; padding: 12px 16px; }
+        .ch-summary span { display: block; font-size: 0.82rem; color: var(--text-muted); }
+        .ch-summary strong { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--accent); }
+        .content-section .ch-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+        .content-section .ch-list li { margin: 0; }
+        .ch-row { display: grid; grid-template-columns: 150px 1fr; gap: 14px; align-items: center; padding: 12px 16px; border: 1px solid var(--glass-border); border-radius: 12px; background: rgba(255,255,255,0.03); }
+        .ch-row .ch-label { font-size: 1.15rem; }
+        .ch-row .ch-label b { font-family: 'Orbitron', sans-serif; color: var(--primary); }
+        .ch-boxes { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-end; }
+        .ch-box { border-radius: 4px; background: linear-gradient(135deg, rgba(0,210,255,0.55), rgba(58,123,213,0.55)); border: 1px solid rgba(0,210,255,0.8); }
+        .ch-more { font-size: 0.85rem; color: var(--text-muted); }
+        .ch-actions { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
+        .ch-actions button { background: transparent; color: var(--primary); border: 1px solid var(--primary); border-radius: 10px; padding: 10px 16px; cursor: pointer; font-size: 0.95rem; min-height: 44px; }
+        .ch-err { color: #f87171; }
+        .ch-multi { margin-top: 18px; }
+        .ch-multi h3 { font-size: 1rem; margin: 14px 0 8px; color: var(--text-muted); }
+        @media (max-width: 600px) {
+            .ch-form { grid-template-columns: 1fr; }
+            .ch-row { grid-template-columns: 1fr; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero glass-panel">
+            <h1>📦 <span class="text-gradient">貨運小幫手</span></h1>
+            <p style="margin-top: 15px;">輸入貨物的 SCU，幫你算出用<strong>最少的箱數</strong>裝完要幾個 32、24、16、8、4、2、1 SCU 的貨箱。</p>
+        </section>
+
+        <section class="content-section glass-panel" style="content-visibility: visible;">
+            <div class="ch-form">
+                <div class="ch-field">
+                    <label for="ch-scu">貨物總量（SCU）</label>
+                    <input id="ch-scu" type="text" inputmode="numeric" autocomplete="off" placeholder="例如 188" value="188">
+                </div>
+                <div class="ch-field">
+                    <label for="ch-max">最大貨箱</label>
+                    <select id="ch-max">
+                        <option value="32" selected>32 SCU</option>
+                        <option value="24">24 SCU</option>
+                        <option value="16">16 SCU</option>
+                        <option value="8">8 SCU</option>
+                        <option value="4">4 SCU</option>
+                        <option value="2">2 SCU</option>
+                        <option value="1">1 SCU</option>
+                    </select>
+                </div>
+            </div>
+            <p class="ch-hint">多筆貨物可以用逗號或 + 分開，例如 <code>188, 76, 40</code>，會分別計算再加總。船放不下 32 SCU 的大箱子時，把「最大貨箱」改小就好。</p>
+            <div class="ch-quick" aria-label="常用數量">
+                <button type="button" data-v="46">46</button>
+                <button type="button" data-v="96">96</button>
+                <button type="button" data-v="188">188</button>
+                <button type="button" data-v="288">288</button>
+                <button type="button" data-v="512">512</button>
+                <button type="button" data-v="696">696</button>
+            </div>
+
+            <div class="ch-result" id="ch-result" aria-live="polite"></div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📘 怎麼看結果</h2>
+            <ul style="list-style-type: disc;">
+                <li>計算方式是<strong>箱數最少</strong>，箱數一樣時優先用大箱子，搬貨次數最少。</li>
+                <li>貨箱尺寸有 <strong>1、2、4、8、16、24、32 SCU</strong> 七種。</li>
+                <li>合約上的「最大貨箱尺寸」和你的船、貨梯能放的最大箱子，取比較小的那個填進「最大貨箱」。</li>
+                <li>搬 16 SCU 以上的箱子建議用 ATLS 或 MaxLift，請看 <a href="equipment.html">ATLS 與 MaxLift</a>；合約大小與最大貨箱請看 <a href="cargo.html">貨運教學</a>。</li>
+                <li>實際上貨梯給的箱子組合由遊戲決定，這裡算的是「最省箱數」的參考，用來估計你的船擺不擺得下。</li>
+            </ul>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="cargo.html" class="btn" style="background: transparent; border: 1px solid var(--primary);">返回貨運教學</a>
+            <a href="../ships/hauling-list.html" class="btn">貨運飛船推薦</a>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            var SIZES = [32, 24, 16, 8, 4, 2, 1];
+            var input = document.getElementById('ch-scu');
+            var maxSel = document.getElementById('ch-max');
+            var out = document.getElementById('ch-result');
+
+            // 箱數最少的組合；箱數相同時優先用大箱子
+            function pack(n, maxBox) {
+                var sizes = SIZES.filter(function (s) { return s <= maxBox; });
+                var big = sizes[0];
+                // 大部分用最大箱，剩下的（最多兩個最大箱的量）用動態規劃找最佳解
+                var rest = n >= big * 2 ? (n % big) + big : n;
+                var bigCount = (n - rest) / big;
+                var best = [[]];
+                var cnt = [0];
+                for (var x = 1; x <= rest; x++) {
+                    cnt[x] = Infinity;
+                    for (var i = 0; i < sizes.length; i++) {
+                        var s = sizes[i];
+                        if (s <= x && cnt[x - s] + 1 < cnt[x]) {
+                            cnt[x] = cnt[x - s] + 1;
+                            best[x] = best[x - s].concat([s]);
+                        }
+                    }
+                }
+                var tally = {};
+                if (bigCount) tally[big] = bigCount;
+                best[rest].forEach(function (s) { tally[s] = (tally[s] || 0) + 1; });
+                return sizes.filter(function (s) { return tally[s]; }).map(function (s) { return { size: s, count: tally[s] }; });
+            }
+
+            function parse(text) {
+                var parts = (text || '').replace(/[，＋、\s]+/g, ',').replace(/\+/g, ',').split(',').filter(Boolean);
+                var nums = [];
+                for (var i = 0; i < parts.length; i++) {
+                    if (!/^\d+$/.test(parts[i])) return null;
+                    var v = parseInt(parts[i], 10);
+                    if (v <= 0 || v > 100000) return null;
+                    nums.push(v);
+                }
+                return nums;
+            }
+
+            function boxesHtml(size, count) {
+                var px = { 32: 30, 24: 26, 16: 22, 8: 18, 4: 14, 2: 11, 1: 8 }[size];
+                var show = Math.min(count, 20), h = '';
+                for (var i = 0; i < show; i++) h += '<span class="ch-box" style="width:' + px + 'px;height:' + px + 'px"></span>';
+                if (count > show) h += '<span class="ch-more">… 共 ' + count + ' 箱</span>';
+                return h;
+            }
+
+            function listHtml(res) {
+                return '<ul class="ch-list">' + res.map(function (r) {
+                    return '<li class="ch-row"><div class="ch-label"><b>' + r.size + '</b> SCU × <b>' + r.count + '</b> 箱</div><div class="ch-boxes">' + boxesHtml(r.size, r.count) + '</div></li>';
+                }).join('') + '</ul>';
+            }
+
+            function asText(res) {
+                return res.map(function (r) { return r.size + ' SCU × ' + r.count + ' 箱'; }).join('\n');
+            }
+
+            function render() {
+                var nums = parse(input.value);
+                var maxBox = parseInt(maxSel.value, 10);
+                if (!input.value.trim()) { out.innerHTML = ''; return; }
+                if (!nums || !nums.length) { out.innerHTML = '<p class="ch-err">請輸入 1～100000 的整數，多筆用逗號或 + 分開。</p>'; return; }
+
+                var total = nums.reduce(function (a, b) { return a + b; }, 0);
+                var all = pack(total, maxBox);
+                var boxCount = all.reduce(function (a, r) { return a + r.count; }, 0);
+                var html = '<div class="ch-summary"><div><span>總量</span><strong>' + total + '</strong> SCU</div><div><span>總箱數</span><strong>' + boxCount + '</strong> 箱</div><div><span>最大貨箱</span><strong>' + maxBox + '</strong> SCU</div></div>';
+
+                if (nums.length > 1) {
+                    html += '<div class="ch-multi">';
+                    nums.forEach(function (n, i) {
+                        var r = pack(n, maxBox);
+                        html += '<h3>第 ' + (i + 1) + ' 筆：' + n + ' SCU（' + r.reduce(function (a, x) { return a + x.count; }, 0) + ' 箱）</h3>' + listHtml(r);
+                    });
+                    html += '</div><p class="ch-hint" style="margin-top:14px;">↓ 合併成一批時的最少箱數</p>';
+                }
+                html += listHtml(all);
+                html += '<div class="ch-actions"><button type="button" id="ch-copy">📋 複製結果</button></div>';
+                out.innerHTML = html;
+
+                document.getElementById('ch-copy').onclick = function () {
+                    var txt = total + ' SCU（最大貨箱 ' + maxBox + ' SCU）\n' + asText(all);
+                    var btn = this;
+                    var done = function () { btn.textContent = '✅ 已複製'; setTimeout(function () { btn.textContent = '📋 複製結果'; }, 1500); };
+                    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done, function () {});
+                };
+                try { history.replaceState(null, '', '?scu=' + encodeURIComponent(input.value.trim()) + (maxBox !== 32 ? '&max=' + maxBox : '')); } catch (e) {}
+            }
+
+            // 從網址帶入（方便分享）
+            try {
+                var q = new URLSearchParams(location.search);
+                if (q.get('scu')) input.value = q.get('scu');
+                if (q.get('max') && SIZES.indexOf(+q.get('max')) >= 0) maxSel.value = q.get('max');
+            } catch (e) {}
+
+            input.addEventListener('input', render);
+            maxSel.addEventListener('change', render);
+            document.querySelectorAll('.ch-quick button').forEach(function (b) {
+                b.addEventListener('click', function () { input.value = b.dataset.v; render(); input.focus(); });
+            });
+            render();
+        })();
+    </script>
+    <script src="../components.js?v=20261111"></script>
+</body>
+</html>
