@@ -1,7 +1,19 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-11 04:05",
+ "updated": "2026-11-13 04:32",
  "items": [
+  {
+   "image_checked": true,
+   "id": "21420",
+   "title": "Star Citizen Alpha 4.10.3 Vanduul Incursion - Nyx Needs You",
+   "title_zh": "《星際公民》Alpha 4.10.3 梵鐠入侵——尼克斯需要你",
+   "summary": "外星勢力梵鐠正入侵人類星空！協助 InterSec 擊退入侵者，保護尼克斯及周邊人口密集星系的安全。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21420-Star-Citizen-Alpha-4103-Vanduul-Incursion",
+   "date": "2026-11-13",
+   "time": 1794504520,
+   "image": "https://robertsspaceindustries.com/i/1b7200424c395fc0090b1577fcdbb14861db2132/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskHrVqqkr7S4jS7JHn9zGHnXoexMySs694)/source.jpg"
+  },
   {
    "image_checked": true,
    "id": "20943",
