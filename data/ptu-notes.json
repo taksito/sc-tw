@@ -1,7 +1,47 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-11 14:52",
+ "updated": "2026-11-13 04:11",
  "posts": [
+  {
+   "id": "576959",
+   "title": "Star Citizen Alpha 4.10.3 LIVE Release Notes",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-live-release-notes",
+   "date": "2026-11-12",
+   "time": 1794496667,
+   "version": "4.10.3",
+   "kind": "LIVE",
+   "build": "",
+   "audience": "",
+   "highlight": "4.10.3 正式上線！推出 IAE 活動、新任務與武器，並修復逾 129 項系統問題。",
+   "sections": [
+    {
+     "h": "ℹ️ 版本資訊",
+     "items": [
+      "Star Citizen Alpha 4.10.3 已正式發布至 LIVE 環境，版本號為 VERSION 4.10.3-LIVE.12650677。",
+      "長期持續性（Long Term Persistence）：保留",
+      "起始額度：20,000 aUEC"
+     ]
+    },
+    {
+     "h": "🎮 遊戲性更新與新功能",
+     "items": [
+      "星際航空航天博覽會（Intergalactic Aerospace Expo, IAE）活動登場。",
+      "新增任務：InterSec Defense Solutions（InterSec 防衛解決方案）。",
+      "新增 FPS 武器：LBCO Skarnov Rifle（LBCO Skarnov 步槍）。",
+      "廢料回收船（Salvage Ship）的緩衝區（Buffer）容量提升。",
+      "開放更多新飛船可於遊戲內使用 aUEC 購買。"
+     ]
+    },
+    {
+     "h": "🔧 錯誤修正與技術更新",
+     "items": [
+      "Alpha 4.10.3 共修復了 129 項問題（包含多項 Exploit 漏洞）。重點改進了每次遊玩都會接觸到的系統：ASOP 終端機與機庫、貨物與合約、貨物電梯以及載具 HUD。",
+      "其中有 36 項修復源自 Issue Council 的社群回報。",
+      "針對機庫與艦隊管理流程進行了大範圍集中優化，包含了 14 項直接與機庫及 ASOP 流程相關的修復。"
+     ]
+    }
+   ]
+  },
   {
    "id": "576753",
    "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU RC1 Patch Notes 13160301",
