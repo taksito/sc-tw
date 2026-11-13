@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anvil Liberator - Star Citizen 飛船指南</title>
+    <meta name="description" content="Anvil Liberator 介紹：4.10.3 上線的重型載具母艦，可同時載 3 艘小船與 2 台地面載具，規格、機庫能停哪些船、武器組件與開發歷程。">
+    <link rel="stylesheet" href="../styles.css?v=20261110b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://media.starcitizen.tools">
+    <style>
+        .ship-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin: 20px 0; }
+        .stat-box { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 8px; border: 1px solid var(--glass-border); text-align: center; font-size: 0.9rem; color: var(--text-muted); }
+        .stat-value { font-size: 1.1rem; color: var(--accent); font-weight: bold; margin-top: 8px; }
+        .video-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border); background: #000; }
+        .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .mod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin: 10px 0 20px; }
+        .mod-card { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 12px; padding: 18px 20px; }
+        .mod-card h3 { font-size: 1.15rem; margin-bottom: 4px; }
+        .mod-card .price { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px; }
+        .mod-card ul { margin: 0; padding-left: 18px; list-style-type: disc; }
+        .timeline { border-left: 2px solid var(--glass-border); margin: 10px 0 10px 8px; padding-left: 20px; }
+        .timeline div { position: relative; margin-bottom: 14px; }
+        .timeline div::before { content: ''; position: absolute; left: -27px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); }
+        .timeline b { color: var(--accent); margin-right: 8px; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; }
+        .badge-dev { display: inline-block; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--warning); color: var(--warning); font-size: 0.85rem; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <script>
+        // 遠端圖片載入失敗時移除該圖；整個圖庫都失敗就把區塊收起來
+        function gxImgFail(img) {
+            var grid = img.closest('.gear-grid');
+            img.closest('figure').remove();
+            if (grid && !grid.querySelector('figure')) {
+                var sec = grid.closest('#gx-gallery');
+                if (sec) sec.remove(); else grid.remove();
+            }
+        }
+    </script>
+    <main>
+        <section class="hero glass-panel">
+            <h1>Anvil <span class="text-gradient">Liberator</span></h1>
+            <p style="margin-top: 10px;">重型載具母艦・3 艘小船＋2 台地面載具・停上去就能維修補給</p>
+            <span class="badge-dev" style="border-color: var(--success); color: var(--success);">✅ 4.10.3 起可在遊戲內駕駛</span>
+        </section>
+
+        <section class="content-section glass-panel">
+            <div style="margin-bottom: 25px;"><figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/d/d3/Anvil-liberator-promo-05.png/800px-Anvil-liberator-promo-05.png.webp" data-full="https://media.starcitizen.tools/thumb/d/d3/Anvil-liberator-promo-05.png/1600px-Anvil-liberator-promo-05.png.webp" alt="Anvil Liberator 載著小戰機飛行" decoding="async" onerror="this.closest('figure').remove()"><figcaption>Anvil Liberator，上方平台停著小戰機（官方宣傳圖）</figcaption></figure></div>
+            <h2 class="text-gradient">🚀 船艦介紹</h2>
+            <p><strong>Liberator</strong> 是 Anvil Aerospace 的重型運輸母艦，專門用來載運<strong>飛船和地面載具</strong>。設計概念是「開放式」運輸：船上有三個起降平台，加上一個寬敞的載具庫，可以把一整支小隊的戰機和戰車一次載到目的地。船上也有給船員和乘客住的艙房。</p>
+            <p>2021 年 CitizenCon 2951 公布並開放概念銷售，2025 年底才進入正式製作，在 <a href="../update410/4103.html">Alpha 4.10.3</a>（2026-11-12）跟著 IAE 2956 一起上線。</p>
+            <div class="ship-stats"><div class="stat-box"><div>製造商</div><div class="stat-value">Anvil Aerospace</div></div><div class="stat-box"><div>尺寸</div><div class="stat-value">大型 (Large)</div></div><div class="stat-box"><div>長／寬／高</div><div class="stat-value">119／67／25 m</div></div><div class="stat-box"><div>乘員</div><div class="stat-value">1～2 人</div></div><div class="stat-box"><div>貨艙</div><div class="stat-value">400 SCU</div></div><div class="stat-box"><div>載運量</div><div class="stat-value">3 艘小船＋2 台載具</div></div><div class="stat-box"><div>護盾</div><div class="stat-value">2 × S3</div></div><div class="stat-box"><div>價格</div><div class="stat-value">$575（戰爭債券 $500）</div></div></div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🅿️ 能載什麼？</h2>
+            <div class="mod-grid">
+                <div class="mod-card">
+                    <h3 class="text-gradient">✈️ 上方起降平台 ×3</h3>
+                    <div class="price">XS 尺寸的飛船</div>
+                    <ul>
+                        <li>大部分單座戰機：Aegis Sabre、Anvil Hornet、Anvil Arrow 等</li>
+                        <li>MISC Prospector 挖礦船也停得上去</li>
+                        <li>有些平台在船體內，有些在船體上方外部</li>
+                    </ul>
+                </div>
+                <div class="mod-card">
+                    <h3 class="text-gradient">🚙 內部載具庫＋前方平台</h3>
+                    <div class="price">地面載具與 XXS 小船</div>
+                    <ul>
+                        <li>地面載具最大到 <strong>Tumbril Nova 戰車</strong>、<strong>Anvil Ballista</strong> 防空車</li>
+                        <li>XXS 小船：Argo MPUV、Origin 85X 等</li>
+                        <li>地面載具從船尾坡道開進去</li>
+                    </ul>
+                </div>
+                <div class="mod-card">
+                    <h3 class="text-gradient">🔧 維修、補彈、加油</h3>
+                    <div class="price">4.10.3 官方說明</div>
+                    <ul>
+                        <li>停在 Liberator 上的船，都能用<strong>降落服務</strong>維修、補彈、加油</li>
+                        <li>概念銷售時官方說它「沒有」維修補給設施，4.10.3 正式版加上了</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin: 20px 0; background: rgba(16,185,129,0.1); border-left: 3px solid var(--success); padding: 15px 20px; border-radius: 0 8px 8px 0;">💡 <strong>適合誰：</strong>想帶小隊戰機一起出遠門的組織、需要把戰車送到星球表面的地面作戰，或是想用一艘船載 Prospector 去挖礦的玩家。它不是戰艦，武裝偏向自保，出任務最好帶護航。</div>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🔫 武器與組件</h2>
+            <div style="width: 100%; overflow-x: auto; margin: 10px 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 520px; border-collapse: collapse;">
+                    <thead><tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;"><th style="padding: 12px 16px;">項目</th><th style="padding: 12px 16px;">配置</th></tr></thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">砲塔</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">1 座 S5 砲塔（2 門 S5 雷射連發砲）、2 座 S2 砲塔（Gallenson 實彈加特林）</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">點防禦</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">2 座點防禦砲塔（位於有人砲塔的另一側）</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">飛彈／炸彈</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">4 × S1 飛彈、4 × S3 掛架</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">牽引光束</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">1 × S2</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">護盾</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">2 × S3 大型護盾產生器</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">電源／冷卻</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">1 × S3 電源、2 × S3 冷卻器</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">量子／跳躍引擎</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">1 × S3 量子引擎、1 × S3 跳躍模組</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">燃料</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">2 × S3 燃料槽、2 × S3 量子燃料槽、2 × S3 進氣口</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">雷達／電腦</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12); vertical-align: top;">1 × S2 雷達、1 × S2 電腦</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">※ Wiki 上很多數值還標「待定」，以上是概念銷售時的配置，4.10.3 正式版可能已調整，以遊戲內為準。</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🛠️ 開發歷程</h2>
+            <div class="timeline">
+                <div><b>2021/10</b>CitizenCon 2951 公布，同一天開放概念銷售</div>
+                <div><b>2025/11</b>進入前期製作</div>
+                <div><b>2026/06</b>進入白模 (Whitebox)，內部動線改成更快走到起降平台</div>
+                <div><b>2026/07</b>沿用 Asgard、Paladin 的 Anvil 共用模組繼續白模</div>
+                <div><b>2026/09</b>進入灰模 (Greybox)，裝上主推進器、操控推進器和起落架</div>
+                <div><b>2026/10</b>灰模完成，大部分區域進入細部建模 (LOD0)</div>
+                <div><b>2026/11/12</b><a href="../update410/4103.html">Alpha 4.10.3</a> 上線，可在遊戲內駕駛</div>
+            </div>
+            <div style="margin: 20px 0; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">🎪 <strong>想先試開？</strong>IAE 2956（11/13～11/27）在 New Babbage 展場可以免費租 200 多台船，Anvil 的展示日可以留意一下。廠商時間表請看 <a href="../news.html">官方最新消息展望台</a>。目前遊戲內還不能用 aUEC 購買。</div>
+        </section>
+
+        <section class="content-section glass-panel" id="gx-gallery">
+            <h2 class="text-gradient">🖼️ 圖片</h2>
+            <div class="gear-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/a/a0/Anvil-liberator-promo-01.png/800px-Anvil-liberator-promo-01.png.webp" data-full="https://media.starcitizen.tools/thumb/a/a0/Anvil-liberator-promo-01.png/1600px-Anvil-liberator-promo-01.png.webp" alt="把戰車空投到戰場" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>把戰車空投到戰場</figcaption></figure>
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/4/43/Anvil-liberator-promo-03.png/800px-Anvil-liberator-promo-03.png.webp" data-full="https://media.starcitizen.tools/thumb/4/43/Anvil-liberator-promo-03.png/1600px-Anvil-liberator-promo-03.png.webp" alt="從船頭看進機庫" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>從船頭看進機庫</figcaption></figure>
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/9/94/Anvil-liberator-promo-04.png/800px-Anvil-liberator-promo-04.png.webp" data-full="https://media.starcitizen.tools/thumb/9/94/Anvil-liberator-promo-04.png/1600px-Anvil-liberator-promo-04.png.webp" alt="內部載具庫" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>內部載具庫</figcaption></figure>
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/e/e8/Anvil-liberator-promo-06.png/800px-Anvil-liberator-promo-06.png.webp" data-full="https://media.starcitizen.tools/thumb/e/e8/Anvil-liberator-promo-06.png/1600px-Anvil-liberator-promo-06.png.webp" alt="戰機護航中的 Liberator" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>戰機護航中的 Liberator</figcaption></figure>
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/b/ba/Anvil-liberator-interior-concept-01.png/800px-Anvil-liberator-interior-concept-01.png.webp" data-full="https://media.starcitizen.tools/thumb/b/ba/Anvil-liberator-interior-concept-01.png/1600px-Anvil-liberator-interior-concept-01.png.webp" alt="內部配置概念圖（一）" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>內部配置概念圖（一）</figcaption></figure>
+                <figure class="media-figure" style="margin:0;"><img src="https://media.starcitizen.tools/thumb/7/78/Anvil-liberator-interior-concept-02.png/800px-Anvil-liberator-interior-concept-02.png.webp" data-full="https://media.starcitizen.tools/thumb/7/78/Anvil-liberator-interior-concept-02.png/1600px-Anvil-liberator-interior-concept-02.png.webp" alt="內部配置概念圖（二）" loading="lazy" decoding="async" onerror="gxImgFail(this)"><figcaption>內部配置概念圖（二）</figcaption></figure>
+            </div>
+        </section>
+
+        <section class="credits-section">
+            <h4>📚 資料與圖片來源</h4>
+            <p>規格、價格與開發歷程整理自 <a href="https://starcitizen.tools/Liberator" target="_blank">Star Citizen Wiki</a>，維修補給功能來自 <a href="https://robertsspaceindustries.com/en/comm-link/Patch-Notes/21429-Star-Citizen-Alpha-4103" target="_blank">官方 4.10.3 改版說明</a>。圖片為官方宣傳圖與概念圖，取自 starcitizen.tools，版權歸 Cloud Imperium Games 所有，本站僅作非商業教學引用。</p>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="../update410/4103.html" class="btn" style="background: transparent; border: 1px solid var(--primary);">📰 4.10.3 改版資訊</a>
+            <a href="new-ships.html" class="btn">🆕 新船介紹</a>
+        </div>
+    </main>
+    <script src="../components.js?v=20261113"></script>
+</body>
+</html>
