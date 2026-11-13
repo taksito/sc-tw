@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.10.3 改版資訊：IAE 2956 與 Vanduul 入侵 - Star Citizen</title>
+    <meta name="description" content="Star Citizen Alpha 4.10.3 LIVE 改版重點：IAE 2956 星際航太展、InterSec Vanduul 入侵任務、LBCO Skarnov 步槍、RSI Galaxy、Anvil Liberator、打撈緩衝倉加大，以及 129 項修正。">
+    <link rel="stylesheet" href="../styles.css?v=20261110b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://media.starcitizen.tools">
+    <style>
+        .fix-list { margin-top: 15px; border: 1px solid var(--glass-border); border-radius: 12px; padding: 0 18px; background: rgba(0,210,255,0.03); }
+        .fix-list + .fix-list { margin-top: 10px; }
+        .fix-list summary { cursor: pointer; padding: 14px 0; font-weight: 700; color: var(--primary); }
+        .fix-list ul { padding: 0 0 16px 20px; }
+        .fix-list li { margin: 6px 0; }
+        .fix-list li small { display: block; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero glass-panel">
+            <div style="margin-bottom: 15px;"><span class="patch-badge live">LIVE 目前版本</span></div>
+            <h1><span class="text-gradient">4.10.3 IAE 2956 &amp; Vanduul 入侵</span></h1>
+            <p>Alpha 4.10.3：目前的正式伺服器版本</p>
+            <div class="patch-meta">
+                <span>上線日期：<strong>2026-11-12</strong></span>
+                <span>版本：<strong>4.10.3-LIVE.13165946</strong></span>
+                <span>長期保存 (LTP)：<strong>保留</strong></span>
+                <span>新角色起始資金：<strong>20,000 aUEC</strong></span>
+            </div>
+        </section>
+
+        <!-- 讀取畫面：把遊戲截圖存成 update410/images/4103-loading.jpg 就會自動顯示；檔案不存在時整區隱藏 -->
+        <figure class="media-figure" id="loading-screen">
+            <img decoding="async" src="images/4103-loading.jpg" data-full="images/4103-loading.jpg" alt="4.10.3 讀取畫面" onerror="document.getElementById('loading-screen').remove()">
+            <figcaption>4.10.3 讀取畫面</figcaption>
+        </figure>
+
+        <figure class="media-figure">
+            <img decoding="async" src="https://robertsspaceindustries.com/i/54aa48fbf5cda7f8a3801dcf92aa88b8783f8368/resize%281500,643,cover,crop%283840,1645,0,0,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskBU2WivGk3x4X3Z3CpK2BwpGP1GGdLTiW%29%29/85/star-citizen-patch-4-4-vanduul-4k.webp" data-full="https://robertsspaceindustries.com/i/54aa48fbf5cda7f8a3801dcf92aa88b8783f8368/resize%281500,643,cover,crop%283840,1645,0,0,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskBU2WivGk3x4X3Z3CpK2BwpGP1GGdLTiW%29%29/85/star-citizen-patch-4-4-vanduul-4k.webp" alt="Vanduul 戰機穿越小行星帶" loading="lazy">
+            <figcaption>Vanduul 戰機群（官方宣傳圖）。4.10.3 的 Vanduul 入侵任務線就是對抗這些敵人</figcaption>
+        </figure>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient" style="margin-bottom: 20px;">⭐ 本版重點</h2>
+            <div class="patch-grid">
+                <div class="patch-card">
+                    <h3>🚀 IAE 2956 星際航太展</h3>
+                    <ul>
+                        <li>11/13 起在 New Babbage 舉辦，<strong>200 多台船與載具免費租來開</strong></li>
+                        <li>每天主打不同廠商，之前開放的船會一直保留</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>👾 InterSec Vanduul 入侵</h3>
+                    <ul>
+                        <li>Nyx 星系的全新任務線，聲望 Rank 1 就能接</li>
+                        <li>新敵艦：Vanduul 驅逐艦 <strong>Mauler</strong></li>
+                        <li>獎勵是藍圖：Skarnov 步槍、BEHR 雷射砲、重甲與飛行服</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🛸 新船</h3>
+                    <ul>
+                        <li><strong>RSI Galaxy</strong>：可換模組的多人船（貨艙模組 720 SCU、醫療模組）</li>
+                        <li><strong>Anvil Liberator</strong>：可載飛船與地面載具的重型母艦</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🔧 129 項修正</h3>
+                    <ul>
+                        <li>ASOP 終端與機庫一次修了 14 項</li>
+                        <li>貨運、合約、貨梯、載具 HUD 都有大量修正</li>
+                        <li>13 項當機與穩定性修正</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section glass-panel" style="margin-top: 30px;">
+            <h2 class="text-gradient" style="margin-bottom: 20px;">🎪 IAE 2956 星際航太展 (Intergalactic Aerospace Expo)</h2>
+            <p>今年由 RSI 主辦，地點在 microTech 的 <strong>New Babbage</strong>：從 New Babbage 星際太空港搭 Metroloop 到 <strong>Tobin Expo Center</strong>。展期從 <strong>2026-11-13</strong> 開始，到 11/27 結束，整個展期都可以免費試玩。</p>
+            <div class="patch-grid" style="margin-top: 15px;">
+                <div class="patch-card">
+                    <h3>🏛️ 會場配置</h3>
+                    <ul>
+                        <li>主展廳連到四個公會展廳：科學院 (Academy of Sciences)、傭兵公會 (Mercenary Guild)、資源工人聯盟 (United Resource Workers)、星際運輸公會 (Interstellar Transport Guild)</li>
+                        <li>每個展廳展出該公會成員常用的船，每台船旁邊都有資訊台</li>
+                        <li>展廳之間有各職業的玩法展示區、周邊商品大廳，以及護甲與武器展示</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🎟️ 免費租船</h3>
+                    <ul>
+                        <li>展場的租借機台可以<strong>免費</strong>租 200 多台飛船與地面載具</li>
+                        <li>每天主打不同的廠商，前幾天開放的船<strong>都會保留</strong>，越晚去能開的船越多</li>
+                        <li>廠商時間表請看 <a href="../news.html">官方最新消息展望台</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 20px; background: rgba(16,185,129,0.1); border-left: 3px solid var(--success); padding: 15px 20px; border-radius: 0 8px 8px 0;">
+                💡 有朋友想入坑的話，IAE 期間是最好的時機：免費試玩 + 免費試開。想買船的話可以先試開再決定，購船建議請看 <a href="../ship-ccu.html">CCU 現金購船指南</a>。
+            </div>
+        </section>
+
+        <section class="content-section glass-panel" style="margin-top: 30px;">
+            <h2 class="text-gradient" style="margin-bottom: 20px;">👾 新任務：InterSec Defense Solutions（Vanduul 入侵）</h2>
+            <p>Vanduul 部隊正在入侵 Nyx，<strong>InterSec Defense Solutions</strong> 招募飛行員把他們打回去。這組新任務在 InterSec 聲望 <strong>Rank 1</strong> 就開放，和原本的科技走私任務並列。任務會把你送到深空裡的新地點：消滅 Vanduul 氏族、擊落 Mauler、奪回並防守船隻、三方對峙、追查失蹤人口卻掉進埋伏，以及徒步突襲 Shattered Blade 的據點。</p>
+            <div class="table-wrap" style="width: 100%; overflow-x: auto; margin: 15px 0 10px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 520px; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;">
+                            <th style="padding: 12px 16px;">任務</th><th style="padding: 12px 16px;">聲望等級</th><th style="padding: 12px 16px;">內容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);"><strong>Shattered Blade Raid</strong><br><small>Shattered Blade 突襲</small></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">1</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">FPS：清除 Nyx 各處輔助站上的 Shattered Blade 部隊</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);"><strong>Retake Ship</strong><br><small>奪回船隻</small></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">2</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">一艘船被 Shattered Blade 登艦佔領，上船把它搶回來</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);"><strong>Vanduul Clan Extermination</strong><br><small>消滅 Vanduul 氏族</small></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">4</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">太空戰：撐過越來越強的 Vanduul 船艦攻勢，分三種難度</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);"><strong>3-Way Standoff</strong><br><small>三方對峙</small></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">4</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">你、Vanduul、Shattered Blade 同時到場，每個人都是目標（包括你）</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);"><strong>[已遮蔽] Takedown</strong><br><small>擊殺神秘目標</small></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">4–6</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">打退一波波 Vanduul，直到一個「[已遮蔽]」被引來入侵地點，分五種難度</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);"><strong>Gather Vanduul Cryopod</strong><br><small>回收 Vanduul 冷凍艙</small></td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">—</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">從戰場回收冷凍艙</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">官方名稱裡的「[redacted]」是刻意遮蔽的，要打到才知道是什麼。最高難度的 <strong>Seek and Destroy（搜索並摧毀）</strong> 合約會出現 Mauler，是為多人團隊設計的，不適合單人挑戰。</p>
+            <div style="margin-top: 20px; background: rgba(16,185,129,0.1); border-left: 3px solid var(--success); padding: 15px 20px; border-radius: 0 8px 8px 0;">
+                💡 <strong>聲望怎麼練：</strong>表格中的等級就是你在 <strong>InterSec Defense Solutions</strong> 的聲望等級。建議先從 Rank 1 的 <strong>Shattered Blade Raid</strong>、Rank 2 的 <strong>Retake Ship</strong> 開始累積，再挑戰 Rank 4 以上的 Vanduul 太空戰。如果任務清單沒出現，先去跑 <a href="../fps-vanduul-smugglers.html">Vanduul 科技走私者</a>（Welcome to Nyx）任務線。InterSec 的聲望門檻整理在 <a href="../ship-combat-intersec.html">飛船戰鬥：InterSec</a>。
+            </div>
+
+            <h3 class="text-gradient" style="font-size: 1.2rem; margin: 30px 0 12px;">🛸 會遇到的 Vanduul 船艦</h3>
+            <div class="gear-grid">
+                <div class="gear-card">
+                    <img decoding="async" src="https://media.starcitizen.tools/thumb/4/4c/Blade-top-isc-2020-06-18.jpg/800px-Blade-top-isc-2020-06-18.jpg.webp" data-full="https://media.starcitizen.tools/4/4c/Blade-top-isc-2020-06-18.jpg" alt="Vanduul Blade" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Blade</h4>
+                        <span class="gear-tag">輕型戰機</span>
+                        <p>速度快、數量多的輕型戰機，常成群出現騷擾。</p>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img decoding="async" src="https://media.starcitizen.tools/thumb/b/b0/Scythe_ISC_2020-06-18.png/800px-Scythe_ISC_2020-06-18.png.webp" data-full="https://media.starcitizen.tools/b/b0/Scythe_ISC_2020-06-18.png" alt="Vanduul Scythe" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Scythe</h4>
+                        <span class="gear-tag">主力戰機</span>
+                        <p>Vanduul 最具代表性的戰機，火力與耐打度都比 Blade 高。</p>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img decoding="async" src="https://media.starcitizen.tools/thumb/3/39/Glaive-iso-isc-2020-06-18.jpg/800px-Glaive-iso-isc-2020-06-18.jpg.webp" data-full="https://media.starcitizen.tools/3/39/Glaive-iso-isc-2020-06-18.jpg" alt="Vanduul Glaive" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Glaive</h4>
+                        <span class="gear-tag">重型戰機</span>
+                        <p>Scythe 的強化版，通常是隊長級的威脅，建議優先集火。</p>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <img decoding="async" src="https://media.starcitizen.tools/thumb/9/9a/Stinger_-_Squadron_42_CitizenCon_2954_Live_Gameplay_Reveal.jpg/800px-Stinger_-_Squadron_42_CitizenCon_2954_Live_Gameplay_Reveal.jpg.webp" data-full="https://media.starcitizen.tools/9/9a/Stinger_-_Squadron_42_CitizenCon_2954_Live_Gameplay_Reveal.jpg" alt="Vanduul Stinger" loading="lazy">
+                    <div class="gear-body">
+                        <h4>Stinger</h4>
+                        <span class="gear-tag">Squadron 42 登場</span>
+                        <p>在 Squadron 42 首度亮相的 Vanduul 船艦，這次也會在任務中出現。</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 20px; background: rgba(245,158,11,0.08); border-left: 3px solid var(--warning); padding: 15px 20px; border-radius: 0 8px 8px 0;">
+                ⚠️ <strong>Mauler（Vanduul 最新的驅逐艦）：</strong>只在最高難度的 Seek and Destroy 合約出現。正式版把 Mauler 的武器調得<strong>更致命</strong>，血量則調低來平衡。另外所有 Vanduul AI 船的<strong>彈藥更多、補彈更快</strong>，長時間纏鬥會明顯更兇猛。戰鬥中會播放 Welcome to Nyx 的戰鬥音樂，Vanduul 機組也會互相喊話。
+            </div>
+        </section>
+
+        <section class="content-section glass-panel" style="margin-top: 30px;">
+            <h2 class="text-gradient" style="margin-bottom: 20px;">🎁 獎勵與冷凍艙</h2>
+            <div class="patch-grid">
+                <div class="patch-card">
+                    <h3>🏆 任務獎勵（藍圖）</h3>
+                    <ul>
+                        <li><strong>LBCO Skarnov</strong> 能量步槍</li>
+                        <li><strong>BEHR 雷射砲</strong>（三種尺寸，飛船武器）</li>
+                        <li><strong>Tailwind</strong> 飛行服</li>
+                        <li><strong>Palatino</strong> 重型護甲</li>
+                        <li><strong>Corbel</strong> 重型護甲</li>
+                        <li>每一項都有軍事風格的配色</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🧊 Vanduul 冷凍艙</h3>
+                    <ul>
+                        <li>任務中可以回收<strong>新款</strong>冷凍艙，裡面裝的是 Vanduul，價值比一般冷凍艙高</li>
+                        <li>PTU 期間這款是藍色，可以拿去跟 <a href="../wikelo.html">Wikelo</a> 交換</li>
+                        <li>建議看物品名稱判斷，不要只看顏色</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section glass-panel" style="margin-top: 30px;">
+            <h2 class="text-gradient" style="margin-bottom: 20px;">🔫 新武器：LBCO Skarnov 能量步槍</h2>
+            <figure class="media-figure">
+                <img decoding="async" src="https://theverse.robertsspaceindustries.com/nfjd8an8d35c3/source.jpg" data-full="https://theverse.robertsspaceindustries.com/nfjd8an8d35c3/source.jpg" alt="LBCO Skarnov 步槍掛在武器架上" loading="lazy">
+                <figcaption>LBCO Skarnov 步槍（官方圖片）。Lightning Bolt Co. 睽違許久的新武器，定位是全自動 DMR</figcaption>
+            </figure>
+            <div class="table-wrap" style="width: 100%; overflow-x: auto; margin: 0 0 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 560px; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;">
+                            <th style="padding: 10px 16px;">射擊模式</th><th style="padding: 10px 16px;">傷害</th><th style="padding: 10px 16px;">射速</th><th style="padding: 10px 16px;">彈匣</th><th style="padding: 10px 16px;">彈速</th><th style="padding: 10px 16px;">開鏡時間</th><th style="padding: 10px 16px;">重量</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 10px 16px;">全自動／單發</td><td style="padding: 10px 16px;">27</td><td style="padding: 10px 16px;">375 RPM</td><td style="padding: 10px 16px;">30 發</td><td style="padding: 10px 16px;">500 m/s</td><td style="padding: 10px 16px;">0.25 秒</td><td style="padding: 10px 16px;">中等</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: -10px;">以上是官方正式版說明的數據。官方另外列出電擊跳躍範圍 5 m、最大跳躍距離 3 m。PTU 後期曾把能量傷害調到 30、連鎖距離調到 7.5 m，正式版說明沒有寫，實際數值以遊戲內為準。</p>
+            <div class="patch-grid" style="margin-top: 15px;">
+                <div class="patch-card">
+                    <h3>特性</h3>
+                    <ul>
+                        <li>全自動能量步槍，可切換單發</li>
+                        <li>命中時留下電脈衝並引爆，會<strong>連鎖跳到附近目標</strong>，敵人擠在一起時特別有效</li>
+                        <li>垂直後座力穩定但偏高，熟練的話很適合對付重甲敵人</li>
+                        <li>能量武器會過熱：環境越熱過熱越快，越冷則越慢</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>怎麼取得</h3>
+                    <ul>
+                        <li>正式版：InterSec Vanduul 入侵任務的<strong>藍圖獎勵</strong></li>
+                        <li>PTU 期間曾在 Area18 的 Cubby Blast、Grim HEX 的 Skutters、Levski 的 Conscientious Objects、Checkmate 的武器店販售；正式版說明沒有提到商店，以遊戲內為準</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 20px; background: rgba(0,210,255,0.06); border-left: 3px solid var(--primary); padding: 15px 20px; border-radius: 0 8px 8px 0;">⚠️ PTU 測試玩家回報：連鎖範圍變大後，近距離使用時<strong>可能電到自己</strong>。</div>
+        </section>
+
+        <section class="content-section glass-panel" style="margin-top: 30px;">
+            <h2 class="text-gradient" style="margin-bottom: 20px;">🚀 飛船與載具</h2>
+            <div class="patch-grid">
+                <div class="patch-card">
+                    <h3>🆕 RSI Galaxy</h3>
+                    <ul>
+                        <li>大型多人船，中間是<strong>可替換的模組艙</strong>，需要時就換角色</li>
+                        <li><strong>貨艙模組</strong>：從基本的 64 SCU 擴充到 <strong>720 SCU</strong>，加上工業級升降梯與牽引光束控制台</li>
+                        <li><strong>醫療模組</strong>：變成野戰醫院，有 T1、T2、T3 醫療床</li>
+                        <li>詳細介紹：<a href="../ships/rsi-galaxy.html">RSI Galaxy</a></li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🆕 Anvil Liberator</h3>
+                    <ul>
+                        <li>可以載飛船與地面載具的<strong>重型母艦</strong></li>
+                        <li>地面載具從後方坡道開進載具艙</li>
+                        <li>飛船可以停在內部機庫，或停在船體內與上方外部的起降平台</li>
+                        <li>停在 Liberator 上的船都能使用<strong>維修、補彈、加油</strong>服務</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>📡 S3 雷達</h3>
+                    <ul>
+                        <li>Carrack、Perseus、Starlancer、Starlancer TAC、Hammerhead、Tiburon 的雷達從 S2 升級為 <strong>S3</strong>，預設配置同步更新</li>
+                        <li>組件艙重做：Perseus 的中繼器移到控制台，Starlancer 的雷達移到工程區</li>
+                        <li>雷達挑選請看 <a href="../components-radar.html">雷達選擇</a></li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>💣 炸彈架</h3>
+                    <ul>
+                        <li>Orison 的 Crusader 展示中心武器機台開始販售 <strong>S1 與 S3 炸彈架</strong></li>
+                        <li>有左側、右側兩種掛載版本</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>✨ 其他飛船更新</h3>
+                    <ul>
+                        <li>Esperia Prowler Utility 的正副駕駛儀表板新增互動：<strong>只開貨艙門</strong>，不用放下後坡道</li>
+                        <li>飛船 HUD 全像投影的顏色改成配合各廠商的配色</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="text-gradient" style="font-size: 1.2rem; margin: 30px 0 12px;">🛒 新開放用 aUEC 購買的飛船</h3>
+            <p>以下這些早就能開的船，第一次可以在遊戲內用 aUEC 購買：</p>
+            <div class="table-wrap" style="width: 100%; overflow-x: auto; margin: 15px 0 10px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <table style="width: 100%; min-width: 480px; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: rgba(0,210,255,0.08); color: var(--primary); text-align: left;">
+                            <th style="padding: 12px 16px;">地點</th><th style="padding: 12px 16px;">商店</th><th style="padding: 12px 16px;">飛船</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">Lorville（Hurston）</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">New Deal</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">Aegis Tiburon、MISC Starlite</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">Levski（Nyx）</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">Teach's Ship Shop</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">Drake Ironclad、Drake Pitbull、MISC Starlite</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">Rundown 休息站（Pyro）</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">—</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">Drake Ironclad Assault、Drake Pitbull、Grey's Market Basher</td></tr>
+                        <tr><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">Area18（ArcCorp）</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">Astro Armada</td><td style="padding: 12px 16px; border-top: 1px solid rgba(56,189,248,0.12);">Origin M80、Gatac Tyilui</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section glass-panel" style="margin-top: 30px;">
+            <h2 class="text-gradient" style="margin-bottom: 20px;">⚖️ 平衡調整</h2>
+            <div class="patch-grid">
+                <div class="patch-card">
+                    <h3>♻️ 打撈緩衝倉加大</h3>
+                    <ul>
+                        <li>Argo Moth：64 → <strong>240 SCU</strong></li>
+                        <li>Reclaimer：240 → <strong>448 SCU</strong></li>
+                        <li>Vulture：13 → 16 SCU</li>
+                        <li>MISC Fortune：13 → 14 SCU</li>
+                        <li>RSI Salvation：6 → 8 SCU</li>
+                        <li>以上五艘的分解光場都加大，對準的容錯也更寬鬆，切船殼不用那麼精準</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>👾 Vanduul 戰鬥</h3>
+                    <ul>
+                        <li>Vanduul AI 船彈藥量增加、補彈更快，持久戰明顯更有攻擊性</li>
+                        <li>Mauler 武器大幅加強</li>
+                        <li>Mauler 血量降低，平衡加強的火力</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🎯 任務與聲望</h3>
+                    <ul>
+                        <li>高風險 (High Risk) 賞金任務的賞金獵人公會聲望 2,000 → <strong>4,000</strong>，正確排在中風險與極難之間</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🚀 飛船武器</h3>
+                    <ul>
+                        <li>S5 與 S7 魚雷的<strong>最小引信距離</strong>提高到 700 m</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section glass-panel" style="margin-top: 30px;">
+            <h2 class="text-gradient" style="margin-bottom: 10px;">🔧 錯誤修正與技術更新</h2>
+            <p style="margin-bottom: 20px;">4.10.3 一共關閉 <strong>129</strong> 個問題，包含多個漏洞 (exploit)，其中 36 個來自 Issue Council 的回報。除了新內容，重點是每次上線都會碰到的東西：<strong>ASOP 終端與機庫、貨物與合約、貨梯、載具 HUD</strong>。下面先列出對 PVE 玩家最有感的修正，完整翻譯清單在每區最下面，點開就能看。</p>
+            <div class="patch-grid">
+                <div class="patch-card">
+                    <h3>🅿️ 機庫與 ASOP（14 項）</h3>
+                    <ul>
+                        <li><strong>ASOP「取出」按鈕變灰、無法取船</strong>的問題修好了（4.10.2 熱修只是加了一分鐘的保險，這次是根本修正）</li>
+                        <li>Fleet Manager／ASOP 載具狀態顯示佔位文字、無法選取</li>
+                        <li>被扣押的船和繳罰款選項會正確顯示</li>
+                        <li>取出地面載具時在平台上被摧毀</li>
+                        <li><strong>地面載具與動力服 (Power Suit) 現在可以用保險索賠</strong>，Ursa、ATLS 跟飛船一樣</li>
+                        <li>打開 ASOP 會卡好幾秒（大艦隊玩家特別明顯）</li>
+                        <li>機庫重疊、看得到別人機庫的問題</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>📋 任務</h3>
+                    <ul>
+                        <li>貨物裝卸區被「卡住佔用」，之後所有船都不能用</li>
+                        <li>Wikelo 接任務卡時會<strong>隨機多接到其他任務</strong></li>
+                        <li>Recover Cargo 完成後貨梯冒出一大堆多餘貨物</li>
+                        <li>賞金／傭兵任務的敵船有時不還手</li>
+                        <li>Levski 運送任務的取貨標記在小行星裡面</li>
+                        <li>Collector 入門任務在合約管理器找不到</li>
+                        <li>mobiGlas 合約清單卡住不能捲動</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>📦 貨物、商店與物品</h3>
+                    <ul>
+                        <li>購買失敗逾時後<strong>所有商店都不能買</strong></li>
+                        <li>貨物機台買了幾次後，明明船上還有空間卻一直失敗</li>
+                        <li>從貨梯取貨失敗時貨物會消失</li>
+                        <li>載具模組可以從貨梯拿出來（而且可能直接消失）</li>
+                        <li>容器裡的製作物品數值在改版後沒保存</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🚀 飛船</h3>
+                    <ul>
+                        <li>組件的失真抗性 (distortion resistance) 全部用同一個值，部分船被打一下就斷電</li>
+                        <li>持續被打時跳過「癱瘓」直接爆炸</li>
+                        <li>船艙在寒冷星球洩壓後無法恢復氣壓，玩家窒息或凍傷</li>
+                        <li>無法更改預設電力分配；全艦隊預設值已重設</li>
+                        <li>發電機被打爆後仍顯示通電，無法結構打撈</li>
+                        <li>載具 HUD 顯示成佔位或深灰色材質</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🌍 地點與環境</h3>
+                    <ul>
+                        <li>接近 Area18 太空港時被警告後直接消失（禁區縮小，警告時間 15 秒 → 90 秒）</li>
+                        <li><strong>聽不到 ATC 塔台語音</strong></li>
+                        <li>配送中心 (Distribution Center) 無法呼叫 ATC</li>
+                        <li>石頭與散落景物出現拖影</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>💥 當機與穩定性（13 項）</h3>
+                    <ul>
+                        <li>伺服器：實體刪除時的死結、讀取任務日誌時當機、任務退款除以零當機、任務佇列記憶體洩漏</li>
+                        <li>用戶端：粒子特效、記憶體釋放、紋理串流、物理查詢等當機</li>
+                        <li>Vulture 同時使用兩道牽引光束會當機</li>
+                    </ul>
+                </div>
+            </div>
+
+            <details class="fix-list">
+                <summary>🅿️ 機庫與 ASOP 終端：完整修正清單</summary>
+                <ul>
+                    <li>ASOP 的「取出」按鈕變灰，無法取出、收納或配送選取的載具 (STARC-214984)<small>機庫平台靠門的事件判斷自己的位置，事件遺失就會永遠停在「移動中」。現在平台會對照門的狀態自我校正，無法校正時會乾淨地取消排隊中的收納／取出。</small></li>
+                    <li>很多載具在 Fleet Manager 與 ASOP 顯示佔位文字、無法選取 (STARC-223081)<small>清單捲出畫面後再捲回來時還留著舊快取，現在會清除。</small></li>
+                    <li>離開降落地點時，留在實例機庫平台上的船沒有被收起來 (STARC-222180)</li>
+                    <li>被扣押的船與繳罰款選項沒有顯示在 ASOP (STARC-205713)</li>
+                    <li>取出地面載具時，載具在機庫平台上被摧毀 (STARC-219816)</li>
+                    <li>從 ASOP 大廳取出的船卡進機庫升降平台 (STARC-137501)</li>
+                    <li>MISC Prospector 取出時歪向一邊（起落架高度不一致）(STARC-208824)</li>
+                    <li>租用的地面載具報廢或被摧毀後無法再次索賠<small>原本保險與回收規則只涵蓋飛船，現在地面載具和動力服也加進去了，Ursa、ATLS 索賠方式跟飛船一樣。</small></li>
+                    <li>部分載具一取出引擎特效就在運轉 (STARC-191084)<small>開電源不會再順便開引擎，要等你設定「準備飛行」才會啟動。</small></li>
+                    <li>機庫視覺重疊，可以看到隔壁機庫和裡面的載具</li>
+                    <li>第二種從自己機庫內看到別人載具的情況</li>
+                    <li>打開 ASOP 終端遊戲會凍結好幾秒<small>以前一次建好你所有載具的介面（大艦隊可達一萬多個元件），現在只建畫面上看得到的那幾列。</small></li>
+                    <li>個人機庫內使用 ASOP 終端時沒有對話與音效</li>
+                    <li>降落區的機庫讓個人武器聲音有過多殘響與回音</li>
+                </ul>
+            </details>
+            <details class="fix-list">
+                <summary>📋 任務：完整修正清單</summary>
+                <ul>
+                    <li>新手教學第三部分使用自動降落不會完成降落目標</li>
+                    <li>Nyx 劇情任務卡在「前往 Blinding Hope」，因為那艘船沒有生成</li>
+                    <li>Levski 運送任務的取貨標記被放在小行星內部</li>
+                    <li>貨物裝卸區可能被永久佔用，擋住之後所有的船<small>駕駛在裝卸完成前離線時，佔用紀錄不會清除，現在會清掉過期紀錄。</small></li>
+                    <li>Collector 入門任務在合約管理器中找不到</li>
+                    <li>在 Wikelo 接任務卡時會隨機多接其他合約</li>
+                    <li>Battaglia 劇情目標：Blinding Hope 上的敵人全部擊殺後，進度計數仍停在 0% (STARC-223490)</li>
+                    <li>Battaglia 中型打撈合約要打撈的載具沒有生成 (STARC-218966)</li>
+                    <li>玩家 HUD 上的任務目標文字被截斷</li>
+                    <li>任務區域裡以「受損狀態」生成的船過一下又回滿血 (STARC-220843)</li>
+                    <li>賞金獵人與傭兵任務中的敵船有時不會還擊</li>
+                    <li>完成 Recover Cargo 合約後，貨梯出現大量多餘貨物<small>以前交件進度算的是每箱的體積，現在每個貨箱算一件。</small></li>
+                    <li>mobiGlas 合約清單卡住不能捲動 (STARC-190800)</li>
+                    <li>IASI 任務中沒有把物品放進送餐升降機的提示</li>
+                    <li>同一個 PVP 賞金合約一次只能有一個玩家接</li>
+                    <li>距離任務地點約 3 km 時，任務的擴增實境標記消失</li>
+                    <li>接第一個 Combat Gauntlet 任務後 Gilly 沒有出來迎接</li>
+                    <li>部分任務說明叫你去廢棄前哨站，但目標其實在地下碉堡裡</li>
+                </ul>
+            </details>
+            <details class="fix-list">
+                <summary>🚀 飛船與載具：完整修正清單</summary>
+                <ul>
+                    <li>部分飛船的武器架變成佔位球體 (STARC-223539)</li>
+                    <li>Drake Caterpillar 的發電機只能從一個很窄的角度修理</li>
+                    <li>Battaglia 劇情任務中，玩家會卡在 Caterpillar 發電機欄杆旁</li>
+                    <li>起落架配置特殊的載具，避震彈簧沒有剛性</li>
+                    <li>所有船艦組件都用同一個失真抗性值，沒有依尺寸區分 (STARC-221603)<small>活動獎勵的冷卻器、發電機、雷達等被設成佔位值 10，裝了這些組件的船幾乎一打就斷電。</small></li>
+                    <li>持續被射擊時，船會跳過「癱瘓」狀態直接被摧毀</li>
+                    <li>透過 mobiGlas 申請的降落服務卡在「處理中」或「被阻擋」(STARC-211549)</li>
+                    <li>載具在星球大氣中洩壓後無法正確恢復艙內氣體，玩家窒息或受到寒冷傷害 (STARC-210719)</li>
+                    <li>維生系統顯示遠超過 100%（最高 200%）(STARC-205396)</li>
+                    <li>無法更改載具的預設電力分配 (STARC-204538)<small>以前每艘船都用同一套預設，有牽引光束、採礦雷射、打撈頭的船開機時這些都是關的。現在全艦隊的預設值都重設了。</small></li>
+                    <li>Esperia Prowler Utility 缺少駕駛艙控制器，駕駛無法使用系統 (STARC-223485)</li>
+                    <li>載具 HUD 顯示成佔位或深灰色材質 (STARC-222692)</li>
+                    <li>IFR-BC7 砲塔開啟雲台時，瞄準點跟不上移動目標 (STARC-193582)</li>
+                    <li>砲塔仰角拉高時瞄準點消失 (STARC-182133)</li>
+                    <li>Stalker V CS 飛彈追蹤太強，鎖定後用干擾彈也甩不掉</li>
+                    <li>發電機已被摧毀的船仍顯示通電，無法打撈 (STARC-220786)</li>
+                    <li>Prowler Utility 啟動 VTOL 時推進器不會轉到位 (STARC-171832)</li>
+                    <li>小艇停靠母艦時出現摩擦聲 (STARC-221546)</li>
+                    <li>Constellation Phoenix 升降梯活塞穿過電梯 (STARC-221547)</li>
+                    <li>RSI Skylark 的燈不見了 (STARC-222006)</li>
+                    <li>Prowler Utility 配置分頁顯示原始文字標籤 (STARC-196555)</li>
+                    <li>RSI Zeus Mk II ES 貨艙的一面牆依角度閃爍或消失 (STARC-191780)</li>
+                    <li>Constellation Phoenix 娛樂區左側房間沒有可登出的床，右側床則沒有正常限制</li>
+                    <li>Constellation Gold Standard 系列：進入下方砲塔後角色時常往前傾</li>
+                    <li>Constellation Gold Standard 系列：左舷床位後方的損壞模型穿進船員區</li>
+                    <li>Constellation Gold Standard 系列：貨物與人員電梯的音效消失或太小聲</li>
+                    <li>Aegis Idris-P 用了 Idris-M 的裝甲</li>
+                    <li>Aegis Gladius Dunlevy 油箱蓋太亮、顏色跟船身不搭</li>
+                    <li>Anvil Centurion 窗戶的材質延遲載入</li>
+                    <li>Crusader Intrepid 太空煞車與後燃器聲音超大聲</li>
+                    <li>RSI Skylark 外部個人儲物格關上時沒有聲音</li>
+                    <li>Gatac 飛彈發射角度錯誤，穿過船身</li>
+                    <li>Gatac 飛船駕駛、副駕駛、砲塔座位的內心提示是橫著顯示的</li>
+                    <li>Aegis Redeemer 與 Gladius 駕駛座的按鈕標籤被截斷</li>
+                    <li>MFD 自我狀態頁的砲塔武器標示圈太大</li>
+                    <li>多功能顯示器在陽光直射下看不清楚，新增動態亮度</li>
+                    <li>G-Safe 指示燈跟起落架指示燈用同一個標籤</li>
+                    <li>Baler 打撈頭在工程終端 3D 畫面中沒有模型</li>
+                    <li>船員居住區的房間控制面板不能開關門（燈還能控制）</li>
+                    <li>Drake Golem 載著不穩定的 Quantanium 時沒有警報音</li>
+                    <li>TOAG Laser Repeater S3 開火沒有聲音</li>
+                    <li>Polaris S4 護盾名稱與說明錯誤</li>
+                </ul>
+            </details>
+            <details class="fix-list">
+                <summary>📦 貨物、商店與物品：完整修正清單</summary>
+                <ul>
+                    <li>購買可能失敗並逾時，之後所有商店都買不了</li>
+                    <li>商品機台買了幾次後，船上貨物網格明明還有空間卻開始失敗 (STARC-217642)</li>
+                    <li>從貨梯移除貨物的請求失敗時，貨物會遺失 (STARC-219727)</li>
+                    <li>載具模組可以透過貨梯拿出來 (STARC-181911)<small>模組在背包系統裡的體積太小，貨梯會接受它們，可能整個消失。現在模組體積調大，超過貨梯上限。</small></li>
+                    <li>容器內製作物品的隨機數值在改版之間沒有保存 (STARC-221433)</li>
+                    <li>製作版 TH-01 Propulsor 體積太小，一個背包可以塞好幾百個</li>
+                    <li>精煉廠各種處理方式的說明文字錯誤</li>
+                    <li>物品機台不一定會顯示玩家全部的物品</li>
+                    <li>Yormandi Tongue 是大型雙手搬運物，存起來卻幾乎不佔空間</li>
+                    <li>牽引光束抓住的物品名稱被截斷，沒有換行</li>
+                    <li>互動輪盤上的「存放」選項對物品箱沒反應</li>
+                    <li>展示商品的擴增實境價格卡在某些角度偏移或破圖</li>
+                    <li>Constellation Phoenix 紀念展示模型的側支架在某些距離消失</li>
+                    <li>RSI Venture Executive 護甲展示架底部沒有碰撞</li>
+                    <li>MaxLift 牽引光束與 Cambio SRT 無法放上 Bosco 武器展示架</li>
+                    <li>Aurora Mk II 與 Constellation Mk IV Andromeda 展示模型的船沒有影子</li>
+                    <li>Constellation Mk IV Andromeda 模型放到貨梯或船上貨物網格時浮在半空中</li>
+                </ul>
+            </details>
+            <details class="fix-list">
+                <summary>🔫 FPS、武器與護甲／🖥️ 介面：完整修正清單</summary>
+                <ul>
+                    <li>Monolith 頭盔（所有款式）的光影會隨鏡頭遠近變化</li>
+                    <li>部分底層服穿過 Monolith Runic 重甲的手臂</li>
+                    <li>持槍時 Monolith 重甲肩膀與腋下材質模糊變形</li>
+                    <li>Arrowhead 狙擊槍（含各款）蓄力或開火時有奇怪的旋轉物體</li>
+                    <li>Orison 救援護甲組的重型頭盔材質錯誤</li>
+                    <li>女性角色拿長步槍時左手臂拉長變形</li>
+                    <li>Omarof 瞄準鏡所有款式都跟預設版同名</li>
+                    <li>部分工具類物品的音量比其他東西大很多</li>
+                    <li>角色自訂中部分眉毛選項顯示佔位材質</li>
+                    <li>新加的好友不會出現在好友清單、也搜尋不到<small>遊戲向 Spectrum 查詢帳號時用了過期的金鑰，所以直接在 Spectrum 加好友一直都是正常的。</small></li>
+                    <li>Venture Starwalker 與 Infrared 兩套服裝的名稱互換了</li>
+                </ul>
+            </details>
+            <details class="fix-list">
+                <summary>🌍 地點與環境：完整修正清單</summary>
+                <ul>
+                    <li>接近 Area18 太空港時收到警告後被移除<small>市中心與高塔的禁區原本是兩個大球體，伸進太空港進場航道，警告只有 15 秒；現在改成較小的方塊範圍，警告延長到 90 秒。</small></li>
+                    <li>聽不到 ATC 塔台的語音</li>
+                    <li>無法聯絡 ATC 在配送中心降落或起飛 (STARC-220137)</li>
+                    <li>石頭與散落景物被抹成條紋狀 (STARC-215562)</li>
+                    <li>Area18 太空港咖啡攤旁邊少了一扇門 (STARC-201891)</li>
+                    <li>腳步聲不會依地面材質改變，部分動作音效完全消失</li>
+                    <li>ArcCorp 地表部分建築沒有碰撞</li>
+                </ul>
+            </details>
+            <details class="fix-list">
+                <summary>💥 當機與穩定性：完整修正清單</summary>
+                <ul>
+                    <li>伺服器：實體分離並排入刪除時主執行緒死結</li>
+                    <li>伺服器：讀取玩家任務日誌時當機</li>
+                    <li>伺服器：任務退款流程除以零當機</li>
+                    <li>伺服器：互動物件餵入的任務佇列無限增長造成記憶體洩漏</li>
+                    <li>用戶端：更新粒子特效時當機</li>
+                    <li>用戶端：檢查世界物件形狀與邊界時當機</li>
+                    <li>用戶端：載具組件資料轉型不符時當機</li>
+                    <li>用戶端：釋放記憶體時當機</li>
+                    <li>用戶端：在 Vulture 上同時使用兩道牽引光束時當機</li>
+                    <li>用戶端：串流正在被繪製的紋理時當機</li>
+                    <li>用戶端：建立物理查詢忽略清單時當機</li>
+                    <li>飛船用同一個 ID 註冊兩個零件時產生致命錯誤</li>
+                </ul>
+            </details>
+            <details class="fix-list">
+                <summary>🩹 4.10.2 期間已熱修（列出來給大家參考，不是 4.10.3 新內容）</summary>
+                <ul>
+                    <li>角色頭部生成沒有模型的眉毛、一直沒被清除，導致伺服器反覆當機</li>
+                    <li>區域還沒清空就被刪除時的例外錯誤</li>
+                    <li>合約結束讀取任務日誌時伺服器當機</li>
+                    <li>任務退款除以零的伺服器當機</li>
+                    <li>飛船碰到機庫門會爆炸</li>
+                    <li>ASOP「取出」按鈕一直變灰：先加了一分鐘的保險機制，根本修正在 4.10.3</li>
+                    <li>重開 ASOP 會清掉索賠計時，配送系統關閉時仍顯示配送時間</li>
+                    <li>RSI 探索月分數計算錯誤：共享打撈與 Quantanium 挖礦合約的完成點數沒有分給隊員</li>
+                    <li>Hurston 附近的 IASI 快遞包裹生成在配送中心深處，撿取會被判定非法闖入</li>
+                    <li>新款 NVIDIA 筆電無法啟動遊戲；不支援 HDR 的螢幕仍顯示 HDR 選項</li>
+                </ul>
+            </details>
+        </section>
+
+        <section class="content-section glass-panel" style="margin-top: 30px;">
+            <h2 class="text-gradient" style="margin-bottom: 20px;">⚠️ 已知問題（節錄）</h2>
+            <p style="margin-bottom: 15px;">官方 4.10.3 已知問題清單很長，這裡挑出 PVE 玩家最容易遇到、而且有解法的幾個。完整清單請看 <a href="https://support.robertsspaceindustries.com/hc/en-us/articles/360056254754-Star-Citizen-Alpha-4-10-3-Known-Issues" target="_blank" rel="noopener noreferrer">官方知識庫 ↗</a>。</p>
+            <div class="patch-grid">
+                <div class="patch-card">
+                    <h3>🚀 飛船</h3>
+                    <ul>
+                        <li><strong>幫船改名會刪掉身上的裝備</strong>：改名前先拆掉所有非原廠物品</li>
+                        <li><strong>890 Jump 可能失去碰撞</strong>（被蟲洞彈出後），只能棄船索賠，官方建議先別用它載貨</li>
+                        <li>Hull-A 貨物支架沒收回就存起來，取出後會卡住：存船前先收好支架</li>
+                        <li>量子拘束器／抑制器在量子航行後無法使用：再跳一次量子再開</li>
+                        <li>Drake 指揮模組雷達失效：脫離母艦再重新對接</li>
+                        <li>打撈音效無限循環：只能重開遊戲</li>
+                        <li>Idris、Polaris、Tyilui 在床登出後，停在裡面的小船會消失</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🌍 地點</h3>
+                    <ul>
+                        <li>部分 ASOP（Levski、Checkmate）沒有「配送」選項：重開遊戲或換地點</li>
+                        <li>在 Area18 機庫存船可能卡在「重新定位玩家」：回主選單再重新加入</li>
+                        <li>Lorville 從 Metro Centre 到 Teasa 太空港的電車可能把人甩出去：上車後離車門遠一點</li>
+                        <li>在別人的 Levski 機庫裡，主人離開時你會被傳到太空站下方：主人走之前先離開</li>
+                        <li>mobiGlas 降落服務沒更新：降落後等幾分鐘再重開 App</li>
+                        <li>鑰匙卡印表機計時顯示 00:00：Alt+F4 重新登入</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🎒 物品</h3>
+                    <ul>
+                        <li>背包滿時從戰利品介面換護甲，放不下的東西會<strong>直接消失</strong>：先清背包</li>
+                        <li>武器配件丟在地上就撿不回來：不要亂丟配件</li>
+                        <li>製作物品放在背包時看不到強化數值：裝備上去再看說明</li>
+                        <li>身上同時有兩頂頭盔（腰掛＋頭上）會出現窒息、跑不動：拿掉一頂</li>
+                        <li>不在主要居所登出時，手上的物品可能被送回宿舍</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🖥️ 技術</h3>
+                    <ul>
+                        <li>錯誤 41013：角色修復通常有效，但個人機庫可能暫時消失</li>
+                        <li>使用 Vulkan 掉幀：降解析度、更新驅動，或改用 DirectX</li>
+                        <li>伺服器當機後無限讀取：完全關掉遊戲再開</li>
+                        <li>角色修復期間<strong>不要動帳號</strong>，至少等 30 分鐘</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section glass-panel" style="margin-top: 30px;">
+            <h2 class="text-gradient" style="margin-bottom: 20px;">🧪 PTU 期間測試過、正式版說明沒列出的內容</h2>
+            <p style="margin-bottom: 15px;">以下是 PTU（10/30～11/11）測試時出現過的調整。正式版改版說明沒有寫到，<strong>不一定有上線</strong>，以遊戲內為準。</p>
+            <div class="patch-grid">
+                <div class="patch-card">
+                    <h3>🚀 飛船（PTU 11/04）</h3>
+                    <ul>
+                        <li>Centaurus：裝甲偏轉降低（物理 531→390、能量 380→330），船體血量 25,740→30,740，油箱 46.8→32 SCU，推進器開始耗油</li>
+                        <li>Polaris 物理與能量裝甲偏轉提高</li>
+                        <li>Starlifter 新增 S10 與 S3 炸彈架</li>
+                        <li>Drake Ironclad、Ironclad Assault、Gatac Tyilui 的 aUEC 售價調高</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>📋 任務與聲望（PTU 11/06）</h3>
+                    <ul>
+                        <li>共享合約的聲望獎勵改成平均分給所有隊員</li>
+                        <li>新增 Skarnov 彈匣藍圖當作合約獎勵</li>
+                        <li>量子站 AI 被攻擊前就會主動交戰</li>
+                        <li>登艦合約地點調整，不會一到就被 Caterpillar 圍攻</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>🎮 遊戲性（PTU 11/04）</h3>
+                    <ul>
+                        <li>Multitool 預設附牽引光束配件</li>
+                        <li>日誌依玩家分類，重要任務事件排最上面</li>
+                        <li>mobiGlas 資產管理與 NikNax 改字母排序</li>
+                        <li>新增髮型、眉毛與鬍子選項</li>
+                    </ul>
+                </div>
+                <div class="patch-card">
+                    <h3>👾 Vanduul AI（PTU）</h3>
+                    <ul>
+                        <li>Vanduul NPC 正確穿上護甲，不能被電暈或用牽引光束拉走</li>
+                        <li>新的 AI 會分三層進攻，並沿走廊分散防守</li>
+                        <li>Vanduul 冷凍艙改成一次性生成，不會在太空亂飄</li>
+                        <li>RC1（11/11）修正：低難度的 Defend Ship 合約錯誤生成 Mauler</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="version-nav">
+            <a href="4102.html"><small>← 上一版</small>4.10.2 RSI 探索月</a>
+        </div>
+        <p class="source-links">📄 官方資料：<a href="https://robertsspaceindustries.com/en/comm-link/Patch-Notes/21429-Star-Citizen-Alpha-4103" target="_blank" rel="noopener noreferrer">4.10.3 LIVE 完整改版說明 ↗</a>　<a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-live-release-notes" target="_blank" rel="noopener noreferrer">Spectrum 改版說明 ↗</a>　<a href="https://support.robertsspaceindustries.com/hc/en-us/articles/360056254754-Star-Citizen-Alpha-4-10-3-Known-Issues" target="_blank" rel="noopener noreferrer">4.10.3 已知問題 ↗</a>　·　<a href="../ptu-tracker.html">PTU 更新追蹤台</a></p>
+
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="../index.html" class="btn">返回首頁</a>
+        </div>
+
+        <section class="credits-section">
+            <h4>📷 圖片來源</h4>
+            <ol>
+                <li>Vanduul 戰機穿越小行星帶：<a href="https://robertsspaceindustries.com/" target="_blank">Roberts Space Industries 官方宣傳圖</a></li>
+                <li>LBCO Skarnov 步槍：<a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/4/thread/4-10-3-ptu-feedback-lbco-skarnov-rifle" target="_blank">[4.10.3 PTU Feedback] LBCO Skarnov Rifle（RSI Spectrum 官方貼文）</a></li>
+                <li>Vanduul Blade：<a href="https://starcitizen.tools/File:Blade-top-isc-2020-06-18.jpg" target="_blank">Blade-top-isc-2020-06-18.jpg</a></li>
+                <li>Vanduul Scythe：<a href="https://starcitizen.tools/File:Scythe_ISC_2020-06-18.png" target="_blank">Scythe ISC 2020-06-18.png</a></li>
+                <li>Vanduul Glaive：<a href="https://starcitizen.tools/File:Glaive-iso-isc-2020-06-18.jpg" target="_blank">Glaive-iso-isc-2020-06-18.jpg</a></li>
+                <li>Vanduul Stinger：<a href="https://starcitizen.tools/File:Stinger_-_Squadron_42_CitizenCon_2954_Live_Gameplay_Reveal.jpg" target="_blank">Stinger - Squadron 42 CitizenCon 2954 Live Gameplay Reveal.jpg</a></li>
+            </ol>
+            <p>Vanduul 船艦圖片取自 <a href="https://starcitizen.tools/" target="_blank">Star Citizen Wiki (starcitizen.tools)</a>。遊戲畫面與相關素材版權歸 Cloud Imperium Games 所有，本站僅作非商業教學引用。</p>
+        </section>
+    </main>
+
+    <script src="../components.js?v=20261113"></script>
+</body>
+</html>

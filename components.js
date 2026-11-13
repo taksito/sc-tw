@@ -175,7 +175,7 @@ class ComponentManager {
 
                 <div class="nav-category">目前版本 <span style="font-size: 0.7rem; color: var(--success); vertical-align: middle;">● LIVE</span></div>
                 <ul class="sidebar-nav">
-                    <li><a href="${prefix}update410/4102.html">🟢 4.10.2 RSI 探索月</a></li>
+                    <li><a href="${prefix}update410/4103.html">🟢 4.10.3 IAE &amp; Vanduul 入侵</a></li>
                 </ul>
 
                 <div class="nav-category">官方最新消息</div>
@@ -185,7 +185,6 @@ class ComponentManager {
 
                 <div class="nav-category">PTU 測試中 <span style="font-size: 0.7rem; color: var(--warning); vertical-align: middle;">(持續更新中)</span></div>
                 <ul class="sidebar-nav">
-                    <li><a href="${prefix}update410/4103-ptu.html">🧪 4.10.3 Vanduul 入侵</a></li>
                     <li><a href="${prefix}ptu-tracker.html">📡 PTU 更新追蹤台</a></li>
                 </ul>
 
@@ -199,6 +198,7 @@ class ComponentManager {
                         <ul class="submenu">
                             <li><a href="${prefix}update410/index.html">• 4.10.0 圍攻 Orison</a></li>
                             <li><a href="${prefix}update410/4101.html">• 4.10.1 Orison 重建救援</a></li>
+                            <li><a href="${prefix}update410/4102.html">• 4.10.2 RSI 探索月</a></li>
                         </ul>
                     </li>
                     <li><a href="${prefix}update49/index.html">📰 4.9 邊境緊張局勢</a></li>
