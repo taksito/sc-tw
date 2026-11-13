@@ -1,7 +1,79 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-13 04:32",
+ "updated": "2026-11-14 04:06",
  "items": [
+  {
+   "image_checked": true,
+   "id": "21448",
+   "title": "Q&A: IAE 2956 New Ships",
+   "title_zh": "IAE 2956 新飛船 Q&A 彙整",
+   "summary": "本篇彙整載具與玩法團隊針對 IAE 2956 首度亮相新飛船的玩家常見提問解答。",
+   "tag": "開發進度",
+   "link": "https://robertsspaceindustries.com/comm-link/engineering/21448-Q-A-IAE-2956-New-Ships",
+   "date": "2026-11-14",
+   "time": 1794585880,
+   "image": "https://robertsspaceindustries.com/i/ce45e95b704ba8ace135028519be9c45de59524a/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResidhkUPNYdGVDeqAEZ8uyaeBeDkNodDgdc)/source.jpg"
+  },
+  {
+   "image_checked": true,
+   "id": "21412",
+   "title": "IAE 2956 RSI",
+   "title_zh": "IAE 2956：RSI 主場展出",
+   "summary": "介紹本屆 IAE 贊助商 RSI 的展出內容，包含備受期待的模組化飛船 RSI Galaxy。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21412-IAE-2956-RSI",
+   "date": "2026-11-14",
+   "time": 1794585880,
+   "image": "https://robertsspaceindustries.com/i/3ea727b272705f3695de02bea60a83dc8cd9ed07/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskTTWxvDm98KhKNavzvKD1bLBtX8GnUYyt)/source.jpg"
+  },
+  {
+   "image_checked": true,
+   "id": "21415",
+   "title": "IAE 2956 Merchandise",
+   "title_zh": "IAE 2956 官方週邊商品",
+   "summary": "展示並提供玩家選購 IAE 2956 各大飛船製造商主題實體週邊商品。",
+   "tag": "促銷",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21415-IAE-2956-Merchandise",
+   "date": "2026-11-14",
+   "time": 1794585880,
+   "image": "https://robertsspaceindustries.com/i/de17a442c9fea1221697aac5bf481d807d4a4132/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseYf5aezUVudTgCu8YmrN7rSHgxLhU9KS6)/source.jpg"
+  },
+  {
+   "image_checked": true,
+   "id": "21414",
+   "title": "IAE 2956 About",
+   "title_zh": "IAE 2956 活動簡介",
+   "summary": "IAE 2956 跨星際航空博覽會正式開幕，提供展覽概覽與玩家參觀指南。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21414-IAE-2956-About",
+   "date": "2026-11-14",
+   "time": 1794585880,
+   "image": "https://robertsspaceindustries.com/i/2b133da6155daba3c3c01b3d80d86f657325595d/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjZqri9f5iyLeRFesbdtYbt2Pi7iB1LWkW)/source.jpg"
+  },
+  {
+   "image_checked": true,
+   "id": "21347",
+   "title": "RSI Skylark - A Little Goes a Long Way",
+   "title_zh": "RSI Skylark：強悍的小型戰鬥機",
+   "summary": "介紹 RSI Skylark 艦載戰鬥機，可作為中大型飛船極具價值的偵查與武器支援夥伴。",
+   "tag": "新船",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21347-RSI-Skylark",
+   "date": "2026-11-14",
+   "time": 1794585880,
+   "image": "https://robertsspaceindustries.com/i/ba6a5045fa927fcdcc0de121b0e80b179e61da8e/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjGaP1e51W6ijnjywH1vudDFqftS9nYFEN)/source.jpg"
+  },
+  {
+   "image_checked": true,
+   "id": "21346",
+   "title": "RSI Galaxy - Mission Made",
+   "title_zh": "RSI Galaxy：為任務而生",
+   "summary": "詳細介紹 RSI Galaxy 模組化多用途飛船，支援改裝為貨運或醫療設施等不同配置。",
+   "tag": "新船",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21346-RSI-Galaxy",
+   "date": "2026-11-14",
+   "time": 1794585880,
+   "image": "https://robertsspaceindustries.com/i/47fb7c33c3bddd09fc146a0b254472adc8621428/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjUT712HZk1AuCvmFTmc18tggt9uk1V4Mt)/source.jpg"
+  },
   {
    "image_checked": true,
    "id": "21420",
