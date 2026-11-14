@@ -1,7 +1,119 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-13 04:11",
+ "updated": "2026-11-14 14:42",
  "posts": [
+  {
+   "id": "577271",
+   "title": "[Wave 1] Star Citizen Alpha 5.0 PTU Patch Notes 13189690",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-5-0-ptu-patch-notes",
+   "date": "2026-11-13",
+   "time": 1794596034,
+   "version": "5.0",
+   "kind": "PTU",
+   "build": "13189690",
+   "audience": "第 1 梯次 (Wave 1)",
+   "highlight": "5.0 PTU 開放！亮點包含 Nyx I 星球重製、SQ42 飛彈鎖定介面與伺服器網格化優化。",
+   "sections": [
+    {
+     "h": "🎯 測試重點",
+     "items": [
+      "PTU 版本間的穩定性、錯誤修正與 LTP（長期持續性）",
+      "Genesis（星球技術 V5）",
+      "Nyx I（奈克斯 I）",
+      "Starchitect 興趣點 (Points of Interest)",
+      "任務板 (Mission Boards) 與在地任務 (Local Missions)",
+      "行星內伺服器網格化 (Intraplanetary Server Meshing)",
+      "TTK（擊殺時間，非 5.0 專屬功能，僅在本週末於 PTU 開放測試與回饋）",
+      "飛彈鎖定介面更新"
+     ]
+    },
+    {
+     "h": "🏛️ Starchitect 據點更新",
+     "items": [
+      "基地、物流、居住、農業與倉庫圖塊的 AI 生成點從外部移至建築內部",
+      "營地改由平民居住而非物流工人，並減少了倉庫與儲藏圖塊的 AI 數量",
+      "基地、降落墊、走道、欄杆與居住圖塊新增攀爬標註（Ledge markup）",
+      "基地、降落墊與物流圖塊優化掩體物件、戰利品配置與路徑，工會大廳新增修復戰利品箱",
+      "重製包裹交付區域",
+      "工會大廳標示、導航標記與品牌視覺優化，並改善指揮大樓、倉庫、物流與監視塔組件",
+      "新增洞穴圖塊視覺效果",
+      "可能修正：First Legion 能夠佔據未定產權的據點",
+      "可能修正：AI 卡在貨運電梯生成間，以及行政 NPC 因缺乏可用物件而無法離開生成間",
+      "可能修正：停用便利貼時僅隱藏文字而非整張便籤",
+      "可能修正：物件掉落穿過底層地基",
+      "可能修正：玩家無法互動的表面出現側身傾斜提示"
+     ]
+    },
+    {
+     "h": "🪐 Genesis 與 Nyx I 星球優化",
+     "items": [
+      "新增橘色調草皮與不同分佈，並降低森林與沼澤區域的植被密度以提升效能",
+      "更新樹木溫度分佈與密度，並新增可採礦岩石變體",
+      "修正崩積物（Scree）與基岩的孔隙率",
+      "降低星球散佈物件的 VRAM 使用量，並重新平衡立方體邊緣的地形細節度（LOD）",
+      "更新水體模擬與擬態風吹彎曲效果",
+      "可能修正：飛船燈光照射植被時出現的光影異常",
+      "可能修正：可採集物無法穩定運作，以及採集節點重新整理問題"
+     ]
+    },
+    {
+     "h": "🌧️ 天氣與音效優化",
+     "items": [
+      "增加降雨頻率，拆分雲朵形狀與氣候地圖並套用雲層調校",
+      "降低閃電強度與生成頻率，並改善遠距離衰減效果",
+      "現在可聽到雷聲，管理音效距離提升至 25km，並新增帶有雷聲音效的降雨事件",
+      "調整雪地與地面效果，包括停用會產生大塊雪團的細節等級（LOD）",
+      "玩家腳步聲混音優化與修正，腳步聲表現將更加穩定一致",
+      "改善 Starchitect 據點的室內/室外過渡音效",
+      "所有基於視覺特效（VFX）的音效（如採礦雷射、蒸汽、煙火等）現在應能正常播放",
+      "為 Nyx I 提供全新管弦樂混音，完成 Starchitect 據點的第三階段音效優化，並新增可搜刮食物容器音效",
+      "可能修正：客戶端音效缺失",
+      "可能修正：聲音傳播至不應出現的位置"
+     ]
+    },
+    {
+     "h": "🖥️ 伺服器網格化",
+     "items": [
+      "領地生成（Territory generation）改為記錄實體的完整變換（Transform）而不僅是座標，且行星與衛星改由自身的組件資料辨識而非推算",
+      "領地預留偏好（Claim reservation bias）現在改由實體數量進行估算",
+      "執行階段領地候選僅在設定中明確啟用時才會納入考量",
+      "可能修正：當物理控制權轉移至玩家控制的飛船時，實體被錯誤剔除（Culled）"
+     ]
+    },
+    {
+     "h": "📜 聲望與合約系統",
+     "items": [
+      "PTU 版本開啟了 10 倍聲望收益倍率以供測試",
+      "跨公會實裝聲望範疇（Reputation scopes），並完成 Cornerstone、Hockrow、Ling 及 Bounty Hunters Guild（賞金獵人公會）合約的獎勵與聲望設定",
+      "公告板合約現在會發放獎勵",
+      "Northrock 與 Eckhart 合約新增難度變體",
+      "任務板合約現在可依範疇及階級進行排序，並新增載入指示器",
+      "Contract Manager（合約管理器）新增合約範疇圖示與標籤",
+      "賞金獵人合約範疇限定於 Starchitect 據點",
+      "調整 Starmap（星圖）任務列表版面，將追蹤標記指示器移至列表內部，並新增顯示未標記標記的按鈕狀態",
+      "可能修正：聲望未在參與者之間正確分配",
+      "可能修正：合約標記除非直接注視否則會消失",
+      "可能修正：貨運電梯未生成快遞合約",
+      "可能修正：巡邏目標在任務階段完成時未清除",
+      "可能修正：剿滅階段期間 HUD 與目標中出現文字標記（Text tokens）",
+      "可能修正：選取的任務板合約在互動時未清除",
+      "可能修正：探針無法交付至雙手任務物品連接埠",
+      "可能修正：前往目標使用行動區域而非據點本身的尺寸"
+     ]
+    },
+    {
+     "h": "🚀 飛彈鎖定介面",
+     "items": [
+      "替換為 Squadron 42（42 號空隊）製作的介面版本",
+      "螢幕中央顯示鎖定圓錐角（Locking cone），具備淡入淡出效果",
+      "鎖定進度現劃分為四個明確狀態：待機（idle）、獲取中（acquiring）、已鎖定（locked）與已解析（resolved）",
+      "完全鎖定的瞬間，目標標記旁會立即顯示「LOCK」",
+      "新增距離指示器，包含明確的超出射程狀態（過遠/過近）",
+      "介面現在會採用玩家飛船製造商的 HUD 配色風格"
+     ]
+    }
+   ]
+  },
   {
    "id": "576959",
    "title": "Star Citizen Alpha 4.10.3 LIVE Release Notes",
@@ -515,52 +627,6 @@
       "可能修正：任務敵方 AI 生成後呆站 20～50 秒才攻擊",
       "可能修正：任務描述把 UGF 地堡說成廢棄前哨站，現在改稱「廢棄設施」",
       "其中 4 項修正來自 Issue Council 回報（維生超過 100% 有 249 人回報）"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "574712",
-   "title": "[Wave 1] Star Citizen Alpha 4.10.3 PTU Patch Notes 12999338",
-   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes",
-   "date": "2026-10-23",
-   "time": 1792773346,
-   "version": "4.10.3",
-   "kind": "PTU",
-   "build": "12999338",
-   "audience": "第 1 梯次 (Wave 1)",
-   "highlight": "4.10.3 PTU 首發：Vanduul 入侵任務線、LBCO Skarnov 步槍登場。",
-   "sections": [
-    {
-     "h": "👾 新任務：Vanduul 入侵 (Vanduul Incursion)",
-     "items": [
-      "Intersec Defence Solutions 開放對抗 Vanduul 與 Shattered Blade 氏族的新任務線，在深空進行",
-      "會遇到 Blade（刀鋒）、Glaive（長柄刀）、Scythe（鐮刀）、Stinger（螫刺）等 Vanduul 戰機",
-      "正式版需先完成 Welcome To Nyx 的 Vanduul 科技走私者任務；PTU 全部開放",
-      "Shattered Blade 突襲（等級 1）：清除 Nyx 各輔助站的 Shattered Blade 部隊",
-      "奪回船艦（等級 2）：登上被佔領的船並奪回",
-      "Vanduul 氏族殲滅（等級 4）：撐過一波波 Vanduul 船艦，三種難度",
-      "三方對峙（等級 4）：你、Vanduul、Shattered Blade 三方混戰",
-      "[保密] 擊殺（等級 4～6）：打退多波 Vanduul 直到引出 [保密]，五種難度",
-      "收集 Vanduul 冷凍艙",
-      "高難度是為團隊設計，不適合單人"
-     ]
-    },
-    {
-     "h": "🧊 冷凍艙與獎勵",
-     "items": [
-      "新增第二種冷凍艙：紅色裝活的 Vanduul，新顏色是死的；死的比較值錢，可以交給 Wikelo",
-      "完成高難度可得：新能量步槍、兩套新重甲、新飛行服、一組新飛船武器的藍圖",
-      "Nyx 星系各處新增太空與 FPS 戰鬥地點"
-     ]
-    },
-    {
-     "h": "🔫 新 FPS 武器：LBCO Skarnov 步槍（LBCO Skarnov Rifle）",
-     "items": [
-      "全自動／單發的能量 DMR，傷害 27、射速 375 RPM、彈匣 30 發、彈速 500",
-      "命中後產生電脈衝，連鎖到附近目標",
-      "垂直後座力高但穩定；會過熱，炎熱環境過熱更快、寒冷環境較慢",
-      "PTU 購買地點：Area18 Cubby Blast、GrimHex Skutters、Levski Conscientious Objects、Checkmate 武器店"
      ]
     }
    ]
