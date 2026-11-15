@@ -1,7 +1,43 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-15 02:37",
+ "updated": "2026-11-16 00:42",
  "items": [
+  {
+   "image_checked": true,
+   "id": "21452",
+   "title": "Star Citizen | Behind the Ships: Anvil Liberator",
+   "title_zh": "星際公民｜艦船幕後：Anvil Liberator（解放者）",
+   "summary": "本影片深入剖析 Anvil Liberator 的後勤與載運能力，幫助玩家了解如何調配艦隊資源。",
+   "tag": "影片",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21452-Star-Citizen-Behind-The-Ships-Anvil-Liberator",
+   "date": "2026-11-16",
+   "time": 1794758910,
+   "image": "https://robertsspaceindustries.com/i/a538b4db1c9a566c44dc3dd8c4f84dbf6674c41b/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjBFHVSVsFr8VWx8QBL3P8bDjB9LXSMMVG)/source.jpg"
+  },
+  {
+   "image_checked": true,
+   "id": "21410",
+   "title": "IAE 2956 Anvil Aerospace",
+   "title_zh": "IAE 2956：Anvil Aerospace（砧骨航太）",
+   "summary": "介紹 IAE 2956 展期登場的軍規航母 Anvil Liberator，幫助玩家掌握最新展區活動資訊。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21410-IAE-2956-Anvil-Aerospace",
+   "date": "2026-11-16",
+   "time": 1794758430,
+   "image": "https://robertsspaceindustries.com/i/96124669b269b11b675acca04d862f5f2ca68746/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseNTGAXs12YwEh5WBumusP6chJdCu7o7bC)/source.jpg"
+  },
+  {
+   "image_checked": true,
+   "id": "21348",
+   "title": "Anvil Liberator - Load Up Your Loadout",
+   "title_zh": "Anvil Liberator（解放者）——整備你的載具配置",
+   "summary": "介紹這艘獨特的露天長程載具運輸艦，幫助玩家了解如何將艦隊有效投送至戰場前線。",
+   "tag": "新船",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21348-Anvil-Liberator",
+   "date": "2026-11-16",
+   "time": 1794758430,
+   "image": "https://robertsspaceindustries.com/i/1eb214161e078cee07c68f0647142fd371a15d84/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskN4rbLbQZWUR4mvx7DtBFKi3o4BMLYbmY)/source.jpg"
+  },
   {
    "image_checked": true,
    "id": "21411",
@@ -204,30 +240,6 @@
    "date": "2026-11-04",
    "time": 1793761380,
    "image": "https://robertsspaceindustries.com/i/ff96febfb6ca38d332299b2d04c91a5469f5220b/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskYhWNQzR5pnKRqVzYFpaw8djKzdjrDjyY)/source.jpg",
-   "image_checked": true
-  },
-  {
-   "id": "21431",
-   "title": "This Week in Star Citizen - November 2, 2026",
-   "title_zh": "《星際公民》本週週報 - 2026年11月2日",
-   "summary": "掌握本週最新社群焦點與活動行程，不錯過宇宙中的大小事。",
-   "tag": "週報",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21431-This-Week-In-Star-Citizen",
-   "date": "2026-11-03",
-   "time": 1793674980,
-   "image": "https://robertsspaceindustries.com/i/d1b4e85ae68bb7a123103277109a9620ed89d14d/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjYUomDBGsxJfM8cG1gEDDFpkczdsmSZ7c)/source.jpg",
-   "image_checked": true
-  },
-  {
-   "id": "21427",
-   "title": "Jump Point Now Available! - ISSUE: 14 05 – Constellation of the Heart",
-   "title_zh": "《Jump Point》電子雜誌發行！第 14 卷第 5 期 – Constellation（星座）之心",
-   "summary": "訂閱者現可下載最新一期雜誌，深入閱讀宇宙設定與獨家飛船開發故事。",
-   "tag": "其他",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21427-Jump-Point-Now-Available",
-   "date": "2026-11-03",
-   "time": 1793674980,
-   "image": "https://robertsspaceindustries.com/i/47830c56239fce16abb4d7d9fcb56ed0ed7af8f2/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResivX8XHDT7JoswSvyz8HqPzgxuWTWdypHC)/source.jpg",
    "image_checked": true
   }
  ]
