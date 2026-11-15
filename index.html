@@ -93,6 +93,35 @@
             </div>
         </section>
 
+        <section class="glass-panel" id="presale" style="padding: 30px; margin-bottom: 40px;">
+            <h2 class="text-gradient" style="font-size: 1.5rem; margin-bottom: 10px;">🔒 IAE 2956 限量船開賣（台灣時間）</h2>
+            <p style="margin-bottom: 15px;">每個帳號限購一艘，每艘船當天分 <strong>6 波</strong>開賣：<strong>00:00、04:00、08:00、12:00、16:00、20:00</strong>。</p>
+            <ul class="presale-list" style="list-style: none; padding: 0; margin: 0;">
+                <li data-date="2026-11-15"><strong>11/15（日）</strong>　Origin 890 Jump</li>
+                <li data-date="2026-11-18"><strong>11/18（三）</strong>　Drake Kraken、Drake Kraken Privateer</li>
+                <li data-date="2026-11-19"><strong>11/19（四）</strong>　Consolidated Outland Pioneer</li>
+                <li data-date="2026-11-21"><strong>11/21（六）</strong>　Aegis Idris-P、Aegis Javelin</li>
+            </ul>
+            <p style="margin-top: 15px;"><a href="news.html#limited-ships">完整波次與 UTC 對照 →</a></p>
+            <style>
+                .presale-list li { padding: 10px 0; border-top: 1px solid rgba(56,189,248,0.12); }
+                .presale-list li:first-child { border-top: none; }
+                .presale-list li.is-past { opacity: 0.45; }
+                .presale-list .ps-tag { display: inline-block; font-size: 0.8rem; padding: 1px 8px; border-radius: 20px; margin-left: 8px; border: 1px solid var(--warning); color: var(--warning); }
+            </style>
+            <script>
+                (function () {
+                    var t = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+                    document.querySelectorAll('.presale-list li').forEach(function (li) {
+                        var d = li.getAttribute('data-date'), tag = null;
+                        if (d < t) { li.classList.add('is-past'); tag = '已結束'; }
+                        else if (d === t) { tag = '今天開賣'; }
+                        if (tag) { var s = document.createElement('span'); s.className = 'ps-tag'; s.textContent = tag; li.appendChild(s); }
+                    });
+                })();
+            </script>
+        </section>
+
         <section class="glass-panel" style="padding: 30px; margin-bottom: 40px;">
             <h2 class="text-gradient" style="font-size: 1.5rem; margin-bottom: 20px;">🎁 還沒註冊？使用推薦碼加入</h2>
             <div class="referral-card">
