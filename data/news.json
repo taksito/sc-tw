@@ -1,7 +1,31 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-16 00:42",
+ "updated": "2026-11-17 03:56",
  "items": [
+  {
+   "image_checked": true,
+   "id": "21408",
+   "title": "IAE 2956 Tumbril Land Systems",
+   "title_zh": "IAE 2956 Tumbril 陸行系統展日",
+   "summary": "介紹 Tumbril 強大的地面載具陣容與展期限定特賣，方便玩家選購強悍的陸戰裝備。",
+   "tag": "促銷",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21408-IAE-2956-Tumbril-Land-Systems",
+   "date": "2026-11-16",
+   "time": 1794844370,
+   "image": "https://robertsspaceindustries.com/i/08e90cfeaab05b59b1eb58b4aaab1cad6c3a3ce8/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResivcrj6KGKrhv4Ln42MQZHYRtmrULYXXeE)/source.jpg"
+  },
+  {
+   "image_checked": true,
+   "id": "21409",
+   "title": "IAE 2956 Crusader Industries",
+   "title_zh": "IAE 2956 十字軍工業展日",
+   "summary": "展示 Crusader 旗下的精湛造船工藝與創新飛船陣容，並提供展覽限定促銷資訊。",
+   "tag": "促銷",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21409-IAE-2956-Crusader-Industries",
+   "date": "2026-11-16",
+   "time": 1794844370,
+   "image": "https://robertsspaceindustries.com/i/e9ad90b657a73a9d6ee240172a05a2e02c7d22d0/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskCsoRDPPhCJeuzSLZ3sAoeZ79RoTj7aGE)/source.jpg"
+  },
   {
    "image_checked": true,
    "id": "21452",
@@ -216,30 +240,6 @@
    "date": "2026-11-05",
    "time": 1793847780,
    "image": "https://robertsspaceindustries.com/i/e22c3bf9093bddb18cf3074b69a6d969e205054a/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResepcsFVsmu16nwzY5GtVEc2XKuW3hVifgJ)/source.jpg",
-   "image_checked": true
-  },
-  {
-   "id": "21422",
-   "title": "Roadmap Roundup - November 4, 2026",
-   "title_zh": "路線圖更新摘要 - 2026年11月4日",
-   "summary": "解釋最新路線圖調整的原因與背後決策，方便玩家追蹤後續版本的開發狀況。",
-   "tag": "開發進度",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21422-Roadmap-Roundup-November-4-2026",
-   "date": "2026-11-05",
-   "time": 1793847780,
-   "image": "https://robertsspaceindustries.com/i/ef51f8242cbf2b96c2c17c8b93ac9ec635b472b7/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResee9oKGGkX6kdnAueTV94PcLkJ7k4GTbJe)/source.jpg",
-   "image_checked": true
-  },
-  {
-   "id": "21311",
-   "title": "November 2026 Subscriber Promotions",
-   "title_zh": "2026年11月訂閱者限定優惠",
-   "summary": "公布 11 月份訂閱者專屬裝飾品與主體為 Xi'an 的本月試飛飛船好康內容。",
-   "tag": "促銷",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21311-November-2026-Subscriber-Promotions",
-   "date": "2026-11-04",
-   "time": 1793761380,
-   "image": "https://robertsspaceindustries.com/i/ff96febfb6ca38d332299b2d04c91a5469f5220b/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskYhWNQzR5pnKRqVzYFpaw8djKzdjrDjyY)/source.jpg",
    "image_checked": true
   }
  ]
