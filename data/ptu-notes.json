@@ -1,7 +1,120 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-14 14:42",
+ "updated": "2026-11-17 06:24",
  "posts": [
+  {
+   "id": "577969",
+   "title": "[Wave 1] Star Citizen Alpha 5.0 PTU Patch Notes 13201184",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-5-0-ptu-patch-notes-1",
+   "date": "2026-11-16",
+   "time": 1794849445,
+   "version": "5.0",
+   "kind": "PTU",
+   "build": "13201184",
+   "audience": "第 1 梯次 (Wave 1)",
+   "highlight": "Genesis 行星技術升級、物品欄系統重構與 VR 虛擬影院模式開放測試。",
+   "sections": [
+    {
+     "h": "🎯 測試重點",
+     "items": [
+      "Alpha Patch 5.0 (版本號 5.0.0-PTU.13201184) 已開放至 PTU 第一波測試（Wave 1）。伺服器僅限美服（US Only），長期續存系統（LTP）啟用。",
+      "PTU 版本間的穩定度、Bug 修正與 LTP 測試",
+      "Genesis (Planet Tech V5 行星技術)",
+      "Nyx 1",
+      "Starchitect 興趣點 (Points of Interest)",
+      "任務板與在地任務",
+      "行星內伺服器網格化 (Intraplanetary Server Meshing)",
+      "擊殺時間 (TTK，非 5.0 正式功能，僅於本週末開放測試與回饋)",
+      "飛彈鎖定介面更新"
+     ]
+    },
+    {
+     "h": "🎒 物品欄重構",
+     "items": [
+      "護甲、服裝與彈匣在物品欄佔用的空間已全面調整。過往採用實際物理體積計算，導致整套護甲裝不下背包、幾隻彈匣就塞滿護甲。現改為依類別與實用度分配空間，彈匣也依武器種類（手槍最小至重機槍最大）分級。",
+      "全套護甲現在皆可塞入背包，輕型、中型、重型、環境防護服及超重型護甲均已重新調整數值。環境防護服可放入 Combat Medium Backpack（戰鬥中型背包），BUL-H4 超重型防護服可放入 Combat Heavy Backpack（戰鬥重型背包）。",
+      "襯衫、長褲、外套與手套現在可大幅壓縮以放入任何護甲、Undersuit（內襯衣）或 Flight Suit（飛行服）口袋，鞋款則可放入背包。所有服飾類物品現均有明確尺寸（以往襯衫、手套、鞋子與帽子無尺寸設定）。",
+      "Flight Suit（飛行服）與 Racing Suit（賽車服）現在佔用與 Undersuit（內襯衣）相同的空間。",
+      "輕型戰鬥背包與工具背包現在可裝入步槍、霰彈槍、衝鋒槍（SMG）、GP-33 以及 Crossbow（十字弓）。",
+      "可能修正：部分彈匣完全不佔體積的問題，包含 Behring Ballistic Rifle（Behring 實彈步槍）、Volt Coil Rifle（Volt 線圈步槍）與 Karna Rifle（Karna 步槍）電池。"
+     ]
+    },
+    {
+     "h": "🥽 VR 影院模式",
+     "items": [
+      "影院模式重構為虛擬電影院，不再只是浮在眼前的大平板。螢幕改為曲面並置於由其發光的房間中，提供多種觀賞環境，並可利用場景深度以體感 3D 呈現遊戲畫面。前台主選單現在預設啟用影院模式。",
+      "螢幕尺寸預設包含 Monitor（顯示器）、Living Room（客廳）、Cinema（影城）與 Giant Screen（巨型螢幕），可調整曲率與高度。",
+      "新增 Screen Follows Me（螢幕跟隨）選項，轉頭時螢幕會保持在眼前。",
+      "觀賞環境：Black（純黑）、Stars（星空）、Aurora（極光）、Day and Night（晝夜）、Underwater（水下）、Orbit（軌道）與 Storm（風暴）。",
+      "3D 畫面選項可根據場景深度為雙眼偏移畫面。",
+      "螢幕光暈會照亮地板與周圍房間。",
+      "實體螢幕可同步鏡頭呈現頭戴裝置的影院畫面。",
+      "選項選單圍繞新設定重新構建，取代舊有的縮放與距離滑桿。",
+      "可能修正：因缺少設定檔導致跨階段無法儲存 VR 設定的問題。",
+      "可能修正：站立玩家在有風的行星上轉頭時視角會俯仰傾斜的問題。",
+      "可能修正：選項選單中滑桿步階四捨五入為零時發生的崩潰。"
+     ]
+    },
+    {
+     "h": "📜 聲望與合約",
+     "items": [
+      "Nyx I 上其餘公會的聲望與獎勵結構已建置完成，職涯板進度現有前置條件，合約將依序解鎖。",
+      "今晚版本啟用了 25 倍聲望倍率以供測試。",
+      "完成 Northrock、Rayari 與 Adagio 合約的聲望與獎勵設定。",
+      "設定 Covalex 與 FTL 職涯板合約的獎勵、階級與前置條件，並為非職涯 Ling 合約新增獎勵。",
+      "Transport Guild（運輸公會）合約現在需先完成前導任務。",
+      "新增 Wikelo 飛船合約。",
+      "合約完成橫幅現在僅顯示合約名稱。",
+      "更新任務板工具提示版面，並在 Starmap 合約面板新增取消追蹤狀態。",
+      "重構 Delivery 寄件櫃介面樣式。",
+      "可能修正：完成任何 Covalex 合約後無法出現後續 Covalex 合約的問題。",
+      "可能修正：Hockrow Return Stolen Cargo 合約出現錯誤文字字串的問題。",
+      "可能修正：Attack on All Fronts 目標未正確設置的問題。"
+     ]
+    },
+    {
+     "h": "🏗️ Starchitect 地點與行星技術",
+     "items": [
+      "Starchitect 地點戰利品分布與室內擺設持續優化，改善敵對 AI 判讀並深化 Spawn Closet（生成點）設計。",
+      "萃取區塊新增 Commodities（大宗貨物），維修室內新增修復戰利品箱，並全面審視居住區室內戰利品。",
+      "重構保險箱戰利品生成機制。",
+      "維修建築新增無門式 Spawn Closet，允許室內外無縫過渡，萃取區塊 AI 現將由此生成。",
+      "120m 停機坪新增 Delivery 遞送點，並調整附近道具位置以改善動線導向。",
+      "將靜態畫面與空白螢幕替換為可運作的預製組件。",
+      "更新控制面板視覺樣式。",
+      "工程師 NPC 現在可透過裝備包獲得 Multitool（多功能工具）與平板電腦。",
+      "完成維修、物流與居住室內的燈光與擺設優化。",
+      "Genesis 與 Nyx I 本版本主要變更為相鄰地形區塊的協調機制。過往區塊獨立計算接地單元導致邊界出現直線裂縫與不匹配地面紋理，現改為在世界中心點計算，確保所有相關區塊達到一致。",
+      "放大地表覆蓋物資源，並新增蘆葦植被。",
+      "成樹與幼樹的 Imposter（遠景樹木假體）啟用風力彎曲效果，與全細節靈活性一致。",
+      "調整基岩粗糙度。",
+      "重構 GPU Instance Culling（實例剔除），並優化地形著色器以減少階段間傳輸的屬性。",
+      "可能修正：玩家可沿著梯子爬下關閉的通風口的問題。",
+      "可能修正：可供電目標及其動畫無法正確串流載入的問題。",
+      "可能修正：生物群落貼圖衰減值問題。",
+      "可能修正：特定地點出現占位符網格 (Placeholder Mesh) 的問題。",
+      "可能修正：行星調色破損問題，現透過行星等級範圍恢復串流泡泡以載入調色實體。",
+      "可能修正：地形區塊邊界出現明顯裂縫與不匹配地面紋理的問題。",
+      "可能修正：用戶端與伺服器端的 Scatter（散落物）放置不一致問題，現雙方對溫度與降雨量的讀取已完全相同。"
+     ]
+    },
+    {
+     "h": "🛠️ 錯誤修正與技術調整",
+     "items": [
+      "可能修正：Battaglia 在串流載入時找不到其行動區域的問題。",
+      "可能修正：KSAR LMG（KSAR 輕機槍）、KSAR Pistol（KSAR 手槍）彈匣在商店缺失，以及 Volt Pistol（Volt 手槍）與 Volt Sniper（Volt 狙擊槍）彈匣名稱缺失的問題。",
+      "可能修正：ASD Delving 代碼畫面問題。",
+      "可能修正：ARGO MPUV 模組現在可進行購買，並補齊名稱、描述與 AR 資料。",
+      "可能修正：GrimHEX 氣閘門的房間連接器問題。",
+      "可能修正：非戰鬥 NPC 樣板的髒汙與磨損狀態變得一致。",
+      "崩潰修正：可能修正 Arena Commander 前台在過濾後無可用遊戲模式時發生的崩潰。",
+      "崩潰修正：可能修正佇列實體事件時的主執行緒死鎖問題。",
+      "崩潰修正：可能修正遊戲過程中的致命錯誤（Fatal Error）。",
+      "引擎初始化優化：涵蓋對話註冊、DataCore 導出檢查、著色器解析與 Subsumption 資料釋放。"
+     ]
+    }
+   ]
+  },
   {
    "id": "577271",
    "title": "[Wave 1] Star Citizen Alpha 5.0 PTU Patch Notes 13189690",
@@ -579,54 +692,6 @@
       "可能修正：mobiGlas 降落服務卡在「處理中」或「已封鎖」",
       "可能修正：完成回收貨物合約後貨運電梯出現大量重複貨物",
       "可能修正：賞金與傭兵合約的敵方 AI 船有時不還擊"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "575272",
-   "title": "[Wave 1] Star Citizen Alpha 4.10.3 PTU Patch Notes 13032516",
-   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-1",
-   "date": "2026-10-28",
-   "time": 1793206316,
-   "version": "4.10.3",
-   "kind": "PTU",
-   "build": "13032516",
-   "audience": "第 1 梯次 (Wave 1)",
-   "highlight": "Mauler 武器大幅增強、Skarnov 彈匣改 30 發、移除 Vulkan 快取 4GB 上限。",
-   "sections": [
-    {
-     "h": "👾 Vanduul 入侵",
-     "items": [
-      "Mauler 的武器變得危險許多",
-      "與 Vanduul 戰鬥時播放 Welcome To Nyx 太空戰音樂，緊張度偵測系統重新啟用",
-      "登艦 (Board Ship) 目標修訂並重新平衡"
-     ]
-    },
-    {
-     "h": "🔫 LBCO Skarnov 步槍（LBCO Skarnov Rifle）",
-     "items": [
-      "副射擊模式加入光效",
-      "彈匣容量改為 30 發"
-     ]
-    },
-    {
-     "h": "💾 著色器快取",
-     "items": [
-      "移除 Vulkan 管線快取 4GB 上限（完整快取會超過，之前會被丟棄）；現有快取會重建一次"
-     ]
-    },
-    {
-     "h": "🔧 錯誤修正",
-     "items": [
-      "可能修正：維生系統可以遠超過 100%",
-      "可能修正：在星球區域內排氣的載具無法恢復大氣，乘客凍死或窒息",
-      "可能修正：mobiGlas 合約選單捲動卡住",
-      "可能修正：從 ASOP 叫船時船卡進機庫平台",
-      "可能修正：船被扣押時 ASOP 沒有繳罰款選項",
-      "可能修正：任務敵方 AI 生成後呆站 20～50 秒才攻擊",
-      "可能修正：任務描述把 UGF 地堡說成廢棄前哨站，現在改稱「廢棄設施」",
-      "其中 4 項修正來自 Issue Council 回報（維生超過 100% 有 249 人回報）"
      ]
     }
    ]
