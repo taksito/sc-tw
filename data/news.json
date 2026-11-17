@@ -1,7 +1,31 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-17 12:15",
+ "updated": "2026-11-18 00:32",
  "items": [
+  {
+   "image_checked": true,
+   "id": "21407",
+   "title": "IAE 2956 Drake Interplanetary",
+   "title_zh": "IAE 2956 德拉克跨星際展覽日",
+   "summary": "介紹 IAE 2956 德拉克展區與全新中型戰鬥機，讓玩家了解單兵探索宇宙的新飛船選擇。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21407-IAE-2956-Drake-Interplanetary",
+   "date": "2026-11-18",
+   "time": 1794931202,
+   "image": "https://robertsspaceindustries.com/i/172517736667aa59cbf82ebd2633b3ea27cfac94/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskGpcc2RvSmrqvuoLUoEw2A9sB4p59pWtn)/source.jpg"
+  },
+  {
+   "image_checked": true,
+   "id": "21345",
+   "title": "Drake Marauder - Welcome to the Gun Show",
+   "title_zh": "Drake Marauder（掠奪者）- 歡迎來到火力展示大會",
+   "summary": "介紹擁有同級中型戰鬥機最強火力的 Drake Marauder（掠奪者），方便玩家評估這款新飛船的火力優勢。",
+   "tag": "新船",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21345-Drake-Marauder",
+   "date": "2026-11-18",
+   "time": 1794931202,
+   "image": "https://robertsspaceindustries.com/i/012627a5410c1c929fd7bc78fc579d0edeb67886/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjCmdUez3smjGDB7kaDzPkWGYiXKiTLDgi)/source.jpg"
+  },
   {
    "image_checked": true,
    "id": "21454",
@@ -216,30 +240,6 @@
    "date": "2026-11-10",
    "time": 1794247380,
    "image": "https://robertsspaceindustries.com/i/8d87a85339731a8c575a9186153425b2bc7ce2ab/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResidYAdV7BVc9kxBDCUjRtj6gZsuDepLziJ)/source.jpg",
-   "image_checked": true
-  },
-  {
-   "id": "21386",
-   "title": "Intergalactic Aerospace Expo 2956 Free Fly and Manufacturer Schedule - Try Star Citizen for Free",
-   "title_zh": "IAE 2956 免費試飛與廠商參展日程表",
-   "summary": "提供玩家免費試飛體驗與各家製造商參展時間表，快前往微科星新巴貝奇共襄盛舉！",
-   "tag": "活動",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21386-Intergalactic-Aerospace-Expo-2956-Free-Fly-And-Manufacturer-Schedule",
-   "date": "2026-11-10",
-   "time": 1794243780,
-   "image": "https://robertsspaceindustries.com/i/4e807696bfcebe9e23582b5d2eaa17db3949d3f7/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResj6737R84FAMrw4cHBsT1L18UTZzjWMmHg)/source.jpg",
-   "image_checked": true
-  },
-  {
-   "id": "21389",
-   "title": "Countdown to IAE 2956 - The Ultimate Ship Show Returns",
-   "title_zh": "IAE 2956 倒數計時 - 終極飛船大展回歸",
-   "summary": "介紹即將登場的 IAE 2956 飛船大展預告，提醒玩家免費試飛熱門與經典艦艇。",
-   "tag": "活動",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21389-Countdown-To-IAE-2956",
-   "date": "2026-11-07",
-   "time": 1794020580,
-   "image": "https://robertsspaceindustries.com/i/e55e5e144978e40380587dde85dda9e6c22701a5/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskZdR2D6tvD6KpL1LMoQ5ujQgbNEu2wUSr)/source.jpg",
    "image_checked": true
   }
  ]
