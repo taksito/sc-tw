@@ -1,7 +1,19 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-17 03:56",
+ "updated": "2026-11-17 12:15",
  "items": [
+  {
+   "image_checked": true,
+   "id": "21454",
+   "title": "This Week in Star Citizen - November 16, 2026",
+   "title_zh": "《星際公民》本週週報 - 2026 年 11 月 16 日",
+   "summary": "本週《星際公民》社群週報，帶你快速掌握遊戲內外的最新活動與社群動態。",
+   "tag": "週報",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21454-This-Week-In-Star-Citizen",
+   "date": "2026-11-17",
+   "time": 1794867144,
+   "image": "https://robertsspaceindustries.com/i/18175a9258864a39775be8ff47a6d238a44161fc/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReska4bEeu26Vd5sUtWwH2e1zjZL7X7BCGaz)/source.jpg"
+  },
   {
    "image_checked": true,
    "id": "21408",
@@ -228,18 +240,6 @@
    "date": "2026-11-07",
    "time": 1794020580,
    "image": "https://robertsspaceindustries.com/i/e55e5e144978e40380587dde85dda9e6c22701a5/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskZdR2D6tvD6KpL1LMoQ5ujQgbNEu2wUSr)/source.jpg",
-   "image_checked": true
-  },
-  {
-   "id": "21432",
-   "title": "Star Citizen Monthly Report: October 2026",
-   "title_zh": "《星際公民》月報：2026年10月",
-   "summary": "統整 10 月份開發進度，涵蓋場景地點、角色、AI 行為與後端技術等最新細節。",
-   "tag": "開發進度",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21432-Star-Citizen-Monthly-Report-October-2026",
-   "date": "2026-11-05",
-   "time": 1793847780,
-   "image": "https://robertsspaceindustries.com/i/e22c3bf9093bddb18cf3074b69a6d969e205054a/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResepcsFVsmu16nwzY5GtVEc2XKuW3hVifgJ)/source.jpg",
    "image_checked": true
   }
  ]
