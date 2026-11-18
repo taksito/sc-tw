@@ -1,7 +1,73 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-17 06:24",
+ "updated": "2026-11-18 15:43",
  "posts": [
+  {
+   "id": "578177",
+   "title": "[Wave 1] Star Citizen Alpha 5.0 PTU Patch Notes 13215521",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-5-0-ptu-patch-notes-1-1",
+   "date": "2026-11-17",
+   "time": 1794934584,
+   "version": "5.0",
+   "kind": "PTU",
+   "build": "13215521",
+   "audience": "第 1 梯次 (Wave 1)",
+   "highlight": "Alpha 5.0 PTU 上線：開放 Nyx 1 與 Genesis 技術、優化伺服器分片與修復多項崩潰。",
+   "sections": [
+    {
+     "h": "🎯 測試重點",
+     "items": [
+      "版本號：VERSION 5.0.0-PTU.13215521（測試對象：Wave 1，美服 PTU 頻道，開啟長效持久性 LTP）。",
+      "PTU 版本間的系統穩定度、錯誤修正與 LTP 長效持久性測試。",
+      "Genesis（Planet Tech V5 行星技術 V5）。",
+      "Nyx 1 行星及其 Starchitect 景點／興趣點（POI）。",
+      "任務板（Mission Boards）與區域任務。",
+      "行星內伺服器分片（Intraplanetary Server Meshing）。",
+      "飛船 TTK（擊殺時間）戰鬥平衡。",
+      "飛彈鎖定介面更新。"
+     ]
+    },
+    {
+     "h": "🚀 遊戲性與功能更新",
+     "items": [
+      "聲望與合約：Nyx I 上其餘公會的聲望與獎勵設定已完成，公告欄美術與工具提示版面同步定稿。",
+      "可能修正：部分星際運輸公會（Interstellar Transport Guild）合約儘管存在於遊戲世界中，卻無法在任何任務板上找到的問題。",
+      "可能修正：公告欄快遞合約及其後續任務因缺少任務物品而無法生成的問題。",
+      "可能修正：資源收集合約完成時未發放獎勵的問題。",
+      "Starchitect 據點：全面優化地形攀爬標記（Ledge markup），覆蓋倉庫、營地、住宅、物流及監視塔等區域；修正道具、座椅與 AI 位置以防玩家卡住；新增據點光暈燈光，監視塔燈光現會回應電力狀態，並可作為合約目標重啟。",
+      "Starchitect 據點導航：公會大廳新增全新標牌材質、品牌識別與 minimap 地點標籤，住宅內部與大廳更新導航網格（Navigation Meshes）以利 AI 尋路。",
+      "可能修正：某據點區域地形導致玩家會穿透行星表面的問題。",
+      "可能修正：公會大廳內玩家坐下後無法站起的辦公椅，以及另一張離開時會將玩家拋出牆外的座椅。",
+      "可能修正：公會大廳階梯左側欄杆穿模的問題。",
+      "可能修正：Nyx I 各據點積累廢棄飛船且幾乎未被自動清理的問題。",
+      "Genesis 與 Nyx I：重調全星球生態系過渡與物種優勢度，調降潮濕表面的雨滴波紋強度，優化水體視覺與遠景地形繪製（遠距離地形完全跳過細分曲面 Tessellation）。",
+      "Nyx I 位移：Nyx I 的拉格朗日點（Lagrange point）已移動位置，改善先前陽光直射導致從 Delta Station 看向行星時光線不良的問題。",
+      "可能修正：萃取機（Extractor）缺少燈光的問題。",
+      "戰術打擊群：戰術打擊群互動已完成正式實作。「協助飛船戰鬥（Assist Ship In Combat）」合約因戰鬥平衡調整導致無法順利完成而暫時停用，待平衡穩定後重新開放。",
+      "可能修正：戰術打擊群互動重置的問題。",
+      "伺服器分片（Server Meshing）：更新領土配置格式並優化加載穩定度。複製層（Replication layer）改為批量發送實體刪除指令，並會在超過設定上限時拆分批次。"
+     ]
+    },
+    {
+     "h": "🛠️ 錯誤修正與技術",
+     "items": [
+      "可能修正：遙控砲塔自我狀態 MFD 未顯示的問題。",
+      "可能修正：Mirai Guardian（守護者）設定 MFD 上的按鈕被壓壓扁的問題。",
+      "可能修正：Xanthule 飛行服及其變體錯誤描述背包相容性的問題。",
+      "崩潰修正：針對伺服器穩定性進行大幅優化。修復了三個導致專用遊戲伺服器崩潰或記憶體耗盡的問題，包含刪除實體時未釋放物理柵欄（Physics fences）的記憶體洩漏問題。",
+      "可能修正：多執行緒建立碰撞代理（Collision proxies）時導致的伺服器崩潰。",
+      "可能修正：平行區域處理期間跨實體寫入導致的客戶端與伺服器崩潰。",
+      "可能修正：實體刪除時未釋放物理柵欄導致的伺服器記憶體耗盡。",
+      "可能修正：檢索物理控制器時導致的伺服器崩潰。",
+      "可能修正：使用者介面附著至已釋放節點時導致的客戶端崩潰。",
+      "可能修正：紋理去碎片化（Texture defragmentation）期間導致的客戶端崩潰。",
+      "可能修正：客戶端緩衝區溢位崩潰。",
+      "可能修正：後起落架縮放導致的嚴重錯誤（Fatal error）。",
+      "診斷優化：針對 Vulkan 崩潰回報新增了著色器快取狀態與處理器詳細資訊的額外診斷。"
+     ]
+    }
+   ]
+  },
   {
    "id": "577969",
    "title": "[Wave 1] Star Citizen Alpha 5.0 PTU Patch Notes 13201184",
@@ -634,64 +700,6 @@
       "可能修正：AR 購物卡片上的價格在某些角度偏移",
       "可能修正：Drake Cutter（切割者）前起落架造成當機",
       "可能修正：Pulverizer LMG（粉碎者輕機槍）彈藥缺少命中特效造成當機"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "575513",
-   "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU Patch Notes 13055118",
-   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-2",
-   "date": "2026-10-30",
-   "time": 1793384913,
-   "version": "4.10.3",
-   "kind": "PTU",
-   "build": "13055118",
-   "audience": "所有測試梯次 (All Waves)",
-   "highlight": "開放所有梯次；Vanduul 入侵大量修正、Skarnov 傷害與重量重新平衡、新讀取畫面。",
-   "sections": [
-    {
-     "h": "👾 Vanduul 入侵 (Vanduul Incursion)",
-     "items": [
-      "可以量子航行到 Shattered Blade 突襲地點了",
-      "合約完成後正確給予藍圖獎勵",
-      "Vanduul NPC 正確穿上護甲（不再沒穿衣服）",
-      "玩家無法再擊暈或用牽引光束拉 Vanduul",
-      "Mauler 武器傷害提高後，血量相對調降",
-      "入侵地點 AI 調整：三層攻擊、專屬走廊路線讓守軍分散、重做掉寶",
-      "每個地點只會生成一個藍色 Vanduul 冷凍艙",
-      "與 Vanduul 戰鬥時播放 Welcome To Nyx 的太空戰音樂",
-      "「消滅特定目標」合約文字修訂，「消滅首領」目標改名為「消滅目標」",
-      "合約任務進一步經濟平衡"
-     ]
-    },
-    {
-     "h": "🔫 LBCO Skarnov 步槍（LBCO Skarnov Rifle）",
-     "items": [
-      "每發能量傷害：10 → 30",
-      "電子連鎖跳躍距離：3.8m → 7.5m",
-      "修正傷害衰減下限（原本下限 30 高於基礎傷害 10），現在下限 20、基礎 30",
-      "步槍重量：4.9 → 2.9；彈匣重量：1.12 → 1.05",
-      "快速射擊模式後座力稍微降低",
-      "補上原本全部空白的 10 個槍聲音效",
-      "槍管配件槽原本只接受實彈槍管，已修正為能量槍管"
-     ]
-    },
-    {
-     "h": "🖼️ 讀取畫面",
-     "items": [
-      "更新 4.10.3 讀取畫面"
-     ]
-    },
-    {
-     "h": "🔧 錯誤修正",
-     "items": [
-      "可能修正：Collector（收藏家）入門合約沒出現，無法進入該任務線",
-      "可能修正：新手教學第 3 部分自動降落無法完成「降落在 LEO」",
-      "可能修正：商店購買失敗逾時後，之後所有購買都卡住直到換伺服器",
-      "可能修正：mobiGlas 降落服務卡在「處理中」或「已封鎖」",
-      "可能修正：完成回收貨物合約後貨運電梯出現大量重複貨物",
-      "可能修正：賞金與傭兵合約的敵方 AI 船有時不還擊"
      ]
     }
    ]
