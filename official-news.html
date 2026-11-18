@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>官方消息追蹤台 - Star Citizen 繁體中文新手入門教學</title>
+    <meta name="description" content="Star Citizen 官方消息追蹤台：自動追蹤 RSI 官方 Comm-Link 新文章，全文翻成繁體中文重點，整理販售中的飛船、塗裝與周邊，附相關連結。">
+    <link rel="stylesheet" href="styles.css?v=20261110b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+    <style>
+        .on-meta { display:flex; flex-wrap:wrap; gap:10px 18px; color: var(--text-muted); font-size:0.92rem; margin-top:10px; }
+        .on-filter { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+        .on-filter button { background:transparent; border:1px solid var(--glass-border); color:var(--text-muted); padding:5px 14px; border-radius:20px; cursor:pointer; font-size:0.9rem; }
+        .on-filter button.active { border-color:var(--primary); color:var(--primary); background:rgba(0,210,255,0.08); }
+        .on-card { border:1px solid var(--glass-border); border-radius:14px; background:rgba(0,0,0,0.3); margin-bottom:16px; overflow:hidden; scroll-margin-top:80px; }
+        .on-card summary { list-style:none; cursor:pointer; padding:16px 18px; display:grid; grid-template-columns:180px 1fr; gap:16px; align-items:start; }
+        .on-card summary::-webkit-details-marker { display:none; }
+        .on-card.noimg summary { grid-template-columns:1fr; }
+        .on-card[open] summary { border-bottom:1px solid var(--glass-border); background:rgba(0,210,255,0.05); }
+        .on-card summary img { width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; }
+        .on-top { display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:0.85rem; color:var(--text-muted); }
+        .on-tag { display:inline-block; font-size:0.78rem; padding:1px 10px; border-radius:20px; border:1px solid var(--primary); color:var(--primary); }
+        .on-tag.t-促銷 { border-color:var(--warning); color:var(--warning); }
+        .on-tag.t-新船 { border-color:var(--success); color:var(--success); }
+        .on-new { background:#ef4444; color:#fff; font-size:0.72rem; padding:1px 9px; border-radius:20px; font-weight:700; }
+        .on-card h3 { font-size:1.08rem; margin:6px 0 4px; color:var(--text-main); }
+        .on-en { font-size:0.8rem; color:var(--text-muted); opacity:.75; }
+        .on-sum { margin:6px 0 0; font-size:0.94rem; color:var(--text-muted); }
+        .on-body { padding:6px 22px 20px; }
+        .on-body h4 { font-size:1.02rem; margin:18px 0 8px; color:var(--accent); }
+        .on-body ul { list-style:disc; margin-left:20px !important; }
+        .on-body li { margin-bottom:6px !important; font-size:0.97rem; }
+        .on-promo { margin-top:18px; padding:14px 18px; border-radius:10px; background:rgba(245,158,11,0.08); border-left:3px solid var(--warning); }
+        .on-promo h4 { margin-top:0; color:var(--warning); }
+        .on-promo .ptype { display:inline-block; font-size:0.75rem; padding:0 8px; border-radius:10px; border:1px solid var(--warning); color:var(--warning); margin-right:6px; }
+        .on-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+        .on-links a { display:inline-block; padding:6px 12px; border:1px solid var(--glass-border); border-radius:8px; font-size:0.9rem; text-decoration:none; }
+        .on-links a:hover { border-color:var(--primary); }
+        .on-src { margin-top:16px; font-size:0.88rem; }
+        .on-wait { color:var(--text-muted); font-size:0.92rem; }
+        .on-empty { color: var(--text-muted); }
+        @media (max-width: 600px) { .on-card summary { grid-template-columns:1fr; } }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero glass-panel">
+            <h1><span class="text-gradient">🛰️ 官方消息追蹤台</span></h1>
+            <p style="margin-top: 15px;">RSI 官方 Comm-Link 的新文章，自動翻成繁體中文。販售中的飛船、塗裝、周邊會另外整理，附上相關連結。</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">📡 最新官方消息</h2>
+            <p>每 3 小時自動檢查 <a href="https://robertsspaceindustries.com/comm-link" target="_blank" rel="noopener">RSI Comm-Link</a>，抓下全文並翻譯成中文重點，最多保留最近 30 篇。點卡片展開看完整內容。</p>
+            <div class="on-meta" id="onMeta"></div>
+            <div class="on-filter" id="onFilter"></div>
+        </section>
+
+        <section class="content-section glass-panel" id="onList">
+            <p class="on-empty">載入中…</p>
+        </section>
+
+        <section class="content-section glass-panel">
+            <h2 class="text-gradient">🔗 其他整理</h2>
+            <ul class="topic-list">
+                <li><a href="news.html"><h3 class="text-gradient">📰 官方最新消息展望台</h3><p>站長整理的 IAE 2956 時間表與限量船開賣時間（台灣時間）。</p></a></li>
+                <li><a href="ptu-tracker.html"><h3 class="text-gradient">📡 PTU 更新追蹤台</h3><p>官方 Patch Notes 的繁體中文版，自動更新。</p></a></li>
+            </ul>
+        </section>
+
+        <section class="credits-section">
+            <h4>📚 資料來源</h4>
+            <p>內容翻譯自 Cloud Imperium Games 在 <a href="https://robertsspaceindustries.com/comm-link" target="_blank" rel="noopener">RSI Comm-Link</a> 發布的官方文章，由 AI 自動翻譯，可能有用詞不精確的地方，價格與販售時間請以官方原文和官方商店為準。圖片版權歸 Cloud Imperium Games 所有。</p>
+        </section>
+
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="index.html" class="btn">返回首頁</a>
+        </div>
+    </main>
+
+    <script src="components.js?v=20261118"></script>
+    <script src="data/news.js?v=20261118" onerror="window.SC_NEWS=null"></script>
+    <script>
+    (function(){
+      const D = window.SC_NEWS, list = document.getElementById('onList'), meta = document.getElementById('onMeta'), filter = document.getElementById('onFilter');
+      if(!D || !D.items || !D.items.length){ list.innerHTML = '<p class="on-empty">目前沒有資料，第一次自動更新完成後就會出現。</p>'; return; }
+      const esc = s => String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+      const ext = u => /^https?:/.test(u) ? ' target="_blank" rel="noopener"' : '';
+      const now = Date.now() / 1000;
+      meta.innerHTML = `<span>🕒 最後更新：${esc(D.updated)}（台灣時間）</span><span>📚 目前收錄：${D.items.length} 篇</span>`;
+
+      const promoLink = (p, links) => {
+        const hit = (links||[]).find(l => l.label.indexOf(p.name) > -1);
+        return hit ? `<a href="${esc(hit.url)}"${ext(hit.url)}>${esc(p.name)}</a>` : esc(p.name);
+      };
+      list.innerHTML = D.items.map((it, i) => {
+        const isNew = now - (it.time||0) < 3 * 86400;
+        const img = it.image ? `<img src="${esc(it.image)}" alt="" loading="lazy" decoding="async" onerror="this.closest('.on-card').classList.add('noimg');this.remove()">` : '';
+        let body = '';
+        if (it.sections && it.sections.length) {
+          body += it.sections.map(s => `<h4>${esc(s.h)}</h4><ul>${(s.items||[]).map(x => `<li>${esc(x)}</li>`).join('')}</ul>`).join('');
+        } else if (it.detailed) {
+          body += `<p class="on-wait">這篇官方文章主要是影片或圖片，沒有可翻譯的文字，請直接看官方原文。</p>`;
+        } else {
+          body += `<p class="on-wait">⏳ 完整翻譯處理中，下一次自動更新後就會出現。先看官方原文 ↓</p>`;
+        }
+        if (it.promo && it.promo.length) {
+          body += `<div class="on-promo"><h4>🛒 販售／推廣內容</h4><ul>${it.promo.map(p => `<li><span class="ptype">${esc(p.type)}</span><strong>${promoLink(p, it.links)}</strong>${p.note ? '：' + esc(p.note) : ''}</li>`).join('')}</ul></div>`;
+        }
+        if (it.links && it.links.length) {
+          body += `<h4>🔗 相關連結</h4><div class="on-links">${it.links.map(l => `<a href="${esc(l.url)}"${ext(l.url)}>${esc(l.label)}</a>`).join('')}</div>`;
+        }
+        body += `<p class="on-src">📄 官方原文：<a href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.title)} ↗</a></p>`;
+        return `<details class="on-card${it.image ? '' : ' noimg'}" id="n${esc(it.id)}" data-tag="${esc(it.tag)}"${i === 0 ? ' open' : ''}>
+          <summary>${img}<div>
+            <div class="on-top">${isNew ? '<span class="on-new">NEW</span>' : ''}<span class="on-tag t-${esc(it.tag)}">${esc(it.tag)}</span><span>📅 ${esc(it.date)}</span>${it.promo && it.promo.length ? '<span>🛒 有販售內容</span>' : ''}</div>
+            <h3>${esc(it.title_zh)}</h3><div class="on-en">${esc(it.title)}</div>
+            ${it.summary ? `<p class="on-sum">${esc(it.summary)}</p>` : ''}
+          </div></summary>
+          <div class="on-body">${body}</div>
+        </details>`;
+      }).join('');
+
+      // 分類篩選
+      const tags = ['全部'].concat([...new Set(D.items.map(x => x.tag).filter(Boolean))]);
+      const hasPromo = D.items.some(x => x.promo && x.promo.length);
+      if (hasPromo) tags.splice(1, 0, '🛒 有販售內容');
+      filter.innerHTML = tags.map((t, i) => `<button type="button"${i === 0 ? ' class="active"' : ''} data-t="${esc(t)}">${esc(t)}</button>`).join('');
+      filter.addEventListener('click', e => {
+        const b = e.target.closest('button'); if (!b) return;
+        filter.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
+        const t = b.dataset.t;
+        list.querySelectorAll('.on-card').forEach((c, i) => {
+          const it = D.items[i];
+          c.hidden = !(t === '全部' || (t === '🛒 有販售內容' ? (it.promo && it.promo.length) : it.tag === t));
+        });
+      });
+
+      // 從其他頁連過來（#n文章編號）就自動展開那篇
+      const h = location.hash && document.getElementById(location.hash.slice(1));
+      if (h && h.tagName === 'DETAILS') { h.open = true; setTimeout(() => h.scrollIntoView(), 50); }
+    })();
+    </script>
+</body>
+</html>

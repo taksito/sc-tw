@@ -36,15 +36,15 @@
     <main>
         <section class="hero glass-panel">
             <h1>📰 <span class="text-gradient">官方最新消息展望台</span></h1>
-            <p style="margin-top: 15px;">CIG 官方公布的活動、展覽與重大消息。上方是自動抓取的官方公告，下方是站長整理的重點。</p>
+            <p style="margin-top: 15px;">CIG 官方公布的活動、展覽與重大消息。上方是最新的官方公告（完整中文翻譯在 <a href="official-news.html">官方消息追蹤台</a>），下方是站長整理的重點。</p>
         </section>
 
 
         <section class="content-section glass-panel" id="auto-news" style="content-visibility: visible;">
-            <h2 class="text-gradient">📡 官方公告（自動更新）</h2>
-            <p class="feed-meta" id="feed-updated">RSI 官方 Comm-Link 的新文章，每 3 小時自動抓取並翻成中文摘要，點標題看官方原文。</p>
+            <h2 class="text-gradient">📡 最新官方公告</h2>
+            <p class="feed-meta" id="feed-updated">RSI 官方 Comm-Link 的新文章，每 3 小時自動抓取並翻成中文，點標題看完整中文翻譯。</p>
             <div class="feed" id="feed"><p class="feed-meta">讀取中…</p></div>
-            <div class="feed-more" id="feed-more-wrap" hidden><button type="button" class="btn" id="feed-more" style="background: transparent; border: 1px solid var(--primary);">顯示更多</button></div>
+            <div class="feed-more"><a class="btn" href="official-news.html" style="background: transparent; border: 1px solid var(--primary);">🛰️ 看全部官方消息（官方消息追蹤台）→</a></div>
         </section>
 
         <section class="content-section glass-panel">
@@ -131,6 +131,7 @@
             <p>官方有新的活動或重大公告，會陸續整理到這一頁。改版與 PTU 測試內容請看：</p>
             <ul class="topic-list">
                 <li><a href="update410/4103.html"><h3 class="text-gradient">🟢 4.10.3 IAE &amp; Vanduul 入侵</h3><p>目前正式伺服器的改版內容。</p></a></li>
+                <li><a href="official-news.html"><h3 class="text-gradient">🛰️ 官方消息追蹤台</h3><p>官方 Comm-Link 文章的完整中文翻譯，販售內容附相關連結，自動更新。</p></a></li>
                 <li><a href="ptu-tracker.html"><h3 class="text-gradient">📡 PTU 更新追蹤台</h3><p>官方 Patch Notes 的繁體中文版，自動更新。</p></a></li>
             </ul>
         </section>
@@ -144,7 +145,7 @@
             <a href="index.html" class="btn">返回首頁</a>
         </div>
     </main>
-    <script src="data/news.js?v=20261110" onerror="window.SC_NEWS=null"></script>
+    <script src="data/news.js?v=20261118" onerror="window.SC_NEWS=null"></script>
     <script>
         (function () {
             var box = document.getElementById('feed');
@@ -153,22 +154,19 @@
                 box.innerHTML = '<p class="feed-meta">目前還沒有資料，第一次自動更新完成後就會出現。</p>';
                 return;
             }
-            if (d.updated) document.getElementById('feed-updated').textContent = '最後更新：' + d.updated + '（台灣時間）・每 3 小時自動抓取 RSI 官方 Comm-Link 並翻成中文摘要，點標題看官方原文。';
+            if (d.updated) document.getElementById('feed-updated').textContent = '最後更新：' + d.updated + '（台灣時間）・每 3 小時自動抓取 RSI 官方 Comm-Link 並翻成中文，點標題看完整中文翻譯。';
             function esc(t) { var e = document.createElement('div'); e.textContent = t || ''; return e.innerHTML; }
-            var SHOW = 8, html = '';
+            var SHOW = 5, html = '';
             d.items.forEach(function (it, i) {
                 var img = it.image ? '<img src="' + esc(it.image) + '" alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add(\'noimg\');this.remove()">' : '';
-                html += '<a class="feed-item' + (it.image ? '' : ' noimg') + '" href="' + esc(it.link) + '" target="_blank" rel="noopener"' + (i >= SHOW ? ' hidden' : '') + '>' + img +
-                    '<div><div class="feed-meta"><span class="feed-tag">' + esc(it.tag) + '</span>' + esc(it.date) + '</div>' +
-                    '<h3>' + esc(it.title_zh) + '</h3><p>' + esc(it.summary) + '</p><div class="feed-en">' + esc(it.title) + ' ↗</div></div></a>';
+                if (i >= SHOW) return;
+                html += '<a class="feed-item' + (it.image ? '' : ' noimg') + '" href="official-news.html#n' + esc(it.id) + '">' + img +
+                    '<div><div class="feed-meta"><span class="feed-tag">' + esc(it.tag) + '</span>' + esc(it.date) + (it.promo && it.promo.length ? '　🛒 有販售內容' : '') + '</div>' +
+                    '<h3>' + esc(it.title_zh) + '</h3><p>' + esc(it.summary) + '</p><div class="feed-en">' + esc(it.title) + '</div></div></a>';
             });
             box.innerHTML = html;
-            if (d.items.length > SHOW) {
-                var w = document.getElementById('feed-more-wrap'); w.hidden = false;
-                document.getElementById('feed-more').onclick = function () { box.querySelectorAll('[hidden]').forEach(function (x) { x.hidden = false; }); w.hidden = true; };
-            }
         })();
     </script>
-    <script src="components.js?v=20261113"></script>
+    <script src="components.js?v=20261118"></script>
 </body>
 </html>
