@@ -1,0 +1,10 @@
+name: probe-news
+on:
+  push:
+    branches: [probe-news]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/probe_news.py
