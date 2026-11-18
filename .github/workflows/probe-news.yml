@@ -5,6 +5,13 @@ on:
 jobs:
   probe:
     runs-on: ubuntu-latest
+    env:
+      PYTHONUNBUFFERED: '1'
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/probe_news.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/news_update.py --test
