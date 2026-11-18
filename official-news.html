@@ -92,7 +92,8 @@
       meta.innerHTML = `<span>🕒 最後更新：${esc(D.updated)}（台灣時間）</span><span>📚 目前收錄：${D.items.length} 篇</span>`;
 
       const promoLink = (p, links) => {
-        const hit = (links||[]).find(l => l.label.indexOf(p.name) > -1);
+        const byType = {'周邊': '周邊', '塗裝': '塗裝', '組合包': '官方商店', '裝備': '官方商店'}[p.type];
+        const hit = (links||[]).find(l => l.label.indexOf(p.name) > -1) || (byType && (links||[]).find(l => l.label.indexOf(byType) > -1));
         return hit ? `<a href="${esc(hit.url)}"${ext(hit.url)}>${esc(p.name)}</a>` : esc(p.name);
       };
       list.innerHTML = D.items.map((it, i) => {
