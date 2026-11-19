@@ -1,7 +1,135 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-19 20:37",
+ "updated": "2026-11-20 05:11",
  "items": [
+  {
+   "id": "21400",
+   "title": "IAE 2956 Kruger Intergalactic",
+   "title_zh": "IAE 2956 Kruger Intergalactic 展區介紹",
+   "summary": "介紹 IAE 2956 期間 Kruger Intergalactic 展區理念與相關官方周邊促銷。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21400-IAE-2956-Kruger-Intergalactic",
+   "date": "2026-11-19",
+   "time": 1795103999,
+   "image": "https://robertsspaceindustries.com/i/25b2f19c87d93e75935df983e914bfde3fd26759/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskPNGegcNXsMbsq4D8rBAbC7srgsR3XT9Y)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Kruger Intergalactic",
+     "items": [
+      "在 Kruger Intergalactic，「每個細節皆追求完美」不只是一種理念，更體現在打造的每一艘船艦中。",
+      "隨著每款新載具的推出，Kruger 持續在航空航太工程的最前線，創造性能與風格兼備的完美平衡。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21401",
+   "title": "IAE 2956 Mirai",
+   "title_zh": "IAE 2956 Mirai 展區介紹與每日特惠",
+   "summary": "介紹 Mirai 融合 Xi'an 科技的高性能飛船，並推出 Guardian（守護者）10 年保險戰爭債券每日特惠。",
+   "tag": "促銷",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21401-IAE-2956-Mirai",
+   "date": "2026-11-19",
+   "time": 1795103999,
+   "image": "https://robertsspaceindustries.com/i/6a7d91811f9f1f40a4bca30f7e761694092d5a76/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskZktUuzMCjoGn5NXico3owo9HBxJG2fW6)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Mirai 品牌介紹",
+     "items": [
+      "Mirai 秉持對速度、敏捷與創新的極致追求，採用受 Xi'an 啟發的革命性造船理念，持續將飛行性能推升至超越飛行員想像的極限。"
+     ]
+    }
+   ],
+   "promo": [
+    {
+     "name": "Guardian",
+     "type": "船",
+     "note": "每日戰爭債券特惠，內含 10 年保險"
+    }
+   ],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "🚀 Guardian（本站介紹）",
+     "url": "ships/mirai-guardian.html"
+    },
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    },
+    {
+     "label": "🆕 2026 新船時間表",
+     "url": "ships/new-ships.html"
+    },
+    {
+     "label": "💰 CCU 現金購船指南",
+     "url": "ship-ccu.html"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21402",
+   "title": "IAE 2956 MISC",
+   "title_zh": "IAE 2956：MISC",
+   "summary": "介紹專注於重工業與可靠實用設計的 MISC 艦船，涵蓋各類運輸與採礦等專業領域艦船。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21402-IAE-2956-MISC",
+   "date": "2026-11-19",
+   "time": 1795103999,
+   "image": "https://robertsspaceindustries.com/i/296e8505a47d33c52261f92d1868c6d653952305/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseAWsAeWEkz43JqL3tZFBfM3GCrpXqckq4)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "MISC 船廠簡介",
+     "items": [
+      "MISC 建立在可靠性與實用導向設計的深厚傳統上，其載具真正是為了生活而打造。",
+      "豐富多元的運輸船、採礦船及各類專業職業艦船，確保您隨時能應對生活中的一切挑戰，無論是平凡日常還是全然無法預測的變局。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
   {
    "id": "21455",
    "title": "Roadmap Roundup - November 18, 2026",
