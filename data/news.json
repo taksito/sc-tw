@@ -1,7 +1,215 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-18 16:01",
+ "updated": "2026-11-19 20:37",
  "items": [
+  {
+   "id": "21455",
+   "title": "Roadmap Roundup - November 18, 2026",
+   "title_zh": "開發路線圖總結 - 2026年11月18日",
+   "summary": "掌握 2026 年 11 月最新路線圖動向，了解 Alpha 4.10 與 5.0 預計推出的新飛船、武器平衡調整與派系裝備。",
+   "tag": "開發進度",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21455-Roadmap-Roundup-November-18-2026",
+   "date": "2026-11-19",
+   "time": 1795039943,
+   "image": "https://robertsspaceindustries.com/i/ef51f8242cbf2b96c2c17c8b93ac9ec635b472b7/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResee9oKGGkX6kdnAueTV94PcLkJ7k4GTbJe)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Alpha 4.10 注目變更",
+     "items": [
+      "RSI Galaxy：實裝高度模組化的多功能飛船，中央空間可配置為重裝遠航貨船或移動野戰醫院。（狀態：已釋出 Released）",
+      "Anvil Liberator：實裝輕型載具運輸艦，可載運戰鬥機、採礦船或回收船進行長途跳躍支援。",
+      "Drake Marauder：實裝中型戰鬥機，單一飛行員即可操作全部 7 把 S3 級武器。",
+      "Gatac Hyūn：實裝該外星廠商首款結合採礦與回收雙功能的飛船。（狀態：已確認 Committed）",
+      "Lightning Bolt Company \"Skarnov\" 步槍 (4.10.3)：實裝全自動精確射手步槍，特殊彈藥可在多個目標間產生電擊連鎖。",
+      "InterSec Defense Solutions 任務包 (4.10.3)：擴展 Nyx 星系的合約，新增對抗 Vanduul 威脅的任務與藍圖獎勵。"
+     ]
+    },
+    {
+     "h": "Alpha 5.0 注目變更",
+     "items": [
+      "載具戰鬥平衡調整：針對戰鬥機進行武器性能、擊殺時間（TTK）以及能量與實體武器的總體平衡修訂。（狀態：已確認 Committed）",
+      "戰利品刷新：重新平衡各沙盒地點的戰利品，並將先前 Wikelo 獨佔獎勵納入常規戰利品池。",
+      "Nyx 派系服裝更新：實裝 Moraine、First Legion、Claw Salamanders、Shattered Blade、People's Alliance、Covalex、Rayari Inc.、Shubin Interstellar 以及通用保安與外圍武裝的多款派系服裝與匹配後背包。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [],
+   "links": [],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21403",
+   "title": "IAE 2956 Grey's Market",
+   "title_zh": "IAE 2956 Grey's Market",
+   "summary": "介紹以拼貼巧思與實用主義著稱的 Grey's Market，簡述其獨特的造船哲學與風格。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21403-IAE-2956-Greys-Market",
+   "date": "2026-11-19",
+   "time": 1795018343,
+   "image": "https://robertsspaceindustries.com/i/88d8f6180912caf7f7181ddd6c347a3f706d2524/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResievPiN5qQ9XbrPevhmRNcrx8tkQSWC47x)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Grey's Market",
+     "items": [
+      "Grey's Market 在 2955 年登場時並未詢問過任何許可。",
+      "他們不進行精選或追求完美，而是將手邊找到的材料敲打拼湊出所需的工具。",
+      "最髒的手能打造出最酷炫的飛船，而他們的雙手永遠不曾乾淨過。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21404",
+   "title": "IAE 2956 Greycat Industrial",
+   "title_zh": "IAE 2956 Greycat Industrial",
+   "summary": "探索 Greycat Industrial 專為艱困環境打造的各式陸載工具與專業裝備。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21404-IAE-2956-Greycat-Industrial",
+   "date": "2026-11-19",
+   "time": 1795018343,
+   "image": "https://robertsspaceindustries.com/i/650e854eda3f140219b9b62767bf7a7f0bb1c3d8/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseutKbkNhfk1BHBnsvepnfJTApUTCRNYQn)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Greycat Industrial",
+     "items": [
+      "Greycat Industrial 的載具專為泥濘、灰塵與艱困地形設計，已成為最敬業工作團隊不可或缺的工具。",
+      "深入了解 Greycat Industrial 除多功能工具與專業裝備外，更擴及陸上載具的完整產品線。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21405",
+   "title": "IAE 2956 Consolidated Outland",
+   "title_zh": "IAE 2956：Consolidated Outland 展區介紹",
+   "summary": "介紹 Consolidated Outland 品牌及其知名飛船 Mustang，帶領新手飛行員踏入星際。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21405-IAE-2956-Consolidated-Outland",
+   "date": "2026-11-19",
+   "time": 1795018343,
+   "image": "https://robertsspaceindustries.com/i/026ec927c80a0b71bc4602908e3d0029105db58c/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskYbrX8pjQvaFMzLeWQDw57u1K8oQLxUo8)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Consolidated Outland",
+     "items": [
+      "Consolidated Outland 在每個契機中都積極追求創新。",
+      "作為宇宙中最受歡迎的飛船之一 Mustang 的製造廠商，該品牌已協助無數新手飛行員飛向星空。",
+      "而他們的創新腳步絕不會就此停止。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21406",
+   "title": "IAE 2956 Argo Astronautics",
+   "title_zh": "IAE 2956：Argo Astronautics",
+   "summary": "介紹 Argo Astronautics 的實用工作載具與每日特惠，包含附帶 10 年保險的 MOLE（鼴鼠）戰爭債券方案。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21406-IAE-2956-Argo-Astronautics",
+   "date": "2026-11-19",
+   "time": 1795018343,
+   "image": "https://robertsspaceindustries.com/i/9a57e160cac996892a54e9516bbfb4e02bea21e2/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResejgqCY7sbczwH1i69dG9iDQ69HW8sKkyU)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Argo Astronautics",
+     "items": [
+      "Argo Astronautics 憑藉專為嚴苛環境重勞動打造的可靠載具，維持著帝國的正常運轉。",
+      "當成效至為關鍵時，Argo 的實用性與可靠度永遠不會過時。"
+     ]
+    },
+    {
+     "h": "每日戰爭債券特惠",
+     "items": [
+      "MOLE（鼴鼠）：附帶 10 年保險。"
+     ]
+    }
+   ],
+   "promo": [
+    {
+     "name": "MOLE",
+     "type": "船",
+     "note": "每日戰爭債券特惠，包含 10 年保險"
+    }
+   ],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "📖 MOLE（Star Citizen Wiki）",
+     "url": "https://starcitizen.tools/index.php?search=MOLE"
+    },
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    },
+    {
+     "label": "🆕 2026 新船時間表",
+     "url": "ships/new-ships.html"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
   {
    "image_checked": true,
    "id": "21407",
