@@ -1,7 +1,68 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-20 05:11",
+ "updated": "2026-11-21 04:51",
  "items": [
+  {
+   "id": "21398",
+   "title": "IAE 2956 Aegis Dynamics",
+   "title_zh": "IAE 2956 Aegis Dynamics",
+   "summary": "介紹 UEE 軍方歷史最悠久的造船廠 Aegis Dynamics，並提供每日戰爭債券優惠與 10 年保險方案。",
+   "tag": "促銷",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21398-IAE-2956-Aegis-Dynamics",
+   "date": "2026-11-20",
+   "time": 1795189534,
+   "image": "https://robertsspaceindustries.com/i/887cbf93f8b5cca53e2ef56e06073074c004232f/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskdsLSTuuajMxZkXvS2BMp42JesRqA8ZFL)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Aegis Dynamics",
+     "items": [
+      "數個世紀以來，Aegis Dynamics 傲然立足並在戰爭史冊中佔據了一席之地。",
+      "這個名聲顯赫的品牌多年來不僅服務軍方，也持續為民間領域提供服務。"
+     ]
+    },
+    {
+     "h": "每日特惠",
+     "items": [
+      "推出 Tiburon 每日戰爭債券特惠，附帶 10 年保險。"
+     ]
+    }
+   ],
+   "promo": [
+    {
+     "name": "Tiburon",
+     "type": "船",
+     "note": "每日戰爭債券特惠，附帶 10 年保險"
+    }
+   ],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "🚀 Tiburon（本站介紹）",
+     "url": "ships/aegis-tiburon.html"
+    },
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    },
+    {
+     "label": "🆕 2026 新船時間表",
+     "url": "ships/new-ships.html"
+    },
+    {
+     "label": "💰 CCU 現金購船指南",
+     "url": "ship-ccu.html"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
   {
    "id": "21400",
    "title": "IAE 2956 Kruger Intergalactic",
