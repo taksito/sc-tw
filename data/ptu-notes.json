@@ -1,7 +1,78 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-19 15:46",
+ "updated": "2026-11-20 15:42",
  "posts": [
+  {
+   "id": "578611",
+   "title": "[Wave 3] Star Citizen Alpha 5.0 PTU Patch Notes 13238477",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-5-0-ptu-patch-notes-3",
+   "date": "2026-11-19",
+   "time": 1795107234,
+   "version": "5.0",
+   "kind": "PTU",
+   "build": "13238477",
+   "audience": "第 3 梯次 (Wave 3)",
+   "highlight": "推出 Genesis 地形技術與 Nyx 1 更新，重組 Starchitect 貨運電梯並優化戰利品與伺服器穩定度。",
+   "sections": [
+    {
+     "h": "🎯 測試重點",
+     "items": [
+      "測試版本：Alpha Patch 5.0（VERSION 5.0.0-PTU.13238477），開放 Wave 3 測試員於美服 PTU 測試（啟用 LTP 長期持續性）。",
+      "PTU 版本間的穩定度、錯誤修正與 LTP 驗證。",
+      "Genesis（Planet Tech V5 地形技術）。",
+      "Nyx 1 星球與環境更新。",
+      "Starchitect 興趣點（Points of Interest）。",
+      "任務板（Mission Boards）與區域任務。",
+      "Intraplanetary Server Meshing（星球內伺服器無縫網格技術）。",
+      "載具 Time To Kill (TTK) 擊殺時間平衡。",
+      "飛彈鎖定介面更新。"
+     ]
+    },
+    {
+     "h": "✨ 特色與地點更新",
+     "items": [
+      "Starchitect 地點：貨運電梯結構重組，將電梯移出內部物理網格以確保控制台擁有正確碰撞體積，側邊房間獨立為維護建築，解決靠近控制台時玩家會被推開的問題。所有舊款電梯降落墊均已替換為新版電梯與維護建築，並調整周圍區域尺寸。",
+      "戰利品分布調整：戰利品箱現在優先刷新步槍、LMG（輕機槍）與 SMG（衝鋒槍）彈藥；小型通用容器中移除了鞋子與夾克；散落貨物暫時停用直到品質設定修正。敵方 AI 若配備背包，背包與胸甲內皆會攜帶備用彈匣。",
+      "建築與照明修飾：所有圖塊類型的外部照明皆已進行磨光與優化，居住與指揮建築的內部佈置持續推進中。",
+      "可能修正：物流椅旋轉方向錯誤。",
+      "可能修正：物流建築內的梯子高度不正確，以及指揮建築外側梯子問題。",
+      "可能修正：據點角落基座破裂，以及據點牆面、欄桿與裙邊上交錯的掩體遮蔽物和缺失的代理模型。",
+      "可能修正：100m 與 140m 降落墊及 20m 維護圖塊缺失邊緣凸起。",
+      "可能修正：NPC 生成室（Spawn closets）位於地形網格下方，已重新調整尺寸並正確放置。",
+      "可能修正：特定據點位置的防空砲塔在不該開火時開火。",
+      "Genesis 與 Nyx 1：地形邊界採用 GPU 驅動裙邊隱藏相鄰圖塊縫隙；擴大地形散落物碰撞機制，設定忽略輪型載具的物件現已忽略所有載具（包含飛船與 gravlev（懸浮載具）），飛行或駕駛不再被微小散落物卡住。",
+      "Nyx 1 雲層環境光遮蔽（Ambient Occlusion）調整、地形像素著色器優化與水體效果改善。",
+      "可能修正：載具 MFD（多功能顯示器）標示 Nyx 躍遷門站點名稱錯誤。"
+     ]
+    },
+    {
+     "h": "🐛 錯誤與技術修正",
+     "items": [
+      "可能修正：Zenith Sniper Rifle（Zenith 狙擊步槍）手動換彈後無法使用，導致玩家無法開火、開鏡瞄準或進行任何互動。",
+      "可能修正：Rock Cracker 地牢事件處理機制重構，防止競態條件（Race Condition）。",
+      "可能修正：New Babbage 與 Orison 的衣架因舊版連接埠需求而拒絕放入物品。",
+      "可能修正：於偏移組件艙安裝組件導致正常組件艙停止運作。",
+      "可能修正：女性版 Moraine Gang 重型裝甲頭盔僅單眼手電筒機能正常發光。",
+      "可能修正：使用 Tractor Beam（牽引光束）將武器移至物品連接埠時武器失控旋轉。",
+      "可能修正：Pyro 區域 Jackson's Swap 百葉窗互動提示距離窗戶過遠，且每次使用後會越移越遠。",
+      "可能修正：Klescher 監獄逃生口與機庫門密碼鎖數字顯示重複。",
+      "可能修正：三款 RRS 迷彩裝甲變體的多項美術問題（包含面罩顏色）。"
+     ]
+    },
+    {
+     "h": "💥 閃退修正",
+     "items": [
+      "本版本修復了 5 個閃退問題，其中 4 個會影響伺服器。",
+      "可能修正：角色在切換布娃娃狀態（Ragdoll）時導致的伺服器與用戶端閃退。",
+      "可能修正：兩個區域同時重命名同一個共享形狀所導致的伺服器閃退。",
+      "可能修正：由 NPC 骨骼與面部模擬參數引發的伺服器閃退。",
+      "可能修正：在 PIT（Personal Inner Thought / 個人內在想法選單）中選擇空白最愛欄位時導致的用戶端閃退。",
+      "可能修正：影響 Persistent Universe 與 Arena Commander 的 GPU 閃退。",
+      "可能修正：Klaus and Werner Laser Repeaters（Klaus and Werner 雷射連發槍）因材質名稱包含無效字元導致的資料錯誤。"
+     ]
+    }
+   ]
+  },
   {
    "id": "578402",
    "title": "[Wave 3] Star Citizen Alpha 5.0 PTU Patch Notes 13228337",
@@ -664,78 +735,6 @@
       "可能修正：Levski 女性警衛顯示佔位材質的問題。",
       "可能修正：ASOP（飛船檢索終端機）音效問題。",
       "High Risk（高風險）賞金合約獎勵聲望由 2,000 提升至 4,000。"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "575968",
-   "title": "[All Backers] Star Citizen Alpha 4.10.3 PTU Patch Notes 13107423",
-   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/all-backers-star-citizen-alpha-4-10-3-ptu-patch-no",
-   "date": "2026-11-04",
-   "time": 1793816676,
-   "version": "4.10.3",
-   "kind": "PTU",
-   "build": "13107423",
-   "audience": "所有支持者 (All Backers)",
-   "highlight": "開放給所有支持者；Centaurus 平衡調整、打撈船緩衝倉大幅增加、Multitool 預設附牽引光束。",
-   "sections": [
-    {
-     "h": "🎯 測試重點",
-     "items": [
-      "穩定性、錯誤修正、PTU 版本之間的長期持久化 (LTP)",
-      "新任務：Vanduul 入侵 (Vanduul Incursion)",
-      "新 FPS 武器：LBCO Skarnov 步槍（LBCO Skarnov Rifle）",
-      "IAE 星際航太展（加速排程）"
-     ]
-    },
-    {
-     "h": "🎮 遊戲性更新",
-     "items": [
-      "日誌依玩家分類，重要任務事件排在最上方",
-      "mobiGlas 資產管理員與 NikNax 改為字母排序，數量超過 1 個才顯示計數",
-      "Multitool（多功能工具）現在預設附帶牽引光束配件",
-      "高風險 (High Risk) 賞金合約聲望由 2,000 提高到 4,000，介於中風險與極高風險之間",
-      "新增髮型、眉毛與鬍子選項"
-     ]
-    },
-    {
-     "h": "🚀 飛船與載具",
-     "items": [
-      "Centaurus（半人馬座）：裝甲偏轉值物理 531→390、能量 380→330；船體血量 25,740→30,740；油箱 46.8→32 SCU，推進器開始耗油",
-      "Polaris（北極星）：物理與能量的裝甲偏轉值都提高",
-      "Starlifter（大力神運輸機）新增 S10 與 S3 炸彈架",
-      "全域調整預設電力分配，啟動時關鍵組件不會再被關閉",
-      "Starlancer（星槍）、Perseus（英仙座）、Carrack（卡拉克）雷達升級為 S3；Starlancer 雷達移到工程區，Perseus 中繼器移到控制台"
-     ]
-    },
-    {
-     "h": "♻️ 打撈船緩衝倉增加",
-     "items": [
-      "Vulture（禿鷹）：13 → 16 SCU（最大箱 1 SCU，+23.08%）",
-      "Reclaimer（回收者）：240 → 448 SCU（最大箱 16 SCU，+86.67%）",
-      "Moth（飛蛾）：64 → 240 SCU（最大箱 8 SCU，+275%）",
-      "Fortune（財富號）：13 → 14 SCU（最大箱 1 SCU，+7.69%）",
-      "Salvation（救贖號）：6 → 8 SCU（最大箱 1 SCU，+33.33%）"
-     ]
-    },
-    {
-     "h": "🔧 錯誤修正（節錄）",
-     "items": [
-      "修正 2 個客戶端當機與 1 個伺服器死結",
-      "可能修正：Battaglia 故事 1 卡在發電廠欄杆、卡在「前往 Blinding Hope」（船沒生成）",
-      "可能修正：從機庫平台叫出的地面載具被摧毀",
-      "可能修正：載具模組可以從貨運電梯取出（模組尺寸已加大來防止）",
-      "可能修正：Intersec 三方對峙 (3-Way Standoff) 敵人都死光仍顯示還有敵人",
-      "可能修正：RSI 活動獎勵組件的 Distortion 數值設定錯誤",
-      "可能修正：小艇停靠母艦時有摩擦聲",
-      "可能修正：Esperia Prowler（徘徊者）VTOL 推進器沒有轉向",
-      "可能修正：Aegis Idris（伊德里斯）IFR-BC7 砲塔雲台異常",
-      "可能修正：RSI Zeus Mk II（宙斯 Mk II）ES 貨艙牆壁閃爍",
-      "可能修正：多艘船的 HUD 顯示成灰色佔位貼圖",
-      "可能修正：配送中心 (Distribution Center) 無法呼叫 ATC 起降",
-      "可能修正：ASOP 終端互動時卡頓 3～4 秒（新增 1 分鐘逾時保護）",
-      "可能修正：被摧毀的發電機仍算通電，導致無法結構打撈"
      ]
     }
    ]
