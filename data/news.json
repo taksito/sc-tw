@@ -1,7 +1,310 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-21 04:51",
+ "updated": "2026-11-22 04:10",
  "items": [
+  {
+   "id": "21462",
+   "title": "Star Citizen | Behind the Ships: Gatac Hyūn",
+   "title_zh": "艦船幕後解密：Gatac Hyūn",
+   "summary": "由開發團隊帶領深入探索首款外星工業通用艦 Gatac Hyūn 的設計理念與運作機制。",
+   "tag": "影片",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21462-Star-Citizen-Behind-The-Ships-Gatac-Hy-n",
+   "date": "2026-11-21",
+   "time": 1795276179,
+   "image": "https://robertsspaceindustries.com/i/84143265ec1ef09152fb55438a560396b474d02e/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskpTmZc2wawW1ZyTaaQyLUpcxJfffwa1Ca)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "深入了解 Gatac Hyūn",
+     "items": [
+      "探討何謂「通用工業艦（Industrial Generalist）」，以及身為首艘此定位的艦船是如何運作的。",
+      "由飛船開發團隊親自帶領玩家導覽這款獨特的外星造物。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [],
+   "links": [],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21395",
+   "title": "IAE 2956 Esperia",
+   "title_zh": "IAE 2956：Esperia 展期介紹",
+   "summary": "介紹 IAE 期間 Esperia 展出的外星複製品飛船，並提供 Talon 戰爭債券每日特惠與周邊商品資訊。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21395-IAE-2956-Esperia",
+   "date": "2026-11-21",
+   "time": 1795276179,
+   "image": "https://robertsspaceindustries.com/i/78b1a12fe1b9b0db45b2dbb184dc018401b8288d/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResj7ErWSFQWirvqdnVzqhSPZpJUbrxbZWMC)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Esperia",
+     "items": [
+      "Esperia 專門重現迷失於時空之中的經典船艦。",
+      "它是唯一一家提供當前在帝國邊陲威脅人類殖民地的 Vanduul 戰機精確複製品的造船廠。",
+      "歡迎在本次 IAE 近距離接觸這些敵方船艦。"
+     ]
+    }
+   ],
+   "promo": [
+    {
+     "name": "Talon",
+     "type": "船",
+     "note": "每日特惠戰爭債券版本，內含 10 年保險"
+    },
+    {
+     "name": "Star Citizen Merchandise",
+     "type": "周邊",
+     "note": "Star Citizen 官方周邊商品"
+    }
+   ],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "📖 Talon（Star Citizen Wiki）",
+     "url": "https://starcitizen.tools/index.php?search=Talon"
+    },
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    },
+    {
+     "label": "🆕 2026 新船時間表",
+     "url": "ships/new-ships.html"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21396",
+   "title": "IAE 2956 Banu",
+   "title_zh": "IAE 2956：Banu 展覽日",
+   "summary": "介紹 Banu 歷經多年淬鍊的獨特造船工藝，為行家打造專精且契合使命的異星飛船。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21396-IAE-2956-Banu",
+   "date": "2026-11-21",
+   "time": 1795276179,
+   "image": "https://robertsspaceindustries.com/i/c36f7446db67cc61ff29d64c38812112701dccee/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResk2KKiKXWH2ufJPd8Anq71LtvYwtwqqraA)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Banu 造船工藝",
+     "items": [
+      "Banu 的造船過程極為繁複且投入深厚，歷經長年累月的反覆推敲與精雕細琢，因此當載具最終上市時，無不極具專注度並完全契合其設計初衷。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21397",
+   "title": "IAE 2956 Aopoa",
+   "title_zh": "IAE 2956：Aopoa",
+   "summary": "介紹專為人類駕駛設計的 Xi'an 外星戰鬥機品牌 Aopoa，帶你了解其獨特的飛行特性與高敏捷火力優勢。",
+   "tag": "促銷",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21397-IAE-2956-Aopoa",
+   "date": "2026-11-21",
+   "time": 1795276179,
+   "image": "https://robertsspaceindustries.com/i/a8b6118acf58a414c71c828376d471c6cf982d06/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResk6CmYGTdm3Q4FExdWgzogHhqjvunqefjc)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "AOPOA",
+     "items": [
+      "作為 Xi’an 造船業的軍備部門，Aopoa 的外星戰鬥機在外貌與飛行性能上皆獨樹一格。",
+      "機體具備強大的打擊能力與極致的敏捷度，雖然需要技術精湛的飛行員才能駕馭，但其展現的戰果絕對值得承擔風險。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    },
+    {
+     "label": "💰 CCU 現金購船指南",
+     "url": "ship-ccu.html"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21394",
+   "title": "IAE 2956 Gatac Manufacture",
+   "title_zh": "IAE 2956 Gatac Manufacture：全新採礦與打撈複合船 Hyūn",
+   "summary": "介紹 Gatac 全新推出的 Xi'an 風格單人採礦與打撈複合船 Hyūn，讓玩家能一機兼顧採礦與拆船作業。",
+   "tag": "新船",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21394-IAE-2956-Gatac-Manufacture",
+   "date": "2026-11-21",
+   "time": 1795276179,
+   "image": "https://robertsspaceindustries.com/i/4710f609906e085357d68c40cf22d7562ee8df28/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseN88RUTjTPSMqKfsYDULSdnzrdfXsWauL)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Gatac Manufacture 品牌介紹",
+     "items": [
+      "有機美學與獨特實用性的結合，Gatac 將美麗的 Xi'an 設計帶入人類手中。",
+      "在今年的 IAE，隆重歡迎外星製造商推出的首款採礦與打撈複合船：Hyūn。"
+     ]
+    },
+    {
+     "h": "Gatac Hyūn：機遇中的財富",
+     "items": [
+      "從礦石到殘骸，由 Xi'an 設計的 Gatac Hyūn 讓單人駕駛即可同時進行採礦與打撈作業。"
+     ]
+    }
+   ],
+   "promo": [
+    {
+     "name": "Gatac Hyūn",
+     "type": "船",
+     "note": "Xi'an 設計的單人採礦與打撈複合船，亦有組合包可供選購。"
+    }
+   ],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "📖 Gatac Hyūn（Star Citizen Wiki）",
+     "url": "https://starcitizen.tools/index.php?search=Gatac+Hy%C5%ABn"
+    },
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    },
+    {
+     "label": "🆕 2026 新船時間表",
+     "url": "ships/new-ships.html"
+    },
+    {
+     "label": "💰 CCU 現金購船指南",
+     "url": "ship-ccu.html"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21349",
+   "title": "Gatac Hyūn - Wealth in Opportunity",
+   "title_zh": "Gatac Hyūn：機遇中的財富",
+   "summary": "介紹 Xi'an 設計的單人採礦與打撈多功能工程船 Gatac Hyūn，具備雙 32 SCU 倉儲空間與獨特外星美學。",
+   "tag": "新船",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21349-Gatac-Hy-n",
+   "date": "2026-11-21",
+   "time": 1795276179,
+   "image": "https://robertsspaceindustries.com/i/3d083524a43e7646f049f82613e1391740715e50/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskCecr6kSoSku4xQbvrUUCfUFFdix5zdoc)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "精緻工業，外星強化",
+     "items": [
+      "Gatac 最新的工業級飛船帶來了意想不到的全新視角。",
+      "這款革命性的採礦與打撈混合飛船打破了勤奮工作就必須犧牲舒適美感的刻板印象，將優雅與機遇交到您的手中。",
+      "在宇宙中，財富無處不在，而 Hyūn 永遠是助您獲取財富的最佳工具。"
+     ]
+    },
+    {
+     "h": "採掘宇宙所賜：採礦",
+     "items": [
+      "配備媲美專用工業船艦的採礦設施，隨時把握探勘機遇。",
+      "外部專屬物料儲存空間最高可回收並存放 32 SCU 的資源。"
+     ]
+    },
+    {
+     "h": "收拾殘局：打撈與貨物",
+     "items": [
+      "藉由 Hyūn 齊全的打撈設備，拆解您遭遇的任何殘骸殘片。",
+      "可將回收物資儲存於額外的 32 SCU 多功能貨艙中，亦可用於裝載任何有助於您發展的貨物。"
+     ]
+    },
+    {
+     "h": "功能的極致形態：設計",
+     "items": [
+      "風格與抱負相得益彰，Hyūn 彰顯出工業工作同樣是值得追求的高尚事業，理應享有 Xi'an 設計所帶來的極致美學、舒適便利與讚賞。"
+     ]
+    }
+   ],
+   "promo": [
+    {
+     "name": "Gatac Hyūn",
+     "type": "船",
+     "note": "Xi'an 設計的單人採礦與打撈混合工業船"
+    },
+    {
+     "name": "Hyūn Paint",
+     "type": "塗裝",
+     "note": "包含大理石黑配金、大理石藍配金、大理石白配金、粉紫波紋等多款塗裝；灰底波紋配藍光款限禮賓俱樂部（Chairman's Club）會員購買"
+    }
+   ],
+   "official": [
+    "https://iae2956.com",
+    "https://robertsspaceindustries.com/en/store/pledge/browse/paints"
+   ],
+   "links": [
+    {
+     "label": "📖 Gatac Hyūn（Star Citizen Wiki）",
+     "url": "https://starcitizen.tools/index.php?search=Gatac+Hy%C5%ABn"
+    },
+    {
+     "label": "🎪 IAE 2956 官方活動頁",
+     "url": "https://iae2956.com"
+    },
+    {
+     "label": "🎨 官方商店：飛船塗裝",
+     "url": "https://robertsspaceindustries.com/en/store/pledge/browse/paints"
+    },
+    {
+     "label": "🆕 2026 新船時間表",
+     "url": "ships/new-ships.html"
+    },
+    {
+     "label": "💰 CCU 現金購船指南",
+     "url": "ship-ccu.html"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
   {
    "id": "21398",
    "title": "IAE 2956 Aegis Dynamics",
@@ -1385,273 +1688,6 @@
     {
      "label": "💰 CCU 現金購船指南",
      "url": "ship-ccu.html"
-    }
-   ],
-   "full": true,
-   "detailed": true
-  },
-  {
-   "image_checked": true,
-   "id": "21420",
-   "title": "Star Citizen Alpha 4.10.3 Vanduul Incursion - Nyx Needs You",
-   "title_zh": "Alpha 4.10.3 Vanduul 入侵：Nyx 需要你",
-   "summary": "Alpha 4.10.3 推出全新 Nyx 星系防衛任務，玩家可接取可重複執行的長期合約，對抗 Vanduul 與敵對幫派並保護星系安全。",
-   "tag": "活動",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21420-Star-Citizen-Alpha-4103-Vanduul-Incursion",
-   "date": "2026-11-13",
-   "time": 1794504520,
-   "image": "https://robertsspaceindustries.com/i/1b7200424c395fc0090b1577fcdbb14861db2132/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskHrVqqkr7S4jS7JHn9zGHnXoexMySs694)/source.jpg",
-   "sections": [
-    {
-     "h": "來自 InterSec Defense Solutions 的傳訊",
-     "items": [
-      "Nyx 星系的緊張局勢已持續數月，在先前協助揭發非法外星科技走私者並從 Shattered Blade 幫派救出 People’s Alliance 飛行員後，官方再次請求玩家協助。",
-      "InterSec Defense Solutions 希望招募玩家一同對抗持續進行的 Vanduul 入侵，繼續打擊危及人類安全的勢力，並維護 Nyx 星系脆弱的穩定。"
-     ]
-    },
-    {
-     "h": "三方對峙局勢",
-     "items": [
-      "由於 Shattered Blade 的持續活動，近日 Vanduul 對 Nyx 的入侵不斷加劇，玩家需主動出擊，阻止襲擊波及更多人口密集區。",
-      "為此 InterSec Defense Solutions 提供了一系列長期且可重複接取的合約，同時對抗 Vanduul 與 Shattered Blade，保護帝國公民並回收遺失的人員與資產。"
-     ]
-    }
-   ],
-   "promo": [],
-   "official": [],
-   "links": [
-    {
-     "label": "🟢 4.10.3 改版資訊",
-     "url": "update410/4103.html"
-    }
-   ],
-   "full": true,
-   "detailed": true
-  },
-  {
-   "image_checked": true,
-   "id": "20943",
-   "title": "Monthly Store Bundle 2026",
-   "title_zh": "2026年11月每月商店組合包",
-   "summary": "介紹本月限定的深藍金色系外觀組合包，內含裝甲、衝鋒槍及 RSI Meteor（流星）專屬塗裝。",
-   "tag": "促銷",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/20943-Monthly-Store-Bundle-2026",
-   "date": "2026-11-11",
-   "time": 1794326516,
-   "image": "https://robertsspaceindustries.com/i/4ecc13a928211aa45f99e877ac137b0f6a67bcdf/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjMy1AX26oX2a98svjkV9gcn47RUvJekWJ)/source.jpg",
-   "sections": [
-    {
-     "h": "2026年11月商店組合包內容",
-     "items": [
-      "本月推出深藍色基底搭配華麗金色紋飾的裝甲、武器與飛船塗裝包。",
-      "組合包包含 Kilgore 與 Poole Geist 裝甲、Gemini C54 衝鋒槍，以及同款配色的 RSI Meteor（流星）塗裝。",
-      "商店組合包（舊稱補丁組合包）為限時販售的主題配色物品與外觀包，於每個月的第二個星期二推出新品。"
-     ]
-    }
-   ],
-   "promo": [
-    {
-     "name": "November 2026 Store Bundle",
-     "type": "組合包",
-     "note": "限時每月商店組合包，內含裝甲、衝鋒槍及 RSI Meteor（流星）塗裝"
-    },
-    {
-     "name": "RSI Meteor Paint",
-     "type": "塗裝",
-     "note": "深藍與華麗金色紋飾風格塗裝"
-    },
-    {
-     "name": "Kilgore and Poole Geist Armor",
-     "type": "裝備",
-     "note": "深藍與金色紋飾風格裝甲"
-    },
-    {
-     "name": "Gemini C54 SMG",
-     "type": "裝備",
-     "note": "深藍與金色紋飾風格衝鋒槍"
-    }
-   ],
-   "official": [],
-   "links": [
-    {
-     "label": "💰 CCU 現金購船指南",
-     "url": "ship-ccu.html"
-    }
-   ],
-   "full": true,
-   "detailed": true
-  },
-  {
-   "id": "21445",
-   "title": "This Week in Star Citizen - November 9, 2026",
-   "title_zh": "本週 Star Citizen（2026年11月9日）",
-   "summary": "IAE 2956 將於 11 月 13 日展開並開放超過 200 艘艦船免費試飛，本週預計推出 Alpha 4.10.3 正式版更新及 RSI Galaxy 介紹。",
-   "tag": "週報",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21445-This-Week-In-Star-Citizen",
-   "date": "2026-11-10",
-   "time": 1794265380,
-   "image": "https://robertsspaceindustries.com/i/528c89edade0b34435e327ab4bda34294a047663/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseXivUHk9zz9x9Kcbc5u1ybriuLEzPgAFY)/source.jpg",
-   "image_checked": true,
-   "sections": [
-    {
-     "h": "上週精彩回顧",
-     "items": [
-      "IAE 2956 將於 11 月 13 日至 27 日在 microTech 的 New Babbage 舉辦，現場提供超過 200 艘飛船與地面載具免費試飛，活動期間將全程開啟 Twitch Drops。",
-      "11 月訂閱者專屬福利已發放，包含本月飛船 Aopoa Khartu-al 以及 Xi'an 的 Li’tova 冥想 T 恤。",
-      "官方發布了 10 月 PU 月報與路線圖更新（Roadmap Update），彙整上月開發成果與未來規劃。",
-      "感謝玩家在 Alpha 5.0 Wave 1 預覽中提供的截圖與反饋，特別是踏上 Nyx I 的測試玩家，後續將儘速擴大 Alpha 5.0 PTU 的測試資格。"
-     ]
-    },
-    {
-     "h": "本週最新動態",
-     "items": [
-      "預計在 IAE 開幕前於正式伺服器推出 Alpha 4.10.3 更新，包含多項問題修復、內容調整與全新的合約任務，準備迎擊 Vanduul 的侵襲。",
-      "週一發布「Behind The Ships - RSI Galaxy」，在 IAE 2956 首次亮相前深入介紹這款集醫療、運輸於一體的模組化艦船。",
-      "IAE 2956 廠商展示時程表與 Twitch Drops 相關公告已於週一同步上線。",
-      "週二將在 Spectrum 上公布 IAE 2956 常見問答（FAQ），並發布包含護甲、武器與飛船塗裝的 2026 年 11 月月度組合包公告。",
-      "週五迎來 IAE 2956 開幕首日（Roberts Space Industries 主場），並發布 RSI Galaxy 與 Skylark 的問答集（Q&A）及 RSI 每週電子報。",
-      "週六為 IAE 2956 第 2 天（Origin Jumpworks 主場），Bar Citizen 世界巡迴也將在西班牙巴塞隆納舉行 2026 年最終站。",
-      "週日為 IAE 2956 第 3 天，由 Anvil Aerospace 登上展示會場主舞台。"
-     ]
-    },
-    {
-     "h": "本週社群時程安排",
-     "items": [
-      "週一：IAE 2956 廠商時程表公告、Twitch Drops 公告、Behind The Ships - RSI Galaxy",
-      "週二：IAE 2956 FAQ、2026 年 11 月月度組合包公告",
-      "週五：IAE 2956 第 1 天（Roberts Space Industries）、RSI Galaxy 與 Skylark Q&A、RSI 每週電子報",
-      "週六：IAE 2956 第 2 天（Origin Jumpworks）、Bar Citizen 巴塞隆納站",
-      "週日：IAE 2956 第 3 天（Anvil Aerospace）"
-     ]
-    },
-    {
-     "h": "社群焦點內容",
-     "items": [
-      "本週社群 MVP：由 PhotonPulse 製作的 Machinima 影片「Warzone」，展現了 Idris（伊德里斯）巡邏與 Hornet（大黃蜂）穿梭在 Hurston 雲層中的壯觀場面。"
-     ]
-    }
-   ],
-   "promo": [
-    {
-     "name": "Aopoa Khartu-al",
-     "type": "船",
-     "note": "11 月訂閱者限定當月載具"
-    },
-    {
-     "name": "Li’tova Meditation T-Shirt",
-     "type": "裝備",
-     "note": "11 月訂閱者專屬物品"
-    }
-   ],
-   "official": [],
-   "links": [
-    {
-     "label": "📖 Aopoa Khartu-al（Star Citizen Wiki）",
-     "url": "https://starcitizen.tools/index.php?search=Aopoa+Khartu-al"
-    },
-    {
-     "label": "🆕 2026 新船時間表",
-     "url": "ships/new-ships.html"
-    }
-   ],
-   "full": true,
-   "detailed": true
-  },
-  {
-   "id": "21447",
-   "title": "Star Citizen | Behind the Ships: RSI Galaxy",
-   "title_zh": "《星際公民》飛船幕後：RSI Galaxy",
-   "summary": "深入介紹 RSI 模組化飛船 Galaxy 的設計幕後與功能特色，預計將於 IAE 2956 首度登場。",
-   "tag": "影片",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21447-Star-Citizen-Behind-The-Ships-RSI-Galaxy",
-   "date": "2026-11-10",
-   "time": 1794265380,
-   "image": "https://robertsspaceindustries.com/i/cd05b8d0643e99a2329bb1ba7fc8a117d1303dc1/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseNAVkY8fv1yhuXKbvTgadXfVfoAMtTAU6)/source.jpg",
-   "image_checked": true,
-   "sections": [
-    {
-     "h": "RSI Galaxy 登場預告",
-     "items": [
-      "這艘備受期待的 RSI 熱門飛船即將放下降落架，準備於 IAE 2956 正式亮相。",
-      "無論是醫療救治還是貨運運輸，這款模組化飛船都將在宇宙中展現強大功能並留下深刻印記。"
-     ]
-    }
-   ],
-   "promo": [
-    {
-     "name": "RSI Galaxy",
-     "type": "船",
-     "note": "多功能模組化飛船，預計於 IAE 2956 正式登場"
-    }
-   ],
-   "official": [],
-   "links": [
-    {
-     "label": "🚀 RSI Galaxy（本站介紹）",
-     "url": "ships/rsi-galaxy.html"
-    },
-    {
-     "label": "🆕 2026 新船時間表",
-     "url": "ships/new-ships.html"
-    }
-   ],
-   "full": true,
-   "detailed": true
-  },
-  {
-   "id": "21434",
-   "title": "Twitch Drops: IAE 2956",
-   "title_zh": "Twitch Drops：IAE 2956 掉寶活動",
-   "summary": "連結 Twitch 與 RSI 帳號並觀看指定實況，累計滿 6 小時即可免費獲得全套 Venture 裝甲與背包。",
-   "tag": "活動",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21434-Twitch-Drops-IAE-2956",
-   "date": "2026-11-10",
-   "time": 1794247380,
-   "image": "https://robertsspaceindustries.com/i/8d87a85339731a8c575a9186153425b2bc7ce2ab/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResidYAdV7BVc9kxBDCUjRtj6gZsuDepLziJ)/source.jpg",
-   "image_checked": true,
-   "sections": [
-    {
-     "h": "活動簡介與時間",
-     "items": [
-      "IAE 2956 正式登場，Twitch Drops 掉寶活動同步於 11 月 13 日至 11 月 27 日展開。",
-      "將您的 Star Citizen 帳號與 Twitch 帳號連結，並觀看任何啟用 Drops 的 Star Citizen 實況，即可自動解鎖遊戲內物品獎勵。",
-      "達到觀看時數里程碑後，對應獎勵會出現在 Twitch 庫存中，領取後便會發送至您的 RSI 帳號機棚。"
-     ]
-    },
-    {
-     "h": "活動獎勵內容",
-     "items": [
-      "觀看 2 小時：Venture 黑/灰色底層服（Venture Undersuit Black/Grey）",
-      "觀看 4 小時：Venture 黑色裝甲套裝（Venture Black Armor Set）",
-      "觀看 6 小時：MacFlex 橘色背包（MacFlex Backpack Orange）",
-      "累計觀看滿 6 小時即可集齊全套裝備，為 RSI Galaxy 的到來做好飛行準備。"
-     ]
-    },
-    {
-     "h": "如何連結 Twitch 與 RSI 帳號",
-     "items": [
-      "前往 RSI 帳號設定：登入 RSI 官網，開啟帳號控制面板（Dashboard），點擊「Settings」並選擇「Linked Accounts」。",
-      "連結 Twitch 帳號：在設定頁面中點擊 Twitch 按鈕，頁面將跳轉至 Twitch 登入頁面。",
-      "登入您的 Twitch 帳號並授權連線。",
-      "完成連結後，即可透過觀看任何標記「Drops Enabled」的 Star Citizen 實況累積獎勵進度。"
-     ]
-    },
-    {
-     "h": "常見問題（FAQ）",
-     "items": [
-      "需要 Amazon Luna 或 Prime Gaming 嗎？不需要，只需擁有一般的 Twitch 帳號並與 RSI 帳號連結即可參加。",
-      "可以解除 Twitch 帳號連結嗎？可以，隨時能在 RSI 帳號設定中的「Linked Accounts」解除並重新綁定。",
-      "一個帳號可以綁定多個帳號嗎？不行，每個 RSI 帳號僅能連結一個 Twitch 帳號，反之亦然。若要更換需先解除先前的連結。",
-      "在 Twitch 解鎖後機棚卻未出現？請先確認綁定與登入的帳號皆正確，且已在 Twitch 庫存頁面點擊「領取（Claim）」；若過一段時間仍未收到，請聯繫玩家客服協助。"
-     ]
-    }
-   ],
-   "promo": [],
-   "official": [],
-   "links": [
-    {
-     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
-     "url": "news.html#limited-ships"
     }
    ],
    "full": true,
