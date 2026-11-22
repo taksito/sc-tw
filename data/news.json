@@ -1,7 +1,100 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-22 09:38",
+ "updated": "2026-11-23 04:01",
  "items": [
+  {
+   "id": "21393",
+   "title": "IAE 2956 Best In Show",
+   "title_zh": "IAE 2956 最佳飛船決選名單與獎勵",
+   "summary": "公佈 Ship Showdown 2956 四強飛船！介紹 IAE 2956 專屬塗裝、紀念幣與總冠軍紀念皮衣獎勵。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21393-IAE-2956-Best-In-Show",
+   "date": "2026-11-22",
+   "time": 1795363141,
+   "image": "https://robertsspaceindustries.com/i/1941ad9a95555d565a37476fbc9c5d6c96778f18/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjTJ24mDWLbwQzJg2WKcukyWzWtcDoKTnW)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "Ship Showdown 2956 四強出爐",
+     "items": [
+      "經過玩家們的熱烈投票與創作，Ship Showdown 2956 的最終四強飛船正式登上 IAE 舞台。",
+      "本次榮獲四強的飛船為：RSI Perseus（英仙座）、Drake Ironclad（鐵甲） Assault、Origin M80 以及 Drake Corsair（海盜）。"
+     ]
+    },
+    {
+     "h": "專屬塗裝與紀念獎勵",
+     "items": [
+      "所有獲得前四名的飛船都將獲得專屬的 IAE 2956 Best in Show（最佳飛船）塗裝。",
+      "往年的 Best in Show 塗裝也將再次開放取得。",
+      "擁有本次四強飛船的玩家，還能獲得遊戲內的紀念幣與展示盒。"
+     ]
+    },
+    {
+     "h": "年度總冠軍與全員好禮",
+     "items": [
+      "今年的最終總冠軍由 RSI Perseus（英仙座）榮獲。",
+      "為慶祝奪冠，所有贊助者玩家皆可免費獲得一件印有 RSI Perseus（英仙座）圖樣的紀念皮衣。"
+     ]
+    }
+   ],
+   "promo": [
+    {
+     "name": "RSI Perseus",
+     "type": "船",
+     "note": "Ship Showdown 2956 總冠軍，附贈獨家 BIS 塗裝、紀念幣與展示盒"
+    },
+    {
+     "name": "Drake Ironclad Assault",
+     "type": "船",
+     "note": "Ship Showdown 2956 四強飛船，附贈獨家 BIS 塗裝、紀念幣與展示盒"
+    },
+    {
+     "name": "Origin M80",
+     "type": "船",
+     "note": "Ship Showdown 2956 四強飛船，附贈獨家 BIS 塗裝、紀念幣與展示盒"
+    },
+    {
+     "name": "Drake Corsair",
+     "type": "船",
+     "note": "Ship Showdown 2956 四強飛船，附贈獨家 BIS 塗裝、紀念幣與展示盒"
+    }
+   ],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "🚀 RSI Perseus（本站介紹）",
+     "url": "ships/rsi-perseus.html"
+    },
+    {
+     "label": "🚀 Drake Ironclad Assault（本站介紹）",
+     "url": "ships/drake-ironclad.html"
+    },
+    {
+     "label": "🚀 Origin M80（本站介紹）",
+     "url": "ships/origin-m80.html"
+    },
+    {
+     "label": "📖 Drake Corsair（Star Citizen Wiki）",
+     "url": "https://starcitizen.tools/index.php?search=Drake+Corsair"
+    },
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    },
+    {
+     "label": "🆕 2026 新船時間表",
+     "url": "ships/new-ships.html"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
   {
    "id": "21462",
    "title": "Star Citizen | Behind the Ships: Gatac Hyūn",
@@ -1601,85 +1694,6 @@
     {
      "label": "🎨 官方商店：飛船塗裝",
      "url": "https://robertsspaceindustries.com/store/pledge/browse/paints"
-    },
-    {
-     "label": "🆕 2026 新船時間表",
-     "url": "ships/new-ships.html"
-    },
-    {
-     "label": "💰 CCU 現金購船指南",
-     "url": "ship-ccu.html"
-    }
-   ],
-   "full": true,
-   "detailed": true
-  },
-  {
-   "image_checked": true,
-   "id": "21346",
-   "title": "RSI Galaxy - Mission Made",
-   "title_zh": "RSI Galaxy：靈活變幻的使命之艦",
-   "summary": "介紹 RSI Galaxy 模組化多用途飛船，可切換貨運與醫療模組，並具備強大防禦能力與靈活調度的機組空間。",
-   "tag": "新船",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21346-RSI-Galaxy",
-   "date": "2026-11-14",
-   "time": 1794585880,
-   "image": "https://robertsspaceindustries.com/i/47fb7c33c3bddd09fc146a0b254472adc8621428/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjUT712HZk1AuCvmFTmc18tggt9uk1V4Mt)/source.jpg",
-   "sections": [
-    {
-     "h": "選擇權在你手中",
-     "items": [
-      "這款多功能飛船重新定義了模組化深度，展現 RSI 獨特的設計工藝。",
-      "次世代底盤圍繞著可配置的中段空間，能轉化為遠程貨運船或移動野戰醫院。",
-      "具備高度防禦能力，無論您的使命為何，Galaxy 都能完美勝任。"
-     ]
-    },
-    {
-     "h": "貨運模組",
-     "items": [
-      "提供額外 656 SCU 的運輸容量。",
-      "配備兩具軌道式牽引光束（Tractor Beam），方便在長途運輸、危險貨運或載具搬運時協助裝載重型貨物。"
-     ]
-    },
-    {
-     "h": "醫療模組",
-     "items": [
-      "能在激烈戰鬥中就地救治傷者。",
-      "完整的醫療床配置，讓機組人員能進行傷患分類與治療。",
-      "空間足以容納 Ursa Medivac 等地面載具，將醫療照護延伸至船艦之外。"
-     ]
-    },
-    {
-     "h": "火力與防禦",
-     "items": [
-      "配備重型裝甲與護盾，在執行任何任務時全力保護隊友。",
-      "編制 6 名機組人員可發揮全艦武器的最大火力；亦可由駕駛員掌控飛船，其餘人員專注於裝載貨物或治療傷員。"
-     ]
-    }
-   ],
-   "promo": [
-    {
-     "name": "RSI Galaxy",
-     "type": "船",
-     "note": "於 IAE 期間購買包含 10 年保險。戰爭債券（Warbond）無法使用商店代幣購買。"
-    }
-   ],
-   "official": [
-    "https://iae2956.com",
-    "https://robertsspaceindustries.com/en/store/pledge/browse/paints"
-   ],
-   "links": [
-    {
-     "label": "🚀 RSI Galaxy（本站介紹）",
-     "url": "ships/rsi-galaxy.html"
-    },
-    {
-     "label": "🎪 IAE 2956 官方活動頁",
-     "url": "https://iae2956.com"
-    },
-    {
-     "label": "🎨 官方商店：飛船塗裝",
-     "url": "https://robertsspaceindustries.com/en/store/pledge/browse/paints"
     },
     {
      "label": "🆕 2026 新船時間表",
