@@ -1,6 +1,6 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-22 04:10",
+ "updated": "2026-11-22 09:38",
  "items": [
   {
    "id": "21462",
@@ -200,8 +200,8 @@
    ],
    "links": [
     {
-     "label": "📖 Gatac Hyūn（Star Citizen Wiki）",
-     "url": "https://starcitizen.tools/index.php?search=Gatac+Hy%C5%ABn"
+     "label": "🚀 Gatac Hyūn（本站介紹）",
+     "url": "ships/gatac-hyun.html"
     },
     {
      "label": "👕 官方周邊商品",
@@ -282,8 +282,8 @@
    ],
    "links": [
     {
-     "label": "📖 Gatac Hyūn（Star Citizen Wiki）",
-     "url": "https://starcitizen.tools/index.php?search=Gatac+Hy%C5%ABn"
+     "label": "🚀 Gatac Hyūn（本站介紹）",
+     "url": "ships/gatac-hyun.html"
     },
     {
      "label": "🎪 IAE 2956 官方活動頁",
@@ -966,8 +966,8 @@
      "url": "https://starcitizen.tools/index.php?search=Marauder"
     },
     {
-     "label": "📖 Gatac Hyūn（Star Citizen Wiki）",
-     "url": "https://starcitizen.tools/index.php?search=Gatac+Hy%C5%ABn"
+     "label": "🚀 Gatac Hyūn（本站介紹）",
+     "url": "ships/gatac-hyun.html"
     },
     {
      "label": "🎪 IAE 2956 官方活動頁",
