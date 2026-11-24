@@ -1,7 +1,188 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-23 04:01",
+ "updated": "2026-11-24 10:44",
  "items": [
+  {
+   "id": "21459",
+   "title": "This Week in Star Citizen - November 23, 2026",
+   "title_zh": "《星際公民》本週週報 - 2026年11月23日",
+   "summary": "本週 IAE 2956 進入尾聲並頒發最佳展覽獎項，同時推出全新可飛飛船與 Alpha 5.0 路線圖更新。",
+   "tag": "週報",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21459-This-Week-In-Star-Citizen",
+   "date": "2026-11-24",
+   "time": 1795451783,
+   "image": "https://robertsspaceindustries.com/i/7dfba21bdeffc0aace1ec8c9adb8570a490931d0/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResepr2wb8mXGW9qXokDDG3XKHcBTjzS4Pcz)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "IAE 2956 與年度最佳展覽 Winners",
+     "items": [
+      "IAE 2956 在 New Babbage 進入最後一週，並於週日公布了本屆最佳展覽（Best in Show）獲勝者。",
+      "為慶祝 RSI Perseus（英仙座）榮獲本屆 Ship Showdown 冠軍，所有玩家皆可免費獲得一件 RSI Perseus（英仙座）主題轟炸機夾克。",
+      "若機庫中擁有今年前 4 強飛船：RSI Perseus（英仙座）、Drake Corsair（海盜）、Origin M80 或 Drake Ironclad（鐵甲） Assault，將會在 IAE 結束時免費獲得專屬的最佳展覽塗裝、紀念挑戰幣與展示盒。"
+     ]
+    },
+    {
+     "h": "全新可飛飛船與開發進度更新",
+     "items": [
+      "Drake Marauder 與 Gatac Hyūn 雙雙登場，並直接在持續性宇宙（PU）中開放飛行。",
+      "Jax McCleary 帶著兩集全新的《Galactic Gear》節目回歸介紹新飛船。",
+      "官方更新了 IAE 新船 Q&A，最新一集的《Behind the Ships》則帶玩家深入了解 Gatac Hyūn 的開發幕後細節。",
+      "路線圖（Roadmap）更新：載具戰鬥平衡調整已確認（Committed）納入 Alpha 5.0，並為 Nyx 星系的所有陣營更新了十多款服裝。"
+     ]
+    },
+    {
+     "h": "本週活動與節目行程",
+     "items": [
+      "週一至週四：IAE 2956 進入最後倒數，免費試飛（Free Fly）、Twitch Drops 與影片競賽持續進行中，所有活動將於 11 月 27 日 20:00 UTC 結束。",
+      "週五：推出最新一集《10 From the Community》，由設計團隊解答玩家對未來職業機制的提問；每週 RSI 電子報也將同步發送。"
+     ]
+    },
+    {
+     "h": "社群 MVP 與精選作品",
+     "items": [
+      "本週 MVP 由 THE•BREIZH•GAMER 拍攝的《Nyx I》影片獲得，展現了該星球壯麗的自然景觀。",
+      "社群精選圖片展示了 Anvil Liberator 在 Nyx 1 等多張優秀玩家投稿創作。"
+     ]
+    }
+   ],
+   "promo": [
+    {
+     "name": "RSI Perseus",
+     "type": "船",
+     "note": "本屆 Ship Showdown 冠軍，擁有者可獲得年度 Best in Show 塗裝與紀念幣"
+    },
+    {
+     "name": "Drake Corsair",
+     "type": "船",
+     "note": "入圍本屆 4 強（Final Four），擁有者可獲得年度 Best in Show 塗裝與紀念幣"
+    },
+    {
+     "name": "Origin M80",
+     "type": "船",
+     "note": "入圍本屆 4 強（Final Four），擁有者可獲得年度 Best in Show 塗裝與紀念幣"
+    },
+    {
+     "name": "Drake Ironclad Assault",
+     "type": "船",
+     "note": "入圍本屆 4 強（Final Four），擁有者可獲得年度 Best in Show 塗裝與紀念幣"
+    },
+    {
+     "name": "Drake Marauder",
+     "type": "船",
+     "note": "IAE 2956 新登場，直接開放可飛（Straight to Flyable）"
+    },
+    {
+     "name": "Gatac Hyūn",
+     "type": "船",
+     "note": "IAE 2956 新登場，直接開放可飛（Straight to Flyable）"
+    }
+   ],
+   "official": [
+    "https://robertsspaceindustries.com/en/iae2956#/schedule/About"
+   ],
+   "links": [
+    {
+     "label": "🚀 RSI Perseus（本站介紹）",
+     "url": "ships/rsi-perseus.html"
+    },
+    {
+     "label": "📖 Drake Corsair（Star Citizen Wiki）",
+     "url": "https://starcitizen.tools/index.php?search=Drake+Corsair"
+    },
+    {
+     "label": "🚀 Origin M80（本站介紹）",
+     "url": "ships/origin-m80.html"
+    },
+    {
+     "label": "🚀 Drake Ironclad Assault（本站介紹）",
+     "url": "ships/drake-ironclad.html"
+    },
+    {
+     "label": "📖 Drake Marauder（Star Citizen Wiki）",
+     "url": "https://starcitizen.tools/index.php?search=Drake+Marauder"
+    },
+    {
+     "label": "🚀 Gatac Hyūn（本站介紹）",
+     "url": "ships/gatac-hyun.html"
+    },
+    {
+     "label": "🎪 IAE 2956 官方活動頁",
+     "url": "https://robertsspaceindustries.com/en/iae2956#/schedule/About"
+    },
+    {
+     "label": "🆕 2026 新船時間表",
+     "url": "ships/new-ships.html"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21392",
+   "title": "IAE 2956 Finale",
+   "title_zh": "IAE 2956 閉幕日",
+   "summary": "這是體驗 IAE 2956 免費試飛與搶購每日戰爭債券特惠及限量飛船的最後機會！",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21392-IAE-2956-Finale",
+   "date": "2026-11-23",
+   "time": 1795448183,
+   "image": "https://robertsspaceindustries.com/i/fa9ec148e468a528a611b38a78b0f91449d02b45/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjeqhyN4vBAyiUtMyhnWm8Vd6TKqwkvkox)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "免費試飛最後機會",
+     "items": [
+      "展覽期間仍有時間免費試飛幾乎所有在 IAE 展出的飛船與地面載具。",
+      "只需前往展場的任何 kiosk 終端機選擇想要體驗的載具，即可前往螢幕上顯示的機庫取船。"
+     ]
+    },
+    {
+     "h": "閉幕每日特惠",
+     "items": [
+      "閉幕期間提供為期四天的優惠，每天 16:00 UTC 都會推出僅限時 24 小時的新戰爭債券每日特惠與限量飛船。",
+      "整個 IAE 期間每日皆有全新優惠上架。"
+     ]
+    },
+    {
+     "h": "切勿錯過",
+     "items": [
+      "在今年的 IAE 優惠結束並等待下一年之前，把握最後時間享受限時折扣。"
+     ]
+    }
+   ],
+   "promo": [
+    {
+     "name": "Nova",
+     "type": "載具",
+     "note": "每日戰爭債券特惠，包含 10 年保險"
+    },
+    {
+     "name": "Star Citizen Merchandise",
+     "type": "周邊",
+     "note": "官方周邊商品"
+    }
+   ],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "📖 Nova（Star Citizen Wiki）",
+     "url": "https://starcitizen.tools/index.php?search=Nova"
+    },
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
   {
    "id": "21393",
    "title": "IAE 2956 Best In Show",
@@ -1549,155 +1730,6 @@
     {
      "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
      "url": "news.html#limited-ships"
-    },
-    {
-     "label": "💰 CCU 現金購船指南",
-     "url": "ship-ccu.html"
-    }
-   ],
-   "full": true,
-   "detailed": true
-  },
-  {
-   "image_checked": true,
-   "id": "21414",
-   "title": "IAE 2956 About",
-   "title_zh": "IAE 2956 跨星際航空博覽會活動簡介",
-   "summary": "介紹 IAE 2956 展覽時間、地點與免費試飛活動，並提供 Twitch Drops 專屬觀看獎勵領取指南。",
-   "tag": "活動",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21414-IAE-2956-About",
-   "date": "2026-11-14",
-   "time": 1794585880,
-   "image": "https://robertsspaceindustries.com/i/2b133da6155daba3c3c01b3d80d86f657325595d/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjZqri9f5iyLeRFesbdtYbt2Pi7iB1LWkW)/source.jpg",
-   "sections": [
-    {
-     "h": "Twitch Drops 觀看獎勵",
-     "items": [
-      "為慶祝玩家期盼已久的 RSI Galaxy 登場，展覽期間推出全新 Twitch Drops 獎勵。",
-      "觀看任何開啟 Drops 的 Star Citizen 直播滿 2 小時可獲得底層服。",
-      "觀看滿 4 小時可獲得搭配護甲。",
-      "觀看滿 6 小時可獲得背包，完成全套外觀裝備領取。"
-     ]
-    },
-    {
-     "h": "IAE 2956 展覽亮點",
-     "items": [
-      "IAE 2956 跨星際航空博覽會於 11 月 13 日至 27 日舉行，匯集人類與外星工藝的飛船總覽。",
-      "今年展覽位於 New Babbage，由 RSI 擔任主辦廠牌，展出新一代經典飛船設計。",
-      "活動期間現場提供超過 200 款載具供玩家免費試飛。"
-     ]
-    },
-    {
-     "h": "免費試玩與新手參觀指引",
-     "items": [
-      "展覽期間開放免費試玩（Free Fly），可自由體驗探索、載物、採礦、回收與空戰等完整內容。",
-      "新玩家創建角色時，建議選擇 New Babbage 作為起始地點。",
-      "抵達後順著現場指標搭乘地下鐵路（Metroloop），即可輕鬆前往展覽會場。"
-     ]
-    }
-   ],
-   "promo": [
-    {
-     "name": "RSI Galaxy",
-     "type": "船",
-     "note": "配合新登場推出專屬 Twitch Drops 觀看獎勵活動"
-    },
-    {
-     "name": "Star Citizen Merchandise",
-     "type": "周邊",
-     "note": "官方周邊商品推廣"
-    }
-   ],
-   "official": [
-    "https://robertsspaceindustries.com/iae2956#/Merchandise"
-   ],
-   "links": [
-    {
-     "label": "🚀 RSI Galaxy（本站介紹）",
-     "url": "ships/rsi-galaxy.html"
-    },
-    {
-     "label": "👕 官方周邊商品",
-     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
-    },
-    {
-     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
-     "url": "news.html#limited-ships"
-    },
-    {
-     "label": "🆕 2026 新船時間表",
-     "url": "ships/new-ships.html"
-    }
-   ],
-   "full": true,
-   "detailed": true
-  },
-  {
-   "image_checked": true,
-   "id": "21347",
-   "title": "RSI Skylark - A Little Goes a Long Way",
-   "title_zh": "RSI Skylark：小巧身軀，大有作為",
-   "summary": "RSI 發布全新艦載戰鬥機 Skylark，能為中大型飛船提供極具價值的偵察支援與武器防衛。",
-   "tag": "新船",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21347-RSI-Skylark",
-   "date": "2026-11-14",
-   "time": 1794585880,
-   "image": "https://robertsspaceindustries.com/i/ba6a5045fa927fcdcc0de121b0e80b179e61da8e/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjGaP1e51W6ijnjywH1vudDFqftS9nYFEN)/source.jpg",
-   "sections": [
-    {
-     "h": "小型飛船，強大支援",
-     "items": [
-      "RSI 推出首款艦載戰鬥機 Skylark，作為 Constellation（星座）Mk V Centaurus（半人馬座）的隨艦搭檔正式登場。",
-      "這款緊湊的機體專為支援中大型飛船而建，具備防衛武力，能滿足邊境探索的武裝需求。"
-     ]
-    },
-    {
-     "h": "偵察者：探索更遠的領域",
-     "items": [
-      "可在主力艦隊保持安全距離時，先行偵察未知太空與調查新地形。",
-      "著陸時有個人儲物空間與武器架可供使用，飛行時也有足夠火力提供後盾。"
-     ]
-    },
-    {
-     "h": "戰士：隨艦戰力",
-     "items": [
-      "設計為搭載於中大型飛船（如 Constellation（星座）Mk V Centaurus（半人馬座）），隨時準備發射提供支援。",
-      "緊湊的機身、有效的武器以及第二具 Shield Generator（護盾產生器）可協助這架艦載戰鬥機應付戰鬥。"
-     ]
-    }
-   ],
-   "promo": [
-    {
-     "name": "RSI Skylark",
-     "type": "船",
-     "note": "RSI 首款艦載戰鬥機，可作為 Constellation Mk V Centaurus 等中大型飛船的隨艦偵察夥伴"
-    },
-    {
-     "name": "RSI Skylark Paint",
-     "type": "塗裝",
-     "note": "包含多款配色塗裝，其中黑橙配色款僅限 Chairman's Club 會員購買"
-    }
-   ],
-   "official": [
-    "https://iae2956.com",
-    "https://robertsspaceindustries.com/store/pledge/browse/paints"
-   ],
-   "links": [
-    {
-     "label": "📖 RSI Skylark（Star Citizen Wiki）",
-     "url": "https://starcitizen.tools/index.php?search=RSI+Skylark"
-    },
-    {
-     "label": "🎪 IAE 2956 官方活動頁",
-     "url": "https://iae2956.com"
-    },
-    {
-     "label": "🎨 官方商店：飛船塗裝",
-     "url": "https://robertsspaceindustries.com/store/pledge/browse/paints"
-    },
-    {
-     "label": "🆕 2026 新船時間表",
-     "url": "ships/new-ships.html"
     },
     {
      "label": "💰 CCU 現金購船指南",
