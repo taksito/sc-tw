@@ -1,7 +1,93 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-24 08:00",
+ "updated": "2026-11-25 06:36",
  "posts": [
+  {
+   "id": "579706",
+   "title": "[Wave 3] Star Citizen Alpha 5.0 PTU Patch Notes 13273298",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-5-0-ptu-patch-notes-6",
+   "date": "2026-11-24",
+   "time": 1795542503,
+   "version": "5.0",
+   "kind": "PTU",
+   "build": "13273298",
+   "audience": "第 3 梯次 (Wave 3)",
+   "highlight": "Alpha 5.0 導入 Nyx I 與 Genesis 星球技術升級，重製 VR 武器介面並修復多項音效與任務錯誤。",
+   "sections": [
+    {
+     "h": "🎯 測試重點",
+     "items": [
+      "PTU 環境現已開啟 25 倍聲望獎勵倍率。",
+      "測試重點：PTU 版本之間的穩定性、錯誤修正與長期持續性（LTP）。",
+      "Genesis（星球技術 V5）。",
+      "Nyx I 星球。",
+      "Starchitect 興趣點（Points of Interest）。",
+      "任務板與區域任務。",
+      "星系內伺服器網格化（Intraplanetary Server Meshing）。",
+      "載具擊殺時間（TTK）平衡調整。",
+      "飛彈鎖定介面更新。",
+      "VOIP 語音通訊穩定性改善。"
+     ]
+    },
+    {
+     "h": "✨ 功能與遊戲性更新",
+     "items": [
+      "【Starchitect 地點】維修、通用、指揮與居住建築的室內照明已完成大範圍霧氣與修飾優化；醫療櫃上方新增照明，並縮短投射陰影距離。重製區域複合照明以防止光線穿牆，調整砲塔模組的紅橘光平衡，農業環新增散射光。",
+      "【Starchitect 地點】保險箱已從廚房移至儲藏室。",
+      "【Starchitect 地點】暴露在外面的梯子新增後背防護，不再看起來像未完工。",
+      "【Starchitect 地點】維修室門框已精確對齊置中。",
+      "【Starchitect 地點】可能修正：儲藏室屋頂貼圖重疊、屋頂特效錯位、浮空道具以及通用哨站外觀出現缺孔的問題。",
+      "【Starchitect 地點】可能修正：複合牆面通風口模組錯位，並改善複合牆面的色彩塗裝與肋條位置。",
+      "【Starchitect 地點】可能修正：移除居住區與資材庫模組中不必要的攀爬點。",
+      "【契約與任務】可能修正：若其他執行任務的玩家先使用了 Covalex 儲物櫃，導致該儲物櫃無法互動的問題。",
+      "【契約與任務】可能修正：「回收貨物」契約中貨櫃未被識別為任務貨物，導致未產生倉庫訂單的問題。",
+      "【契約與任務】可能修正：玩家在地點完成註冊前到達時，「全線攻擊（Attack on All Fronts）」任務會卡住的問題。",
+      "【契約與任務】可能修正：目標完成（或已被其他玩家使用終端機）後，目標標記仍留在螢幕上的問題。",
+      "【契約與任務】可能修正：快遞契約包裹顯示錯誤名稱的問題。",
+      "【契約與任務】可能修正：「回收物品」契約要求交還至儲物櫃而非原先目標地點的問題，並已將需偷取的物品移開新擺設的室內裝飾。",
+      "【Genesis 與 Nyx I】針對 Nyx I 植被進行風吹效果優化，部分植物改用骨骼網格（Skeletal Meshes）處理以實現更逼真的擺動。進一步調整雲彩環境光遮蔽（AO），海洋渲染現已能在遠距離平滑淡出倒影，防止從軌道觀察時出現奇特鏡像瑕疵。",
+      "【Genesis 與 Nyx I】清理水體設定，切換設定時不再殘留孤立區域。",
+      "【Genesis 與 Nyx I】改善水體螢幕空間反射（SSR）。",
+      "【Genesis 與 Nyx I】可能修正：從載具內部掃描 Gatala Fungi（Gatala 蕈類）採集物時顯示佔位文字的問題。",
+      "【Genesis 與 Nyx I】新增 Gatala Fungi（Gatala 蕈類）的互動音效。",
+      "【音效】大幅修正生物群落（Biome）音效。此前即使玩家保持靜止，發聲器也會移動，導致生物群落環境音疊加並產生抖動。修正 Levski 環境音混音，原先環境音過大且穿透全站，現已限制於特定區域。",
+      "【音效】進一步調校 Nyx 各生物群落的環境音混音。",
+      "【音效】可能修正：玩家靜止時生物群落環境音疊加與抖動的問題。",
+      "【音效】可能修正：Levski 環境音效過大並貫穿整個站點的問題。",
+      "【虛擬實境】VR 武器客製化介面已重製為 3D 物件。配件掛載點直接繪製於武器上而非平面面板，可使用立體游標選擇並用滑鼠滾輪滾動配件列表。開啟介面時角色不再隨頭部轉動而傾斜（此前會導致視野偏移）。",
+      "【虛擬實境】立體游標現可自動在眼球追蹤與手動瞄準之間切換：移動滑鼠時接管控制，數秒無動作後恢復眼球追蹤。",
+      "【虛擬實境】環形選單現已直接使用立體游標，當眼球追蹤不可用時會根據頭部朝向運作。"
+     ]
+    },
+    {
+     "h": "🔧 錯誤修正與技術優化",
+     "items": [
+      "可能修正：Battaglia 不與玩家對話，導致任務無法進行的問題。",
+      "可能修正：進行 ASD Delving 時，第二隻 Yormandi 未在 Onyx Facility 刷新的問題。",
+      "可能修正：載入進入 Persistent Universe（持久宇宙）後，主選單介面缺少當前地點描述的問題。",
+      "可能修正：角色客製化中的混合滑桿用滑鼠拖曳時無法移動的問題。",
+      "可能修正：多款載具外部燈光快速閃爍的問題。",
+      "可能修正：在 Crusader 展廳地板上進入載具駕駛席時，玩家位置重置且載具消失的問題。",
+      "可能修正：Zeus Mk II（宙斯 Mk II）探索型頭盔燈光錯位，導致移動或舉槍瞄準時會投射異常陰影的問題。",
+      "可能修正：MISC Hull C（船體 C）未播放首次收攏動畫的問題。",
+      "可能修正：Levski NPC 的內襯服（Undersuit）穿透外衣的問題。",
+      "可能修正：駕駛艙內部能聽到重力產生器音效的問題。",
+      "可能修正：Model-K2 Rifle（Model-K2 步槍）說明誤寫為等離子武器而非雷射武器的問題。"
+     ]
+    },
+    {
+     "h": "💥 閃退修正",
+     "items": [
+      "可能修正：載入角色模型時因鎖定衝突導致的用戶端凍結與看門狗超時問題。",
+      "可能修正：輪型載具物理計算導致的用戶端閃退。",
+      "可能修正：風向與粒子著色器中無效數學運算導致的 GPU 閃退。",
+      "可能修正：查詢星球載入狀態時發生的伺服器閃退。",
+      "可能修正：實體密度類別變更時發生的伺服器閃退。",
+      "可能修正：啟動時 Windows 程式庫載入鉤子中的多項閃退與溢位問題。"
+     ]
+    }
+   ]
+  },
   {
    "id": "579522",
    "title": "[Wave 3) Star Citizen Alpha 5.0 PTU Patch Notes 5 13260598",
@@ -683,39 +769,6 @@
       "可能修正：玩家在 Battaglia Story 1 Phase 2 期間穿越擋住 Command Module（指揮艙）大門的障礙物並卡住的問題。",
       "可能修正：在 Battaglia Story 2 期間將上傳卡插入讀卡機後會被退出的問題，現在磁碟會在交付時正確被銷毀。",
       "可能修正：Drake Golem（Drake 傀儡）在運載不穩定的 Quantanium 時缺少音效警報的問題。"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "576588",
-   "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU Patch Notes 13145606",
-   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-5",
-   "date": "2026-11-09",
-   "time": 1794263066,
-   "version": "4.10.3",
-   "kind": "PTU",
-   "build": "13145606",
-   "audience": "所有測試梯次 (All Waves)",
-   "highlight": "本次 PTU 開放所有 Wave，重點包含新任務 Vanduul Incursion、新武器 LBCO Skarnov 步槍及 IAE 與 AI 修正。",
-   "sections": [
-    {
-     "h": "🎯 測試重點",
-     "items": [
-      "版本資訊：Alpha 4.10.3-PTU.13145606（測試對象：所有 Wave，伺服器：僅限美服 US，長期持續性 LTP：已啟用）",
-      "PTU 版本之間的穩定性、錯誤修正與 LTP（長期持續性）測試",
-      "新任務：Vanduul Incursion",
-      "新 FPS 武器：LBCO Skarnov Rifle（LBCO Skarnov 步槍）",
-      "IAE（星際航空展，採用加速時程）"
-     ]
-    },
-    {
-     "h": "🐛 錯誤修正與技術更新",
-     "items": [
-      "今晚的版本重點在於進一步提升 IAE 與 Vanduul Incursion 的效能與進行細節拋光。",
-      "可能修正：在「Blinding Hope」Battaglia 任務中消滅船上所有敵人後，計數器卡在 0% 的問題。",
-      "可能修正：在 Wikelo's 接受任務卡片時，會導致隨機接受其他任務的問題。",
-      "可能修正：在 Bounty Hunter（賞金獵人）/ Mercenary（傭兵）任務期間，敵對 AI 飛船有機率不會向玩家還擊的問題。"
      ]
     }
    ]
