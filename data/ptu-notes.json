@@ -1,7 +1,84 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-21 15:29",
+ "updated": "2026-11-24 08:00",
  "posts": [
+  {
+   "id": "579522",
+   "title": "[Wave 3) Star Citizen Alpha 5.0 PTU Patch Notes 5 13260598",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-5-0-ptu-patch-notes-5",
+   "date": "2026-11-23",
+   "time": 1795456448,
+   "version": "5.0",
+   "kind": "PTU",
+   "build": "13260598",
+   "audience": "",
+   "highlight": "飛船裝甲數值重平衡並支援 MFD 顯示，Genesis 行星技術與效能持續優化！",
+   "sections": [
+    {
+     "h": "🎯 測試重點",
+     "items": [
+      "PTU 目前啟用 25 倍聲望獎勵倍率加成。",
+      "伺服器穩定度、錯誤修正以及 PTU 發布版本間的 LTP（長期存續）。",
+      "Genesis（行星技術 V5）。",
+      "Nyx 1。",
+      "Starchitect 興趣點（POI）。",
+      "任務看板與在地任務。",
+      "行星內伺服器網格化（Intraplanetary Server Meshing）。",
+      "載具擊殺時間（TTK）平衡調整。",
+      "飛彈鎖定介面更新。",
+      "VOIP（語音通話）穩定度改善。"
+     ]
+    },
+    {
+     "h": "⚙️ 遊戲性更新",
+     "items": [
+      "飛船裝甲：所有飛船的裝甲數值已調整以符合近期的平衡改動，裝甲狀況現在會顯示在工程 MFD（多功能顯示器）上，讓玩家能與其他系統一併監控其狀態。",
+      "Starchitect 地點：儲存區與居住區模組的外觀光照已完成優化與潤飾，儲存區內部霧氣效果目前正在調整中。貨物電梯與倉庫光照亦已修正。",
+      "可能修正：60 公尺物流建築中的椅子先前為靜態道具無法乘坐，且已完全移除管理員桌後方導致玩家卡住無法站起的椅子。",
+      "可能修正：Jaquez Storage 地塊上物品浮空的問題。",
+      "可能修正：儲存地塊後方的筒倉穿透欄杆的問題。",
+      "可能修正：100 公尺複合地塊上的牆角碰撞判定與幾何模型不符的問題。",
+      "可能修正：電漿罐在物品插槽生成時導致穿透鄰近物體的問題。",
+      "可能修正：外露的管道末端，現已妥善收整至地板內。",
+      "任務合約：可能修正極度困難（Very Hard）與超級困難（Super）難度的賞金獵人合約未出現在 mobiGlas 或任務看板上的問題。",
+      "可能修正：任務箱子顯示為「PLACEHOLDER」而非正確名稱的問題。",
+      "可能修正：Hockrow 下載合約顯示錯誤文字的問題。",
+      "可能修正：海盜船生成為 890 Jump（890 跳躍號）的問題，現已將其從飛船戰鬥合約與中等難度任務中排除。",
+      "可能修正：主要目標飛船與其護航僚機生成距離過遠，導致目標缺乏防護的問題。",
+      "可能修正：「防衛飛船（Defend Ship）」任務中攻擊方生成距離過遠而無法交戰的問題。",
+      "星圖（Starmap）：目標標記先前為隨機排序，導致縮放至標記重疊時，未追蹤的目標可能會覆蓋正在追蹤的標記。現在追蹤中的標記將一律繪製在最上層。",
+      "Genesis 與 Nyx I：重製了潮濕地形的著色表現，水坑不再於不自然的裸露基岩上生成。雨天倒影現在會以正確座標旋轉，使濕滑表面的倒影與地平線一致，不再呈現異常角度。",
+      "進一步降低 VRAM（視訊記憶體）佔用，地面反照率（Albedo）細節現在僅在靠近攝影機時載入。",
+      "GPU 實例剔除（Instance Culling）現已支援間接細節層次（Indirect LOD）。",
+      "可能修正：Nyx I 部分區域水坑渲染異常的問題。",
+      "音效：可能修正部分 Starchitect 地點的生命徵象終端機按鈕聽起來過於實體化，現已重製為數位音效。",
+      "公會大廳的電腦與燈光音效已製作完成，複合設施陣營廣播音效作業仍在持續進行中。"
+     ]
+    },
+    {
+     "h": "🐛 錯誤修正與技術調整",
+     "items": [
+      "可能修正：在駭入 Security Post Kareah 清除紀錄後，PvP 賞金有時仍未清除的問題。",
+      "可能修正：設定前往躍遷點閘道空間站（Jump Point Gateway Stations）的航線時未顯示導航標記的問題。",
+      "可能修正：Area18 的 Empire Health Services 接待櫃檯後方出現佔位符球體的問題。",
+      "可能修正：任務箱雖然有動畫卻被實體化為靜態物件，導致嚴重效能損耗的資料錯誤。",
+      "可能修正：新角色生成時配備的 Arclight Pistol（Arclight 手槍）彈匣為空，導致開第一槍前必須先重新裝填彈藥的問題。",
+      "可能修正：Levski 標誌呈現紅色偏色的問題。",
+      "可能修正：Orison 的 Cousin Crow's 載具武器穿透展示架的問題。"
+     ]
+    },
+    {
+     "h": "💥 當機修正",
+     "items": [
+      "可能修正：載入行星材質時客戶端凍結時間過長而觸發看門狗（Watchdog）機制的問題。",
+      "可能修正：筆刷群組在渲染時被誤認為小行星而導致的客戶端當機。",
+      "可能修正：介面中畫布在仍處於互動狀態下被銷毀所導致的客戶端當機。",
+      "可能修正：游標移動到背包物品上方時導致的客戶端當機。",
+      "可能修正：針對粒子材質的進一步 GPU 當機修正。"
+     ]
+    }
+   ]
+  },
   {
    "id": "578910",
    "title": "[Wave 3] Star Citizen Alpha 5.0 PTU Patch Notes 13248297",
@@ -639,61 +716,6 @@
       "可能修正：在「Blinding Hope」Battaglia 任務中消滅船上所有敵人後，計數器卡在 0% 的問題。",
       "可能修正：在 Wikelo's 接受任務卡片時，會導致隨機接受其他任務的問題。",
       "可能修正：在 Bounty Hunter（賞金獵人）/ Mercenary（傭兵）任務期間，敵對 AI 飛船有機率不會向玩家還擊的問題。"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "576227",
-   "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU Patch Notes 13132336",
-   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-4",
-   "date": "2026-11-06",
-   "time": 1793999236,
-   "version": "4.10.3",
-   "kind": "PTU",
-   "build": "13132336",
-   "audience": "所有測試梯次 (All Waves)",
-   "highlight": "本版開放新槍 LBCO Skarnov Rifle，調升 Ironclad 價格並支援地面載具保險理賠，並修正 ASOP 與飛船碰撞問題。",
-   "sections": [
-    {
-     "h": "🎯 測試重點",
-     "items": [
-      "穩定性、錯誤修正以及 PTU 版本之間的 LTP（長期持續性）測試",
-      "新任務：Vanduul Incursion（Vanduul 入侵）",
-      "新單兵武器：LBCO Skarnov Rifle（LBCO Skarnov 步槍）",
-      "IAE（聖宇航展，採加速時程進行測試）"
-     ]
-    },
-    {
-     "h": "⚙️ 遊戲性與功能更新",
-     "items": [
-      "飛船取得與價格調整：Basher（撞擊者）現可在 Pyro Rundown Reststops 購買；Gatac Tyilui 現可在 Area18 的 Astro Armada 購買；兩者皆已加入 Arena Commander 庫存。同時調升 Drake Ironclad（鐵甲）、Drake Ironclad Assault（鐵甲突擊型）與 Gatac Tyilui 的 aUEC 售價。",
-      "武器手感調整：全面調整 4.10 版本武器組的操作手感，提升射擊體驗。",
-      "Vanduul Incursion 任務更新：導入全新一次性實體生成器，用於從生成的飛船領取一次性合約獎勵，現已應用於 Vanduul 低溫艙（cryopod），使其在太空中不再出現受重力影響的行為。",
-      "新增 LBCO Skarnov Rifle（LBCO Skarnov 步槍）彈匣藍圖並作為合約獎勵。",
-      "Vanduul 在戰鬥期間新增語音喊話。",
-      "量子站（quantum stations）的 AI 在受到攻擊前就會主動與目標交戰。",
-      "共享合約的聲望獎勵現已平均分配給所有隊員。",
-      "登船合約（Board Ship）地點調整，不再將任務設在玩家及其 Drake Caterpillar（毛毛蟲）一抵達就會遭受攻擊的位置。",
-      "壓制目標合約（Neutralize Target）不再生成無人操控的 Polaris（北極星）作為目標。",
-      "保險系統更新：地面載具與動力服（powersuits）現可透過保險理賠進行索賠回收。"
-     ]
-    },
-    {
-     "h": "🛠️ 錯誤修正與技術調整",
-     "items": [
-      "可能修正：在某些表面行走時腳步聲材質未正確切換的問題。",
-      "可能修正：玩家離開座椅後失去與自家飛船的碰撞體，導致斜坡與電梯變為無實體且船體互相穿透的問題。",
-      "可能修正：多款載具在 Fleet Manager 與 ASOP 終端機顯示占位符狀態，導致無法交付或檢索的問題。",
-      "可能修正：部分飛船上的武器架位置出現占位符球體的問題。",
-      "可能修正：當機庫門打開時，玩家能在自己的獨立機庫（instanced hangar）內看到其他玩家載具的問題。",
-      "可能修正：由衝突的護盾藍圖關聯引起的資料斷言（data assert）錯誤。",
-      "可能修正：RSI Constellation（星座） Centaurus（半人馬座） Mk V 的遙控砲塔失去雲台運作功能的問題。",
-      "可能修正：MaxLift Tractor Beam（牽引光束）與 Cambio SRT 變體無法放置在 Bosco Weapon Display Rack（Bosco 武器展示架）上的問題。",
-      "可能修正：玩家能夠進入 Drake Caterpillar（毛毛蟲）上原本被封鎖死角的問題。",
-      "可能修正：部分 Argo Moth（飛蛾）塗裝在載具塗裝管理器中顯示方向錯誤的問題。",
-      "可能修正：物品吸附至貨運電梯（freight elevator）時懸浮在半空中的問題。",
-      "可能修正：Polaris（北極星）的 Size 4 Shield Generator（4 級護盾產生器）顯示錯誤名稱與描述的問題。"
      ]
     }
    ]
