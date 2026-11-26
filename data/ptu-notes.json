@@ -1,7 +1,91 @@
 {
  "source": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048",
- "updated": "2026-11-25 06:36",
+ "updated": "2026-11-26 16:40",
  "posts": [
+  {
+   "id": "579877",
+   "title": "[All Waves] Star Citizen Alpha 5.0 PTU Patch Notes 13284307",
+   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-5-0-ptu-patch-notes-6-1",
+   "date": "2026-11-25",
+   "time": 1795634452,
+   "version": "5.0",
+   "kind": "PTU",
+   "build": "13284307",
+   "audience": "所有測試梯次 (All Waves)",
+   "highlight": "Alpha 5.0 PTU 釋出 Genesis 科技與 Nyx 1 星系，並開啟 50 倍聲望加倍！",
+   "sections": [
+    {
+     "h": "🎯 測試重點",
+     "items": [
+      "PTU 目前開啟 50 倍聲望獎勵加倍。",
+      "測試重點：穩定性、錯誤修正、PTU 版本之間的長效存續（LTP）。",
+      "Genesis（Planet Tech V5 星球科技 V5）。",
+      "Nyx 1 星系。",
+      "Starchitect 興趣點（POI）。",
+      "任務板與在地任務。",
+      "星球內伺服器網格（Intraplanetary Server Meshing）。",
+      "載具擊殺時間（TTK）平衡調整。",
+      "飛彈鎖定介面更新。",
+      "VOIP 語音穩定度改善。"
+     ]
+    },
+    {
+     "h": "⚙️ 遊戲性更新",
+     "items": [
+      "【聲望系統】mobiGlas 中的公會聲望頁面現已填充內容。前六個公會階級現在有了名稱與圖示（先前為空白）。",
+      "【聲望系統】賞金目標名稱現在會在整個賞金描述中以顏色高亮顯示，而非僅部分顯示。",
+      "【聲望系統】新增 Nyx I 合約的任務獎勵文字。",
+      "【Starchitect 地點】公會大廳、複合設施、砲塔模組與內裝的光照持續優化，修復漏光、為光盒新增溢光效果，並調整保險箱、交付點與生涯板的陰影投射距離以提升效能。萃取單元與建築外觀進行了色彩調整，避免每個地點都是白色而顯得重複。",
+      "【Starchitect 地點】效能優化：Imposter 着色器透過將工作流提前，速度提升約 25%，星球材質烘焙速度顯著加快。",
+      "【Starchitect 地點】居住區、降落場與後勤倉儲的建築結構在小地圖上顯示更加清晰。",
+      "【Starchitect 地點】管理員對話在與玩家交談時取得優先權，NPC 不再會插話打斷。",
+      "【Starchitect 地點】可能修正：附近 NPC 被擊殺後 AI 反應重置，導致敵方未意識到遭到攻擊的問題。",
+      "【Starchitect 地點】可能修正：80 公尺公會大廳的門面板在門實際開啟時仍顯示為「已鎖定（Locked）」。",
+      "【Starchitect 地點】可能修正：破碎採礦點高亮顯示為橘色而非紫色，且使用採礦載具破碎時會直接粉碎的問題。",
+      "【Starchitect 地點】可能修正：60 公尺後勤建築中損壞的邊緣峭壁，並進一步調整降落場各處的邊緣。",
+      "【Starchitect 地點】可能修正：道具燈光過亮以及複合設施可互動螢幕的排序問題。",
+      "【合約】可能修正：合約將玩家引導至 Tactical Strike Group（戰術打擊群）地點導致站點防禦系統攻擊玩家的問題。",
+      "【合約】可能修正：玩家死亡並返回該地點後，Boss 標記未重新出現的問題。",
+      "【合約】可能修正：Ling 採礦合約要求等離子燃料導致生成失敗的問題。",
+      "【合約】可能修正：三個物品遞送合約無法生的問題。",
+      "【Genesis 與 Nyx I】大氣光照延伸支援地面霧氣與降雨區域，天空光會在下方正確變暗並還原漫射日光。",
+      "【Genesis 與 Nyx I】地表覆蓋物現僅使用土壤深度判定，不再浮在基岩附近。",
+      "【Genesis 與 Nyx I】地表濕潤效果更穩定，並進行了水體與 VRAM（顯示記憶體）優化。",
+      "【Genesis 與 Nyx I】體積雲改進，包括可選的大氣變紅效果，使夕陽照耀下的雲彩不再褪色失真。",
+      "【音效】戰鬥音樂過渡打磨優化。",
+      "【音效】Starchitect 地點混響優化。",
+      "【音效】飛船武器混音調整。",
+      "【音效】可能修正：玩家一進入 Siege of Orison（奧里森攻城戰）副本就能聽到大聲迫擊砲爆炸聲的問題。"
+     ]
+    },
+    {
+     "h": "🐛 錯誤與技術修正",
+     "items": [
+      "可能修正：ArcCorp 上缺失興趣點，現已重新顯示於導航中。",
+      "可能修正：Quantum Travel（量子航行）路線設定後立即重置的問題。",
+      "可能修正：在商品終端機出售貨物（包含 Hull C（船體 C））時顯示「Failed Awaiting Manual Delivery to Freight Elevator（等待手動遞送至貨物電梯失敗）」的問題。",
+      "可能修正：Levski 的索賠保險與預設配置計時器過長的問題。",
+      "可能修正：護甲在 Arena Commander（競技場指揮官）中未提供防護，導致大多數武器一兩槍即可擊殺的問題。",
+      "可能修正：領出的載具燈光卡在緊急狀態的問題。",
+      "可能修正：Origin 600i 所有衍生型的前方電梯存取點需要跳躍才能觸及的問題。",
+      "可能修正：新手教學期間靠近關閉的居住艙門後，裝備的頭盔消失的問題。",
+      "可能修正：玩家在 Lorville 從椅子上站起時會受到傷害並穿模進入居住艙桌子的問題。",
+      "可能修正：1/8 SCU 大小的商品與任務物品可放進背包的問題。",
+      "可能修正：Palatino 背包（來自 Vanduul Incursion（Vanduul 入侵））在攜帶時相對於角色手部位置偏移的問題。"
+     ]
+    },
+    {
+     "h": "💥 閃退修正",
+     "items": [
+      "可能修正：初始化任務地點時發生的客戶端看門狗超時閃退。",
+      "可能修正：長效生成期間發生的伺服器閃退。",
+      "可能修正：滅火器生成回呼引起的伺服器閃退。",
+      "可能修正：銷毀收納實體階層時的伺服器端斷言錯誤（Assert）。",
+      "可能修正：因缺失塗裝材質與缺失背包掛點導致的客戶端與伺服器閃退。"
+     ]
+    }
+   ]
+  },
   {
    "id": "579706",
    "title": "[Wave 3] Star Citizen Alpha 5.0 PTU Patch Notes 13273298",
@@ -732,43 +816,6 @@
       "Alpha 4.10.3 共修復了 129 項問題（包含多項 Exploit 漏洞）。重點改進了每次遊玩都會接觸到的系統：ASOP 終端機與機庫、貨物與合約、貨物電梯以及載具 HUD。",
       "其中有 36 項修復源自 Issue Council 的社群回報。",
       "針對機庫與艦隊管理流程進行了大範圍集中優化，包含了 14 項直接與機庫及 ASOP 流程相關的修復。"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "576753",
-   "title": "[All Waves] Star Citizen Alpha 4.10.3 PTU RC1 Patch Notes 13160301",
-   "url": "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-4-10-3-ptu-patch-notes-2-1",
-   "date": "2026-11-10",
-   "time": 1794346336,
-   "version": "4.10.3",
-   "kind": "PTU",
-   "build": "13160301",
-   "audience": "所有測試梯次 (All Waves)",
-   "highlight": "本版修復 Levski 機庫無電梯、ASOP 終端機卡船，以及 Battaglia 任務與飛船機制異常。",
-   "sections": [
-    {
-     "h": "ℹ️ 測試資訊",
-     "items": [
-      "版本號：Alpha 4.10.3-PTU.13160301",
-      "測試對象：所有波次（All Waves）",
-      "伺服器資訊：PTU 頻道（僅限美服）",
-      "長期持續性（LTP）：已啟用"
-     ]
-    },
-    {
-     "h": "🛠️ 錯誤與技術修正",
-     "items": [
-      "進一步進行最終效能與日誌紀錄更新。",
-      "可能修正：Vanduul Incursion 護衛飛船合約在較低難度的變體中錯誤地生成 Mauler（槌骨者）。",
-      "可能修正：當機庫裝載平台在移動中途卡住時，ASOP 終端機的「取回（Retrieve）」選項會永久變灰的問題。現在平台會自動與機庫門重新同步，並乾淨地取消掛起的存放或取回請求，避免玩家卡在換船佇列中。",
-      "可能修正：Levski 指定的機庫內缺少電梯或電梯控制面板，導致完全無法進入該地點的問題。",
-      "可能修正：Battaglia 中型回收合約無法成功生成載具的問題。",
-      "可能修正：玩家在進行 Battaglia 任務期間能夠進入 Drake Caterpillar（毛毛蟲）引擎室的問題。",
-      "可能修正：玩家在 Battaglia Story 1 Phase 2 期間穿越擋住 Command Module（指揮艙）大門的障礙物並卡住的問題。",
-      "可能修正：在 Battaglia Story 2 期間將上傳卡插入讀卡機後會被退出的問題，現在磁碟會在交付時正確被銷毀。",
-      "可能修正：Drake Golem（Drake 傀儡）在運載不穩定的 Quantanium 時缺少音效警報的問題。"
      ]
     }
    ]
