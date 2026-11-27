@@ -1,7 +1,79 @@
 {
  "source": "https://robertsspaceindustries.com/comm-link",
- "updated": "2026-11-24 10:44",
+ "updated": "2026-11-28 07:58",
  "items": [
+  {
+   "id": "21391",
+   "title": "IAE 2956 Farewell",
+   "title_zh": "IAE 2956 圓滿落幕",
+   "summary": "IAE 2956 展覽已正式閉幕。官方感謝玩家參與，並預告 2957 年將帶來涵蓋貨運、戰鬥、採礦與製造等職業的全新飛船。",
+   "tag": "活動",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21391-IAE-2956-Farewell",
+   "date": "2026-11-28",
+   "time": 1795808694,
+   "image": "https://robertsspaceindustries.com/i/a9dd44e32267c84a3764a47fec59eb7636b28438/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseTTFZQGoHf35NxoHuC3SnDgrcrPf2toUA)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "告別 IAE 2956",
+     "items": [
+      "感謝所有玩家參與今年的 IAE 展覽，讓活動圓滿成功。",
+      "每年的展覽都呈現了宇宙中極其豐富的飛船與陸巡載具陣容，無論是驚艷的新發表艦船或是歷年經典，都能滿足不同玩家的需求。"
+     ]
+    },
+    {
+     "h": "展望 2957 年",
+     "items": [
+      "展望 2957 年，將有更多全新飛船登場。",
+      "包括 Kruger、Consolidated Outland、Grey's Market、Greycat、Drake、Anvil、MISC、Aegis、Origin、Crusader 以及 Banu 等品牌都將推出新品。",
+      "新飛船陣容將涵蓋貨運、戰鬥、採礦、製造、運輸與精煉等多種職業生涯。",
+      "期待未來一年大家繼續探索宇宙，並於下一次慶典活動中再次相聚。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [
+    "https://robertsspaceindustries.com/iae2956#/Merchandise"
+   ],
+   "links": [
+    {
+     "label": "👕 官方周邊商品",
+     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
+    },
+    {
+     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
+     "url": "news.html#limited-ships"
+    }
+   ],
+   "full": true,
+   "detailed": true
+  },
+  {
+   "id": "21466",
+   "title": "10 From the Community - Professional Pursuits",
+   "title_zh": "來自社群的 10 個問題：職業發展",
+   "summary": "本集影片探討採礦、醫療、賞金獵人、回收、製造與貿易等職業發展，解答社群關心的玩法擴展與體驗連結。",
+   "tag": "影片",
+   "link": "https://robertsspaceindustries.com/comm-link/transmission/21466-10-From-The-Community",
+   "date": "2026-11-27",
+   "time": 1795794294,
+   "image": "https://robertsspaceindustries.com/i/5fcd4b81d34173c05ae266560f68b7aa2d2cb293/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjResjudBs6gDFuEzbeDgjADHUbkSFsZ2bopg6)/source.jpg",
+   "image_checked": true,
+   "sections": [
+    {
+     "h": "職業玩法開發解答",
+     "items": [
+      "本集節目針對採礦、醫療、賞金獵人、回收、製造與商業貿易等職業進行探討。",
+      "團隊解答了來自《星際公民》社群的 10 個（或 11 個）問題，說明如何擴展現有玩法循環並創造新的職業體驗。"
+     ]
+    }
+   ],
+   "promo": [],
+   "official": [],
+   "links": [],
+   "full": true,
+   "detailed": true
+  },
   {
    "id": "21459",
    "title": "This Week in Star Citizen - November 23, 2026",
@@ -1606,130 +1678,6 @@
     {
      "label": "🆕 2026 新船時間表",
      "url": "ships/new-ships.html"
-    },
-    {
-     "label": "💰 CCU 現金購船指南",
-     "url": "ship-ccu.html"
-    }
-   ],
-   "full": true,
-   "detailed": true
-  },
-  {
-   "image_checked": true,
-   "id": "21412",
-   "title": "IAE 2956 RSI",
-   "title_zh": "IAE 2956 RSI 品牌日",
-   "summary": "介紹 IAE 2956 中 RSI 的展出重點，包含 RSI Galaxy 的首次亮相以及 RSI Skylark 的獨立推出。",
-   "tag": "促銷",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21412-IAE-2956-RSI",
-   "date": "2026-11-14",
-   "time": 1794585880,
-   "image": "https://robertsspaceindustries.com/i/3ea727b272705f3695de02bea60a83dc8cd9ed07/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskTTWxvDm98KhKNavzvKD1bLBtX8GnUYyt)/source.jpg",
-   "sections": [
-    {
-     "h": "ROBERTS SPACE INDUSTRIES",
-     "items": [
-      "Roberts Space Industries 在這一年迎來非凡的成就，不僅主導 IAE 2956，更迎來兩項重要發布：Skylark 的獨立推出，以及模組化主力艦 Galaxy 的首次亮相。"
-     ]
-    },
-    {
-     "h": "RSI GALAXY",
-     "items": [
-      "這艘多功能飛船重新定義了模組化飛船的深度能力，能進行載貨、醫療並堅守陣地。"
-     ]
-    },
-    {
-     "h": "RSI SKYLARK",
-     "items": [
-      "RSI 的首款微型戰機首次獨立登場，準備好支援、防禦並與您的艦隊一同面對邊境。"
-     ]
-    }
-   ],
-   "promo": [
-    {
-     "name": "Galaxy",
-     "type": "船",
-     "note": "RSI 的模組化主力飛船"
-    },
-    {
-     "name": "Skylark",
-     "type": "船",
-     "note": "RSI 的首款微型戰機獨立推出"
-    }
-   ],
-   "official": [
-    "https://robertsspaceindustries.com/iae2956#/Merchandise"
-   ],
-   "links": [
-    {
-     "label": "🚀 Galaxy（本站介紹）",
-     "url": "ships/rsi-galaxy.html"
-    },
-    {
-     "label": "📖 Skylark（Star Citizen Wiki）",
-     "url": "https://starcitizen.tools/index.php?search=Skylark"
-    },
-    {
-     "label": "👕 官方周邊商品",
-     "url": "https://robertsspaceindustries.com/iae2956#/Merchandise"
-    },
-    {
-     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
-     "url": "news.html#limited-ships"
-    },
-    {
-     "label": "🆕 2026 新船時間表",
-     "url": "ships/new-ships.html"
-    },
-    {
-     "label": "💰 CCU 現金購船指南",
-     "url": "ship-ccu.html"
-    }
-   ],
-   "full": true,
-   "detailed": true
-  },
-  {
-   "image_checked": true,
-   "id": "21415",
-   "title": "IAE 2956 Merchandise",
-   "title_zh": "IAE 2956 官方週邊商品販售",
-   "summary": "慶祝 IAE 盛會，官方推出多款 Star Citizen 週邊商品與新品，訂閱者可享額外最高 15% 優惠。",
-   "tag": "促銷",
-   "link": "https://robertsspaceindustries.com/comm-link/transmission/21415-IAE-2956-Merchandise",
-   "date": "2026-11-14",
-   "time": 1794585880,
-   "image": "https://robertsspaceindustries.com/i/de17a442c9fea1221697aac5bf481d807d4a4132/resize(2048,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseYf5aezUVudTgCu8YmrN7rSHgxLhU9KS6)/source.jpg",
-   "sections": [
-    {
-     "h": "使用官方週邊商品一同慶祝 IAE",
-     "items": [
-      "銀河航太博覽會（IAE）已經到來，一系列 Star Citizen 官方週邊商品也同步上架。",
-      "探索全新推出的商品與經典熱銷商品，包含許多非常適合當作節慶禮物的精選好物。",
-      "訂閱者（Subscribers）可享有最高額外 15% 的折扣優惠。",
-      "部分地區供應數量有限。"
-     ]
-    }
-   ],
-   "promo": [
-    {
-     "name": "IAE 2956 Merchandise",
-     "type": "周邊",
-     "note": "訂閱者享最高額外 15% 優惠，部分地區限量販售"
-    }
-   ],
-   "official": [
-    "https://robertsspaceindustries.com/en/store/pledge/browse/merchandise"
-   ],
-   "links": [
-    {
-     "label": "👕 官方周邊商品",
-     "url": "https://robertsspaceindustries.com/en/store/pledge/browse/merchandise"
-    },
-    {
-     "label": "📰 IAE 2956 站長整理（限量船開賣時間）",
-     "url": "news.html#limited-ships"
     },
     {
      "label": "💰 CCU 現金購船指南",
